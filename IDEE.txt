@@ -1,0 +1,24 @@
+﻿AZIENDA AGRICOLA:
+
+Presentazione
+La storia
+Cosa coltiva
+Cosa produce
+Macchine a disposizione
+Servizi che offre
+Team di contadini e terzisti (con facce, possibilmente)
+Animali
+Posizione
+Contatti + possibilità di scrivere al tizio.
+
+COSE DA FARE:
+Trovare testi per ogni sezione.
+
+FORMAT:
+- Menù orizzontale con sezioni che si mantengono lungo lo scrolling
+- In home, diverse sezioni (che sono quielle che andremo a mettere pagina per pagina) e poi si rimanda alla pagina intera
+
+SITI DI RIFERIMENTO:
+www.coffele.it
+www.aziendagricolamoretti.it/
+
