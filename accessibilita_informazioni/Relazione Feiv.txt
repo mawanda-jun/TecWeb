@@ -1,0 +1,12 @@
+- Contenuti testuali alternativi ai contenuti multimediali
+- Meglio non mettere video in totale; se proprio, non ad avvio automatico
+- Non usare colori per rappresentare informazioni
+- Spostarsi col tasto "tab" tra i link e per compilare form da tastiera
+- Non mettere alcun contenuto temporizzato
+- Non mettere effetti lampeggiati
+- Link per saltare casella di ricerca e barra di navigazione per andare direttamente al contenuto
+- Mettere codifica utf8 e mettere span lang per le parole straniere
+- Meglio lasciare l'aspetto del sito il più uniforme possibile (copia-incolla is the way!)
+- Compatibilità con css3 e xhtml
+- Verificare copertura colori: deuteranopia, protanopia, tritanopia; tools: ImageJ e Vischeck
+
