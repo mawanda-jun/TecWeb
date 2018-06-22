@@ -21,15 +21,16 @@ body {
   top: 0;
   width: 100%;
   max-width: 1024px;
-  background-color: #ddd;
+  background-color: #a4d883;
 }
 
 #header_menu img {
   width: 8em;
   padding: 1em;
-  padding-left: 2em;
+  /* padding-left: 2em; */
   float: left;
   display: block;
+  position: relative;
 }
 
 #menu {
@@ -41,14 +42,16 @@ body {
   position: absolute;
   top: 50%;
   right: 1em;
-  transform: translate(0, -50%)
+  transform: translate(0, -50%);
+  color:#152a23;
+
 }
 
 .dropbtn {
   background-color: #4CAF50;
   color: white;
-  padding: 16px;
-  font-size: 16px;
+  padding: 0.7em;
+  font-size: 1.3em;
   border: none;
   cursor: pointer;
 }
@@ -94,7 +97,7 @@ body {
 
 
 .evidenziato {
-  border-bottom: 5px solid #aaa;
+  border-bottom: 5px solid #804600;
 }
 
 #menu li {
@@ -111,6 +114,9 @@ body {
 #menu a:hover {
   color: crimson;
   text-decoration: underline;
+}
+#menu a:visited {
+  color: #800000;
 }
 
 #home_img {
