@@ -24,6 +24,7 @@ header {
   width: 100%;
   max-width: 1024px;
   background-color: #3c2109;
+  opacity: 0.95;
   /* background-image: url('../img/wood-pattern.jpg'); */
   /* opacity: 1; */
   /* background-position: center; */
@@ -125,8 +126,9 @@ header img {
   padding-left: 1.2em;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
-  font-size: 1.8em;
-  background-color: #ddd;
+  font-size: 3em;
+  text-transform: uppercase;
+  /* background-color: #FDEEB1; */
   width: 70%;
   margin-top: 0.5em;
   /* position: relative; */
@@ -139,6 +141,8 @@ header img {
 }
 
 .right-section h1 {
+  text-align: right;
+  padding-right: 1.3em;
   float: right;
 }
 
