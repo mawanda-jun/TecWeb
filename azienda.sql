@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS grani;
 CREATE TABLE IF NOT EXISTS grani (
     nome VARCHAR(20) PRIMARY KEY,
     descrizione TEXT,
-	immagine VARCHAR(30),
+	  immagine VARCHAR(30),
     prezzo FLOAT(5,2) NOT NULL,
     disponibilità SMALLINT UNSIGNED NOT NULL
 )
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS macchinari (
     codice CHAR(6) PRIMARY KEY,
     nome VARCHAR(20) NOT NULL,
     modello VARCHAR(20) NOT NULL,
-	immagine VARCHAR(30),
+	  immagine VARCHAR(30),
     prezzoGiorno FLOAT(5,2) NOT NULL
 )
 ENGINE=InnoDB;
@@ -29,14 +29,14 @@ CREATE TABLE IF NOT EXISTS clienti (
     nome VARCHAR(20) NOT NULL,
     cognome VARCHAR(20) NOT NULL,
     telefono CHAR(10) NOT NULL,
-	email VARCHAR(40)
+	  email VARCHAR(40)
 )
 ENGINE=InnoDB;
 
 /*--- Prenotazioni dei macchinari ---*/
 DROP TABLE IF EXISTS prenotazioni;
 CREATE TABLE IF NOT EXISTS prenotazioni (
-	ordine MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	  ordine MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     idCliente CHAR(9) NOT NULL,
     idMacchinario CHAR(6) NOT NULL,
     dataInizio DATE NOT NULL,
@@ -49,11 +49,9 @@ ENGINE=InnoDB;
 /*--- Utenti del sistema ---*/
 DROP TABLE IF EXISTS users;
 CREATE TABLE IF NOT EXISTS users (
-	username VARCHAR(15) PRIMARY KEY,
-	psw VARCHAR(20) NOT NULL,
-	type ENUM('Admin', 'Impiegato', 'Utente') NOT NULL, /* Other da definire */
-	cliente CHAR(9),
-	FOREIGN KEY(cliente) REFERENCES clienti(id) ON UPDATE CASCADE ON DELETE CASCADE
+	  username varchar(30) PRIMARY KEY,
+    email varchar(60) DEFAULT NULL,
+    password varchar(50) NOT NULL
 )
 ENGINE=InnoDB;
 
@@ -94,9 +92,5 @@ INSERT INTO prenotazioni (idCliente, idMacchinario, dataInizio, dataFine) VALUES
 ('CZ2345678', 'TRAT01', '2018-07-02', '2018-07-09'),
 ('AZ0123456', 'TRAT03', '2018-07-04', '2018-07-15');
 
-INSERT INTO users (username, psw, type, cliente) VALUES
-('admin', '', 'Admin', NULL),
-('operatore1', '', 'Impiegato', NULL),
-('mario1961', '', 'Utente', 'EZ4567890'),
-('giusy83', '', 'Utente', 'DZ3456789'),
-('xxGUIDOxx', '', 'Utente', 'BZ1234567');
+INSERT INTO users (username, email, pwd) VALUES
+('admin', 'admin@admin.com', '$2y$10$F0B3IE4vRA0kXt74LkCcBO4qOOKnjSbQXxWT8LNMdswo6N7W8OGWi');
