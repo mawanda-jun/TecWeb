@@ -10,3 +10,142 @@ body {
   max-width: 1024px;
   margin-top: 0.1em;
 }
+
+header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  max-width: 1024px;
+  background-color: #a4d883;
+}
+
+header img {
+  width: 6em;
+  padding: 1em;
+  /* padding-left: 2em; */
+  float: left;
+  display: block;
+  position: relative;
+}
+
+/* header .navbar {
+  padding-right: 1em;
+  list-style: none;
+  font-size: 1.4em;
+  padding-top: 0.3em;
+  padding-left: 1.8em;
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translate(0, -50%);
+  color: #152a23;
+
+} */
+
+#top-img {
+  width: 100%;
+  margin-top: 7.3em;
+  position: relative;
+  z-index: -1;
+}
+
+#.content {
+  display: inline;
+  z-index: -1;
+  /* padding-left: 1em; */
+}
+
+.left-section,
+.right-section {
+  /* display: inline; */
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+.left-section h1,
+.right-section h1 {
+  padding-left: 1.2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-size: 1.8em;
+  background-color: #ddd;
+  width: 70%;
+  margin-top: 0.5em;
+  /* position: relative; */
+  /* line-height: 76% */
+  /* float: left; */
+}
+
+.left-section h1 {
+  float: left;
+}
+
+.right-section h1 {
+  float: right;
+}
+
+
+.left-section p,
+.right-section p {
+  padding-left: 1%;
+  width: 70%;
+  /* float: left; */
+  /* position: relative; */
+}
+
+.left-section p {
+  float: left;
+}
+
+.right-section p {
+  float: right;
+}
+
+.left-section img,
+.right-section img {
+  margin-top: 0.5em;
+  padding-top: 0.3em;
+  padding-left: 1.2em;
+  padding-bottom: 0.3em;
+  position: absolute;
+  top: 0;
+  width: 10%;
+
+  /* padding-right: 1em; */
+}
+
+.left-section img {
+  padding-right: 1em;
+  right: 0;
+}
+
+.right-section img {
+  padding-left: 1em;
+  left: 0;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  text-align: center;
+}
+
+#xhtmlvalid {
+  float: left;
+}
+
+#cssvalid {
+  float: right;
+}
+
+#footer p {
+  display: inline-block;
+  padding-top: 0.7em;
+  font-style: italic;
+  font-size: 0.9em;
+
+}
