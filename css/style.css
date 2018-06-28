@@ -17,6 +17,10 @@ html {
   background-color: rgba(253, 238, 177, 0.8);
 }
 
+#go-to-content {
+  display: none;
+}
+
 header {
   position: fixed;
   z-index: 100;
@@ -24,7 +28,7 @@ header {
   width: 100%;
   max-width: 1024px;
   background-color: #3c2109;
-  opacity: 0.95;
+  opacity: 0.97;
   /* background-image: url('../img/wood-pattern.jpg'); */
   /* opacity: 1; */
   /* background-position: center; */
@@ -47,7 +51,7 @@ header img {
 #navbar {
   float: right;
   list-style: none;
-  margin-top: 2em;
+  padding-top: 3.7em;
 }
 
 #navbar li {
@@ -81,13 +85,15 @@ header img {
 #breadcrumb {
   z-index: 99;
   width: 100%;
-  background-color: #FDEEB1;
-  margin-top: 7.3em;
   position: relative;
+  float: left;
+  text-align: left;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
 }
 
 #breadcrumb #path {
-  color: #551700;
+  color: #f4d03f;
 }
 
 #top-img {
@@ -100,6 +106,7 @@ header img {
   height: 27em;
   width: 100%;
   position: relative;
+  margin-top: 9em;
   bottom: 0em;
   z-index: +1;
 }
