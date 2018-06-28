@@ -1,0 +1,37 @@
+h1 {
+	font-size: 4em;
+}
+#menu a, #menu .disable {
+	padding: 6pt 5pt;
+}
+#contenuto {
+	float: none;
+	width: auto;
+	margin: 1%
+}
+#sidebar {
+	float: none;
+	width: auto;
+	margin: 1%;
+}
+
+#jumptotop {
+	text-indent: 0;
+	white-space: normal;
+	overflow: visible;
+}
+#jumptotop a {
+	display: block;
+	text-decoration: none;
+	background-color: #DDDDDD;
+	color: #000000;
+	border: 2pt solid #838383;
+	padding: 10pt 15pt;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+#loginform {
+	width: 40%;
+	margin: 5% auto;
+}

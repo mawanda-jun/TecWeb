@@ -1,0 +1,109 @@
+body {
+	width: 100vw;
+	border-radius: 0;
+}
+h1 {
+	padding: 0% 1.5% 0% 1.5%;
+	font-size: 4em;
+	text-align: center;
+}
+#header h2 {
+	padding: 0% 0% 4% 6%;
+	font-size: 2em;
+	text-align: center;
+}
+#titolo {
+	margin-top: 0;
+}
+#header {
+	height: auto;
+	width: 100vw;
+	border: 0;
+	border-radius: 0;
+}
+#menu {
+	position: relative;
+	bottom: auto;
+	left: auto;
+	width: 100vw;
+}
+#footer {
+	width: 100vw;
+}
+#menu li {
+	float: none;
+	width: auto;
+	border-radius: 0;
+}
+#menu #menuvoice {
+	display: block;
+	background-color: #DDDDDD;
+	color: #000000;
+	padding: 10pt 15pt;
+}
+#menu .menuitem {
+	display: none;
+}
+#menu:hover > .menuitem{
+	display: block;
+}
+
+#locationbar {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#contenuto #personaggi img {
+	float: none;
+	display: block;
+	margin: auto;
+	width: 70%;
+}
+
+.ddsidebar {
+	font-size: 1em;
+	border-bottom-width: 2pt;
+	margin-bottom: 3%;
+	padding-bottom: 1%;
+}
+#articleside dt {
+	font-size: 1.4em;
+}
+#articleside dd {
+	font-size: 0.9em;
+	border-bottom-width: 1pt;
+	margin-bottom: 2%;
+	padding-bottom: 1%;
+}
+#articleside img {
+	padding: 1%;
+}
+
+#contenuto div.newsimage img {
+	width: 80%;
+	display: block;
+	float: none;
+	border: 2pt solid #000D40;
+	margin: auto;
+}
+#contenuto img.total2images {
+	width: 80%;
+	display: block;
+}
+#contenuto img.total3images {
+	width: 70%;
+	display: block;
+}
+
+
+@media screen and (max-width: 720px) {
+	#header {
+		background-image: none;
+	}
+
+	#loginform {
+		width: 70%;
+		margin: 5% auto;
+	}
+
+}

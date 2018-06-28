@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	text-align: justify;
+}
+html, body {
+	font-family: "Times New Roman", Times, Georgia, serif;
+	font-size: 1em;
+	width: 100%;
+}
+h1 {
+	margin: 2pt;
+	font-size: 3em;
+}
+
+h2 {
+	margin: 10pt;
+	font-size: 2em;
+	text-align: center;
+}
+h3, dt {
+	margin: 8pt;
+	font-size: 1.6em;
+	clear: both;
+	margin-top: 1cm;
+}
+h4 {
+	margin: 4pt;
+	font-size: 1.2em;
+}
+
+#titoletto {
+	margin-left: 30pt;
+	font-size: 0.8em;
+}
+
+img, #menudiv, #skipmenu, #sidebar, #linkadmin, #jumptotop, #commenti {
+	display: none;
+}
+
+#personaggi img {
+	display: block;
+    width: 4cm;
+    float: left;
+    margin: 0 6mm 0 6mm;
+	clear: both;
+	page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}
+dd {
+	page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}
+
+#personaggi li:last-child {
+	list-style-type: none;
+	margin-top: 0.5cm;
+}
+
+#footer {
+	margin-top: 26pt;
+	text-align: center;
+	font-size: 0.8em;
+	font-style: italic;
+}
