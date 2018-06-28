@@ -7,9 +7,14 @@ html,
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 0.9em;
-  /* max-width: 1024px; */
+  max-width: 1024px;
   margin-top: 0.1em;
   margin: auto;
+  background-color: white;
+}
+
+html {
+  background-color: rgba(253, 238, 177, 0.8);
 }
 
 header {
@@ -17,9 +22,11 @@ header {
   z-index: 100;
   top: 0;
   width: 100%;
-  /* max-width: 1024px; */
-  background-color: #FDEEB1;
-
+  max-width: 1024px;
+  background-color: #551700;
+  /* background-image: url('../img/wood-pattern.jpg'); */
+  /* opacity: 1; */
+  /* background-position: center; */
 }
 
 header img {
@@ -50,26 +57,26 @@ header img {
 
 #navbar li a {
   text-decoration: none;
-  color: #552a1b;
+  color: #f4d03f;
   text-transform: uppercase;
   font-size: 1em;
-  font-weight: bold;
+  /* font-weight: bold; */
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
 #navbar li.active a {
-  border: 0.2em solid #552a1b;
+  border: 0.2em solid #f4d03f;
   padding-left: 1.8em;
   padding-right: 1.8em;
 }
 
 #navbar li a:hover {
-  border-bottom: 0.2em solid #552a1b;
+  border-bottom: 0.2em solid #f4d03f;
 }
 
 #breadcrumb {
-  z-index: -1;
+  z-index: 99;
   width: 100%;
   background-color: #FDEEB1;
   margin-top: 7.3em;
@@ -91,12 +98,12 @@ header img {
   width: 100%;
   position: relative;
   bottom: 0em;
-  z-index: -1;
+  z-index: +1;
 }
 
 .content {
   display: inline;
-  z-index: -1;
+  z-index: +1;
   /* padding-left: 1em; */
 }
 
@@ -110,7 +117,7 @@ header img {
 }
 
 .right-section {
-  background-color: rgba(192, 57, 43, 0.3);
+  /* background-color: rgba(192, 57, 43, 0.3); */
 }
 
 .left-section h1,
