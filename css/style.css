@@ -17,7 +17,7 @@ header {
   top: 0;
   width: 100%;
   max-width: 1024px;
-  background-color: #a4d883;
+  background-color: black;
 }
 
 header img {
@@ -43,21 +43,22 @@ header img {
 
 #navbar li a {
   text-decoration: none;
+  color: white;
   text-transform: uppercase;
   font-size: 1em;
-  font-weight: bolder;
+  font-weight: bold;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
 #navbar li.active a {
-  border: 0.3em solid white;
+  border: 0.2em solid white;
   padding-left: 1.8em;
   padding-right: 1.8em;
 }
 
 #navbar li a:hover {
-  border-bottom: 0.3em solid white;
+  border-bottom: 0.2em solid white;
 }
 
 #top-img {
