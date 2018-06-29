@@ -84,11 +84,13 @@ header img {
 }
 
 #breadcrumb {
-  z-index: 99;
+  /* da fixare la linea che esce dal bordo */
+  border-top: 1px solid #f4d03f;
   width: 100%;
   position: relative;
   float: left;
   text-align: left;
+  padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1em;
 }
