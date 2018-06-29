@@ -1,2 +1,22 @@
 Scelta dei colori:	https://webaim.org/blog/wcag-2-0-and-link-colors/
 			http://colorsafe.co/
+
+Pannello amministrazione:
+- creare nuovo pannello per amministrazione (con home e tutto i resto)
+- pagina prodotti: 
+-- aggiungere, togliere, modificare grani con prezzo e quantita' grani
+- pagina servizi:
+-- mettere disponinibilta' (query su prenotazioni, passando id macchinario)
+-- aggiungere, togliere, modificare attrezzature.
+- pagina ordini:
+-- tipologia grano, quantita' ordinata, prezzo, disponibilita 
+-- serve solo come reference per scalare la disponbilita' dal totale presente nei grani
+- pagina prenotazioni:
+-- lista di macchinari, visualizzazione disponibilita', se disponibile si puo' prenotare (impostando data inizio/fine) (prima pagina)
+-- se il cliente e' gia' presente si aggiunge la prenotazione (controlla se carta identita' gia' presente); (seconda pagina) se non e' presente si sbloccano i form di input per aggiungere un nuovo cliente (javascipt deve essere abilitato). Viene visualizzato il costo della prenotazione (da frontend)
+-- riepilogo e conferma (terza pagina)
+- pagina clienti:
+-- aggiunta, modifica, eliminazione cliente
+- pagina amminstratori:
+-- aggiunta, modifica, eliminazione amministratore
+- torna al sito (nella riga di "ti trovi in")
