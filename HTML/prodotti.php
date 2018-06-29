@@ -30,7 +30,7 @@ header('Content-type: application/xhtml+xml'); ?>
         <li><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
         <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
         <li class="active" tabindex="7"><a href="" >Prodotti</a></li>
-        <li><a href="../html/servizi.html" tabindex="9">Servizi</a></li>
+        <li><a href="../html/servizi.php" tabindex="9">Servizi</a></li>
         <li><a href="" tabindex="11">Contattaci</a></li>
       </ul>
     </div>
@@ -77,11 +77,12 @@ header('Content-type: application/xhtml+xml'); ?>
     $grains = $connection->getListGrains();
 
     if ($grains != null) {
-      echo '<div class="grain-section">';
       foreach ($grains as $grain) {
+        echo '<div class="grain-section">';
         echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>';
         echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
-        echo '<img src=' . $grain['immagine'] . 'alt="immagine del "' . $grain['nome'] . '/>';
+        echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
+        echo '</div>';
       }
     } else echo '<p>Nessun grano ora in produzione</p>'
     ?>
