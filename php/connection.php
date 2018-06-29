@@ -3,10 +3,10 @@ setlocale(LC_TIME, "it_IT");
 
 class DBConnection {
 
-	const HOST_DB = 'localhost';
-	const USER = 'root';
-	const PASSWD = '';
-	const DATABASE = 'azienda';
+	const host = 'localhost';
+	const user = 'root';
+	const pwd = '';
+	const db = 'azienda';
 	/*public $connectionErrorPage = ''; DA DEFINIRE UNA PAGINA DI ERRORE PER IL DB */
 
 	public $connectionOpen = false;
@@ -14,38 +14,35 @@ class DBConnection {
 	private $connection;
 
 	/* Apre una connessione con il db con le variabili impostate precedentemente */
-	public function openConnection($ignoreError = false) {
+	public function openConnection() {
 		if($this->failedConnection)
 			return false;
-		$this->connection = @mysqli_connect(static::HOST_DB, static::USER, static::PASSWD, static::DATABASE);
+		$this->connection = @mysqli_connect(static::host, static::user, static::pwd, static::db);
 		if(!$this->connection)
 		{
 			$this->failedConnection = true;
-			if(!$ignoreError)
-				$this->showError();
+			$this->showError();
 			return false;
 		}
 		$this->connectionOpen = true;
 		return true;
 	}
 
-	private function showError()
-	{
+	private function showError() {
 		header('Location: /'.$this->connectionErrorPage);
-		die();
+		exit();
 	}
 
-	private function getAllQuery($query)
-	{
+	private function getAllQuery($query) {
 		$result = mysqli_query($this->connection, $query) or $this->showError();
 		return mysqli_fetch_all($result, MYSQLI_ASSOC);
 	}
 	
-	private function getAssArrayQuery($query)
-	{
+	private function getAssArrayQuery($query)	{
 		return mysqli_fetch_assoc(mysqli_query($this->connection, $query));
 	}
-	
+  
+  // Utilizzato per prevenire SQL
 	private function escape($string) {
 		return mysqli_real_escape_string($this->connection, $string);
 	}
@@ -110,13 +107,13 @@ class DBConnection {
   }
 
   public function getPrenotationClient($order) {
-    $query = 'SELECT idCliente FROM prenotazioni WHERE ordine ='.$this->escape($order));
+    $query = 'SELECT idCliente FROM prenotazioni WHERE ordine ='.$this->escape($order);
     return($days * mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
   }
 
   // da spostare dove serve realmente
   public function getMachinePrice($id, $days) {
-    $dayPrice = 'SELECT prezzoGiorno FROM macchinari WHERE codice ='.$this->escape($id));
+    $dayPrice = 'SELECT prezzoGiorno FROM macchinari WHERE codice ='.$this->escape($id);
     return($days * mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
   }
 
@@ -134,7 +131,7 @@ class DBConnection {
 		$query = 'INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilità) VALUES ("'.
       $this->escape($name).'", "'.
       $this->escape($description).'", "'.
-			$image.'", "'.
+			$this->escape($image).'", "'.
       $this->escape($price).'", "'.
       $this->escape($availability).'", "';
 		return mysqli_query($this->connection, $query);
@@ -145,7 +142,7 @@ class DBConnection {
       $this->escape($id).'", "'.
       $this->escape($name).'", "'.
       $this->escape($model).'", "'.
-			$image.'", "'.
+			$this->escape($image).'", "'.
       $this->escape($dayPrice).'", "';
 		return mysqli_query($this->connection, $query);
   }
@@ -328,7 +325,7 @@ class DBConnection {
 	}
 	*/
 
-	public function closeconnection() {
+	public function closeConnection() {
 		if($this->connectionOpen)
 			mysqli_close($this->connection);
 		$this->connectionOpen = false;

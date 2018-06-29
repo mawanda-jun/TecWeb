@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS grani (
     prezzo FLOAT(5,2) NOT NULL,
     disponibilità SMALLINT UNSIGNED NOT NULL
 )
-ENGINE=InnoDB;
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*--- Macchinari affittati dall'azienda ---*/
 DROP TABLE IF EXISTS macchinari;
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS macchinari (
 	  immagine VARCHAR(30),
     prezzoGiorno FLOAT(5,2) NOT NULL
 )
-ENGINE=InnoDB;
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*--- Clienti che hanno affittato un macchinario ---*/
 DROP TABLE IF EXISTS clienti;
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS clienti (
     telefono CHAR(10) NOT NULL,
 	  email VARCHAR(40)
 )
-ENGINE=InnoDB;
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*--- Prenotazioni dei macchinari ---*/
 DROP TABLE IF EXISTS prenotazioni;
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS prenotazioni (
     FOREIGN KEY (idMacchinario) REFERENCES macchinari(codice) ON UPDATE CASCADE ON DELETE NO ACTION,
     FOREIGN KEY (idCliente) REFERENCES clienti(id) ON UPDATE CASCADE ON DELETE NO ACTION
 )
-ENGINE=InnoDB;
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*--- Utenti del sistema ---*/
 DROP TABLE IF EXISTS users;
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS users (
     email varchar(60) DEFAULT NULL,
     password varchar(50) NOT NULL
 )
-ENGINE=InnoDB;
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 /*--- INSERIMENTO DATI ---*/
