@@ -1,0 +1,5 @@
+{
+  "search.exclude": {
+    "**/altri_progetti": true
+  }
+}

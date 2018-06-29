@@ -22,7 +22,7 @@ header('Content-type: application/xhtml+xml'); ?>
     <p id="go-to-content" tabindex="3"><a href="#content">Vai al contenuto</a></p>
     <!-- <div class="shrink-center"> -->
     <div class="row">
-      <img src="../img/logo.png" alt="logo azienda" id="logo-img" />
+      <img src="../images/logo.png" alt="logo azienda" id="logo-img" />
       <!-- da nascondere -->
       <!-- <p id="hidden-breadcrumb" tabindex="1">Ti trovi in: Home</p> -->
       <!-- da nascondere -->
@@ -64,7 +64,7 @@ header('Content-type: application/xhtml+xml'); ?>
         belli svettanti, sono pi&ugrave; difficilmente attaccabili dalle infestanti, rendendo superflui i diserbanti.
         Insomma, si prestano ottimamente alla coltivazione biologica.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="16" />
+      <img src="../images/logo.png" alt="" tabindex="16" />
     </div>
     <div class="grains-list">
 
@@ -96,14 +96,14 @@ header('Content-type: application/xhtml+xml'); ?>
         grazie al gusto dolce e al colore carico della farina. Se ne ricava tra l'altro il celebre pane
         Nero di Castelvetrano.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="21" />
+      <img src="../images/logo.png" alt="" tabindex="21" />
     </div>
     <div class="left-section" id="story1">
       <h1 tabindex="13">Frassineto</h1>
       <p tabindex="15">Nato nel 1922 nell'Aretino, &egrave; un grano tenero derivato dal Gentil Rosso (vedi). Vanta gusto e
         aroma intensi.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="16" />
+      <img src="../images/logo.png" alt="" tabindex="16" />
     </div>
     <div class="right-section" id="products-overview1">
       <h1 tabindex="17">Senatore Cappelli</h1>
@@ -113,41 +113,41 @@ header('Content-type: application/xhtml+xml'); ?>
         un grano di maggiore resa. Non per questo il Cappelli perse sotto il profilo nutrizionale e della
         digeribilit&agrave;.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="21" />
+      <img src="../images/logo.png" alt="" tabindex="21" />
     </div>
     <div class="left-section" id="story2">
       <h1 tabindex="13">Dicocco o farro medio</h1>
       <p tabindex="15">Proteico e ricco di antiossidanti, appartiene davvero a un'antica cultivar ed era il preferito
         dagli antichi romani.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="16" />
+      <img src="../images/logo.png" alt="" tabindex="16" />
     </div>
     <div class="right-section" id="products-overview2">
       <h1 tabindex="17">Gentil Rosso</h1>
       <p tabindex="19">Nato in Toscana a met&agrave; '800, questo grano tenero ha spighe rossicce da cui si ricava una farina
         di colore carico. &egrave; ben fornito di minerali e proteine.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="21" />
+      <img src="../images/logo.png" alt="" tabindex="21" />
     </div>
     <div class="left-section" id="story2">
       <h1 tabindex="13">Rieti</h1>
       <p tabindex="15">Originario dell'omonima citt&agrave; laziale, era gi&agrave; coltivato nel '600, ma ebbe grande diffusione
         in Italia nell'800.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="16" />
+      <img src="../images/logo.png" alt="" tabindex="16" />
     </div>
     <div class="right-section" id="products-overview2">
       <h1 tabindex="17">Solina</h1>
       <p tabindex="19">Grano tenero diffuso in Abruzzo gi&agrave; nel XVI secolo.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="21" />
+      <img src="../images/logo.png" alt="" tabindex="21" />
     </div>
     <div class="left-section" id="story2">
       <h1 tabindex="13">Russello</h1>
       <p tabindex="15">Pregiata variet&agrave; di grano duro siciliano, deve il suo nome al colore rosso-dorato delle spighe.
         Ben digeribile, &egrave; molto apprezzato per la panificazione.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="16" />
+      <img src="../images/logo.png" alt="" tabindex="16" />
     </div>
     <div class="right-section" id="products-overview2">
       <h1 tabindex="17">Verna</h1>
@@ -155,7 +155,7 @@ header('Content-type: application/xhtml+xml'); ?>
         ha mostrato un tenore di glutine dello 0,9% contro il 14% della media delle attuali cultivar,
         rispetto alle quali ha pure un miglior contenuto di antiossidanti, proteine totali, minerali.
       </p>
-      <img src="../img/logo.png" alt="" tabindex="21" />
+      <img src="../images/logo.png" alt="" tabindex="21" />
     </div> -->
   </div>
   <div id="go-to-menu">
@@ -163,9 +163,9 @@ header('Content-type: application/xhtml+xml'); ?>
   </div>
   <footer>
     <div class="shrink-center">
-      <img id="xhtmlvalid" src="../img/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
       <p>Da pensare a cosa scriverci</p>
-      <img id="cssvalid" src="../img/vcss-blue.gif" lang="en" alt="CSS valid" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS valid" />
     </div>
   </footer>
 

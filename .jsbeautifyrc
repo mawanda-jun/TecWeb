@@ -13,7 +13,8 @@
       "shtml",
       "xml",
       "svg",
-      "dust"
+      "dust",
+      "php"
     ],
     "brace_style": "collapse", // [collapse|expand|end-expand|none] Put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or just put end braces on own line, or attempt to keep them where they are
     "end_with_newline": true, // End output with newline
