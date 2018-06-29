@@ -11,14 +11,14 @@ CREATE TABLE grani (
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilita) VALUES 
-('Timilia o grano marzuolo', 'Grano duro siciliano gi&agrave; citato in epoca greca. &Egrave; particolarmente apprezzato per la panificazione grazie al gusto dolce e al colore carico della farina. Se ne ricava tra l''altro il celebre pane Nero di Castelvetrano.', 'grano-timilia.jpg', 0, 0),
+('Timilia o grano marzuolo', 'Grano duro siciliano gi&agrave; citato in epoca greca. &Egrave; particolarmente apprezzato per la panificazione grazie al gusto dolce e al colore carico della farina. Se ne ricava tra l''altro il celebre pane Nero di Castelvetrano.', 'grano_timilia.jpg', 0, 0),
 ('Frassineto', 'Nato nel 1922 nell''Aretino, &Egrave; un grano tenero derivato dal Gentil Rosso. Vanta gusto e aroma intensi.', 'grano_frassineto.jpg', 0, 0),
-('Senatore Cappelli', 'Nato con l''intento di aumentare la produzione di frumento per la crescente popolazione, deve il nome al senatore abruzzese Raffaele Cappelli, nella cui tenuta il genetista Nazareno Strampelli compì gli incroci che lo portarono, dopo un''ibridazione con una cultivar tunisina, a produrre un grano di maggiore resa. Non per questo il Cappelli perse sotto il profilo nutrizionale e della digeribilit&agrave;.', 'grano-senatore-cappelli.jpg', 0, 0),
-('Dicocco o farro medio', 'Proteico e ricco di antiossidanti, appartiene davvero a un''antica cultivar ed era il preferito dagli antichi romani.', 'grano-triticum-dicoccum.jpg', 0, 0),
-('Gentil Rosso', 'Nato in Toscana a met&agrave; &rsquo;800, questo grano tenero ha spighe rossicce da cui si ricava una farina di colore carico. &Egrave; ben fornito di minerali e proteine.', 'grano-gentil-rosso.jpg', 0, 0),
-('Rieti', 'Originario dell''omonima citt&agrave; laziale, era gi&agrave; coltivato nel &rsquo;600, ma ebbe grande diffusione in Italia nell&rsquo;800.', 'grano-rieti.jpg', 0, 0),
-('Solina', 'Grano tenero diffuso in Abruzzo gi&agrave; nel XVI secolo.', 'grano-solina.jpg', 0, 0),
-('Russello', 'Pregiata variet&agrave; di grano duro siciliano, deve il suo nome al colore rosso-dorato delle spighe. Ben digeribile, &Egrave; molto apprezzato per la panificazione.', 'grano-russello.jpg', 0, 0),
+('Senatore Cappelli', 'Nato con l''intento di aumentare la produzione di frumento per la crescente popolazione, deve il nome al senatore abruzzese Raffaele Cappelli, nella cui tenuta il genetista Nazareno Strampelli comp&igrave; gli incroci che lo portarono, dopo un''ibridazione con una cultivar tunisina, a produrre un grano di maggiore resa. Non per questo il Cappelli perse sotto il profilo nutrizionale e della digeribilit&agrave;.', 'grano_senatore_cappelli.jpg', 0, 0),
+('Dicocco o farro medio', 'Proteico e ricco di antiossidanti, appartiene davvero a un''antica cultivar ed era il preferito dagli antichi romani.', 'grano_triticum_dicoccum.jpg', 0, 0),
+('Gentil Rosso', 'Nato in Toscana a met&agrave; &rsquo;800, questo grano tenero ha spighe rossicce da cui si ricava una farina di colore carico. &Egrave; ben fornito di minerali e proteine.', 'grano_gentil_rosso.jpg', 0, 0),
+('Rieti', 'Originario dell''omonima citt&agrave; laziale, era gi&agrave; coltivato nel &rsquo;600, ma ebbe grande diffusione in Italia nell&rsquo;800.', 'grano_rieti.jpg', 0, 0),
+('Solina', 'Grano tenero diffuso in Abruzzo gi&agrave; nel XVI secolo.', 'grano_solina.jpg', 0, 0),
+('Russello', 'Pregiata variet&agrave; di grano duro siciliano, deve il suo nome al colore rosso-dorato delle spighe. Ben digeribile, &Egrave; molto apprezzato per la panificazione.', 'grano_russello.jpg', 0, 0),
 ('Verna', 'Grano tenero originario della Toscana. Sottoposta ad analisi dall''universit&agrave; di Bologna, la farina ha mostrato un tenore di glutine dello 0,9% contro il 14% della media delle attuali <span xml:lang=\"en\">cultivar</span>, rispetto alle quali ha pure un miglior contenuto di antiossidanti, proteine totali, minerali.', 'grano_verna.jpg', 0, 0);
 
 /*--- Macchinari affittati dall'azienda ---*/
