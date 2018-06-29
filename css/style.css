@@ -199,26 +199,22 @@ header img {
 
 .left-section img,
 .right-section img {
-  margin-top: 0.5em;
-  padding-top: 0.3em;
-  padding-left: 1.2em;
-  padding-bottom: 0.3em;
+  padding: 1em;
+  padding-top: 0em;
   position: relative;
-  top: 0;
-  width: 10%;
+  width: 27%;
 
   /* padding-right: 1em; */
 }
 
 .left-section img {
-  padding-right: 1em;
-  /* right: 0; */
   float: right;
+  padding-left: 0.5em;
 }
 
 .right-section img {
-  padding-left: 1em;
   float: left;
+  padding-right: 0.5em;
 }
 
 #go-to-menu {
