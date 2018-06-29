@@ -22,7 +22,7 @@ header('Content-type: application/xhtml+xml'); ?>
     <p id="go-to-content" tabindex="3"><a href="#content">Vai al contenuto</a></p>
     <!-- <div class="shrink-center"> -->
     <div class="row">
-      <img src="../images/logo.png" alt="logo azienda" id="logo-img" />
+      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
       <!-- da nascondere -->
       <!-- <p id="hidden-breadcrumb" tabindex="1">Ti trovi in: Home</p> -->
       <!-- da nascondere -->
@@ -52,7 +52,7 @@ header('Content-type: application/xhtml+xml'); ?>
         trovare i vari macchinari e la relativa disponibilità. Per prenotare un macchinario si prega
         di contattare l'azienda.
       </p>
-      <img src="../images/logo.png" alt="" tabindex="16" />
+      <img src="../images/logo.jpg" alt="" tabindex="16" />
     </div>
 
 <div class="machines-list">
