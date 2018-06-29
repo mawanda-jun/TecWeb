@@ -142,7 +142,8 @@ header img {
 }
 
 .left-section,
-.right-section {
+.right-section,
+.grain-section {
   /* display: inline; */
   overflow: hidden;
   position: relative;
@@ -155,7 +156,8 @@ header img {
 }
 
 .left-section h1,
-.right-section h1 {
+.right-section h1,
+.grain-section h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding-left: 1.2em;
   padding-top: 0.3em;
@@ -170,7 +172,8 @@ header img {
   /* float: left; */
 }
 
-.left-section h1 {
+.left-section h1,
+.grain-section h1 {
   float: left;
 }
 
@@ -182,14 +185,16 @@ header img {
 
 
 .left-section p,
-.right-section p {
+.right-section p,
+.grain-section p {
   padding-left: 1%;
   width: 70%;
   /* float: left; */
   /* position: relative; */
 }
 
-.left-section p {
+.left-section p,
+.grain-section p {
   float: left;
 }
 
@@ -198,7 +203,8 @@ header img {
 }
 
 .left-section img,
-.right-section img {
+.right-section img,
+.grain-section img {
   padding: 1em;
   padding-top: 0em;
   position: relative;
@@ -207,7 +213,8 @@ header img {
   /* padding-right: 1em; */
 }
 
-.left-section img {
+.left-section img,
+.grain-section img {
   float: right;
   padding-left: 0.5em;
 }

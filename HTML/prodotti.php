@@ -1,3 +1,7 @@
+<?php require_once __DIR__ . "/../php/connection.php";
+// mettere nome database
+header('Content-type: application/xhtml+xml'); ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
@@ -25,7 +29,7 @@
       <ul id="navbar">
         <li><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
         <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
-        <li class="active"><a href="../html/prodotti.html" tabindex="7" >Prodotti</a></li>
+        <li class="active" tabindex="7"><a href="" >Prodotti</a></li>
         <li><a href="../html/servizi.html" tabindex="9">Servizi</a></li>
         <li><a href="" tabindex="11">Contattaci</a></li>
       </ul>
@@ -50,122 +54,110 @@
       <h1 tabindex="13">Il grano: vecchio e nuovo</h1>
       <p tabindex="15">Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha
         reso pi&ugrave; basso - quindi pi&ugrave; difficilmente abbattibile e pi&ugrave; facilmente raccoglibile dai macchinari
-        moderni -, dall’altro lo ha reso pi&ugrave; produttivo per la produzione di farine e derivati. La nostra
+        moderni -, dall'altro lo ha reso pi&ugrave; produttivo per la produzione di farine e derivati. La nostra
         azienda ha tuttavia deciso di seguire una strada diversa: ricerche importanti hanno visto come
         il grano duro antico offra notevoli vantaggi nutrizionali. Infatti il glutine in esso contenuto
         ha una struttura diversa dagli altri e pi&ugrave; facilmente digeribile, oltre ad avere una composizione
         proteica migliore ed un impatto glicemico inferiore. Non sono poi da trascurare i loro importanti
-        contributi alla biodiversit`a e all’ambiente. Va infatti considerato che i grani di antiche variet`a
+        contributi alla biodiversit&agrave; e all'ambiente. Va infatti considerato che i grani di antiche variet&agrave;
         hanno meno bisogno di concimazioni, altrimenti si sviluppano anche troppo in altezza; essendo
         belli svettanti, sono pi&ugrave; difficilmente attaccabili dalle infestanti, rendendo superflui i diserbanti.
         Insomma, si prestano ottimamente alla coltivazione biologica.
       </p>
       <img src="../img/logo.png" alt="" tabindex="16" />
     </div>
-    <!-- </div> -->
-    <div class="right-section" id="products-overview">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
+    <div class="grains-list">
+
+    <?php
+    $connection = new DBConnection();
+    $connection->openConnection();
+      
+      // $index = 0;         //forse non serve
+      // $grainForPage = 10; //grani da mostrare per pagina
+    $grains = $connection->getListGrains();
+
+    if ($grains != null) {
+      echo '<div class="grain-section">';
+      foreach ($grains as $grain) {
+        echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>';
+        echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
+        echo '<img src=' . $grain['immagine'] . 'alt="immagine del "' . $grain['nome'] . '/>';
+      }
+    } else echo '<p>Nessun grano ora in produzione</p>'
+    ?>
+    </div>
+
+
+
+
+    <!-- <div class="right-section" id="products-overview">
       <h1 tabindex="17">Timilia o grano Marzuolo</h1>
-      <p tabindex="19">Grano duro siciliano gi`a citato in epoca greca. `E particolarmente apprezzato per la panificazione
-        grazie al gusto dolce e al colore carico della farina. Se ne ricava tra l’altro il celebre pane
+      <p tabindex="19">Grano duro siciliano gi&agrave; citato in epoca greca. &egrave; particolarmente apprezzato per la panificazione
+        grazie al gusto dolce e al colore carico della farina. Se ne ricava tra l'altro il celebre pane
         Nero di Castelvetrano.
       </p>
       <img src="../img/logo.png" alt="" tabindex="21" />
     </div>
-    <!-- </div> -->
     <div class="left-section" id="story1">
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
-      <!-- <div class="shrink-center"> -->
       <h1 tabindex="13">Frassineto</h1>
-      <p tabindex="15">Nato nel 1922 nell’Aretino, `e un grano tenero derivato dal Gentil Rosso (vedi). Vanta gusto e
+      <p tabindex="15">Nato nel 1922 nell'Aretino, &egrave; un grano tenero derivato dal Gentil Rosso (vedi). Vanta gusto e
         aroma intensi.
       </p>
       <img src="../img/logo.png" alt="" tabindex="16" />
     </div>
-    <!-- </div> -->
     <div class="right-section" id="products-overview1">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
       <h1 tabindex="17">Senatore Cappelli</h1>
-      <p tabindex="19">Nato con l’intento di aumentare la produzione di frumento per la crescente popolazione, deve il
+      <p tabindex="19">Nato con l'intento di aumentare la produzione di frumento per la crescente popolazione, deve il
         nome al senatore abruzzese Raffaele Cappelli, nella cui tenuta il genetista Nazareno Strampelli
-        comp`ı gli incroci che lo portarono, dopo un’ibridazione con una cultivar tunisina, a produrre
+        comp`ı gli incroci che lo portarono, dopo un'ibridazione con una cultivar tunisina, a produrre
         un grano di maggiore resa. Non per questo il Cappelli perse sotto il profilo nutrizionale e della
-        digeribilità.
+        digeribilit&agrave;.
       </p>
       <img src="../img/logo.png" alt="" tabindex="21" />
-      <!-- </div> -->
     </div>
     <div class="left-section" id="story2">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
       <h1 tabindex="13">Dicocco o farro medio</h1>
-      <p tabindex="15">Proteico e ricco di antiossidanti, appartiene davvero a un’antica cultivar ed era il preferito
+      <p tabindex="15">Proteico e ricco di antiossidanti, appartiene davvero a un'antica cultivar ed era il preferito
         dagli antichi romani.
       </p>
       <img src="../img/logo.png" alt="" tabindex="16" />
-      <!-- </div> -->
     </div>
     <div class="right-section" id="products-overview2">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
       <h1 tabindex="17">Gentil Rosso</h1>
-      <p tabindex="19">Nato in Toscana a metà ’800, questo grano tenero ha spighe rossicce da cui si ricava una farina
-        di colore carico. `E ben fornito di minerali e proteine.
+      <p tabindex="19">Nato in Toscana a met&agrave; '800, questo grano tenero ha spighe rossicce da cui si ricava una farina
+        di colore carico. &egrave; ben fornito di minerali e proteine.
       </p>
       <img src="../img/logo.png" alt="" tabindex="21" />
     </div>
     <div class="left-section" id="story2">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
       <h1 tabindex="13">Rieti</h1>
-      <p tabindex="15">Originario dell’omonima citt`a laziale, era gi`a coltivato nel ’600, ma ebbe grande diffusione
-        in Italia nell’800.
+      <p tabindex="15">Originario dell'omonima citt&agrave; laziale, era gi&agrave; coltivato nel '600, ma ebbe grande diffusione
+        in Italia nell'800.
       </p>
       <img src="../img/logo.png" alt="" tabindex="16" />
-      <!-- </div> -->
     </div>
     <div class="right-section" id="products-overview2">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
       <h1 tabindex="17">Solina</h1>
-      <p tabindex="19">Grano tenero diffuso in Abruzzo gi`a nel XVI secolo.
+      <p tabindex="19">Grano tenero diffuso in Abruzzo gi&agrave; nel XVI secolo.
       </p>
       <img src="../img/logo.png" alt="" tabindex="21" />
     </div>
     <div class="left-section" id="story2">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
       <h1 tabindex="13">Russello</h1>
-      <p tabindex="15">Pregiata variet`a di grano duro siciliano, deve il suo nome al colore rosso-dorato delle spighe.
-        Ben digeribile, `e molto apprezzato per la panificazione.
+      <p tabindex="15">Pregiata variet&agrave; di grano duro siciliano, deve il suo nome al colore rosso-dorato delle spighe.
+        Ben digeribile, &egrave; molto apprezzato per la panificazione.
       </p>
       <img src="../img/logo.png" alt="" tabindex="16" />
-      <!-- </div> -->
     </div>
     <div class="right-section" id="products-overview2">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
       <h1 tabindex="17">Verna</h1>
-      <p tabindex="19">Grano tenero originario della Toscana. Sottoposta ad analisi dall’universit`a di Bologna, la farina
+      <p tabindex="19">Grano tenero originario della Toscana. Sottoposta ad analisi dall'universit&agrave; di Bologna, la farina
         ha mostrato un tenore di glutine dello 0,9% contro il 14% della media delle attuali cultivar,
         rispetto alle quali ha pure un miglior contenuto di antiossidanti, proteine totali, minerali.
       </p>
       <img src="../img/logo.png" alt="" tabindex="21" />
-    </div>
-    <!-- </div> -->
+    </div> -->
   </div>
-  <!-- <div class="shrink-center"> -->
   <div id="go-to-menu">
     <a href="#story">Torna su</a>
   </div>
@@ -176,10 +168,9 @@
       <img id="cssvalid" src="../img/vcss-blue.gif" lang="en" alt="CSS valid" />
     </div>
   </footer>
-  <!-- </div> -->
 
 
-
+<?php $connection->closeconnection(); ?>
 </body>
 
 
