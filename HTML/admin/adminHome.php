@@ -10,20 +10,20 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 $wronglogin = false;
 $wrongloginmessage = '<div id="wronglogin">Dati errati!</div>';
 
-// $connection = new DBAccess();
-// $connection->openConnection();
+$connection = new DBConnection();
+$connection->openConnection();
 
 if(isset($_POST['email']) && isset($_POST['password']))
-    // if($connection->adminLogIn( $_POST['email'], $_POST['password'])) //linea dove avviene il controllo dell'accesso
-    if(($_POST['email'] == "admin") && ($_POST['password'] == "admin"))
+    if($connection->adminLogin( $_POST['email'], $_POST['password'])) //linea dove avviene il controllo dell'accesso
+    // if(($_POST['email'] == "admin") && ($_POST['password'] == "admin"))
 	{
 		$_SESSION['login'] = true;
 		$_SESSION['email'] = $_POST['email'];
 	}
-// else
-	// $wronglogin = true;
+else
+	$wronglogin = true;
 
-// $connection->closeConnection();
+$connection->closeConnection();
 
 if(isset($_GET['logout']) && $_GET['logout'] == "true")
 {
@@ -67,7 +67,7 @@ else
           <li><a href="ordini.php" tabindex="7">Ordini</a></li>
           <li><a href="prenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li><a href="clienti.php" tabindex="11">Clienti</a></li>
-          <li><a href="amministratori.php" tabindex="11">amministratori</a></li>
+          <li><a href="amministratori.php" tabindex="11">Amministratori</a></li>
         </ul>
         <?php 
     } ?>
@@ -167,7 +167,6 @@ else
           </fieldset>
           <!-- </div> -->
         </form>
-        <a href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a href="../">Torna al sito</a>
         <?php
 
