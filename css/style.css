@@ -87,15 +87,23 @@ header img {
   /* da fixare la linea che esce dal bordo */
   border-top: 1px solid #f4d03f;
   width: 98.8%;
-  position: relative;
-  float: left;
-  text-align: left;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1em;
+  float: left;
 }
 
 #breadcrumb #path {
+  display: inline-block;
+  text-align: left;
+  color: #f4d03f;
+}
+
+#breadcrumb #admin {
+
+  float: right;
+  /* vertical-align: top; */
+  padding-right: 1em;
   color: #f4d03f;
 }
 
