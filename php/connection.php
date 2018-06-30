@@ -119,14 +119,14 @@ class DBConnection {
 		return mysqli_query($this->connection, $insert);
   }
 
-  public function insertMachine($id, $type, $name, $model, $power, $purchaseData, $image, $dayPrice) {
-		$insert = 'INSERT INTO macchinari (codice, nome, modello, immagine, prezzoGiorno) VALUES ("'.
+  public function insertMachine($id, $type, $name, $model, $power, $year, $image, $dayPrice) {
+		$insert = 'INSERT INTO macchinari (codice, tipologia, nome, modello, potenzaKW, anno, immagine, prezzoGiorno) VALUES ("'.
       $this->escape($id).'", "'.
       $this->escape($type).'", "'.
       $this->escape($name).'", "'.
       $this->escape($model).'", "'.
       $this->escape($power).'", "'.
-      $this->escape($purchaseData).'", "'.
+      $this->escape($year).'", "'.
 			$this->escape($image).'", "'.
       $this->escape($dayPrice).'")';
 		return mysqli_query($this->connection, $insert);

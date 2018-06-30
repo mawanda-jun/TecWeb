@@ -28,19 +28,20 @@ CREATE TABLE macchinari (
   nome VARCHAR(50) NOT NULL,
   modello VARCHAR(30) NOT NULL,
   potenzaKW FLOAT(5,2) NOT NULL,
-  dataAcquisto DATE NOT NULL,
+  anno TINYINT(4) NOT NULL,
   immagine VARCHAR(50),
   prezzoGiorno FLOAT(5,2) NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO macchinari (codice, tipologia, nome, modello, potenzaKW, dataAcquisto, immagine, prezzoGiorno) VALUES 
-('TRAT01', 'Trattore', 'Lamborghini', 'Mach 250 VRT', 194.00, '2017-07-21', 'lamborghini_mach_250_vrt.jpg', 107.95),
-('TRAT02', 'Trattore', 'Landini', '7-230 DT',  	151.00, '2014-02-18', 'landini_7_230_dt.jpg', 74.65),
-('TRAT03', 'Trattore', 'Goldoni', 'Q 110',  89.48, '2017-05-08', 'goldoni_q_110.jpg', 34.45),
-('MIET01', 'Mietitrebbia', 'Laverda', 'M400', 225.06, '2016-03-13', 'laverda_M400.jpg', 149.65),
-('MIET02', 'Mietitrabbia', 'New Holland', 'TC5.90', 190.00, '2013-04-21', 'new_holland_tc_90.jpg', 165.70),
-('VEND01', 'Vendemmiatrice', 'New Holland', 'BRAUD 9090L', 129.00, '2015-08-02', 'new_holland_braud_9090l.jpg', 136.90);
+INSERT INTO macchinari (codice, tipologia, nome, modello, potenzaKW, anno, immagine, prezzoGiorno) VALUES 
+('TRAT01', 'Trattore', 'Lamborghini', 'Mach 250 VRT', 194.00, '2017', 'lamborghini_mach_250_vrt.jpg', 107.95),
+('TRAT02', 'Trattore', 'Landini', '7-230 DT',  	151.00, '2014', 'landini_7_230_dt.jpg', 74.65),
+('TRAT03', 'Trattore', 'Goldoni', 'Q 110',  89.48, '2017', 'goldoni_q_110.jpg', 34.45),
+('MIET01', 'Mietitrebbia', 'Laverda', 'M400', 225.06, '2016', 'laverda_M400.jpg', 149.65),
+('MIET02', 'Mietitrabbia', 'New Holland', 'TC5.90', 190.00, '2013', 'new_holland_tc_90.jpg', 165.70),
+('VEND01', 'Vendemmiatrice', 'New Holland', 'BRAUD 9090L', 129.00, '2015', 'new_holland_braud_9090l.jpg', 136.90),
+('VEND02', 'Vendemmiatrice', 'Pellenc', '890/SP2', 128.71, '2016', 'pellenc_890sp2.jpg', 147.85);
 
 /*--- Clienti che hanno affittato un macchinario ---*/
 CREATE TABLE clienti (
@@ -82,7 +83,7 @@ INSERT INTO prenotazioni (idCliente, idMacchinario, dataInizio, dataFine) VALUES
 /*--- Utenti del sistema (operatori dell'azienda/admin) ---*/
 CREATE TABLE users (
   email varchar(60) PRIMARY KEY,
-  pwd varchar(50) NOT NULL
+  pwd varchar(80) NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
