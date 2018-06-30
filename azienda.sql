@@ -24,20 +24,23 @@ INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilita) VALUES
 /*--- Macchinari affittati dall'azienda ---*/
 CREATE TABLE macchinari (
     codice CHAR(6) PRIMARY KEY,
+    tipologia VARCHAR(30) NOT NULL,
     nome VARCHAR(20) NOT NULL,
     modello VARCHAR(20) NOT NULL,
-	immagine VARCHAR(30),
+    potenzaKW FLOAT(5,2) NOT NULL,
+    dataAcquisto DATE NOT NULL,
+	  immagine VARCHAR(30),
     prezzoGiorno FLOAT(5,2) NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO macchinari (codice, nome, modello, immagine, prezzoGiorno) VALUES 
-('TRAT01', 'Lamborghini', 'Mach 250 VRT', 'lamborghini_mach_250_vrt.jpg', 107.95),
-('TRAT02', 'Landini', '7-230 DT', 'landini_7_230_dt.jpg', 74.65),
-('TRAT03', 'Goldoni', 'Q 110', 'goldoni_q_110.jpg', 34.45),
-('MIET01', 'Laverda', 'M400', 'laverda_M400.jpg', 149.65),
-('MIET02', 'New Holland', 'TC5.90', 'new_holland_tc_90.jpg', 165.70),
-('VEND01', 'New Holland', 'BRAUD 9090L', 'new_holland_braud_9090l.jpg', 136.90);
+INSERT INTO macchinari (codice, tipologia, nome, modello, potenzaKW, dataAcquisto, immagine, prezzoGiorno) VALUES 
+('TRAT01', 'Trattore', 'Lamborghini', 'Mach 250 VRT', 194.00, '2017-07-21', 'lamborghini_mach_250_vrt.jpg', 107.95),
+('TRAT02', 'Trattore', 'Landini', '7-230 DT',  	151.00, '2014-02-18', 'landini_7_230_dt.jpg', 74.65),
+('TRAT03', 'Trattore', 'Goldoni', 'Q 110',  89.48, '2017-05-08', 'goldoni_q_110.jpg', 34.45),
+('MIET01', 'Mietitrebbia', 'Laverda', 'M400', 225.06, '2016-03-13', 'laverda_M400.jpg', 149.65),
+('MIET02', 'Mietitrabbia', 'New Holland', 'TC5.90', 190.00, '2013-04-21', 'new_holland_tc_90.jpg', 165.70),
+('VEND01', 'Vendemmiatrice', 'New Holland', 'BRAUD 9090L', 129.00, '2015-08-02', 'new_holland_braud_9090l.jpg', 136.90);
 
 /*--- Clienti che hanno affittato un macchinario ---*/
 CREATE TABLE clienti (
