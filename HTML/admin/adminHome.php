@@ -15,12 +15,12 @@ $wrongloginmessage = '<div id="wronglogin">Dati errati!</div>';
 $connection = new DBConnection();
 $connection->openConnection();
 
-if (isset($_POST['email']) && isset($_POST['password']))
-  if ($connection->adminLogin($_POST['email'], $_POST['password'])) //linea dove avviene il controllo dell'accesso
-    // if(($_POST['email'] == "admin") && ($_POST['password'] == "admin"))
+if (isset($_POST['emailLogin']) && isset($_POST['password']))
+  if ($connection->adminLogin($_POST['emailLogin'], $_POST['password'])) //linea dove avviene il controllo dell'accesso
+    // if(($_POST['emailLogin'] == "admin") && ($_POST['password'] == "admin"))
 {
   $_SESSION['login'] = true;
-  $_SESSION['email'] = $_POST['email'];
+  $_SESSION['emailLogin'] = $_POST['emailLogin'];
 } else
   $wronglogin = true;
 
@@ -28,7 +28,7 @@ $connection->closeConnection();
 
 if (isset($_GET['logout']) && $_GET['logout'] == "true") {
   $_SESSION['login'] = false;
-  $_SESSION['email'] = null;
+  $_SESSION['emailLogin'] = null;
   header("Location: ../home.html");
   session_unset();
   session_destroy();
@@ -156,8 +156,8 @@ else
             if ($wronglogin)
               echo ($wrongloginmessage);
             ?>
-            <label for="email">Email</label>:
-            <input id="email" name="email" type="text" />
+            <label for="emailLogin">Email</label>:
+            <input id="emailLogin" name="emailLogin" type="text" />
             <br/>
             <label for="password"><span xml:lang="en">Password</span></label>:
             <input id="password" name="password" type="password" />

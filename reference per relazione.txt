@@ -40,3 +40,6 @@ Pannello amministrazione:
 -- aggiunta, modifica, eliminazione amministratore
 --> insertAdmin($email, $password)
     removeAdmin($email)
+
+
+htmlspecialchars impedisce che si possano iniettare nel sito alcuni particolari script javascript per romperlo

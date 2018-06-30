@@ -23,9 +23,9 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
 
   if (isset($_POST['submit'])) {
 
-    if ((!isset($_POST['email']) || strcmp($_POST['email'], "") == 0))
+    if (!isset($_POST['email']) || empty($_POST['email']))
       $error = 'L\'<span xml:lang="en">email</span> non pu&ograve; essere vuota.';
-    else if ((!isset($_POST['password']) || strcmp($_POST['password'], "") == 0))
+    else if (!isset($_POST['password']) || empty($_POST['password']))
       $error = 'La password non pu&ograve; essere vuota';
     else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
       $error = 'L\'<span xml:lang="en">email</span> non &egrave; scritta correttamente. Seguire la prassi: "mario@gmail.com"';
@@ -66,10 +66,12 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
 if ($error == null) {
   $_SESSION['error'] = null;
   $_SESSION['isError'] = false;
+  $_SESSION['email'] = null;
   // header("Location: amministratori.php");
 } else {
   $_SESSION['isError'] = true;
   $_SESSION['error'] = $error;
+  $_SESSION['email'] = $_POST['email'];
   // header("Location: sessione_scaduta.php");
 }
 header("Location: amministratori.php");
