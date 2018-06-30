@@ -42,7 +42,7 @@ header('Content-type: application/xhtml+xml'); ?>
     <!-- </div> -->
   </header>
 
-      <div class="spacer">
+  <div class="spacer">
     &nbsp;
   </div>
   <div class="top-img" id="servizi-top-img">
@@ -60,9 +60,9 @@ header('Content-type: application/xhtml+xml'); ?>
       <img src="../images/logo.jpg" alt="" tabindex="16" />
     </div>
 
-<div class="machines-list">
+    <div class="machines-list">
 
-<?php
+      <?php
 $connection = new DBConnection();
 $connection->openConnection();
   
@@ -75,14 +75,14 @@ if ($machines != null) {
     echo '<div class="machine-section">';
     echo '<h1 tabindex="10">' . $machine['nome'] . '</h1>';
     echo '<h2 tabindex="10">' . $machine['modello'] . '</h2>';
-    // echo '<img src="../images/' . $machine['immagine'] . '" alt="immagine del ' . $machine['nome'] . '" "' . $machine['modello'] . '"/>';
+    echo '<img src="../images/' . $machine['immagine'] . '" alt="immagine del ' . $machine['nome'] . ' ' . $machine['modello'] . '"/>';
     echo '</div>';
   }
 } else echo '<p>Nessun grano ora in produzione</p>'
 ?>
-</div>
+    </div>
 
-</div>
+  </div>
   <!-- <div class="shrink-center"> -->
   <div id="go-to-menu">
     <a href="#story">Torna su</a>
