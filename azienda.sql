@@ -32,12 +32,12 @@ CREATE TABLE macchinari (
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO macchinari (codice, nome, modello, immagine, prezzoGiorno) VALUES 
-('TRAT01', 'Lamborghini', 'Mach 250 VRT', ' ', 107.95),
-('TRAT02', 'Landini', '7-230 DT', ' ', 74.65),
-('TRAT03', 'Goldoni', 'Q 110', ' ', 34.45),
-('MIET01', 'Laverda', 'M400', ' ', 149.65),
-('MIET02', 'New Holland', 'TC5.90', ' ', 165.70),
-('VEND01', 'New Holland', 'BRAUD 9090L', ' ', 136.90);
+('TRAT01', 'Lamborghini', 'Mach 250 VRT', 'lamborghini_mach_250_vrt.jpg', 107.95),
+('TRAT02', 'Landini', '7-230 DT', 'landini_7_230_dt.jpg', 74.65),
+('TRAT03', 'Goldoni', 'Q 110', 'goldoni_q_110.jpg', 34.45),
+('MIET01', 'Laverda', 'M400', 'laverda_M400.jpg', 149.65),
+('MIET02', 'New Holland', 'TC5.90', 'new_holland_tc_90.jpg', 165.70),
+('VEND01', 'New Holland', 'BRAUD 9090L', 'new_holland_braud_9090l.jpg', 136.90);
 
 /*--- Clienti che hanno affittato un macchinario ---*/
 CREATE TABLE clienti (
