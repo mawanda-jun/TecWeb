@@ -1,0 +1,297 @@
+* {
+  margin: 0em;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  max-width: 1024px;
+  margin-top: 0.1em;
+  margin: auto;
+  background-color: white;
+}
+
+html {
+  background-color: rgba(253, 238, 177, 0.8);
+}
+
+/* #go-to-content {
+    display: none;
+  } */
+
+header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  max-width: 1024px;
+  background-color: #3c2109;
+  opacity: 0.97;
+  /* background-image: url('../img/wood-pattern.jpg'); */
+  /* opacity: 1; */
+  /* background-position: center; */
+}
+
+header img {
+  width: 6em;
+  padding: 1em;
+  /* padding-left: 2em; */
+  float: left;
+  display: block;
+  position: relative;
+}
+
+.shrink-center {
+  max-width: 1024px;
+  margin: auto;
+}
+
+#navbar {
+  float: right;
+  list-style: none;
+  padding-top: 3.7em;
+  padding-right: 2em;
+}
+
+#navbar li {
+  display: inline-block;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}
+
+#navbar li a {
+  text-decoration: none;
+  color: #f4d03f;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  /* font-weight: bold; */
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#navbar li.active a {
+  border: 0.2em solid #f4d03f;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  pointer-events: none;
+  cursor: default;
+}
+
+#navbar li a:hover {
+  border-bottom: 0.2em solid #f4d03f;
+}
+
+#breadcrumb {
+  border-top: 1px solid #f4d03f;
+  width: 100%;
+  position: relative;
+  float: left;
+  text-align: left;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+}
+
+#breadcrumb a {
+  color: #f4d03f;
+}
+
+.spacer {
+  width: 100%;
+  height: 8.7em;
+}
+
+/* .top-img {
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: 100%;
+  width: 100%;
+  position: relative;
+  bottom: 0em;
+  z-index: +1;
+} */
+
+/* #home-top-img,
+#chi-top-img,
+#prodotti-top-img,
+#servizi-top-img {
+  height: 40em;
+}
+
+#home-top-img {
+  background-image: url(../images/home-img.jpg);
+}
+
+#chi-top-img {
+  background-image: url(../images/chi-img.jpg);
+
+}
+
+#prodotti-top-img {
+  background-image: url(../images/prodotti-img.jpg);
+}
+
+#servizi-top-img {
+  background-image: url(../images/servizi-img.jpg);
+} */
+
+.content {
+  display: inline;
+  z-index: +1;
+  /* padding-left: 1em; */
+}
+
+.left-section,
+.right-section,
+.center-section,
+.grain-section {
+  /* display: inline; */
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+.left-section h1,
+.right-section h1,
+.center-section h1,
+.grain-section h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding-left: 1.2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-size: 3em;
+  text-transform: uppercase;
+  /* background-color: #FDEEB1; */
+  width: 60%;
+  margin-top: 0.5em;
+  /* position: relative; */
+  /* line-height: 76% */
+  /* float: left; */
+}
+
+.center-section h1 {
+  text-align: center;
+  width: 100%;
+  padding-left: 0em;
+}
+
+.left-section h1,
+.grain-section h1 {
+  float: left;
+}
+
+.right-section h1 {
+  text-align: right;
+  padding-right: 1.3em;
+  float: right;
+}
+
+.left-section p,
+.right-section p,
+.grain-section p {
+  text-align: justify;
+  width: 60%;
+  /* float: left; */
+  /* position: relative; */
+}
+
+.center-section p {
+  text-align: justify;
+  width: auto;
+  padding-left: 3.5em;
+  margin-right: 3.5em;
+}
+
+.left-section p,
+.grain-section p {
+  float: left;
+  padding-left: 0.5em;
+}
+
+.right-section p {
+  float: right;
+  padding-right: 0.5em;
+}
+
+.left-section img,
+.right-section img,
+.grain-section img {
+  padding: 1em;
+  padding-top: 0em;
+  position: relative;
+  width: 37%;
+
+  /* padding-right: 1em; */
+}
+
+.left-section img,
+.grain-section img {
+  float: right;
+  padding-left: 0.5em;
+}
+
+.right-section img {
+  float: left;
+  padding-right: 0.5em;
+}
+
+#go-to-menu {
+  overflow-y: auto;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: red;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 15px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+}
+
+#to-to-menu:hover {
+  background-color: #555;
+  /* Add a dark-grey background on hover */
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  text-align: center;
+}
+
+#xhtmlvalid {
+  float: left;
+}
+
+#cssvalid {
+  float: right;
+}
+
+#footer p {
+  display: inline-block;
+  padding-top: 0.7em;
+  font-style: italic;
+  font-size: 0.9em;
+}

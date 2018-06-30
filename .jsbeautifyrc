@@ -47,7 +47,9 @@
       "h3",
       "h4",
       "h5",
-      "h6"
+      "h6",
+      "?php",
+      "?"
     ], // List of tags that should not be reformatted
     "wrap_line_length": 100 // Lines should wrap at next opportunity after this number of characters (0 disables)
   },
