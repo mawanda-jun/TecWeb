@@ -37,28 +37,26 @@
     &nbsp;
   </div>
 
-  <div class="top-img" id="home-top-img">
-  </div>
   <div class="content">
     <div class="center-section">
       <h1>Vuoi contattarci?</h1>
       <h3>Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h3>
       <form id="contattaci-form" action="dati.php" method="POST">
         <ul>
-          <li class="nome_form">
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" class="testo_form" required>
+          <li class="name-form">
+            <label for="name">Nome</label>
+            <input type="text" name="name" class="form-control" id="name" required>
           </li>
-          <li class="email_form">
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" class="testo_form" required>
+          <li class="email-form">
+            <label for="email" lang: "en">E-mail</label>
+            <input type="email" name="email" class="form-control" id="email" required>
           </li>
-          <li class="messaggio_form">
-            <label for="testo">Messaggio</label>
-            <textarea name="testo" id="testo"></textarea>
+          <li class="message-form">
+            <label for="text">Messaggio</label>
+            <textarea name="text" class: "form-control" id="testo"></textarea>
           </li>
-          <li class="pulsante_form">
-            <input type="submit" value="Richiedi informazioni" class="pulsante">
+          <li class="submit-form">
+            <input type="submit" value="Richiedi informazioni" class="form-control-submit">
           </li>
         </ul>
       </form>

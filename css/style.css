@@ -209,6 +209,39 @@ header img {
   margin-right: 3.5em;
 }
 
+.center-section h3 {
+  width: auto;
+  padding-left: 3.5em;
+  margin-right: 3.5em;
+}
+
+.center-section h3 {
+  width: auto;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.center-section form {
+  margin: auto;
+  float: left;
+  left: 50%;
+}
+
+.center-section form ul {
+  list-style: none;
+}
+
+.center-section form label {
+  float: left;
+  width: 100%;
+}
+
+.control-form {
+  float: right;
+}
+
+
+
 .left-section p,
 .grain-section p {
   float: left;
