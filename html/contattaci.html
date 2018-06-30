@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+  <title>Home Page</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="DASISTEMARE" />
+  <meta name="author" content="DASISTEMARE" />
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
+  <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
+  <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
+  <!-- <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script> -->
+</head>
+
+<body>
+
+  <header>
+    <p id="go-to-content" tabindex="3"><a href="#content">Vai al contenuto</a></p>
+    <div class="row">
+      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
+      <ul id="navbar">
+        <li><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
+        <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
+        <li><a href="../html/prodotti.php" tabindex="7">Prodotti</a></li>
+        <li><a href="../html/servizi.html" tabindex="9">Servizi</a></li>
+        <li class="active"><a href="../html/contattaci.html" tabindex="11">Contattaci</a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div id="breadcrumb">
+        <div id="path" tabindex="12">Ti trovi in: Contattaci</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="spacer">
+    &nbsp;
+  </div>
+
+  <div class="top-img" id="home-top-img">
+  </div>
+  <div class="content">
+    <div class="center-section">
+      <h1>Vuoi contattarci?</h1>
+      <h3>Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h3>
+      <form id="contattaci-form" action="dati.php" method="POST">
+        <ul>
+          <li class="nome_form">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="testo_form" required>
+          </li>
+          <li class="email_form">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" class="testo_form" required>
+          </li>
+          <li class="messaggio_form">
+            <label for="testo">Messaggio</label>
+            <textarea name="testo" id="testo"></textarea>
+          </li>
+          <li class="pulsante_form">
+            <input type="submit" value="Richiedi informazioni" class="pulsante">
+          </li>
+        </ul>
+      </form>
+    </div>
+
+    <div id="go-to-menu">
+      <a href="#story">Torna su</a>
+    </div>
+    <footer>
+      <div class="shrink-center">
+        <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <p>Da pensare a cosa scriverci</p>
+        <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS valid" />
+      </div>
+    </footer>
+    <!-- </div> -->
+
+
+
+</body>
+
+
+</html>
