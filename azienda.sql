@@ -28,7 +28,7 @@ CREATE TABLE macchinari (
   nome VARCHAR(50) NOT NULL,
   modello VARCHAR(30) NOT NULL,
   potenzaKW FLOAT(5,2) NOT NULL,
-  anno TINYINT(4) NOT NULL,
+  anno SMALLINT(4) NOT NULL,
   immagine VARCHAR(50),
   prezzoGiorno FLOAT(5,2) NOT NULL
 )
