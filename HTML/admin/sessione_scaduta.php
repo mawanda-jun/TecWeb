@@ -21,7 +21,13 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   <div id="content">
     <h1>Qualcosa non va...</h1>
     <p>
-      <?php if(isset($_SESSION['error'])) echo $_SESSION['error']; else echo('Qualcosa &egrave; andato storto. Clicca sul logo e andr&agrave; tutto bene.'); $_SESSION['error'] = null;?>
+      <?php 
+      if(isset($_SESSION['error'])) 
+        echo $_SESSION['error'];
+      else 
+        echo('Qualcosa &egrave; andato storto. Clicca sul logo e andr&agrave; tutto bene.'); 
+      $_SESSION['error'] = null;
+      ?>
     </p>
     <!-- <img id="imageerr" src="../images/err404.jpg" alt="Immagine di errore"/> <br/> -->
     <!-- <a href="index.php">Torna alla pagina di amministrazione del sito</a> <br/> -->

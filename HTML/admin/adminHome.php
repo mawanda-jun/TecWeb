@@ -5,7 +5,9 @@
 
 <?php
 header('Content-type: application/xhtml+xml');
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 
 $wronglogin = false;
 $wrongloginmessage = '<div id="wronglogin">Dati errati!</div>';
@@ -13,31 +15,29 @@ $wrongloginmessage = '<div id="wronglogin">Dati errati!</div>';
 $connection = new DBConnection();
 $connection->openConnection();
 
-if(isset($_POST['email']) && isset($_POST['password']))
-    if($connection->adminLogin( $_POST['email'], $_POST['password'])) //linea dove avviene il controllo dell'accesso
+if (isset($_POST['email']) && isset($_POST['password']))
+  if ($connection->adminLogin($_POST['email'], $_POST['password'])) //linea dove avviene il controllo dell'accesso
     // if(($_POST['email'] == "admin") && ($_POST['password'] == "admin"))
-	{
-		$_SESSION['login'] = true;
-		$_SESSION['email'] = $_POST['email'];
-	}
-else
-	$wronglogin = true;
+{
+  $_SESSION['login'] = true;
+  $_SESSION['email'] = $_POST['email'];
+} else
+  $wronglogin = true;
 
 $connection->closeConnection();
 
-if(isset($_GET['logout']) && $_GET['logout'] == "true")
-{
-	$_SESSION['login'] = false;
-	$_SESSION['email'] = null;
+if (isset($_GET['logout']) && $_GET['logout'] == "true") {
+  $_SESSION['login'] = false;
+  $_SESSION['email'] = null;
   header("Location: ../home.html");
   session_unset();
   session_destroy();
-	die();
+  die();
 }
-if(isset($_SESSION['login']) && $_SESSION['login'] == true)
-	$title = "Pannello di amministrazione";
+if (isset($_SESSION['login']) && $_SESSION['login'] == true)
+  $title = "Pannello di amministrazione";
 else
-	$title = "Login";
+  $title = "Login";
 ?>
 
   <head>
@@ -70,7 +70,7 @@ else
           <li><a href="amministratori.php" tabindex="11">Amministratori</a></li>
         </ul>
         <?php 
-    } ?>
+      } ?>
       </div>
 
       <div id="breadcrumb">
@@ -78,7 +78,7 @@ else
         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <?php 
-    } ?>
+      } ?>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
     </header>
@@ -91,7 +91,7 @@ else
   </div> -->
 
     <?php
-	if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+    if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
       <div class="content">
 
         <div class="left-section" id="actions">
@@ -108,7 +108,7 @@ else
 
 
 
-          <h2>Benvenuto nell’area di amministrazione</h2>
+          <!-- <h2>Benvenuto nell’area di amministrazione</h2>
           <p>In quest’ area potrai gestire, aggiornare e monitorare alcune parti del sito.</p>
 
           <h3 xml:lang="en">News</h3>
@@ -140,12 +140,12 @@ else
           <p>In questa sezione è possibile aggiungere e rimuovere amministratori, cambiare la propria password
             ed aggiornare la propria <span xml:lang="it">e-mail</span>.</p>
 
-          <p>Infine puoi ritornare al sito rimanendo loggato all’Area amministrativa o fare <span xml:lang="en">Logout</span>.</p>
+          <p>Infine puoi ritornare al sito rimanendo loggato all’Area amministrativa o fare <span xml:lang="en">Logout</span>.</p> -->
         </div>
       </div>
       <?php
 
-} else { ?>
+    } else { ?>
         <h1>Pagina di <span xml:lang="en">login</span></h1>
         <form action="adminHome.php" method="post" id="loginform">
           <fieldset id="loginfields">
@@ -153,9 +153,9 @@ else
             <legend> <span xml:lang="en">Login</span></legend>
 
             <?php 
-			if ($wronglogin)
-				echo ($wrongloginmessage);
-			?>
+            if ($wronglogin)
+              echo ($wrongloginmessage);
+            ?>
             <label for="email">Email</label>:
             <input id="email" name="email" type="text" />
             <br/>
@@ -170,7 +170,7 @@ else
         <a href="../">Torna al sito</a>
         <?php
 
-} ?>
+      } ?>
 
 
           <div id="go-to-menu">

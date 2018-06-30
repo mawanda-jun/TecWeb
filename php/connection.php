@@ -72,7 +72,7 @@ class DBConnection {
   }
 
   public function getListAdmins() {
-		return $this->getAllQuery('SELECT username, email FROM users');
+		return $this->getAllQuery('SELECT email FROM users');
   }
   
   public function getListClients() {
