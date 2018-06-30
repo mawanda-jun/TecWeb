@@ -41,10 +41,15 @@ header('Content-type: application/xhtml+xml'); ?>
     </div>
     <!-- </div> -->
   </header>
+
+      <div class="spacer">
+    &nbsp;
+  </div>
   <div class="top-img" id="servizi-top-img">
     <!-- <img src="../img/top-img-grain.jpg" alt="" /> da mettere in background 
         da mettere eventualmente informazioni rapide o scritte-->
   </div>
+
   <div class="content">
     <div class="left-section" id="story">
       <h1 tabindex="13">Servizio macchinari</h1>

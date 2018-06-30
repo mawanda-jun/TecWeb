@@ -99,6 +99,11 @@ header img {
   color: #f4d03f;
 }
 
+.spacer {
+  width: 100%;
+  height: 8.7em;
+}
+
 .top-img {
   background-repeat: no-repeat;
   background-color: white;
@@ -111,28 +116,28 @@ header img {
   z-index: +1;
 }
 
+#home-top-img,
+#chi-top-img,
+#prodotti-top-img,
+#servizi-top-img {
+  height: 40em;
+}
+
 #home-top-img {
   background-image: url(../images/home-img.jpg);
-  height: 40em;
-  margin-top: 9.8em;
 }
 
 #chi-top-img {
   background-image: url(../images/chi-img.jpg);
-  height: 40em;
-  margin-top: 9.8em;
+
 }
 
 #prodotti-top-img {
   background-image: url(../images/prodotti-img.jpg);
-  height: 40em;
-  margin-top: 9.8em;
 }
 
 #servizi-top-img {
   background-image: url(../images/servizi-img.jpg);
-  height: 40em;
-  margin-top: 9.8em;
 }
 
 .content {

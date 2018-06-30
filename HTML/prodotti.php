@@ -6,7 +6,7 @@ header('Content-type: application/xhtml+xml'); ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-  <title>Home Page</title>
+  <title>Prodotti</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="DASISTEMARE" />
   <meta name="author" content="DASISTEMARE" />
@@ -41,6 +41,9 @@ header('Content-type: application/xhtml+xml'); ?>
     </div>
     <!-- </div> -->
   </header>
+  <div class="spacer">
+    &nbsp;
+  </div>
   <div class="top-img" id="prodotti-top-img">
     <!-- <img src="../img/top-img-grain.jpg" alt="" /> da mettere in background 
         da mettere eventualmente informazioni rapide o scritte-->
