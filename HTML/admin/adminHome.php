@@ -68,14 +68,18 @@ else
           <li><a href="prenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li><a href="clienti.php" tabindex="11">Clienti</a></li>
           <li><a href="amministratori.php" tabindex="11">amministratori</a></li>
-          <li><a href="adminHome.php?logout=true" xml:lang="en">Logout</a></li>
         </ul>
         <?php 
     } ?>
       </div>
 
       <div id="breadcrumb">
-        <div id="path" tabindex="12"><a href="../">Torna al sito</a></div>
+        <p id="path" tabindex="12">Ti trovi in: Pannello amministrazione</p>
+        <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+        <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
+        <?php 
+    } ?>
+        <a id="toSite" href="../">Torna al sito</a>
       </div>
     </header>
 
@@ -90,54 +94,77 @@ else
 	if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
       <div class="content">
 
-        <div class="left-section" id="story">
-          <h1 tabindex="13">La nostra storia</h1>
-          <p tabindex="15">Qui metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"
-          </p>
-          <img src="../images/history-home.png" alt="Vecchia foto di un contadino al lavoro" tabindex="16" />
-        </div>
-        <div class="right-section" id="products-overview">
-          <h1 tabindex="17">I nostri prodotti</h1>
-          <p tabindex="19">Qui metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"Qui
-            metteremo un breve riassunto di quello che andremo a scrivere nella pagina "chi siamo"
-          </p>
-          <img src="../images/grano_misto.jpg" alt="Grano misto" tabindex="21" />
+        <div class="left-section" id="actions">
+          <h2 tabindex="13">Benvenuto nella sezione di amministrazione</h2>
+          <p tabindex="15">In questa sezione potrai svolgere tutte le operazioni di amministrazione del sito.</p>
+          <h3>Prodotti</h3>
+          <p>In questa sezione si possono: </p>
+          <ul> </ul>
+
+
+
+
+
+
+
+
+          <h2>Benvenuto nell’area di amministrazione</h2>
+          <p>In quest’ area potrai gestire, aggiornare e monitorare alcune parti del sito.</p>
+
+          <h3 xml:lang="en">News</h3>
+          <p>In questa pagina si ha la possibilità di:</p>
+          <ul>
+            <li>aggiungere <span xml:lang="en">news</span></li>
+            <li>cancellare la <span xml:lang="en">cache</span> delle <span xml:lang="en">news</span> per
+              la <span xml:lang="en">sidebar</span></li>
+            <li>cancellare le <span xml:lang="en">news</span></li>
+            <li>modificare le <span xml:lang="en">news</span></li>
+            <li>impostare le <span xml:lang="en">news</span> come bozza o pubblicarle</li>
+          </ul>
+
+          <h3>Immagini</h3>
+          <p>In questa sezione è possibile fare l’<span lang="en">upload</span> di nuove immagini o rimuoverle
+            dal sito.</p>
+
+          <h3>Commenti e utenti bloccati</h3>
+          <p>Nella sezione commenti è presente una lista di tutti i commenti presenti nel sito. E’ possibile
+            bloccare un utente, specificandone il motivo (se desiderato) e conseguentemente eliminare
+            il commento oppure eliminare solo il commento.</p>
+          <p>Nella pagina utenti bloccati invece troviamo un elenco di tutti gli utenti ai quali è impedito
+            l'inserimento dei commenti e c'è la funzione per sbloccarli.</p>
+
+          <h3>Capitoli</h3>
+          <p>Questa sezione elenca tutti i capitoli presenti, permettendo di aggiungerne di nuovi o di eliminarne.</p>
+
+          <h3>Amministratori</h3>
+          <p>In questa sezione è possibile aggiungere e rimuovere amministratori, cambiare la propria password
+            ed aggiornare la propria <span xml:lang="it">e-mail</span>.</p>
+
+          <p>Infine puoi ritornare al sito rimanendo loggato all’Area amministrativa o fare <span xml:lang="en">Logout</span>.</p>
         </div>
       </div>
-
       <?php
 
 } else { ?>
         <h1>Pagina di <span xml:lang="en">login</span></h1>
         <form action="adminHome.php" method="post" id="loginform">
-          <!-- <fieldset id="loginfields"> -->
-          <!-- <div id="loginFields"> -->
-          <legend> <span xml:lang="en">Login</span></legend>
+          <fieldset id="loginfields">
+            <!-- <div id="loginFields"> -->
+            <legend> <span xml:lang="en">Login</span></legend>
 
-          <?php 
+            <?php 
 			if ($wronglogin)
 				echo ($wrongloginmessage);
 			?>
-          <label for="email">Email</label>:
-          <input id="email" name="email" type="text" />
-          <br/>
-          <label for="password"><span xml:lang="en">Password</span></label>:
-          <input id="password" name="password" type="password" />
-          <br/>
-          <input value="Login" type="submit" />
-          <input value="Cancella" type="reset" />
-          <!-- </fieldset> -->
+            <label for="email">Email</label>:
+            <input id="email" name="email" type="text" />
+            <br/>
+            <label for="password"><span xml:lang="en">Password</span></label>:
+            <input id="password" name="password" type="password" />
+            <br/>
+            <input value="Login" type="submit" />
+            <input value="Cancella" type="reset" />
+          </fieldset>
           <!-- </div> -->
         </form>
         <a href="adminHome.php?logout=true" xml:lang="en">Logout</a>
@@ -152,9 +179,9 @@ else
           </div>
           <footer>
             <div class="shrink-center">
-              <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+              <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+              <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
               <p>Da pensare a cosa scriverci</p>
-              <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS valid" />
             </div>
           </footer>
           <!-- </div> -->

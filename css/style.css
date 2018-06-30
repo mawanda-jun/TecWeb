@@ -53,6 +53,7 @@ header img {
   list-style: none;
   padding-top: 3.7em;
   padding-right: 2em;
+  vertical-align: middle;
 }
 
 #navbar li {
@@ -332,8 +333,9 @@ footer {
 }
 
 #footer p {
-  display: inline-block;
-  padding-top: 0.7em;
+  /* display: inline-block; */
+  /* padding-top: 0.7em; */
   font-style: italic;
   font-size: 0.9em;
+  vertical-align: middle;
 }
