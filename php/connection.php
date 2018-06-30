@@ -47,35 +47,12 @@ class DBConnection {
 		return mysqli_real_escape_string($this->connection, $string);
 	}
 
-	public function adminLogin($username, $password) {
+	public function adminLogin($email, $password) {
 		$query = 'SELECT pwd FROM users WHERE '.
-			'username = "'.$this->escape($username).'"';
+			'email = "'.$this->escape($email).'"';
 		$result = mysqli_query($this->connection, $query) or $this->showError();
 		$dataDB = mysqli_fetch_row($result);
 		return password_verify($password, $dataDB[0]);
-	}
-	
-	// Rimuove l'amministratore indicato sse questo non è l'unico rimasto. Ritorna true se l'eliminazione è andata a buon fine, false altrimenti
-	public function removeAdmin($username) {
-		if(mysqli_num_rows(mysqli_query($this->connection, 'SELECT * FROM users')) > 1) {
-			$query = 'DELETE FROM users WHERE username = "'.$this->escape($username).'"';
-			return mysqli_query($this->connection, $query) == 1;
-		}
-		return false;
-	}
-	
-	// Inserisce un nuovo admin con i dati indicati. Ritorna true se l'inserimento è andato a buon fine, false altrimenti
-	public function insertAdmin($username, $email, $password) {
-		$query = 'SELECT * FROM users WHERE username= "'.$this->escape($username).'"';
-		if(mysqli_num_rows(mysqli_query($this->connection, $query)) == 0)
-		{
-			$insert = 'INSERT INTO users (username, email, pwd) VALUES ("'.
-				$this->escape($username).'", "'.
-				$this->escape($email).'", "'.
-				$this->escape(password_hash($password, PASSWORD_DEFAULT)).'")';
-			return mysqli_query($this->connection, $insert) == 1;
-		}
-		return false;
 	}
           
   public function getListGrains() {
@@ -108,222 +85,115 @@ class DBConnection {
 
   public function getPrenotationClient($order) {
     $query = 'SELECT idCliente FROM prenotazioni WHERE ordine ='.$this->escape($order);
-    return($days * mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
+    return(mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
   }
 
-  // da spostare dove serve realmente
-  public function getMachinePrice($id, $days) {
+  public function getMachinePrice($id) {
     $dayPrice = 'SELECT prezzoGiorno FROM macchinari WHERE codice ='.$this->escape($id);
-    return($days * mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
+    return(mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
   }
 
+  public function insertAdmin($email, $password) {
+		$insert = 'INSERT INTO users (email, pwd) VALUES ("'.
+      $this->escape($email).'", "'.
+      $this->escape(password_hash($password, PASSWORD_DEFAULT)).'")';
+  }
+  
   public function insertClient($id, $name, $surname, $phone, $email) {
-		$query = 'INSERT INTO clienti (id, nome, cognome, telefono, email) VALUES ("'.
+    $insert = 'INSERT INTO clienti (id, nome, cognome, telefono, email) VALUES ("'.
       $this->escape($id).'", "'.
       $this->escape($name).'", "'.
       $this->escape($surname).'", "'.
       $this->escape($phone).'", "'.
-      $this->escape($email).'", "';
-		return mysqli_query($this->connection, $query);
+      $this->escape($email).'")';
+    return mysqli_query($this->connection, $insert);
   }
   
   public function insertGrain($name, $description, $image, $price, $availability) {
-		$query = 'INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilità) VALUES ("'.
+		$insert = 'INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilità) VALUES ("'.
       $this->escape($name).'", "'.
       $this->escape($description).'", "'.
 			$this->escape($image).'", "'.
       $this->escape($price).'", "'.
-      $this->escape($availability).'", "';
-		return mysqli_query($this->connection, $query);
+      $this->escape($availability).'")';
+		return mysqli_query($this->connection, $insert);
   }
 
-  public function insertMachine($id, $name, $model, $image, $dayPrice) {
-		$query = 'INSERT INTO macchinari (codice, nome, modello, immagine, prezzoGiorno) VALUES ("'.
+  public function insertMachine($id, $type, $name, $model, $power, $purchaseData, $image, $dayPrice) {
+		$insert = 'INSERT INTO macchinari (codice, nome, modello, immagine, prezzoGiorno) VALUES ("'.
       $this->escape($id).'", "'.
+      $this->escape($type).'", "'.
       $this->escape($name).'", "'.
       $this->escape($model).'", "'.
+      $this->escape($power).'", "'.
+      $this->escape($purchaseData).'", "'.
 			$this->escape($image).'", "'.
-      $this->escape($dayPrice).'", "';
-		return mysqli_query($this->connection, $query);
+      $this->escape($dayPrice).'")';
+		return mysqli_query($this->connection, $insert);
   }
 
   // serve un controllo sulla disponibilità alla prenotazione del macchinario
-  public function insertPrenotation($order, $clientId, $machineId, $firstDay, $lastDay) {
-		$query = 'INSERT INTO prenotazioni (ordine, idCliente, idMacchinario, dataInizio, dataFine) VALUES ("'.
-      $this->escape($order).'", "'.
+  public function insertPrenotation($clientId, $machineId, $firstDay, $lastDay) {
+		$insert = 'INSERT INTO prenotazioni (idCliente, idMacchinario, dataInizio, dataFine) VALUES ("'.
       $this->escape($clientId).'", "'.
       $this->escape($machineId).'", "'.
       $this->escape($firstDay).'", "'.
-      $this->escape($lastDay).'", "';
-		return mysqli_query($this->connection, $query);
+      $this->escape($lastDay).'")';
+		return mysqli_query($this->connection, $insert);
   }
 
-	/* 
-
-	public function getListNews($withHidden = false, $charLimit = false, $entryLimit = false, $fromEntry = false ) {
-		$query = 'Select id, title, image, imgdescr, data, hidden, ';
-	   	if($charLimit != false)
-			$query.= ' CONCAT(SUBSTRING(text, 1, 300), "...") as text ';
-		else
-			$query.= ' text ';
-		$query.= ' from news ';
-	   	if(!$withHidden)
-			$query.= 'where hidden = false ';
-		$query.= ' ORDER BY data desc ';
-		if($entryLimit != false && $fromEntry == false) //prendo i primi TOT		
-			$query.= ' LIMIT '.$this->escape($entryLimit);
-		if($entryLimit != false && $fromEntry != false) //prendo da TOT per TOT		
-			$query.= ' LIMIT '.$this->escape($fromEntry).', '.$this->escape($entryLimit);
-		return $this->getAllQuery($query);
+  public function removeGrain($name) {
+		$query = 'DELETE FROM grani WHERE nome='.$this->escape($name);
+		return mysqli_query($this->connection, $query) === TRUE;
 	}
 
-	//ritorna username e email di tutti gli utenti tranne quelli esclusi
-	public function getListAdminsData($excludeAdmin) {
-		$query = 'SELECT username, email FROM admins WHERE '.'username <> "'.$this->escape($excludeAdmin).'"';
-		return $this->getAllQuery($query);
+  public function removeMachine($id) {
+		$query = 'DELETE FROM macchinari WHERE codice='.$this->escape($id);
+		return mysqli_query($this->connection, $query) === TRUE;
+  }
+  
+  public function removeClient($id) {
+		$query = 'DELETE FROM clienti WHERE id='.$this->escape($id);
+		return mysqli_query($this->connection, $query) === TRUE;
 	}
 
-	//Ritorna l'email dell'amministratore passato
-	public function getAdminEmail($admin) {
-  		$query = 'SELECT email FROM admins WHERE username = "'.$this->escape($admin).'"';
-  		return mysqli_fetch_row(mysqli_query($this->connection, $query))[0];
-	}
-
-	//data una nuova email e una password, l'email viene aggiornata e la password viene modificata solamente se non vuota, ritorna true se non ci sono stati problemi
-	public function changeAdminData($admin, $newEmail, $newPassword) {
-		if($admin!=null && $newEmail!=null && $newEmail!=null) {
-			$query = 'UPDATE admins SET ';
-			if(strcmp($newEmail, '') != 0)
-				$query.= 'email = "'.$this->escape($newEmail).'"';
-			if(strcmp($newPassword, '') != 0)
-				$query.=', password = "'.$this->escape(password_hash($newPassword, PASSWORD_DEFAULT)).'"';
-			$query.=' WHERE username = "'.$this->escape($admin).'"';
-		//	die($query);
-			return mysqli_query($this->connection, $query) == 1;
+  // Rimuove l'amministratore indicato sse questo non è l'unico rimasto. Ritorna true se l'eliminazione è andata a buon fine, false altrimenti
+	public function removeAdmin($email) {
+		if(mysqli_num_rows(mysqli_query($this->connection, 'SELECT * FROM users')) > 1) {
+			$query = 'DELETE FROM users WHERE email = "'.$this->escape($email).'"';
+			return mysqli_query($this->connection, $query) === TRUE;
 		}
-				 
-	}
+		return false;
+  }
+  
+  public function setGrainPrice($name, $price) {
+    $query = 'UPDATE grani SET prezzo = '.$this->escape($price).'
+              WHERE nome = "'.$this->escape($name).'"';
+    return mysqli_query($this->connection, $query) === TRUE;
+  }
 
-	public function getListComments($idNews, $limit=false, $reverseOrder=false) {
-		$query = 'Select * from comment';
-		if($idNews != null)
-			$query .= ' where news_id = '.$this->escape($idNews);
-		if($limit != false)
-			$query.= ' order by data asc';
-		else
-			$query.= ' order by data desc';
-		if($limit != false)
-			$query.= ' limit '.$limit;
-		return $this->getAllQuery($query);
-	}
+  public function setGrainAvailability($name, $quantity) {
+    $query = 'UPDATE grani SET disponibilita = '.$this->escape($quantity).'
+              WHERE nome = "'.$this->escape($name).'"';
+    return mysqli_query($this->connection, $query) === TRUE;
+  }
 
-	public function getListBan() {
-		return $this->getAllQuery('Select * from ban order by date desc');
-	}
+  public function setMachinePrice($id, $price) {
+    $query = 'UPDATE macchinari SET prezzoGiorno = '.$this->escape($price).'
+              WHERE codice = "'.$this->escape($id).'"';
+    return mysqli_query($this->connection, $query) === TRUE;
+  }
 
-	public function getNumberNews($withHidden = false) {
-		$query = 'Select * from news ';
-	   	if(!$withHidden)
-			$query.= 'where hidden = false';
-		$result = mysqli_query($this->connection, $query) or $this->showError();
-		return mysqli_num_rows($result);
-	}
-	
-	public function getIpFromComment($idpost) {
-		$query = 'SELECT ip FROM comment where id = '.
-			$this->escape($idpost);
-		$result = $this->getAssArrayQuery($query) or $this->showError();
-		return $result['ip'];
-	}
+  public function getMachineAvailability($id) {
+    $query = 'SELECT dataFine FROM prenotazioni
+              WHERE CURDATE() > dataInizio AND CURDATE() < dataFine AND ordine = "'.$this->escape($id).'"';
+    return(mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
+  }
 
-
-	public function getArticle($id) {
-		return $this->getAssArrayQuery('Select * from news where id='.$this->escape($id));
-	}
-	
-	public function removeBan($id) {
-		$query = 'delete from ban where ip="'.$this->escape($id).'"';
-		return mysqli_query($this->connection, $query) or $this->showError();
-	}
-	public function removeChapter($id) {
-		$query = 'delete from chapters where id='.$this->escape($id);
-		return mysqli_query($this->connection, $query) == 1;
-	}
-	public function removeNews($id) {
-		$query = 'delete from news where id='.$this->escape($id);
-		return mysqli_query($this->connection, $query) == 1;
-	}
-	public function removeComment($id) {
-		$query = 'delete from comment where id='.$this->escape($id);
-		return mysqli_query($this->connection, $query) == 1;
-	}
-
-	public function insertComment($name, $email, $message, $id, $ip) {
-		$query = 'INSERT INTO comment (nick, email, message, news_id, ip) VALUES (\''.
-			htmlentities($this->escape($name)).'\',\''.
-			htmlentities($this->escape($email)).'\',\''.
-			htmlentities($this->escape($message)).'\','.
-			$this->escape($id).', "'.
-			$this->escape($ip).'")';
-		return mysqli_query($this->connection, $query) == 1;
-	}
-
-	public function insertChapter($number, $year, $title, $image, $imagedescr, $titleeng, $titleita, $plot) {
-		$query = 'INSERT INTO chapters (number, year, title, image, imagedescr, titleeng, titleita, plot) VALUES ("'.
-			$this->escape($number).'", "'.
-			$this->escape($year).'", "'.
-			$this->escape($title).'", "'.
-			$image.'", "'.
-			$imagedescr.'", "'.
-			$this->escape($titleeng).'", "'.
-			$this->escape($titleita).'", "'.
-			$this->escape($plot).'")';
-		return mysqli_query($this->connection, $query);
-	}
-
-	public function insertNews($title, $image, $hidden, $text, $imgdescr) {
-		$query = 'INSERT INTO news (title, image, hidden, text, imgdescr) VALUES ("'.
-			$this->escape($title).'", "'.
-			$image.'", '.
-			$hidden.', "'.
-			html_entity_decode($this->escape($text)).'", "'.
-			$this->escape($imgdescr).'")';
-		return mysqli_query($this->connection, $query) == 1;
-	}
-
-	public function insertBan($ip, $reason) {
-		$query = 'INSERT INTO ban (ip, motivo) VALUES (\''.
-			$this->escape($ip).'\', \''.
-			$this->escape($reason).'\')';
-		return mysqli_query($this->connection, $query) == 1;
-	}
-
-	public function updateNewsVisibility($id, $hidden) {
-		if($hidden == true)
-			$hiddenbinary = 1;
-		else
-			$hiddenbinary = 0;
-		$query = 'UPDATE news SET hidden='.
-			$hiddenbinary.' WHERE id='.
-			$this->escape($id);
-		return mysqli_query($this->connection, $query) == 1;
-	}
-
-	public function updateNews($title, $image, $hidden, $text, $imgdescr, $id) {
-		$query = 'UPDATE news set title="'.
-			$title.'", image="'.
-			$image.'", hidden="'.
-			$hidden.'", imgdescr ="'.
-			$this->escape($imgdescr).'", text="'.
-			html_entity_decode($this->escape($text)).'" WHERE id='.
-			$this->escape($id);
-		return mysqli_query($this->connection, $query) == 1;
-	}
-
-	public function checkBannedIp($ip) {
-		return (mysqli_query($this->connection, 'SELECT * FROM ban WHERE ip = '.$this->escape($ip)) >= 1);
-	}
-	*/
+  public function isClient($id) {
+    $query = 'SELECT * FROM clienti WHERE id = "'.$this->escape($id).'"';
+    return (mysqli_query($this->connection, $query) >= 1);
+  }
 
 	public function closeConnection() {
 		if($this->connectionOpen)

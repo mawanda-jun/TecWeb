@@ -2,21 +2,41 @@ Scelta dei colori:	https://webaim.org/blog/wcag-2-0-and-link-colors/
 			http://colorsafe.co/
 
 Pannello amministrazione:
-- creare nuovo pannello per amministrazione (con home e tutto i resto)
-- pagina prodotti: 
+1) pagina prodotti: 
 -- aggiungere, togliere, modificare grani con prezzo e quantita' grani
-- pagina servizi:
+--> insertGrain($name, $description, $image, $price, $availability)
+    removeGrain($name)
+    setGrainPrice($name, $price)
+    setGrainAvailability($name, $quantity)
+
+2) pagina servizi:
 -- mettere disponinibilta' (query su prenotazioni, passando id macchinario)
 -- aggiungere, togliere, modificare attrezzature.
-- pagina ordini:
+--> insertMachine($id, $type, $name, $model, $power, $purchaseData, $image, $dayPrice)
+    removeMachine($id)
+    setMachinePrice($id, $price)
+
+3) pagina ordini:
 -- tipologia grano, quantita' ordinata, prezzo, disponibilita 
 -- serve solo come reference per scalare la disponbilita' dal totale presente nei grani
-- pagina prenotazioni:
--- lista di macchinari, visualizzazione disponibilita', se disponibile si puo' prenotare (impostando data inizio/fine) (prima pagina)
--- se il cliente e' gia' presente si aggiunge la prenotazione (controlla se carta identita' gia' presente); (seconda pagina) se non e' presente si sbloccano i form di input per aggiungere un nuovo cliente (javascipt deve essere abilitato). Viene visualizzato il costo della prenotazione (da frontend)
+--> setGrainAvailability($name, $quantity)
+
+4) pagina prenotazioni:
+-- lista di macchinari, visualizzazione disponibilita', se disponibile si puo' prenotare (impostando data inizio/fine). Viene visualizzato il costo della prenotazione (da frontend) (prima pagina)
+-- se il cliente e' gia' presente si aggiunge la prenotazione (controlla se carta identita' gia' presente); (seconda pagina) se non e' presente si sbloccano i form di input per aggiungere un nuovo cliente (javascipt deve essere abilitato)
 -- riepilogo e conferma (terza pagina)
-- pagina clienti:
+--> getMachineAvailability($id)
+    getMachinePrice($id)
+	  isClient($id) 
+    insertClient($id, $name, $surname, $phone, $email)
+	  insertPrenotation($order, $clientId, $machineId, $firstDay, $lastDay)
+
+5) pagina clienti:
 -- aggiunta, modifica, eliminazione cliente
-- pagina amminstratori:
+--> insertClient($id, $name, $surname, $phone, $email)
+    removeClient($id)
+
+6) pagina amminstratori:
 -- aggiunta, modifica, eliminazione amministratore
-- torna al sito (nella riga di "ti trovi in")
+--> insertAdmin($email, $password)
+    removeAdmin($email)

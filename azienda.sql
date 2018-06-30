@@ -2,11 +2,11 @@
 
 /*--- Contiene i grani coltivati ---*/
 CREATE TABLE grani (
-    nome VARCHAR(60) PRIMARY KEY,
-    descrizione TEXT,
-	immagine VARCHAR(30),
-    prezzo FLOAT(5,2) NOT NULL,
-    disponibilita SMALLINT UNSIGNED NOT NULL
+  nome VARCHAR(50) PRIMARY KEY,
+  descrizione TEXT,
+	immagine VARCHAR(50),
+  prezzo FLOAT(5,2) NOT NULL,
+  disponibilita SMALLINT UNSIGNED NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -23,14 +23,14 @@ INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilita) VALUES
 
 /*--- Macchinari affittati dall'azienda ---*/
 CREATE TABLE macchinari (
-    codice CHAR(6) PRIMARY KEY,
-    tipologia VARCHAR(30) NOT NULL,
-    nome VARCHAR(20) NOT NULL,
-    modello VARCHAR(20) NOT NULL,
-    potenzaKW FLOAT(5,2) NOT NULL,
-    dataAcquisto DATE NOT NULL,
-	  immagine VARCHAR(30),
-    prezzoGiorno FLOAT(5,2) NOT NULL
+  codice CHAR(6) PRIMARY KEY,
+  tipologia VARCHAR(50) NOT NULL,
+  nome VARCHAR(50) NOT NULL,
+  modello VARCHAR(30) NOT NULL,
+  potenzaKW FLOAT(5,2) NOT NULL,
+  dataAcquisto DATE NOT NULL,
+  immagine VARCHAR(50),
+  prezzoGiorno FLOAT(5,2) NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -44,11 +44,11 @@ INSERT INTO macchinari (codice, tipologia, nome, modello, potenzaKW, dataAcquist
 
 /*--- Clienti che hanno affittato un macchinario ---*/
 CREATE TABLE clienti (
-    id CHAR(9) PRIMARY KEY,
-    nome VARCHAR(20) NOT NULL,
-    cognome VARCHAR(20) NOT NULL,
-    telefono CHAR(10) NOT NULL,
-	email VARCHAR(40)
+  id CHAR(9) PRIMARY KEY,
+  nome VARCHAR(50) NOT NULL,
+  cognome VARCHAR(50) NOT NULL,
+  telefono CHAR(10) NOT NULL,
+	email VARCHAR(60)
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -62,12 +62,12 @@ INSERT INTO clienti (id, nome, cognome, telefono, email) VALUES
 /*--- Prenotazioni dei macchinari ---*/
 CREATE TABLE prenotazioni (
 	ordine MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idCliente CHAR(9) NOT NULL,
-    idMacchinario CHAR(6) NOT NULL,
-    dataInizio DATE NOT NULL,
-    dataFine DATE NOT NULL,
-    FOREIGN KEY (idMacchinario) REFERENCES macchinari(codice) ON UPDATE CASCADE ON DELETE NO ACTION,
-    FOREIGN KEY (idCliente) REFERENCES clienti(id) ON UPDATE CASCADE ON DELETE NO ACTION
+  idCliente CHAR(9) NOT NULL,
+  idMacchinario CHAR(6) NOT NULL,
+  dataInizio DATE NOT NULL,
+  dataFine DATE NOT NULL,
+  FOREIGN KEY (idMacchinario) REFERENCES macchinari(codice) ON UPDATE CASCADE ON DELETE NO ACTION,
+  FOREIGN KEY (idCliente) REFERENCES clienti(id) ON UPDATE CASCADE ON DELETE NO ACTION
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -79,13 +79,12 @@ INSERT INTO prenotazioni (idCliente, idMacchinario, dataInizio, dataFine) VALUES
 ('CZ2345678', 'TRAT01', '2018-07-02', '2018-07-09'),
 ('AZ0123456', 'TRAT03', '2018-07-04', '2018-07-15');
 
-/*--- Utenti del sistema ---*/
+/*--- Utenti del sistema (operatori dell'azienda/admin) ---*/
 CREATE TABLE users (
-	username varchar(30) PRIMARY KEY,
-    email varchar(60) DEFAULT NULL,
-    pwd varchar(50) NOT NULL
+  email varchar(60) PRIMARY KEY,
+  pwd varchar(50) NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO users (username, email, pwd) VALUES
-('admin', 'admin@admin.com', '$2y$10$F0B3IE4vRA0kXt74LkCcBO4qOOKnjSbQXxWT8LNMdswo6N7W8OGWi');
+INSERT INTO users (email, pwd) VALUES
+('admin@admin.com', '$2y$10$F0B3IE4vRA0kXt74LkCcBO4qOOKnjSbQXxWT8LNMdswo6N7W8OGWi');
