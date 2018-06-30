@@ -31,13 +31,12 @@ header('Content-type: application/xhtml+xml'); ?>
         <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
         <li><a href="../html/prodotti.php" tabindex="7">Prodotti</a></li>
         <li class="active"><a href="" tabindex="9">Servizi</a></li>
-        <li><a href="" tabindex="11">Contattaci</a></li>
+        <li><a href="../html/contattaci.html" tabindex="11">Contattaci</a></li>
       </ul>
     </div>
-    <div class="row">
-      <div id="breadcrumb">
-        <div id="path" tabindex="12">Ti trovi in: Servizi</div>
-      </div>
+    <div id="breadcrumb">
+      <p id="path" tabindex="12">Ti trovi in: Home</p>
+      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
     </div>
     <!-- </div> -->
   </header>
