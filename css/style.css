@@ -86,7 +86,7 @@ header img {
 #breadcrumb {
   /* da fixare la linea che esce dal bordo */
   border-top: 1px solid #f4d03f;
-  width: 100%;
+  width: 98.8%;
   position: relative;
   float: left;
   text-align: left;
@@ -114,14 +114,15 @@ header img {
   position: relative;
   bottom: 0em;
   z-index: +1;
+  height: 40em;
 }
 
-#home-top-img,
+/* #home-top-img,
 #chi-top-img,
 #prodotti-top-img,
 #servizi-top-img {
   height: 40em;
-}
+} */
 
 #home-top-img {
   background-image: url(../images/home-img.jpg);
