@@ -56,7 +56,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
     </div>
 
 
-    <div class="admins">
+    <div class="clients">
       <div id="description">
         <h3>Benvenuto nella pagina di gestione dei clienti.</h3>
         <p>In questa pagina &egrave; possibile inserire ed eliminare altri clienti.</p>
@@ -84,28 +84,30 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         } else echo '<p>Nessun cliente presente.</p>';
         ?>
 
-        <h1>Aggiungi un cliente</h1>
-        <form id="insertClient" action="clientManager.php" method="post">
-          <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
-          <fieldset id="clientFields">
-            <legend>Inserisci i seguenti dati:</legend>
-            <label for="id">Carta d'identità:</label>
-            <input name="id" type="text" id="id" size="30" maxlength="50" />
-            <label for="nome">Nome:</label>
-            <input name="nome" type="text" id="nome" size="30" maxlength="50" />
-            <label for="cognome">Cognome:</label>
-            <input name="cognome" type="text" id="cognome" size="30" maxlength="50" />
-            <label for="telefono">Numero di telefono:</label>
-            <input name="telefono" type="text" id="telefono" size="30" maxlength="50" />
-            <label for="email"><span xml:lang="en">Email:</span></label>
-            <input name="email" type="email" id="email" size="30" maxlength="50" />
-            <input type="submit" value="Aggiungi" name="submit" />
-            <div id="errorInput">
-              <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-            </div>
-            <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
-          </fieldset>
-        </form>
+        <div class="add-client">
+          <h1>Aggiungi un cliente</h1>
+          <form id="insertClient" action="clientManager.php" method="post">
+            <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
+            <fieldset id="clientFields">
+              <legend>Inserisci i seguenti dati:</legend>
+              <label for="id">Carta d'identità:</label>
+              <input name="id" type="text" id="id" size="30" maxlength="50" />
+              <label for="nome">Nome:</label>
+              <input name="nome" type="text" id="nome" size="30" maxlength="50" />
+              <label for="cognome">Cognome:</label>
+              <input name="cognome" type="text" id="cognome" size="30" maxlength="50" />
+              <label for="telefono">Numero di telefono:</label>
+              <input name="telefono" type="text" id="telefono" size="30" maxlength="50" />
+              <label for="email"><span xml:lang="en">Email:</span></label>
+              <input name="email" type="email" id="email" size="30" maxlength="50" />
+              <input type="submit" value="Aggiungi" name="submit" />
+              <div id="errorInput">
+                <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
+              </div>
+              <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
+            </fieldset>
+          </form>
+        </div>
 
         <?php
           $connection->closeConnection();

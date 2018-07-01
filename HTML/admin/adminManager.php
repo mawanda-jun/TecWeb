@@ -22,7 +22,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
-      case "add":
+      case "Aggiungi":
         {
           if ($error == null)
             $connection->insertAdmin($_POST['email'], $_POST['password']);

@@ -192,6 +192,18 @@ class DBConnection {
     return mysqli_query($this->connection, $query) === TRUE;
   }
 
+  public function setClientNumber($id, $number) {
+    $query = 'UPDATE clienti SET telefono = '.$this->escape($number).'
+              WHERE id = "'.$this->escape($id).'"';
+    return mysqli_query($this->connection, $query) === TRUE;
+  }
+
+  public function setClientEmail($id, $email) {
+    $query = 'UPDATE clienti SET email = '.$this->escape($email).'
+              WHERE id = "'.$this->escape($id).'"';
+    return mysqli_query($this->connection, $query) === TRUE;
+  }
+
   public function getMachineAvailability($id) {
     $query = 'SELECT dataFine FROM prenotazioni
               WHERE CURDATE() > dataInizio AND CURDATE() < dataFine AND ordine = "'.$this->escape($id).'"';

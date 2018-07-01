@@ -27,9 +27,10 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
           if ($error == null)
             $connection->insertClient($_POST['id'], $_POST['nome'], $_POST['cognome'], $_POST['telefono'], $_POST['email']);
         };
-      case "modify":
+      case "Modifica":
         {
-            // nothing to do here for now
+          if ($error == null)
+            
         };
     }
   } else if(isset($_GET['remove']) && !empty($_GET['remove'])) {
