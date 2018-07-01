@@ -73,8 +73,18 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
     if ($grains != null) {
       foreach ($grains as $grain) {
         echo '<div class="grain-section">';
-        echo '<h2 tabindex="10">' . $grain['nome'] . '</h2>'; 
-        
+        echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>'; ?>
+        <h2>Imposta una nuova disponibilit&agrave;</h2>
+        <form id="insertAvailability" action="productManager.php" method="post">
+          <label for="availability">Disponibilit&agrave;</label>
+          <input name="availability" type="number" id="availability" size="5" />
+        </form>
+        <h2>Imposta un nuovo prezzo</h2>
+        <form id="insertPrice" action="productManager.php" method="post">
+          <label for="price">Prezzo</label>
+          <input name="price" type="number" id="price" size="5" />
+        </form>
+        <?php
         echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
         // echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
         // echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
@@ -93,9 +103,9 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
     </div>
     <footer>
       <div class="shrink-center">
-        <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
         <p>Da pensare a cosa scriverci</p>
-        <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS valid" />
       </div>
     </footer>
 
