@@ -33,14 +33,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
       $error = 'La password non deve essere superiore agli 8 caratteri.';
     switch ($_POST['submit']) {
       default:
-        if (!isset($_GET['remove'])) {
-          if (strcmp($_GET['remove'], "") <> 0) {
-            $connection->removeAdmin($_GET['email']);
-            $error = null;
-          }
-        } else {
-          $error = "action not found";
-        }
+        $error = "action not found";
       case "add":
         {
           if ($error == null)
@@ -50,12 +43,10 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
         {
             // nothing to do here for now
         };
-      // case "remove":
-      //   {
-      //     $connection->removeAdmin($_POST['email']);
-      //     $error = null;
-      //   }
     }
+  } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
+    $connection->removeAdmin($_GET['remove']);
+    $error = null;
   }
   $connection->closeConnection();
 
@@ -71,9 +62,9 @@ if ($error == null) {
 } else {
   $_SESSION['isError'] = true;
   $_SESSION['error'] = $error;
-  $_SESSION['email'] = $_POST['email'];
+  if (isset($_POST['email'])) $_SESSION['email'] = $_POST['email'];
   // header("Location: sessione_scaduta.php");
 }
 header("Location: amministratori.php");
-die();
+exit();
 ?>

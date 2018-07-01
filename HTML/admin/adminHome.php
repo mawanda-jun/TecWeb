@@ -32,7 +32,7 @@ if (isset($_GET['logout']) && $_GET['logout'] == "true") {
   header("Location: ../home.html");
   session_unset();
   session_destroy();
-  die();
+  exit();
 }
 if (isset($_SESSION['login']) && $_SESSION['login'] == true)
   $title = "Pannello di amministrazione";
