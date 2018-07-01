@@ -95,6 +95,15 @@ class DBConnection {
     return(mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
   }
 
+  public function getMachineryType() {
+    $query = 'SELECT DISTINCT tipologia FROM macchinari';
+    return(mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
+  }
+
+  public function getMachineryOfType($type) {
+    return $this->getAllQuery('SELECT * FROM macchinari WHERE tipologia = '.$this->escape($type));
+  }
+
   public function insertAdmin($email, $password) {
 		$insert = 'INSERT INTO users (email, pwd) VALUES ("'.
       $this->escape($email).'", "'.
@@ -160,13 +169,9 @@ class DBConnection {
 		return mysqli_query($this->connection, $query) === TRUE;
 	}
 
-  // Rimuove l'amministratore indicato sse questo non è l'unico rimasto. Ritorna true se l'eliminazione è andata a buon fine, false altrimenti
 	public function removeAdmin($email) {
-		if(mysqli_num_rows(mysqli_query($this->connection, 'SELECT * FROM users')) > 1) {
-			$query = 'DELETE FROM users WHERE email = "'.$this->escape($email).'"';
-			return mysqli_query($this->connection, $query) === TRUE;
-		}
-		return false;
+		$query = 'DELETE FROM users WHERE email = "'.$this->escape($email).'"';
+		return mysqli_query($this->connection, $query) === TRUE;
   }
   
   public function setGrainPrice($name, $price) {

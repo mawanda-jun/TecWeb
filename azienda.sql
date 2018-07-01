@@ -39,7 +39,7 @@ INSERT INTO macchinari (codice, tipologia, nome, modello, potenzaKW, anno, immag
 ('TRAT02', 'Trattore', 'Landini', '7-230 DT',  	151.00, '2014', 'landini_7_230_dt.jpg', 74.65),
 ('TRAT03', 'Trattore', 'Goldoni', 'Q 110',  89.48, '2017', 'goldoni_q_110.jpg', 34.45),
 ('MIET01', 'Mietitrebbia', 'Laverda', 'M400', 225.06, '2016', 'laverda_M400.jpg', 149.65),
-('MIET02', 'Mietitrabbia', 'New Holland', 'TC5.90', 190.00, '2013', 'new_holland_tc_90.jpg', 165.70),
+('MIET02', 'Mietitrebbia', 'New Holland', 'TC5.90', 190.00, '2013', 'new_holland_tc_90.jpg', 165.70),
 ('VEND01', 'Vendemmiatrice', 'New Holland', 'BRAUD 9090L', 129.00, '2015', 'new_holland_braud_9090l.jpg', 136.90),
 ('VEND02', 'Vendemmiatrice', 'Pellenc', '890/SP2', 128.71, '2016', 'pellenc_890sp2.jpg', 147.85);
 
