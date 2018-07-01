@@ -51,6 +51,6 @@ if ($error == null) {
   $_SESSION['error'] = $error;
   if (isset($_POST['email'])) $_SESSION['email'] = $_POST['email'];
 }
-header("Location: amministratori.php");
+header("Location: adminAmministratori.php");
 exit();
 ?>
