@@ -57,42 +57,61 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
 
     <div class="grains">
       <div id="description">
-        <h3>Benvenuto nella pagina di gestione delle coltivazioni.</h3>
+        <h1>Benvenuto nella pagina di gestione delle coltivazioni.</h1>
         <p>In questa pagina &egrave; possibile inserirle, modificarle ed eliminarle.
           <br/> &Egrave; anche possibile cambiarne solo la disponibilit&agrave; e il prezzo.</p>
       </div>
-
-      <?php
-    $connection = new DBConnection();
-    $connection->openConnection();
+      <div class="list-modify-delete-grain">
+        <?php
+        $connection = new DBConnection();
+        $connection->openConnection();
       
       // $index = 0;         //forse non serve
       // $grainForPage = 10; //grani da mostrare per pagina
-    $grains = $connection->getListGrains();
+        $grains = $connection->getListGrains();
 
-    if ($grains != null) {
-      foreach ($grains as $grain) {
-        echo '<div class="grain-section">';
-        echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>'; ?>
-        <h2>Imposta una nuova disponibilit&agrave;</h2>
-        <form id="insertAvailability" action="productManager.php" method="post">
-          <label for="availability">Disponibilit&agrave;</label>
-          <input name="availability" type="number" id="availability" size="5" />
+        if ($grains != null) {
+          foreach ($grains as $grain) {
+            echo '<div class="grain-section">';
+            echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>'; ?>
+          <h2>Imposta una nuova disponibilit&agrave;</h2>
+          <form id="insertAvailability" action="productManager.php" method="post">
+            <label for="availability">Disponibilit&agrave;</label>
+            <input name="availability" type="number" id="availability" size="5" />
+          </form>
+          <h2>Imposta un nuovo prezzo</h2>
+          <form id="insertPrice" action="productManager.php" method="post">
+            <label for="price">Prezzo</label>
+            <input name="price" type="number" id="price" size="5" />
+          </form>
+          <?php
+          echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
+          echo '</div>';
+          // echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : '';
+        }
+      } else echo '<p>Nessun grano ora in produzione</p>';
+      ?>
+      </div>
+
+      <div class="add-grain">
+        <h1>Inserisci una nuova <span xml:lang="en">cultivar</span></h1>
+        <form method="post" action="productManager.php" enctype="multipart/form-data">
+          <label for="name">Nome:</label>
+          <input type="text" name="name" />
+          <label for="availability">Disponibilit&agrave; (in quintali):</label>
+          <input type="numbrt" name="availability" />
+          <label for="price">Prezzo:</label>
+          <input type="number" name="price" />
+          <label for="description">Descrizione:</label>
+          <textarea name="description" rows="5" cols="40"></textarea>
+          <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
+          <input type="file" name="fileToUpload" id="fileToUpload" />
+          <input type="submit" name="submit" value="add" />
         </form>
-        <h2>Imposta un nuovo prezzo</h2>
-        <form id="insertPrice" action="productManager.php" method="post">
-          <label for="price">Prezzo</label>
-          <input name="price" type="number" id="price" size="5" />
-        </form>
-        <?php
-        echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
-        // echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
-        // echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
-        echo '</div>';
-      }
-      echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '';
-    } else echo '<p>Nessun grano ora in produzione</p>';
-    ?>
+      </div>
+
+
+
 
     </div>
 
@@ -106,7 +125,17 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
         <p>Da pensare a cosa scriverci</p>
-      </div>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?><br/>
+        <!-- <?php echo (isset($_SESSION['file_exists']) && $_SESSION['file_exists']) ? $_SESSION['file_exists'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['maxSize']) && $_SESSION['maxSize']) ? $_SESSION['maxSize'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['noExtension']) && $_SESSION['noExtension']) ? $_SESSION['noExtension'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['noCharacter']) && $_SESSION['noCharacter']) ? $_SESSION['noCharacter'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['getImageType']) && $_SESSION['getImageType']) ? $_SESSION['getImageType'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['fileName']) && $_SESSION['fileName']) ? $_SESSION['fileName'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['file']) && $_SESSION['file']) ? $_SESSION['file'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['fileName1']) && $_SESSION['fileName1']) ? $_SESSION['fileName1'] : ''; ?><br/>
+        <?php echo (isset($_SESSION['file1']) && $_SESSION['file1']) ? $_SESSION['file1'] : ''; ?><br/> -->
+    </div>
     </footer>
 
 
