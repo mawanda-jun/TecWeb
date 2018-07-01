@@ -3,23 +3,11 @@
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-// function to write on console
-function console($data)
-{
-  if (is_array($data))
-    $output = "<script>console.log( 'Debug Objects: " . implode(',', $data) . "' );</script>";
-  else
-    $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
-  echo $output;
-}
 
 if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if login has been successfull
 
   $connection = new DBConnection();
   $connection->openConnection();
-
-  console($_POST['email']);
-  console($_POST['password']);
 
   if (isset($_POST['submit'])) {
 
@@ -58,12 +46,10 @@ if ($error == null) {
   $_SESSION['error'] = null;
   $_SESSION['isError'] = false;
   $_SESSION['email'] = null;
-  // header("Location: amministratori.php");
 } else {
   $_SESSION['isError'] = true;
   $_SESSION['error'] = $error;
   if (isset($_POST['email'])) $_SESSION['email'] = $_POST['email'];
-  // header("Location: sessione_scaduta.php");
 }
 header("Location: amministratori.php");
 exit();

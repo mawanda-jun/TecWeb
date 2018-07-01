@@ -73,8 +73,6 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           echo '<div class="listAndDelete"><p>Lista degli amministratori:</p><ul>';
           foreach ($admins as $admin)
             echo '<li>' . $admin['email'] . ' <a class="button" title="removing admin ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina</a></li>';
-            echo 'div id="error"> ' . (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' . '</div>';
-            // echo '<li>' . $admin['email'] . ' <a class="button" title="removing admin ' . $admin['email'] . '"' . ' href="adminHome.php" >Elimina</a></li>';
           echo '</ul></div>';
         } else
           echo '<div id="">Non ci sono altri amministratori.</div>';
@@ -86,7 +84,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
             <fieldset id="adminFields">
               <legend>Inserisci i seguenti dati:</legend>
               <label for="email"><span xml:lang="en">Email</span></label>
-              <input name="email" type="text" id="email" size="30" maxlength="50" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''?>"
+              <input name="email" type="text" id="email" size="30" maxlength="50" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"
               />
               <label for="password"><span xml:lang="en">Password</span></label>
               <input name="password" type="text" id="password" size="10" maxlength="12" />
