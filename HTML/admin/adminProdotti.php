@@ -80,6 +80,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         // echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
         echo '</div>';
       }
+      echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '';
     } else echo '<p>Nessun grano ora in produzione</p>';
     ?>
 
