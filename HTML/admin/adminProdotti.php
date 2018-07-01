@@ -19,9 +19,9 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
 ?>
 
   <head>
-    <title>Amministratori</title>
+    <title>Prodotti</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="gestione_amministratori" content="Pagina di gestione degli amministratori" />
+    <meta name="prodotti" content="Pagina di gestione dei prodotti" />
     <meta name="author" content="DASISTEMARE" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
@@ -35,17 +35,17 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
         <ul id="navbar">
           <li><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
-          <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
+          <li class="active"><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
           <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
           <li><a href="adminOrdini.php" tabindex="7">Ordini</a></li>
           <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
-          <li class="active"><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
+          <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
         </ul>
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Amministratori</p>
+        <p id="path" tabindex="12">Ti trovi in: Prodotti</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
@@ -73,23 +73,17 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
     if ($grains != null) {
       foreach ($grains as $grain) {
         echo '<div class="grain-section">';
-        echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>';
-        echo '<a class="button" title="removing admin ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina</a></li>';
-        echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
+        echo '<h2 tabindex="10">' . $grain['nome'] . '</h2>'; 
+        
+        echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
+        // echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
         // echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
         echo '</div>';
       }
-    } else echo '<p>Nessun grano ora in produzione</p>'
+    } else echo '<p>Nessun grano ora in produzione</p>';
     ?>
 
     </div>
-
-
-
-
-
-
-
 
 
 
