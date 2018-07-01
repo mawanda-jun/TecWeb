@@ -11,7 +11,8 @@ header('Content-type: application/xhtml+xml'); ?>
   <meta name="description" content="DASISTEMARE" />
   <meta name="author" content="DASISTEMARE" />
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-  <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
+  <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"
+  />
   <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
   <!-- <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script> -->
 </head>

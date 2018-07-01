@@ -1,5 +1,13 @@
 @import url("style.css");
 
+#navbar {
+  display: none;
+}
+
+.dropdown {
+  display: inline;
+}
+
 .grain-section .text-subsection,
 .service-section .text-subsection {
   width: 100%;

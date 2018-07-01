@@ -85,6 +85,10 @@ header img {
   border-bottom: 0.2em solid #f4d03f;
 }
 
+.dropdown {
+  display: none;
+}
+
 #breadcrumb {
   border-top: 1px solid #f4d03f;
   width: 98.8%;
