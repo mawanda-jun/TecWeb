@@ -78,6 +78,7 @@ header('Content-type: application/xhtml+xml'); ?>
           echo '<p tabindex="10"> Tipologia: ' . $machine['tipologia'] . '</p>';
           echo '<p tabindex="10"> Potenza: ' . $machine['potenzaKW'] . ' KW</p>';
           echo '<p tabindex="10"> Anno: ' . $machine['anno'] . '</p>';
+          echo '<p tabindex="10"> Prezzo (al giorno): ' . $machine['prezzoGiorno'] . '</p>';
           echo '</div>';
           echo '<img src="../images/' . $machine['immagine'] . '" alt="immagine del ' . $machine['nome'] . ' ' . $machine['modello'] . '"/>';
           echo '</div>';
