@@ -33,8 +33,9 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
         };
     }
   } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
-    $connection->removeGrain($_GET['remove']);
-    $error = null;
+    if(!$connection->removeGrain($_GET['remove']))
+    $error = "L'eliminazione di una coltivazione non &egrave; andata a buon fine. ";
+    else $error = null;
   }
   $connection->closeConnection();
 
