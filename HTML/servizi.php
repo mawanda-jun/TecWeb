@@ -70,12 +70,14 @@ $machines = $connection->getListMachinery();
 
 if ($machines != null) {
   foreach ($machines as $machine) {
-    echo '<div class="left-section">';
+    echo '<div class="service-section">';
+    echo '<div class="text-subsection">';
     echo '<h1 tabindex="10">' . $machine['nome'] . '</h1>';
     echo '<h2 tabindex="10"> Modello: ' . $machine['modello'] . '</h2>';
     echo '<p tabindex="10"> Tipologia: ' .$machine['tipologia'] . '</p>';
     echo '<p tabindex="10"> Potenza: ' .$machine['potenzaKW'] . ' KW</p>';
     echo '<p tabindex="10"> Anno: ' .$machine['anno'] . '</p>';
+    echo '</div>';
     echo '<img src="../images/' . $machine['immagine'] . '" alt="immagine del ' . $machine['nome'] . ' ' . $machine['modello'] . '"/>';
     echo '</div>';
   }
