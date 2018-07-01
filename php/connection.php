@@ -122,7 +122,7 @@ class DBConnection {
   }
   
   public function insertGrain($name, $description, $image, $price, $availability) {
-		$insert = 'INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilità) VALUES ("'.
+		$insert = 'INSERT INTO grani (nome, descrizione, immagine, prezzo, disponibilita) VALUES ("'.
       $this->escape($name).'", "'.
       $this->escape($description).'", "'.
 			$this->escape($image).'", "'.
