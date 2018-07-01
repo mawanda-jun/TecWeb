@@ -72,7 +72,9 @@ class DBConnection {
   }
 
   public function getListAdmins() {
-		return $this->getAllQuery('SELECT email FROM users');
+    $email = $_SESSION['emailLogin'];
+    $query = 'SELECT email FROM users WHERE email <>"'.$email.'"';
+		return $this->getAllQuery($query);
   }
   
   public function getListClients() {
@@ -97,6 +99,7 @@ class DBConnection {
 		$insert = 'INSERT INTO users (email, pwd) VALUES ("'.
       $this->escape($email).'", "'.
       $this->escape(password_hash($password, PASSWORD_DEFAULT)).'")';
+    return mysqli_query($this->connection, $insert);
   }
   
   public function insertClient($id, $name, $surname, $phone, $email) {
