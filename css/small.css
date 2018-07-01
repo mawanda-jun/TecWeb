@@ -1,0 +1,15 @@
+@import url("style.css");
+
+.grain-section .text-subsection,
+.service-section .text-subsection {
+  width: 100%;
+  padding: 1em;
+}
+
+.left-section img,
+.right-section img,
+.grain-section img,
+.service-section img {
+  width: 100%;
+  padding: 1em;
+}

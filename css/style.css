@@ -164,7 +164,7 @@ header img {
   /* display: inline; */
   overflow: hidden;
   position: relative;
-  padding-bottom: 1em;
+  padding: 1em;
   border-bottom: 1px solid #ddd;
 }
 
@@ -221,10 +221,8 @@ header img {
 .grain-section p,
 .service-section p {
   width: 100%;
-  float: left;
-  text-align: justify;
   /* float: left; */
-  /* position: relative; */
+  text-align: justify;
 }
 
 .center-section p {
@@ -242,17 +240,10 @@ header img {
   margin-right: 3.5em;
 }
 
-.left-section .text-subsection,
-.center-section .text-subsection,
 .grain-section .text-subsection,
 .service-section .text-subsection {
   width: 60%;
   float: left;
-}
-
-.right-section .text-subsection {
-  width: 60%;
-  float: right;
 }
 
 .center-section form {
@@ -290,24 +281,23 @@ header img {
 .right-section img,
 .grain-section img,
 .service-section img {
-  padding: 1em;
-  padding-top: 3.2em;
+  /* padding: 1em;
+  padding-top: 3.2em; */
   position: relative;
-  float: right;
   width: 37%;
   /* padding-right: 1em; */
+  padding: 0.5em;
+  padding-top: 0em;
 }
 
 .left-section img,
 .grain-section img,
 .service-section img {
   float: right;
-  padding-left: 0.5em;
 }
 
 .right-section img {
   float: left;
-  padding-right: 0.5em;
 }
 
 #go-to-menu {
