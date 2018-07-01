@@ -11,7 +11,8 @@ header('Content-type: application/xhtml+xml'); ?>
   <meta name="description" content="DASISTEMARE" />
   <meta name="author" content="DASISTEMARE" />
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-  <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
+  <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"
+  />
   <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
   <!-- <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script> -->
 </head>
@@ -81,10 +82,12 @@ header('Content-type: application/xhtml+xml'); ?>
     if ($grains != null) {
       foreach ($grains as $grain) {
         echo '<div class="grain-section">';
+        echo '<div class="text-subsection">';
         echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>';
         echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
         echo '<p tabindex="10"> Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
         echo '<p tabindex="10"> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';
+        echo '</div>';
         echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
         echo '</div>';
       }

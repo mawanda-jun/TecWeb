@@ -165,8 +165,8 @@ class DBConnection {
   }
   
   public function removeClient($id) {
-		$query = 'DELETE FROM clienti WHERE id = "'.$this->escape($id).'"';
-		return mysqli_query($this->connection, $query) === TRUE;
+    $query = 'DELETE FROM clienti WHERE id = "'.$this->escape($id).'"';
+    return mysqli_query($this->connection, $query) === TRUE;
 	}
 
 	public function removeAdmin($email) {

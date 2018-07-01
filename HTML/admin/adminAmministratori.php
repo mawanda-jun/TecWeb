@@ -58,7 +58,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
 
     <div class="admins">
       <div id="description">
-        <h3>Benvenuto nella pagina di gestione degli amministratori.</h3>
+        <h1>Benvenuto nella pagina di gestione degli amministratori.</h1>
         <p>In questa pagina &egrave; possibile inserire ed eliminare altri amministratori.</p>
       </div>
 
@@ -76,16 +76,15 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           echo '<div id="">Non ci sono altri amministratori.</div>';
         ?>
 
-        <h3>Aggiungi un amministratore</h3>
+        <h1>Aggiungi un amministratore</h1>
         <form id="insertAdmin" action="adminManager.php" method="post">
           <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
           <fieldset id="adminFields">
             <legend>Inserisci i seguenti dati:</legend>
-            <label for="email"><span xml:lang="en">Email</span></label>
-            <input name="email" type="text" id="email" size="30" maxlength="50" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"
-            />
-            <label for="password"><span xml:lang="en">Password</span></label>
-            <input name="password" type="text" id="password" size="10" maxlength="12" />
+            <label for="email"><span xml:lang="en">Email:</span></label>
+            <input name="email" type="email" id="email" size="30" maxlength="50" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"/>
+            <label for="password"><span xml:lang="en">Password:</span></label>
+            <input name="password" type="password" id="password" size="10" maxlength="12" />
             <input type="submit" value="add" name="submit" />
             <div id="errorInput">
               <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
