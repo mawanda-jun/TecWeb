@@ -49,7 +49,7 @@ header('Content-type: application/xhtml+xml'); ?>
   </div>
   <div class="content">
 
-    <div class="left-section" id="story">
+    <div class="center-section" id="story">
       <!-- <div class="shrink-center"> -->
       <!-- <a href="" tabindex="6"></a> -->
       <!-- se non funziona usare questo -->
@@ -67,7 +67,6 @@ header('Content-type: application/xhtml+xml'); ?>
         infestanti, rendendo superflui i diserbanti. Insomma, si prestano ottimamente alla coltivazione
         biologica.
       </p>
-      <img src="../images/logo.jpg" alt="" tabindex="16" />
     </div>
     <div class="grains-list">
 
