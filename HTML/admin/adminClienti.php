@@ -67,14 +67,45 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         $connection = new DBConnection();
         $connection->openConnection();
         $clients = $connection->getListClients();
+        
         if ($clients != null) {
-          echo '<div class="listAndDelete"><p>Lista dei clienti:</p><ul>';
-          foreach ($clients as $client)
-            echo '<li>' . $client['id'] . ' - ' . $client['nome'] . ' ' . $client['cognome'] . ' - ' . $client['telefono'] . ' - ' . $client['email'] . ' <a class="button" title="removing client ' . $client['id'] . '"' . ' href="clientManager.php?remove=' . $client['id'] . '" >Elimina</a></li>';
-          echo '</ul></div>';
-        } else
-          echo '<div id="">Non ci sono altri amministratori.</div>';
+          foreach ($clients as $client) {
+            echo '<div class="grain-section">';
+            echo '<ul>';
+            echo '<li> Identificativo: ' . $client['id'] . '</li>'; 
+            echo '<p tabindex="10">' . $client['nome'] . ' ' . $client['cognome'] . '</p>';
+            echo '<p tabindex="10"> Telefono: ' . $client['telefono'] . '</p>';
+            echo '<p tabindex="10"> Email: ' . $client['email'] . '</p>';
+            echo '<a class="button" title="Rimuovi ' . $client['id'] . '" href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
+            echo '</ul>';
+            echo '</div>';
+          }
+          echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '';
+        } else echo '<p>Nessun cliente presente.</p>';
         ?>
+
+        <h1>Aggiungi un cliente</h1>
+        <form id="insertClient" action="clientManager.php" method="post">
+          <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
+          <fieldset id="clientFields">
+            <legend>Inserisci i seguenti dati:</legend>
+            <label for="id">Carta d'identità:</label>
+            <input name="id" type="text" id="id" size="30" maxlength="50" />
+            <label for="nome">Nome:</label>
+            <input name="nome" type="text" id="nome" size="30" maxlength="50" />
+            <label for="cognome">Cognome:</label>
+            <input name="cognome" type="text" id="cognome" size="30" maxlength="50" />
+            <label for="telefono">Numero di telefono:</label>
+            <input name="telefono" type="text" id="telefono" size="30" maxlength="50" />
+            <label for="email"><span xml:lang="en">Email:</span></label>
+            <input name="email" type="email" id="email" size="30" maxlength="50" />
+            <input type="submit" value="Aggiungi" name="submit" />
+            <div id="errorInput">
+              <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
+            </div>
+            <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
+          </fieldset>
+        </form>
 
         <?php
           $connection->closeConnection();
