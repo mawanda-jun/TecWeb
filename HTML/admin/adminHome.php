@@ -62,12 +62,12 @@ else
 
         <ul id="navbar">
           <li class="active"><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
-          <li><a href="prodotti.php" lang="en" tabindex="1">Prodotti</a></li>
-          <li><a href="servizi.php" tabindex="5">Servizi</a></li>
-          <li><a href="ordini.php" tabindex="7">Ordini</a></li>
-          <li><a href="prenotazioni.php" tabindex="9">Prenotazioni</a></li>
-          <li><a href="clienti.php" tabindex="11">Clienti</a></li>
-          <li><a href="amministratori.php" tabindex="11">Amministratori</a></li>
+          <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
+          <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
+          <li><a href="adminOrdini.php" tabindex="7">Ordini</a></li>
+          <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
+          <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
+          <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
         </ul>
         <?php 
       } ?>
