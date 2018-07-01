@@ -81,10 +81,12 @@ header('Content-type: application/xhtml+xml'); ?>
     if ($grains != null) {
       foreach ($grains as $grain) {
         echo '<div class="grain-section">';
+        echo '<div class="text-subsection">';
         echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>';
         echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
         echo '<p tabindex="10"> Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
         echo '<p tabindex="10"> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';
+        echo '</div>';
         echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
         echo '</div>';
       }

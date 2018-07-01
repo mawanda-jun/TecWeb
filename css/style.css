@@ -173,10 +173,6 @@ header img {
   padding-bottom: 2em;
 }
 
-.text-subsection {
-  width: 60%;
-}
-
 .left-section h1,
 .right-section h1,
 .center-section h1,
@@ -189,7 +185,6 @@ header img {
   font-size: 3em;
   text-transform: uppercase;
   /* background-color: #FDEEB1; */
-  width: 60%;
   margin-top: 0.5em;
   /* position: relative; */
   /* line-height: 76% */
@@ -205,6 +200,7 @@ header img {
 .left-section h1,
 .grain-section h1,
 .service-section h1 {
+  width: 100%;
   float: left;
 }
 
@@ -215,9 +211,7 @@ header img {
 }
 
 .service-section h2 {
-  float: left;
-  width: 60%;
-  padding-left: 2.5em;
+  width: 100%;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-transform: uppercase;
 }
@@ -226,9 +220,9 @@ header img {
 .right-section p,
 .grain-section p,
 .service-section p {
+  width: 100%;
   float: left;
   text-align: justify;
-  width: 60%;
   /* float: left; */
   /* position: relative; */
 }
@@ -246,6 +240,19 @@ header img {
   padding-bottom: 1em;
   padding-left: 3.5em;
   margin-right: 3.5em;
+}
+
+.left-section .text-subsection,
+.center-section .text-subsection,
+.grain-section .text-subsection,
+.service-section .text-subsection {
+  width: 60%;
+  float: left;
+}
+
+.right-section .text-subsection {
+  width: 60%;
+  float: right;
 }
 
 .center-section form {
@@ -284,14 +291,16 @@ header img {
 .grain-section img,
 .service-section img {
   padding: 1em;
-  padding-top: 0em;
+  padding-top: 3.2em;
   position: relative;
-  width: 40%;
+  float: right;
+  width: 37%;
   /* padding-right: 1em; */
 }
 
 .left-section img,
-.grain-section img {
+.grain-section img,
+.service-section img {
   float: right;
   padding-left: 0.5em;
 }
