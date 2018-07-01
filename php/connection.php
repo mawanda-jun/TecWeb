@@ -155,17 +155,17 @@ class DBConnection {
   }
 
   public function removeGrain($name) {
-		$query = 'DELETE FROM grani WHERE nome='.$this->escape($name);
+		$query = 'DELETE FROM grani WHERE nome = "'.$this->escape($name).'"';
 		return mysqli_query($this->connection, $query) === TRUE;
 	}
 
   public function removeMachine($id) {
-		$query = 'DELETE FROM macchinari WHERE codice='.$this->escape($id);
+		$query = 'DELETE FROM macchinari WHERE codice = "'.$this->escape($id).'"';
 		return mysqli_query($this->connection, $query) === TRUE;
   }
   
   public function removeClient($id) {
-		$query = 'DELETE FROM clienti WHERE id='.$this->escape($id);
+		$query = 'DELETE FROM clienti WHERE id = "'.$this->escape($id).'"';
 		return mysqli_query($this->connection, $query) === TRUE;
 	}
 
