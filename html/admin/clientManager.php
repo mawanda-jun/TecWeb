@@ -10,15 +10,15 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
   if (isset($_POST['submit'])) {
       // manca controllo su valori campi dati immessi
     if (!isset($_POST['nome']) || empty($_POST['nome']))
-      $error = 'Il nome non pu&ograve; essere vuota';
+      $error = 'Il nome non pu&ograve; essere vuoto';
     else if (!isset($_POST['cognome']) || empty($_POST['cognome']))
-      $error = 'Il nome non pu&ograve; essere vuota';
+      $error = 'Il cognome non pu&ograve; essere vuoto';
     else if (!isset($_POST['telefono']) || empty($_POST['telefono']))
-      $error = 'Il numero di telefono non pu&ograve; essere vuota';
+      $error = 'Il numero di telefono non pu&ograve; essere vuoto';
     else if (isset($_POST['email']) || !empty($_POST['email']))
       if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
-        $error = 'L\'<span xml:lang="en">email</span> non &egrave; scritta correttamente. Seguire la prassi: "mario@gmail.com"';
-    
+      $error = 'L\'<span xml:lang="en">email</span> non &egrave; scritta correttamente. Seguire la prassi: "mario@gmail.com"';
+
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
@@ -29,14 +29,13 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
         };
       case "Modifica":
         {
-          if ($error == null)
-            
+
         };
     }
-  } else if(isset($_GET['remove']) && !empty($_GET['remove'])) {
-      if(!$connection->removeClient($_GET['remove']))
-        $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente associato ad una prenotazione!";
-    } 
+  } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
+    if (!$connection->removeClient($_GET['remove']))
+      $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente associato ad una prenotazione!";
+  }
   $connection->closeConnection();
 
 } else {

@@ -9,6 +9,8 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
   // $_SESSION['fileName'] = $_FILES["fileToUpload"]["name"];
   // $_SESSION['file'] = $_FILES["fileToUpload"]["tmp_name"];
 
+  $connection = new DBConnection();
+  $connection->openConnection();
   if (isset($_POST['submit'])) {
     // make null variables so I don't use them
     $_SESSION['isError'] = false;
@@ -16,8 +18,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
 
     $fileName = basename($_FILES["fileToUpload"]["name"]);
 
-    $connection = new DBConnection();
-    $connection->openConnection();
     if (!isset($_POST['name']) || empty($_POST['name']))
       $error = 'Il nome non pu&ograve; essere vuoto.';
     else if (!isset($_POST['availability']) || empty($_POST['availability']))
@@ -33,7 +33,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
-      case "add":
+      case "Aggiungi":
         {
           if ($error == null) {
             $fileName = $_FILES["fileToUpload"]["name"];
@@ -60,6 +60,11 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
             // nothing to do here for now
         };
     }
+  } else if (isset($_GET['grainName']) && !empty($_GET['grainName'])) {
+    if (isset($_POST['availability']))
+      $connection->setGrainAvailability($_GET['grainName'], $_POST['availability']);
+    else if (isset($_POST['price']))
+      $connection->setGrainPrice($_GET['grainName'], $_POST['price']);
   } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
     if (!$connection->removeGrain($_GET['remove']))
       $error = "L'eliminazione di una coltivazione non &egrave; andata a buon fine. ";

@@ -78,11 +78,17 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <form id="insertAvailability" action="productManager.php" method="post">
             <label for="availability">Disponibilit&agrave;</label>
             <input name="availability" type="number" id="availability" size="5" />
-          </form>
+            <?php
+            echo '<a class="button" title="Imposta disponibilit&agrave;' . $grain['nome'] . '"' . ' href="productManager.php?grainName=' . $grain['nome'] . '" >Aggiungi disponibilit&agrave;</a>';
+            ?>
+            </form>
           <h2>Imposta un nuovo prezzo</h2>
           <form id="insertPrice" action="productManager.php" method="post">
             <label for="price">Prezzo</label>
             <input name="price" type="number" id="price" size="5" />
+            <?php
+            echo '<a class="button" title="Imposta prezzo' . $grain['nome'] . '"' . ' href="productManager.php?grainName=' . $grain['nome'] . '" >Aggiungi prezzo</a>';
+            ?>
           </form>
           <?php
           echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
@@ -106,7 +112,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <textarea name="description" rows="5" cols="40"></textarea>
           <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
           <input type="file" name="fileToUpload" id="fileToUpload" />
-          <input type="submit" name="submit" value="add" />
+          <input type="submit" name="submit" value="Aggiungi" />
         </form>
       </div>
 
