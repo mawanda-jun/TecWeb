@@ -52,7 +52,7 @@ header('Content-type: application/xhtml+xml'); ?>
   <div class="content">
     <div class="center-section" id="services">
       <h1 tabindex="13">Servizio macchinari</h1>
-      <p tabindex="15">L'azienda Cavallin pone la propria attrezzatura a vostra disposizione. Quì di seguito si possono
+      <p tabindex="15">L'azienda Cavallin pone la propria attrezzatura a vostra disposizione. Qui di seguito si possono
         trovare i vari macchinari e la relativa disponibilità. Per prenotare un macchinario si prega
         di contattare l'azienda.
       </p>
@@ -72,7 +72,10 @@ if ($machines != null) {
   foreach ($machines as $machine) {
     echo '<div class="left-section">';
     echo '<h1 tabindex="10">' . $machine['nome'] . '</h1>';
-    echo '<h2 tabindex="10">' . $machine['modello'] . '</h2>';
+    echo '<h2 tabindex="10"> Modello: ' . $machine['modello'] . '</h2>';
+    echo '<p tabindex="10"> Tipologia: ' .$machine['tipologia'] . '</p>';
+    echo '<p tabindex="10"> Potenza: ' .$machine['potenzaKW'] . ' KW</p>';
+    echo '<p tabindex="10"> Anno: ' .$machine['anno'] . '</p>';
     echo '<img src="../images/' . $machine['immagine'] . '" alt="immagine del ' . $machine['nome'] . ' ' . $machine['modello'] . '"/>';
     echo '</div>';
   }

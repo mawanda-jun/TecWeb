@@ -83,6 +83,8 @@ header('Content-type: application/xhtml+xml'); ?>
         echo '<div class="grain-section">';
         echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>';
         echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
+        echo '<p tabindex="10"> Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
+        echo '<p tabindex="10"> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';
         echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
         echo '</div>';
       }
