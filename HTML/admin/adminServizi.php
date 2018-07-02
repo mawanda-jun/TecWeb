@@ -76,9 +76,9 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <h2>Imposta un nuovo prezzo</h2>
           <form id="insertPrice" action="serviceManager.php" method="post">
             <label for="price">Prezzo</label>
-            <input name="price" type="text" id="price" size="5" />
+            <input name="price" type="text" id="price" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
             <?php echo '<input name="machineID" type="hidden" value="' . $machine['codice'] . '"/>'; ?>
-            <input type="submit" name="submitPrice" value="Aggiungi prezzo" />
+            <input type="submit" name="submitPrice" value="Modifica prezzo" />
           </form>
           <?php
           echo '<button class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</button>';
