@@ -66,9 +66,9 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
                 $connection->setMachinePrice($_POST['machineID'], $_POST['price']);
         }
     } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
-        if (!$connection->removeMachine($_GET['remove']))
+        if (!$connection->removeMachine($_GET['remove'])) {
             $error = "L'eliminazione del macchinario non &egrave; andata a buon fine. ";
-        else $error = null;
+        } else $error = null;
     }
     $connection->closeConnection();
 

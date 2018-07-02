@@ -77,11 +77,11 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <form id="insertPrice" action="serviceManager.php" method="post">
             <label for="price">Prezzo</label>
             <input name="price" type="text" id="price" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
-            <?php echo '<input name="machineID" type="hidden" value="' . $machine['codice'] . '"/>'; ?>
+            <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>"/>
             <input type="submit" name="submitPrice" value="Modifica prezzo" />
           </form>
           <?php
-          echo '<button class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</button>';
+          echo '<a class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</a>';
           echo '</div>';
           // echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : '';
         }
