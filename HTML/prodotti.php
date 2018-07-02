@@ -60,7 +60,7 @@ header('Content-type: application/xhtml+xml'); ?>
         da mettere eventualmente informazioni rapide o scritte-->
   </div>
   <div class="content">
-
+    <div id="anchor"></div>
     <div class="center-section" id="story">
       <!-- <div class="shrink-center"> -->
       <!-- <a href="" tabindex="6"></a> -->
@@ -178,7 +178,7 @@ header('Content-type: application/xhtml+xml'); ?>
     </div> -->
   </div>
   <div id="go-to-menu">
-    <a href="#story">Torna su</a>
+    <a href="#anchor">Torna su</a>
   </div>
   <footer>
     <div class="shrink-center">
