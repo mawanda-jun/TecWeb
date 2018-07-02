@@ -8,10 +8,11 @@
   display: inline;
 }
 
-.grain-section .text-subsection,
-.service-section .text-subsection {
+.left-section h1,
+.right-section h1,
+.left-section p,
+.right-section p {
   width: 100%;
-  padding: 1em;
 }
 
 .left-section img,
@@ -20,4 +21,31 @@
 .service-section img {
   width: 100%;
   padding: 1em;
+}
+
+.center-section {
+  padding-left: 0em;
+  margin-right: 0em;
+  width: auto;
+}
+
+.grain-section .text-subsection,
+.service-section .text-subsection {
+  width: 100%;
+  padding: 1em;
+}
+
+.grain-section h1,
+.service-section h1 {
+  text-align: center;
+  width: 100%;
+  padding: 0;
+}
+
+.grain-section p,
+.service-section p {
+  width: 100%;
+  text-align: justify;
+  width: auto;
+  padding: 0;
 }

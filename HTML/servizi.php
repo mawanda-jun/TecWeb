@@ -36,8 +36,7 @@ header('Content-type: application/xhtml+xml'); ?>
       </ul>
     </div>
     <div id="breadcrumb">
-      <p id="path" tabindex="12">Ti trovi in: Servizi</p>
-      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+      <p id="path" tabindex="12">Ti trovi in: Home</p>
     </div>
     <!-- </div> -->
   </header>
@@ -96,7 +95,7 @@ header('Content-type: application/xhtml+xml'); ?>
   <footer>
     <div class="shrink-center">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-      <p>Da pensare a cosa scriverci</p>
+      <p>Da pensare a cosa scriverci. <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a></p>
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS valid" />
     </div>
   </footer>
