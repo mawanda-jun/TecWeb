@@ -199,7 +199,7 @@ class DBConnection {
   }
 
   public function setClientEmail($id, $email) {
-    $query = 'UPDATE clienti SET email = '.$this->escape($email).'
+    $query = 'UPDATE clienti SET email = "'.$this->escape($email).'"
               WHERE id = "'.$this->escape($id).'"';
     return mysqli_query($this->connection, $query) === TRUE;
   }

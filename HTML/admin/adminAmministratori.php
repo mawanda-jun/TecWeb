@@ -46,7 +46,7 @@ if (!isAdmin()) {
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Amministratori</p>
+        <p id="path" tabindex="12">Ti trovi in: Amministrazione > Amministratori</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
@@ -59,7 +59,7 @@ if (!isAdmin()) {
 
     <div class="admins">
       <div id="description">
-        <h1>Benvenuto nella pagina di gestione degli amministratori.</h1>
+        <h1>Benvenuto nella pagina di gestione degli amministratori</h1>
         <p>In questa pagina &egrave; possibile inserire ed eliminare altri amministratori.</p>
       </div>
 

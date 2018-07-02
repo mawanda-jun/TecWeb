@@ -28,12 +28,23 @@ if (isAdmin()) { // control if login has been successfull
       case "Modifica":
         {
 
-        };
-    }
+  } else if (isset($_POST['submitNumber'])) {
+    if (isset($_POST['number']) && isset($_POST['clientId']))
+      if(!$connection->setClientNumber($_POST['clientId'], $_POST['number']))
+        $error = "Errore durante la modifica del numero di telefono.";
+      else $error = null;
+
+  } else if (isset($_POST['submitEmail'])) {
+    if (isset($_POST['email']) && isset($_POST['clientId']))
+      if (!$connection->setClientEmail($_POST['clientId'], $_POST['email']))
+        $error = "Errore durante la modifica dell'indirizzo mail.";
+      else $error = null;
+
   } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
-    if (!$connection->removeClient($_GET['remove']))
-      $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente associato ad una prenotazione!";
-  }
+      if (!$connection->removeClient($_GET['remove']))
+        $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente associato ad una prenotazione!";
+      else $error = null;
+  } 
   $connection->closeConnection();
 
 } else {

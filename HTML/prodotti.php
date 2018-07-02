@@ -36,7 +36,7 @@ header('Content-type: application/xhtml+xml'); ?>
       </ul>
     </div>
     <div id="breadcrumb">
-      <p id="path" tabindex="12">Ti trovi in: Home</p>
+      <p id="path" tabindex="12">Ti trovi in: Prodotti</p>
       <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
     </div>
     <!-- </div> -->
