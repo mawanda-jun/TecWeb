@@ -5,7 +5,7 @@ CREATE TABLE grani (
   nome VARCHAR(50) PRIMARY KEY,
   descrizione TEXT,
 	immagine VARCHAR(50),
-  prezzo FLOAT(5,2) NOT NULL,
+  prezzo FLOAT(5,2) UNSIGNED NOT NULL,
   disponibilita SMALLINT UNSIGNED NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -30,7 +30,7 @@ CREATE TABLE macchinari (
   potenzaKW FLOAT(5,2) NOT NULL,
   anno SMALLINT(4) NOT NULL,
   immagine VARCHAR(50),
-  prezzoGiorno FLOAT(5,2) NOT NULL
+  prezzoGiorno FLOAT(6,2) NOT NULL
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

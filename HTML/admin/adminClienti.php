@@ -45,7 +45,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Clienti</p>
+        <p id="path" tabindex="12">Ti trovi in: Amministrazione > Clienti</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
@@ -58,8 +58,9 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
 
     <div class="clients">
       <div id="description">
-        <h3>Benvenuto nella pagina di gestione dei clienti.</h3>
+        <h1>Benvenuto nella pagina di gestione dei clienti</h1>
         <p>In questa pagina &egrave; possibile inserire ed eliminare altri clienti.</p>
+        <p>&Egrave; inoltre possibile modificarne il numero di telefono e l'indirizzo <span xml:lang="en">email</span>.</p>
       </div>
 
 
@@ -74,9 +75,26 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
             echo '<ul>';
             echo '<li> Identificativo: ' . $client['id'] . '</li>'; 
             echo '<p tabindex="10">' . $client['nome'] . ' ' . $client['cognome'] . '</p>';
-            echo '<p tabindex="10"> Telefono: ' . $client['telefono'] . '</p>';
+            echo '<p tabindex="10"> Telefono: ' . $client['telefono'] . '</p>'; 
             echo '<p tabindex="10"> Email: ' . $client['email'] . '</p>';
-            echo '<a class="button" title="Rimuovi ' . $client['id'] . '" href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
+            ?>
+
+            <form id="insertNumber" action="clientManager.php" method="post" enctype="multipart/form-data">
+              <label for="number">Nuovo numero di telefono:</label>
+              <input name="number" type="text" id="number" size="9" />
+              <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
+              <input type="submit" name="submitNumber" value="Modifica numero" />
+            </form>
+
+            <form id="insertEmail" action="clientManager.php" method="post" enctype="multipart/form-data">
+              <label for="email">Nuova email:</label>
+              <input name="email" type="text" id="email" size="24" />
+              <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
+              <input type="submit" name="submitEmail" value="Modifica email" />
+            </form>
+
+            <?php
+            echo '<a class="button" title="Rimuovi ' . $client['id'] . '"' . ' href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
             echo '</ul>';
             echo '</div>';
           }
@@ -100,7 +118,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
               <input name="telefono" type="text" id="telefono" size="30" maxlength="50" />
               <label for="email"><span xml:lang="en">Email:</span></label>
               <input name="email" type="email" id="email" size="30" maxlength="50" />
-              <input type="submit" value="Aggiungi" name="submit" />
+              <input type="submit" value="Aggiungi" name="add"/>
               <div id="errorInput">
                 <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
               </div>

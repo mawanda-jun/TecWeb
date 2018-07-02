@@ -45,7 +45,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Amministratori</p>
+        <p id="path" tabindex="12">Ti trovi in: Amministrazione > Amministratori</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
@@ -58,7 +58,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
 
     <div class="admins">
       <div id="description">
-        <h1>Benvenuto nella pagina di gestione degli amministratori.</h1>
+        <h1>Benvenuto nella pagina di gestione degli amministratori</h1>
         <p>In questa pagina &egrave; possibile inserire ed eliminare altri amministratori.</p>
       </div>
 
@@ -70,7 +70,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         if ($admins != null) {
           echo '<div class="listAndDelete"><p>Lista degli amministratori:</p><ul>';
           foreach ($admins as $admin)
-            echo '<li>' . $admin['email'] . ' <a class="button" title="Rimuovi amministratore ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina</a></li>';
+            echo '<li>' . $admin['email'] . ' <a class="button" title="Rimuovi amministratore ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina amministratore</a></li>';
           echo '</ul></div>';
         } else
           echo '<div id="">Non ci sono altri amministratori.</div>';

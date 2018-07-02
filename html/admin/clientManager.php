@@ -7,7 +7,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
   $connection = new DBConnection();
   $connection->openConnection();
 
-  if (isset($_POST['submit'])) {
+  if (isset($_POST['add'])) {
       // manca controllo su valori campi dati immessi
     if (!isset($_POST['nome']) || empty($_POST['nome']))
       $error = 'Il nome non pu&ograve; essere vuoto';
@@ -17,25 +17,29 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
       $error = 'Il numero di telefono non pu&ograve; essere vuoto';
     else if (isset($_POST['email']) || !empty($_POST['email']))
       if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
-      $error = 'L\'<span xml:lang="en">email</span> non &egrave; scritta correttamente. Seguire la prassi: "mario@gmail.com"';
+        $error = 'L\'<span xml:lang="en">email</span> non &egrave; scritta correttamente. Seguire la prassi: "mario@gmail.com"';
 
-    switch ($_POST['submit']) {
-      default:
-        $error = "action not found";
-      case "Aggiungi":
-        {
-          if ($error == null)
-            $connection->insertClient($_POST['id'], $_POST['nome'], $_POST['cognome'], $_POST['telefono'], $_POST['email']);
-        };
-      case "Modifica":
-        {
+    if ($error == null)
+      if(!$connection->insertClient($_POST['id'], $_POST['nome'], $_POST['cognome'], $_POST['telefono'], $_POST['email']))
+        $error = "Errore durante l'inserimento del cliente. Controlla che non sia già presente un cliente con lo stesso identificativo!";
 
-        };
-    }
+  } else if (isset($_POST['submitNumber'])) {
+    if (isset($_POST['number']) && isset($_POST['clientId']))
+      if(!$connection->setClientNumber($_POST['clientId'], $_POST['number']))
+        $error = "Errore durante la modifica del numero di telefono.";
+      else $error = null;
+
+  } else if (isset($_POST['submitEmail'])) {
+    if (isset($_POST['email']) && isset($_POST['clientId']))
+      if (!$connection->setClientEmail($_POST['clientId'], $_POST['email']))
+        $error = "Errore durante la modifica dell'indirizzo mail.";
+      else $error = null;
+
   } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
-    if (!$connection->removeClient($_GET['remove']))
-      $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente associato ad una prenotazione!";
-  }
+      if (!$connection->removeClient($_GET['remove']))
+        $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente associato ad una prenotazione!";
+      else $error = null;
+  } 
   $connection->closeConnection();
 
 } else {
