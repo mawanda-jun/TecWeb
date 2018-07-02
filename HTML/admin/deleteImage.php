@@ -1,7 +1,8 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
-$returnpage = $_SERVER['HTTP_REFERER'];
-$error = '';
+require()
+// $returnpage = $_SERVER['HTTP_REFERER'];
+// $error = '';
 if(isset($_SESSION['login']) && $_SESSION['login'] == true)
 {
 	$ok = true;

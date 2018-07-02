@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php";
+require_once('../../validation/validator.php');
 
 session_start();
 
@@ -8,20 +9,20 @@ if (isAdmin()) { // control if login has been successfull
   $connection->openConnection();
 
   if (isset($_POST['submit'])) {
-
+    $id = filter_var($_POST['id'], FILTER_SANITIZE_STRING);
     $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
     $cognome = filter_var($_POST['cognome'], FILTER_SANITIZE_STRING);
     $telefono = filter_var($_POST['telefono'], FILTER_SANITIZE_NUMBER_INT);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-    $error = validateClientAdd($nome, $cognome, $telefono, $email);
+    $error = validateClientAdd($id, $nome, $cognome, $telefono, $email);
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
       case "Aggiungi":
         {
           if ($error == false) {
-            $connection->insertClient($_POST['id'], $_POST['nome'], $_POST['cognome'], $_POST['telefono'], $_POST['email']);
+            $connection->insertClient($id, $nome, $cognome, $telefono, $email);
             $error = null;
           }
         };
@@ -52,11 +53,9 @@ if (isAdmin()) { // control if login has been successfull
 if ($error == null) {
   $_SESSION['error'] = null;
   $_SESSION['isError'] = false;
-  $_SESSION['email'] = null;
 } else {
   $_SESSION['isError'] = true;
   $_SESSION['error'] = $error;
-  if (isset($_POST['email'])) $_SESSION['email'] = $_POST['email'];
 }
 header("Location: adminClienti.php");
 exit();

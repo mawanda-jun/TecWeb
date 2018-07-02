@@ -18,18 +18,14 @@ if (isAdmin()) { // control if login has been successfull
 
     $fileName = basename($_FILES["fileToUpload"]["name"]);
 
-    if (!isset($_POST['name']) || empty($_POST['name']))
-      $error = 'Il nome non pu&ograve; essere vuoto.';
-    else if (!isset($_POST['availability']) || empty($_POST['availability']))
-      $error = 'La disponibilit&agrave; non pu&ograve; essere nulla.';
-    else if (!filter_var($_POST['availability'], FILTER_VALIDATE_FLOAT))
-      $error = 'La disponibilit&agrave; non &egrave; nel formato corretto. Usare il formato: "10.5"';
-    else if (!isset($_POST['price']) || empty($_POST['price']))
-      $error = 'Il prezzo non pu&ograve; essere nullo.';
-    else if (!filter_var($_POST['availability'], FILTER_VALIDATE_FLOAT))
-      $error = 'Il prezzo non &egrave; nel formato corretto. Usare il formato: "50.1"';
-    else if (strlen($_POST['description']) > 500)
-      $error = 'Descrizione troppo lunga. Usare meno di 500 caratteri.';
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $availability = filter_var($_POST['availability'], FILTER_SANITIZE_NUMBER_FLOAT);
+    $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT);
+    $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
+
+
+    $error = validateGrainAdd($name, $description, $fileName, $price, $availability);
+
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
@@ -42,10 +38,9 @@ if (isAdmin()) { // control if login has been successfull
             $errorOrOk = uploadImage($fileName, $tmpFileName, $fileSize);
 
             if ($errorOrOk['error'] != null) {
-              $_SESSION['isError'] = true;
-              $_SESSION['error'] = $errorOrOk['error'];
-              $_SESSION['errorUploadingImage'] = $errorOrOk['error'];
+              $error = $errorOrOk['error'];
               header("Location: adminProdotti.php");
+              
               exit();
             } else
               if (!$connection->insertGrain($_POST['name'], $_POST['description'], $fileName, $_POST['price'], $_POST['availability'])) {

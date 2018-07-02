@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php"; ?>
-<?php require_once('../../validation/validator.php');?>
+<?php require_once('../../validation/validator.php'); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -66,19 +66,23 @@ if (!isAdmin()) {
 
 
       <?php
-        $connection = new DBConnection();
-        $connection->openConnection();
-        $clients = $connection->getListClients();
-        
-        if ($clients != null) {
-          foreach ($clients as $client) {
-            echo '<div class="grain-section">';
-            echo '<ul>';
-            echo '<li> Identificativo: ' . $client['id'] . '</li>'; 
-            echo '<p tabindex="10">' . $client['nome'] . ' ' . $client['cognome'] . '</p>';
-            echo '<p tabindex="10"> Telefono: ' . $client['telefono'] . '</p>'; 
-            echo '<p tabindex="10"> Email: ' . $client['email'] . '</p>';
-            ?>
+      $connection = new DBConnection();
+      $connection->openConnection();
+      $clients = $connection->getListClients();
+
+      if ($clients != null) { ?>
+      <div id="errorInput">
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
+      </div>
+      <?php 
+      foreach ($clients as $client) {
+        echo '<div class="grain-section">';
+        echo '<ul>';
+        echo '<li> Identificativo: ' . $client['id'] . '</li>';
+        echo '<p tabindex="10">' . $client['nome'] . ' ' . $client['cognome'] . '</p>';
+        echo '<p tabindex="10"> Telefono: ' . $client['telefono'] . '</p>';
+        echo '<p tabindex="10"> Email: ' . $client['email'] . '</p>';
+        ?>
 
             <form id="insertNumber" action="clientManager.php" method="post" enctype="multipart/form-data">
               <label for="number">Nuovo numero di telefono:</label>
@@ -99,7 +103,7 @@ if (!isAdmin()) {
             echo '</ul>';
             echo '</div>';
           }
-          echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '';
+          // echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '';
         } else echo '<p>Nessun cliente presente.</p>';
         ?>
 
@@ -119,17 +123,15 @@ if (!isAdmin()) {
               <input name="telefono" type="text" id="telefono" size="30" maxlength="50" />
               <label for="email"><span xml:lang="en">Email:</span></label>
               <input name="email" type="email" id="email" size="30" maxlength="50" />
-              <input type="submit" value="Aggiungi" name="add"/>
-              <div id="errorInput">
-                <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-              </div>
+              <input type="submit" value="Aggiungi" name="submit"/>
+              
               <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
             </fieldset>
           </form>
         </div>
 
         <?php
-          $connection->closeConnection();
+        $connection->closeConnection();
         ?>
 
     </div>
@@ -142,7 +144,8 @@ if (!isAdmin()) {
       <div class="shrink-center">
         <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-        <p>Da pensare a cosa scriverci</p>
+        <p>Da pensare a cosa scriverci</p><br/>
+        <!-- <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?> -->
       </div>
     </footer>
     <!-- </div> -->
