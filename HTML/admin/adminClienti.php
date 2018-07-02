@@ -93,7 +93,7 @@ if (!isAdmin()) {
 
             <form id="insertEmail" action="clientManager.php" method="post" enctype="multipart/form-data">
               <label for="email">Nuova email:</label>
-              <input name="email" type="text" id="email" size="24" />
+              <input name="email" type="text" id="email" size="23" />
               <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
               <input type="submit" name="submitEmail" value="Modifica email" />
             </form>

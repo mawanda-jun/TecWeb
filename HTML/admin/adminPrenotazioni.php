@@ -66,9 +66,29 @@ if (!isAdmin()) {
       <?php
         $connection = new DBConnection();
         $connection->openConnection();
-
         date_default_timezone_set("Europe/Rome");
 
+        $prenotations = $connection->getListActivePrenotations();
+
+        
+        if ($prenotations != null) {
+          echo '<h2 tabindex="10">Prenotazioni attive:</h2>';
+          foreach ($prenotations as $prenotation) {
+            echo '<div class="grain-section">';
+            $activeMachinery = $connection->getMachine($prenotation['idMacchinario']);
+            echo '<h3 tabindex="10">Ordine #' . $prenotation['ordine'] . '</h3>';
+            echo '<h4 tabindex="10">' . $activeMachinery['nome'] . ' ' . $activeMachinery['modello'] .'</h4>';
+            echo '<p tabindex="10">ID cliente: ' . $prenotation['idCliente'] . '</p>';
+            echo '<p tabindex="10">ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
+            echo '<p tabindex="10">Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
+            echo '<p tabindex="10">Data fine prenotazione: ' . $prenotation['dataFine'] . '</p>';
+            echo '<a class="button" title="Rimuovi ' . $prenotation['ordine'] . '"' . ' href="prenotazioniManager.php?remove=' . $prenotation['ordine'] . '" >Elimina prenotazione</a>';
+            echo '</div>';
+          }
+        } else echo '<p>Nessuna prenotazione attiva al momento.</p>';
+
+        
+        
         $machines = $connection->getListMachinery();
         echo '<form id="frm" method="post" class="listMachineAndReserve" onchange="onSelectChange();">Lista dei macchinari:';
         if ($machines != null) { ?>
@@ -84,51 +104,28 @@ if (!isAdmin()) {
         // echo $_POST['machineID'];
         if (isset($_POST['machineID']) && !empty($_POST['machineID']))
             echo '<div id="machinePrice">
-        <p id="costo macchinario">Il costo della macchina &egrave;:'
-            . $connection->getMachinePrice($_POST['machineID']) . '</p></div>';
+        <p id="costo macchinario">Il costo della macchina &egrave;: '
+            .$connection->getMachinePrice($_POST['machineID']) . '€ al giorno.</p></div>';
         ?>
-          <form method="post">
-            <fieldset>
-              <legend>Scegli le date della prenotazione:</legend>
-              <div>
-                <label for="start">Inizio</label>
-                <input type="date" id="start" name="start" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>"/>
-              </div>
+        <form method="post">
+          <fieldset>
+            <legend>Scegli le date della prenotazione:</legend>
+            <div>
+              <label for="start">Inizio</label>
+              <input type="date" id="start" name="start" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>"/>
+            </div>
 
-              <div>
-                <label for="end">Fine</label>
-                <input type="date" id="end" name="end" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>"/>
-              </div>
+            <div>
+              <label for="end">Fine</label>
+              <input type="date" id="end" name="end" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>"/>
+            </div>
 
-            </fieldset>
+          </fieldset>
+        </form>
 
-            <input type="submit" value="Imposta data" />
-          </form>
+        
 
-
-
-
-          <h1>Aggiungi un amministratore</h1>
-          <form id="insertAdmin " action="adminManager.php " method="post ">
-            <!-- onsubmit="return validateFormInsertAdmin() "> da usare quando e se avremo uno script di validazione -->
-            <fieldset id="adminFields ">
-              <legend>Inserisci i seguenti dati:</legend>
-              <label for="email "><span xml:lang="en ">Email:</span></label>
-              <input name="email " type="email " id="email " size="30 " maxlength="50 " value="<?php
-                                                                                                echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>" />
-              <label for="password"><span xml:lang="en">Password:</span></label>
-              <input name="password" type="password" id="password" size="10" maxlength="12" />
-              <input type="submit" value="Aggiungi" name="submit" />
-              <div id="errorInput">
-                <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-              </div>
-              <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
-            </fieldset>
-          </form>
-          <?php
-            $connection->closeConnection();
-            ?>
-
+        <?php $connection->closeConnection(); ?>
     </div>
 
 
