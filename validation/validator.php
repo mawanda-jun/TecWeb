@@ -29,7 +29,7 @@ function valName($name)
 
 function valPhone($phoneNumber)
 {
-    $isInt = ctype_digit($phoneNumber);
+    $isInt = valInt($phoneNumber);
     // $isInt = filter_val((int)$phoneNumber, FILTER_VALIDATE_INT);
     $isShort = strlen($phoneNumber) <= 14;
     return $isInt && $isShort ? true : false;
@@ -41,6 +41,12 @@ function valFloat($n)
     $isFloat = is_float($n);
     $isInt = ctype_digit($n);
     return ($isFloat || $isInt) ? true : false;
+}
+
+function valInt($n)
+{
+    return ctype_digit($n) ? true : false;
+
 }
 
 
@@ -84,12 +90,19 @@ function validateGrainAdd($name, $description, $fileName, $price, $availability)
         return "Formato disponibilit&agrave; non valido. Ricordarsi di usare: 10.10";
     else return false;
 }
-function validateServiceAdd($id, $type, $name, $model, $power, $year, $price) {
-    if(isEmpty($id) || isEmpty($type) || isEmpty($name) || isEmpty($model) || isEmpty($power) || isEmpty($year) || isEmpty($price))
-    return "Nessun campo pu&ograve; essere vuoto";
-    else if(strlen($id) > 7)
-    return "ID macchinario troppo lungo. Inserire un codice inferiore ai 6 caratteri";
-    else if()
+function validateServiceAdd($id, $type, $name, $model, $power, $year, $price)
+{
+    if (isEmpty($id) || isEmpty($type) || isEmpty($name) || isEmpty($model) || isEmpty($power) || isEmpty($year) || isEmpty($price))
+        return "Nessun campo pu&ograve; essere vuoto";
+    else if (strlen($id) > 7)
+        return "ID macchinario troppo lungo. Inserire un codice inferiore ai 6 caratteri";
+    else if (!valFloat($power))
+        return "Inserire la potenza nel formato corretto. Si usi: 10.10";
+    else if (!valInt($year))
+        return "Inserire un anno corretto";
+    else if (!valFloat($price))
+        return "Inserire un prezzo nel formato corretto. Si usi: 10.10";
+    else return false;
 }
 
 

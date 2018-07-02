@@ -1,5 +1,6 @@
 <?php require_once __DIR__ . "/../../php/connection.php";
 require_once('uploadImage.php');
+require_once('../../validation/validator.php');
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -16,50 +17,47 @@ if (isAdmin()) { // control if login has been successfull
     // $_SESSION['isError'] = false;
     // $_SESSION['errorUploadingImage'] = false;
 
-    // $fileName = basename($_FILES["fileToUpload"]["name"]);
+        $fileName = basename($_FILES["fileToUpload"]["name"]);
+        $id = filter_var($_POST['id'], FILTER_SANITIZE_STRING);
+        $type = filter_var($_POST['type'], FILTER_SANITIZE_STRING);
+        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+        $model = filter_var($_POST['model'], FILTER_SANITIZE_STRING);
+        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+        $power = filter_var($_POST['power'], FILTER_SANITIZE_NUMBER_FLOAT);
+        $year = filter_var($_POST['year'], FILTER_SANITIZE_NUMBER_INT);
+        $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT);
 
-    // if (!isset($_POST['name']) || empty($_POST['name']))
-    //   $error = 'Il nome non pu&ograve; essere vuoto.';
-    // else if (!isset($_POST['availability']) || empty($_POST['availability']))
-    //   $error = 'La disponibilit&agrave; non pu&ograve; essere nulla.';
-    // else if (!filter_var($_POST['availability'], FILTER_VALIDATE_FLOAT))
-    //   $error = 'La disponibilit&agrave; non &egrave; nel formato corretto. Usare il formato: "10.5"';
-    // else if (!isset($_POST['price']) || empty($_POST['price']))
-    //   $error = 'Il prezzo non pu&ograve; essere nullo.';
-    // else if (!filter_var($_POST['availability'], FILTER_VALIDATE_FLOAT))
-    //   $error = 'Il prezzo non &egrave; nel formato corretto. Usare il formato: "50.1"';
-    // else if (strlen($_POST['description']) > 500)
-    //   $error = 'Descrizione troppo lunga. Usare meno di 500 caratteri.';
-    // switch ($_POST['submit']) {
-    //   default:
-    //     $error = "action not found";
-    //   case "Aggiungi":
-    //     {
-    //       if ($error == null) {
-    //         $fileName = $_FILES["fileToUpload"]["name"];
-    //         $tmpFileName = $_FILES["fileToUpload"]["tmp_name"];
-    //         $fileSize = $_FILES['fileToUpload']['size'];
-    //         $errorOrOk = uploadImage($fileName, $tmpFileName, $fileSize);
+        $error = validateServiceAdd($id, $type, $name, $model, $power, $year, $price);
 
-    //         if ($errorOrOk['error'] != null) {
-    //           $_SESSION['isError'] = true;
-    //           $_SESSION['error'] = $errorOrOk['error'];
-    //           $_SESSION['errorUploadingImage'] = $errorOrOk['error'];
-    //           header("Location: adminProdotti.php");
-    //           exit();
-    //         } else
-    //           if (!$connection->insertGrain($_POST['name'], $_POST['description'], $fileName, $_POST['price'], $_POST['availability'])) {
-    //         // if (!$connection->insertGrain('ciao', 'ciao', 'image.img', '123', '123')) {
-    //           $_SESSION['isError'] = true;
-    //           $_SESSION['error'] = "C'&egrave; stato un problema durante il caricamento della <span xml:lang='en'>cultivar</span>";
-    //         }
-    //       }
-    //     };
-    //   case "modify":
-    //     {
-    //         // nothing to do here for now
-    //     };
-    // }
+        switch ($_POST['submit']) {
+            default:
+                $error = "action not found";
+            case "Aggiungi":
+                {
+                    if ($error == null) {
+                        $fileName = $_FILES["fileToUpload"]["name"];
+                        $tmpFileName = $_FILES["fileToUpload"]["tmp_name"];
+                        $fileSize = $_FILES['fileToUpload']['size'];
+                        $errorOk = uploadImage($fileName, $tmpFileName, $fileSize);
+
+                        if ($errorOk['error'] != null) {
+                            if (!$_SESSION['already'])
+                                deleteImage($fileName);
+                            $error = $errorOk['error'];
+                            $_SESSION['isError'] = true;
+                            $_SESSION['error'] = $error;
+                            header("Location: adminServizi.php");
+
+                            exit();
+                        } else
+                            if (!$connection->insertGrain($_POST['name'], $_POST['description'], $fileName, $_POST['price'], $_POST['availability'])) {
+          // if (!$connection->insertGrain('ciao', 'ciao', 'image.img', '123', '123')) {
+                            $_SESSION['isError'] = true;
+                            $_SESSION['error'] = "C'&egrave; stato un problema durante il caricamento della <span xml:lang='en'>cultivar</span>";
+                        }
+                    }
+                };
+        }
     } else if (isset($_POST['submitPrice'])) {
         if (isset($_POST['machineID']) && !empty($_POST['machineID'])) {
             if (isset($_POST['price']))

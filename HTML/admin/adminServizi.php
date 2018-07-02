@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php"; ?>
-<?php require_once('../../validation/validator.php');?>
+<?php require_once('../../validation/validator.php'); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -63,6 +63,8 @@ if (!isAdmin()) {
           se ne pu&ograve; modificare il prezzo.</p>
       </div>
       <div class="list-modify-delete-service">
+      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
+        <br/>
         <?php
         $connection = new DBConnection();
         $connection->openConnection();
@@ -93,7 +95,7 @@ if (!isAdmin()) {
 
       <div class="add-machine">
         <h1>Inserisci una nuova macchina</h1>
-        <form method="post" action="productManager.php" enctype="multipart/form-data">
+        <form method="post" action="serviceManager.php" enctype="multipart/form-data">
           <label for="id">Codice identificativo:</label>
           <input type="text" name="id" />
 
@@ -137,8 +139,6 @@ if (!isAdmin()) {
         <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
         <p>Da pensare a cosa scriverci</p>
-        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
-        <br/>
         <!-- <?php echo (isset($_SESSION['file_exists']) && $_SESSION['file_exists']) ? $_SESSION['file_exists'] : ''; ?><br/>
         <?php echo (isset($_SESSION['maxSize']) && $_SESSION['maxSize']) ? $_SESSION['maxSize'] : ''; ?><br/>
         <?php echo (isset($_SESSION['noExtension']) && $_SESSION['noExtension']) ? $_SESSION['noExtension'] : ''; ?><br/>
