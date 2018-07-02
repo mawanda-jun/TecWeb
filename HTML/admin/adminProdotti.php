@@ -78,15 +78,15 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <form id="insertAvailability" action="productManager.php" method="post" enctype="multipart/form-data">
             <label for="availability">Disponibilit&agrave;</label>
             <input name="availability" type="text" id="availability" size="5" value="<?php echo $grain['disponibilita'] ?>"/>
-            <input name="grainName" type="hidden" value="'<?php echo $grain['nome'] ?>"/>
-            <input class="button" type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
+            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>"/>
+            <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
           </form>
           <h2>Imposta un nuovo prezzo</h2>
           <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
             <label for="price">Prezzo</label>
             <input name="price" type="text" id="price" size="5" value ="<?php echo $grain['prezzo'] ?>" />
-            <input name="grainName" type="hidden" value="'<?php echo $grain['nome'] ?>"/>
-            <input class="button" type="submit" name="submitPrice" value="Modifica prezzo" />
+            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>"/>
+            <input type="submit" name="submitPrice" value="Modifica prezzo" />
           </form>
           <?php
           echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
