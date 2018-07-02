@@ -304,6 +304,11 @@ header img {
   float: left;
 }
 
+#anchor {
+  position: relative;
+  top: -9.7em;
+}
+
 #go-to-menu {
   overflow-y: auto;
   /* Hidden by default */
