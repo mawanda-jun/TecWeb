@@ -1,5 +1,7 @@
 <?php require_once __DIR__ . "/../../php/connection.php";
+require_once('../../validation/validator.php');
 require_once('uploadImage.php');
+require_once('deleteImage.php');
 
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
@@ -35,12 +37,16 @@ if (isAdmin()) { // control if login has been successfull
             $fileName = $_FILES["fileToUpload"]["name"];
             $tmpFileName = $_FILES["fileToUpload"]["tmp_name"];
             $fileSize = $_FILES['fileToUpload']['size'];
-            $errorOrOk = uploadImage($fileName, $tmpFileName, $fileSize);
+            $errorOk = uploadImage($fileName, $tmpFileName, $fileSize);
 
-            if ($errorOrOk['error'] != null) {
-              $error = $errorOrOk['error'];
+            if ($errorOk['error'] != null) {
+              if (!$_SESSION['already'])
+                deleteImage($fileName);
+              $error = $errorOk['error'];
+              $_SESSION['isError'] = true;
+              $_SESSION['error'] = $error;
               header("Location: adminProdotti.php");
-              
+
               exit();
             } else
               if (!$connection->insertGrain($_POST['name'], $_POST['description'], $fileName, $_POST['price'], $_POST['availability'])) {

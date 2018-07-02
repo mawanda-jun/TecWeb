@@ -12,46 +12,38 @@ function uploadImage($fileName, $tmpFileName, $fileSize)
 	// $_SESSION['file'] = ($fileName ? $fileName : "niente");
 
 // Check if image file is a actual image or fake image
-	if (isset($_POST["submit"])) {
-		$check = getimagesize($tmpFileName);
-		if ($check !== false) {
-			// $ok = "Il file &egrave; un'immagine - " . $check["mime"] . ".";
-			$uploadOk = 1;
-		} else {
-			$_SESSION['getImageType'] = "Il file non &egrave; un'immagine.";
-			$uploadOk = 0;
-		}
-	}
+
+	// $check = getimagesize($tmpFileName);
+	// if ($check == true) {
+	// 	$error = "Il file non &egrave; un'immagine.";
+	// 	$uploadOk = 0;
+	// }
+	
 // Check if file already exists
 	if (file_exists($target_file)) {
-		$_SESSION['file_exists'] = "L'immagine esiste gi&agrave;. Sei sicuro di volerla usare?";
-		// $uploadOk = 0;
+		$_SESSION['already'] = true;
+		$error = "L'immagine esiste gi&agrave;. Per favore cambia l'immagine.";
+		$uploadOk = 0;
 	}
 // Check file size
 	if ($fileSize > 500000) {
-		$_SESSION['maxSize'] = "L'immagine supera la dimensione consentita";
+		$error = "L'immagine supera la dimensione consentita";
 		$uploadOk = 0;
 	}
 // Allow certain file formats
 	if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 		&& $imageFileType != "gif") {
-		$_SESSION['noExtension'] = "Attenzione: solamente le estensioni JPG, JPEG, PNG e GIF sono consentite.";
+		$error = "Attenzione: solamente le estensioni JPG, JPEG, PNG e GIF sono consentite.";
 		$uploadOk = 0;
 	}
 	// check if the file upladed contains some char not accepted for security
 	if (strrpos(basename($fileName), '..') != false || strrpos(basename($fileName), '/') != false)
-		$_SESSION['noCharacter'] = 'Il nome contiene caratteri non accettati per motivi di sicurezza, come .. o /';
+		$error = 'Il nome contiene caratteri non accettati per motivi di sicurezza, come .. o /';
+
 // Check if $uploadOk is set to 0 by an error
-	if ($uploadOk == 0) {
-		$error = "Il file non &egrave; stato caricato.";
-
-
-// if everything is ok, try to upload file
-	} else {
+	if ($uploadOk == 1) {
 		if (move_uploaded_file($tmpFileName, $target_file)) {
 			$ok = "Il file " . basename($fileName) . " &grave; stato caricato.";
-		} else {
-			$error = "C'&egrave; stato un errore durante il caricamento del file.";
 		}
 	}
 	return array(

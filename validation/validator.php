@@ -38,7 +38,9 @@ function valPhone($phoneNumber)
 
 function valFloat($n)
 {
-    return (filter_val($n, FILTER_VALIDATE_FLOAT)) ? true : false;
+    $isFloat = is_float($n);
+    $isInt = ctype_digit($n);
+    return ($isFloat || $isInt) ? true : false;
 }
 
 
@@ -78,9 +80,16 @@ function validateGrainAdd($name, $description, $fileName, $price, $availability)
         return 'Descrizione troppo lunga. Usare meno di 500 caratteri.';
     else if (!valFloat($price))
         return "Formato prezzo non valido. Ricordarsi di usare: 10.10";
-    else if (!valEmail($availability))
+    else if (!valFloat($availability))
         return "Formato disponibilit&agrave; non valido. Ricordarsi di usare: 10.10";
     else return false;
+}
+function validateServiceAdd($id, $type, $name, $model, $power, $year, $price) {
+    if(isEmpty($id) || isEmpty($type) || isEmpty($name) || isEmpty($model) || isEmpty($power) || isEmpty($year) || isEmpty($price))
+    return "Nessun campo pu&ograve; essere vuoto";
+    else if(strlen($id) > 7)
+    return "ID macchinario troppo lungo. Inserire un codice inferiore ai 6 caratteri";
+    else if()
 }
 
 
