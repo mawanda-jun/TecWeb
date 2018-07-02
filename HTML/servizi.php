@@ -65,9 +65,33 @@ header('Content-type: application/xhtml+xml'); ?>
     <div id="anchor"></div>
     <div class="center-section" id="services">
       <h1 tabindex="13">Servizio macchinari</h1>
-      <p tabindex="15">L'azienda Cavallin pone la propria attrezzatura a vostra disposizione. Qui di seguito si possono
-        trovare i vari macchinari e la relativa disponibilità. Per prenotare un macchinario si prega
-        di contattare l'azienda.
+      <p tabindex="15">
+        Proponiamo un servizio di noleggio trattori, telescopici e attrezzatura agricola. Mettiamo a vostra disposizione
+        un parco trattori ampio e completo, atto a soddisfare tutte le esigenze. Sono disponibili trattori
+        da 50 a 400 cavalli, telescopici da 6mt a 14mt e attrezzature agricole specializzate.
+      </p>
+      <p>
+        Il servizio del noleggio presenta diversi vantaggi:
+        <ul>
+          <li>Potete ridurre al minimo il parco macchine, conservando più risorse</li>
+          <li>Avete sempre a disposizione la macchina giusta per il lavoro in corso.</li>
+          <li>Il noleggio elimina i costi di manutenzione, i costi di riparazione e i costi indiretti dovuti allo
+            stop dei lavori.</li>
+          <li>Controllo dei costi e budget migliori: il noleggio offre un costo chiaro e semplice, dato dalla fattura
+            del noleggiatore.</li>
+          <li>Con il noleggio si elimina il rischio di problemi burocratici (assicurazioni, permessi, ecc…). </li>
+        </ul>
+      </p>
+      <p>
+        I termini salienti del contratto:
+        <ul>
+          <li>Trasporto del trattore a scelta dell’utente.</li>
+          <li>Massimale di ore di utilizzo.
+          </li>
+          <li>Veicolo assicurato a carico della cooperativa con obbligo di versamento cauzionale franchigia.</li>
+          <li>Copertura furto-incendio-danni meccanici.</li>
+          <li>Manutenzione a carico della cooperativa.</li>
+        </ul> 
       </p>
     </div>
 
