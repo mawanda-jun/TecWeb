@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php"; ?>
+<?php require_once('../../validation/validator.php'); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -9,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
+if (!isAdmin()) {
   $_SESSION['error'] = "Sessione invalida";
   header("Location: sessione_scaduta.html");
   session_unset();
@@ -64,17 +65,17 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
 
 
       <?php
-        $connection = new DBConnection();
-        $connection->openConnection();
-        $admins = $connection->getListAdmins();
-        if ($admins != null) {
-          echo '<div class="listAndDelete"><p>Lista degli amministratori:</p><ul>';
-          foreach ($admins as $admin)
-            echo '<li>' . $admin['email'] . ' <a class="button" title="Rimuovi amministratore ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina</a></li>';
-          echo '</ul></div>';
-        } else
-          echo '<div id="">Non ci sono altri amministratori.</div>';
-        ?>
+      $connection = new DBConnection();
+      $connection->openConnection();
+      $admins = $connection->getListAdmins();
+      if ($admins != null) {
+        echo '<div class="listAndDelete"><p>Lista degli amministratori:</p><ul>';
+        foreach ($admins as $admin)
+          echo '<li>' . $admin['email'] . ' <a class="button" title="Rimuovi amministratore ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina</a></li>';
+        echo '</ul></div>';
+      } else
+        echo '<div id="">Non ci sono altri amministratori.</div>';
+      ?>
 
         <h1>Aggiungi un amministratore</h1>
         <form id="insertAdmin" action="adminManager.php" method="post">
@@ -82,10 +83,11 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <fieldset id="adminFields">
             <legend>Inserisci i seguenti dati:</legend>
             <label for="email"><span xml:lang="en">Email:</span></label>
-            <input name="email" type="email" id="email" size="30" maxlength="50" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"/>
+            <input name="email" type="email" id="email" size="30" maxlength="50" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"
+            />
             <label for="password"><span xml:lang="en">Password:</span></label>
             <input name="password" type="password" id="password" size="10" maxlength="12" />
-            <input type="submit" value="Aggiungi" name="submit"/>
+            <input type="submit" value="Aggiungi" name="submit" />
             <div id="errorInput">
               <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
             </div>
@@ -93,8 +95,8 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           </fieldset>
         </form>
         <?php
-          $connection->closeConnection();
-          ?>
+        $connection->closeConnection();
+        ?>
 
     </div>
 

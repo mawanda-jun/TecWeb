@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php"; ?>
+<?php require_once('../../validation/validator.php');?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -9,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
+if (!isAdmin()) {
   $_SESSION['error'] = "Sessione invalida";
   header("Location: sessione_scaduta.html");
   session_unset();

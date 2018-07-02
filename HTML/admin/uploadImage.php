@@ -24,8 +24,8 @@ function uploadImage($fileName, $tmpFileName, $fileSize)
 	}
 // Check if file already exists
 	if (file_exists($target_file)) {
-		$_SESSION['file_exists'] = "L'immagine esiste gi&agrave;.";
-		$uploadOk = 0;
+		$_SESSION['file_exists'] = "L'immagine esiste gi&agrave;. Sei sicuro di volerla usare?";
+		// $uploadOk = 0;
 	}
 // Check file size
 	if ($fileSize > 500000) {
@@ -105,4 +105,3 @@ function uploadImage($fileName, $tmpFileName, $fileSize)
 // 	);
 // }
 ?>
-

@@ -2,30 +2,28 @@
 
 session_start();
 
-if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if login has been successfull
+if (isAdmin()) { // control if login has been successfull
 
   $connection = new DBConnection();
   $connection->openConnection();
 
   if (isset($_POST['submit'])) {
-      // manca controllo su valori campi dati immessi
-    if (!isset($_POST['nome']) || empty($_POST['nome']))
-      $error = 'Il nome non pu&ograve; essere vuoto';
-    else if (!isset($_POST['cognome']) || empty($_POST['cognome']))
-      $error = 'Il cognome non pu&ograve; essere vuoto';
-    else if (!isset($_POST['telefono']) || empty($_POST['telefono']))
-      $error = 'Il numero di telefono non pu&ograve; essere vuoto';
-    else if (isset($_POST['email']) || !empty($_POST['email']))
-      if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
-      $error = 'L\'<span xml:lang="en">email</span> non &egrave; scritta correttamente. Seguire la prassi: "mario@gmail.com"';
 
+    $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
+    $cognome = filter_var($_POST['cognome'], FILTER_SANITIZE_STRING);
+    $telefono = filter_var($_POST['telefono'], FILTER_SANITIZE_NUMBER_INT);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+    $error = validateClientAdd($nome, $cognome, $telefono, $email);
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
       case "Aggiungi":
         {
-          if ($error == null)
+          if ($error == false) {
             $connection->insertClient($_POST['id'], $_POST['nome'], $_POST['cognome'], $_POST['telefono'], $_POST['email']);
+            $error = null;
+          }
         };
       case "Modifica":
         {
@@ -55,4 +53,3 @@ header("Location: adminClienti.php");
 exit();
 
 ?>
-

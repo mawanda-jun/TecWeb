@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if login has been successfull
+if (isAdmin()) { // control if login has been successfull
   // $_SESSION['fileName'] = $_FILES["fileToUpload"]["name"];
   // $_SESSION['file'] = $_FILES["fileToUpload"]["tmp_name"];
 

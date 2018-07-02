@@ -1,38 +1,35 @@
 <?php require_once __DIR__ . "/../../php/connection.php";
+require_once('../../validation/validator.php');
 
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if login has been successfull
+if (isAdmin()) { // control if login has been successfull
 
   $connection = new DBConnection();
   $connection->openConnection();
 
   if (isset($_POST['submit'])) {
 
-    if (!isset($_POST['email']) || empty($_POST['email']))
-      $error = 'L\'<span xml:lang="en">email</span> non pu&ograve; essere vuota.';
-    else if (!isset($_POST['password']) || empty($_POST['password']))
-      $error = 'La password non pu&ograve; essere vuota';
-    else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
-      $error = 'L\'<span xml:lang="en">email</span> non &egrave; scritta correttamente. Seguire la prassi: "mario@gmail.com"';
-    else if (strlen($_POST['password']) > 8)
-      $error = 'La password non deve essere superiore agli 8 caratteri.';
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+    $error = validateAdminAdd($email, $password);
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
       case "Aggiungi":
         {
-          if ($error == null)
-            $connection->insertAdmin($_POST['email'], $_POST['password']);
-        };
-      case "modify":
-        {
-            // nothing to do here for now
+          if ($error == false) {
+            $connection->insertAdmin($email, $password);
+            $error = null;
+          }
         };
     }
-  } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
+  } else if (!isEmpty($_GET['remove'])) {
     $connection->removeAdmin($_GET['remove']);
     $error = null;
   }
@@ -49,7 +46,7 @@ if ($error == null) {
 } else {
   $_SESSION['isError'] = true;
   $_SESSION['error'] = $error;
-  if (isset($_POST['email'])) $_SESSION['email'] = $_POST['email'];
+  if (!isEmpty($email)) $_SESSION['email'] = $_POST['email'];
 }
 header("Location: adminAmministratori.php");
 exit();

@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php"; ?>
+<?php require_once('../../validation/validator.php');?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -9,9 +10,9 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
+if (!isAdmin()) {
   $_SESSION['error'] = "Sessione invalida";
-  header("Location: sessione_scaduta.html");
+  header("Location: sessione_scaduta.php");
   session_unset();
   session_destroy();
   exit();
@@ -58,7 +59,8 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
     <div class="services">
       <div id="description">
         <h1>Benvenuto nella pagina di gestione dei servizi.</h1>
-        <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se ne pu&ograve; modificare il prezzo.</p>
+        <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre
+          se ne pu&ograve; modificare il prezzo.</p>
       </div>
       <div class="list-modify-delete-service">
         <?php
@@ -77,7 +79,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <form id="insertPrice" action="serviceManager.php" method="post">
             <label for="price">Prezzo</label>
             <input name="price" type="text" id="price" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
-            <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>"/>
+            <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
             <input type="submit" name="submitPrice" value="Modifica prezzo" />
           </form>
           <?php
@@ -89,22 +91,36 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
       ?>
       </div>
 
-      <!-- <div class="add-grain">
-        <h1>Inserisci una nuova <span xml:lang="en">cultivar</span></h1>
+      <div class="add-machine">
+        <h1>Inserisci una nuova macchina</h1>
         <form method="post" action="productManager.php" enctype="multipart/form-data">
-          <label for="name">Nome:</label>
+          <label for="id">Codice identificativo:</label>
+          <input type="text" name="id" />
+
+          <label for="type">Tipo:</label>
+          <input type="text" name="type" />
+
+          <label for="name">Marca:</label>
           <input type="text" name="name" />
-          <label for="availability">Disponibilit&agrave; (in quintali):</label>
-          <input type="numbrt" name="availability" />
-          <label for="price">Prezzo:</label>
+
+          <label for="model">Modello:</label>
+          <input type="text" name="model" />
+
+          <label for="power">Potenza:</label>
+          <input type="text" name="power" />
+
+          <label for="year">Anno:</label>
+          <input type="text" name="year" />
+
+          <label for="price">Prezzo all'ora:</label>
           <input type="text" name="price" />
-          <label for="description">Descrizione:</label>
-          <textarea name="description" rows="5" cols="40"></textarea>
+
           <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
           <input type="file" name="fileToUpload" id="fileToUpload" />
+
           <input type="submit" name="submit" value="Aggiungi" />
         </form>
-      </div> -->
+      </div>
 
 
 
@@ -121,7 +137,8 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
         <p>Da pensare a cosa scriverci</p>
-        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?><br/>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
+        <br/>
         <!-- <?php echo (isset($_SESSION['file_exists']) && $_SESSION['file_exists']) ? $_SESSION['file_exists'] : ''; ?><br/>
         <?php echo (isset($_SESSION['maxSize']) && $_SESSION['maxSize']) ? $_SESSION['maxSize'] : ''; ?><br/>
         <?php echo (isset($_SESSION['noExtension']) && $_SESSION['noExtension']) ? $_SESSION['noExtension'] : ''; ?><br/>
@@ -131,7 +148,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         <?php echo (isset($_SESSION['file']) && $_SESSION['file']) ? $_SESSION['file'] : ''; ?><br/>
         <?php echo (isset($_SESSION['fileName1']) && $_SESSION['fileName1']) ? $_SESSION['fileName1'] : ''; ?><br/>
         <?php echo (isset($_SESSION['file1']) && $_SESSION['file1']) ? $_SESSION['file1'] : ''; ?><br/> -->
-    </div>
+      </div>
     </footer>
 
 
