@@ -6,15 +6,15 @@
 <?php
 header('Content-type: application/xhtml+xml');
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 
 if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
-    $_SESSION['error'] = "Sessione invalida";
-    header("Location: sessione_scaduta.html");
-    session_unset();
-    session_destroy();
-    exit();
+  $_SESSION['error'] = "Sessione invalida";
+  header("Location: sessione_scaduta.html");
+  session_unset();
+  session_destroy();
+  exit();
 }
 ?>
 
@@ -70,24 +70,23 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
         $machines = $connection->getListMachinery();
 
         if ($machines != null) {
-            foreach ($machines as $machine) {
-                echo '<div class="grain-section">';
-                echo '<h1 tabindex="10">' . $machine['nome'] . ' ' . $machine['modello'] . '</h1>'; ?>
+          foreach ($machines as $machine) {
+            echo '<div class="grain-section">';
+            echo '<h1 tabindex="10">' . $machine['nome'] . ' ' . $machine['modello'] . '</h1>'; ?>
           <h2>Imposta un nuovo prezzo</h2>
           <form id="insertPrice" action="serviceManager.php" method="post">
             <label for="price">Prezzo</label>
-            <input name="price" type="number" id="price" size="5" />
-            <?php
-            echo '<a class="button" title="Imposta prezzo' . $machine['nome'] . '"' . ' href="serviceManager.php?machineID=' . $machine['codice'] . '" >Aggiungi prezzo</a>';
-            ?>
+            <input name="price" type="text" id="price" size="5" />
+            <?php echo '<input name="machineID" type="hidden" value="' . $machine['codice'] . '"/>'; ?>
+            <input type="submit" name="submitPrice" value="Aggiungi prezzo" />
           </form>
           <?php
-            echo '<a class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</a>';
-            echo '</div>';
+          echo '<button class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</button>';
+          echo '</div>';
           // echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : '';
         }
-    } else echo '<p>Nessun macchinario disponibile</p>';
-    ?>
+      } else echo '<p>Nessun macchinario disponibile</p>';
+      ?>
       </div>
 
       <!-- <div class="add-grain">
@@ -98,7 +97,7 @@ if (!isset($_SESSION['login']) || !($_SESSION['login'] === true)) {
           <label for="availability">Disponibilit&agrave; (in quintali):</label>
           <input type="numbrt" name="availability" />
           <label for="price">Prezzo:</label>
-          <input type="number" name="price" />
+          <input type="text" name="price" />
           <label for="description">Descrizione:</label>
           <textarea name="description" rows="5" cols="40"></textarea>
           <label for="fileToUpload">Seleziona un'immagine dal computer:</label>

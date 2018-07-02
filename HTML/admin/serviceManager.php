@@ -60,9 +60,11 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
     //         // nothing to do here for now
     //     };
     // }
-    } else if (isset($_GET['machineID']) && !empty($_GET['machineID'])) {
-        if (isset($_POST['price']))
-            $connection->setMachinePrice($_GET['machineID'], $_POST['price']);
+    } else if (isset($_POST['submitPrice'])) {
+        if (isset($_POST['machineID']) && !empty($_POST['machineID'])) {
+            if (isset($_POST['price']))
+                $connection->setMachinePrice($_POST['machineID'], $_POST['price']);
+        }
     } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
         if (!$connection->removeMachine($_GET['remove']))
             $error = "L'eliminazione del macchinario non &egrave; andata a buon fine. ";

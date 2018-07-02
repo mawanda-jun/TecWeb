@@ -60,11 +60,16 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === true) { // control if lo
             // nothing to do here for now
         };
     }
-  } else if (isset($_GET['grainName']) && !empty($_GET['grainName'])) {
-    if (isset($_POST['availability']))
-      $connection->setGrainAvailability($_GET['grainName'], $_POST['availability']);
-    else if (isset($_POST['price']))
-      $connection->setGrainPrice($_GET['grainName'], $_POST['price']);
+  } else if (isset($_POST['submitAvailability'])) {  //&& !empty($_POST['submitAvailability'])) {
+    if (isset($_POST['availability']) && isset($_POST['grainName']))
+      $connection->setGrainAvailability($_POST['grainName'], $_POST['availability']);
+      // $_SESSION['availability'] = $_POST['availability'];
+      // $_SESSION['grainName'] = $_POST['grainName'];
+  } else if (isset($_POST['submitPrice'])) {
+    if (isset($_POST['price']) && isset($_POST['grainName']))
+      if ($_POST['price'] > 999.99) $error = "Prezzo troppo alto, il massimo &egrave; di 999.99";
+    else
+      $connection->setGrainPrice($_POST['grainName'], $_POST['price']);
   } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
     if (!$connection->removeGrain($_GET['remove']))
       $error = "L'eliminazione di una coltivazione non &egrave; andata a buon fine. ";
