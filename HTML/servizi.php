@@ -62,6 +62,7 @@ header('Content-type: application/xhtml+xml'); ?>
   </div>
 
   <div class="content">
+    <div id="anchor"></div>
     <div class="center-section" id="services">
       <h1 tabindex="13">Servizio macchinari</h1>
       <p tabindex="15">L'azienda Cavallin pone la propria attrezzatura a vostra disposizione. Qui di seguito si possono
@@ -102,7 +103,7 @@ header('Content-type: application/xhtml+xml'); ?>
   </div>
   <!-- <div class="shrink-center"> -->
   <div id="go-to-menu">
-    <a href="#story">Torna su</a>
+    <a href="#anchor">Torna su</a>
   </div>
   <footer>
     <div class="shrink-center">
