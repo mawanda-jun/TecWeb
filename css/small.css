@@ -5,20 +5,20 @@
 }
 
 .dropbtn {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #3c2109;
+  color: #f4d03f;
   padding: 0.7em;
   margin: 2em;
   margin-top: 0.7em;
   margin-right: 1em;
   font-size: 1.3em;
-  border: none;
+  border: 0.2em solid #f4d03f;
   cursor: pointer;
 }
 
 .dropbtn:hover,
 .dropbtn:focus {
-  background-color: #3e8e41;
+  background-color: #573314;
 }
 
 .dropdown {

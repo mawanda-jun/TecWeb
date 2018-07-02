@@ -14,7 +14,7 @@ header('Content-type: application/xhtml+xml'); ?>
   <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
   />
   <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
-  <!-- <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script> -->
+  <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -37,16 +37,18 @@ header('Content-type: application/xhtml+xml'); ?>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
-          <li class="active"><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
-          <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
-          <li><a href="../html/prodotti.php" tabindex="7">Prodotti</a></li>
-          <li><a href="../html/servizi.php" tabindex="9">Servizi</a></li>
-          <li><a href="../html/contattaci.html" tabindex="11">Contattaci</a></li>
+          <ul>
+            <li class="active"><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
+            <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
+            <li><a href="../html/prodotti.php" tabindex="7">Prodotti</a></li>
+            <li><a href="../html/servizi.php" tabindex="9">Servizi</a></li>
+            <li><a href="../html/contattaci.html" tabindex="11">Contattaci</a></li>
+          </ul>
         </div>
       </div>
     </div>
     <div id="breadcrumb">
-      <p id="path" tabindex="12">Ti trovi in: Home</p>
+      <p id="path" tabindex="12">Ti trovi in: Prodotti</p>
     </div>
     <!-- </div> -->
   </header>
