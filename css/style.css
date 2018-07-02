@@ -258,11 +258,17 @@ header img {
 
 .center-section form {
   margin: auto;
-  width: 37%;
+  width: 39%;
+  /* width: 100%;
+  margin-left: 23em; */
 }
 
 .center-section form ul {
   list-style: none;
+}
+
+.center-section form li {
+  margin-bottom: 0.5em;
 }
 
 .center-section form label {
@@ -270,8 +276,22 @@ header img {
   width: 100%;
 }
 
-#testo {
-  width: 100%;
+.submit-form {
+  margin-top: 1em;
+}
+
+.form-control-submit:hover,
+.form-control-submit:focus {
+  cursor: pointer;
+}
+
+#name,
+#email {
+  width: 250px;
+}
+
+#message-text {
+  width: 480px;
   height: 10em;
 }
 
