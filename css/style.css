@@ -44,17 +44,12 @@ header img {
   position: relative;
 }
 
-.shrink-center {
-  max-width: 1024px;
-  margin: auto;
-}
-
 #navbar {
   float: right;
   list-style: none;
-  padding-top: 3.4em;
-  padding-right: 2em;
-  vertical-align: middle;
+  margin-top: 3.4em;
+  margin-right: 2em;
+  /* vertical-align: middle; */
 }
 
 #navbar li {
@@ -104,38 +99,26 @@ header img {
   color: #f4d03f;
 }
 
-#breadcrumb #admin {
-
-  float: right;
-  /* vertical-align: top; */
-  padding-right: 1em;
-  color: #f4d03f;
-}
-
 .spacer {
   width: 100%;
   height: 9.7em;
+  margin: 0em;
 }
 
 .top-img {
+  margin: 0em;
   background-repeat: no-repeat;
   background-color: white;
   background-position-x: center;
   background-position-y: bottom;
   background-size: 100%;
-  width: 100%;
   position: relative;
   bottom: 0em;
   z-index: +1;
   height: 40em;
+  width: 100%;
+  display: inline-block;
 }
-
-/* #home-top-img,
-#chi-top-img,
-#prodotti-top-img,
-#servizi-top-img {
-  height: 40em;
-} */
 
 #home-top-img {
   background-image: url(../images/home-img.jpg);
@@ -157,7 +140,6 @@ header img {
 .content {
   display: inline;
   z-index: +1;
-  /* padding-left: 1em; */
 }
 
 .left-section,
@@ -182,14 +164,15 @@ header img {
 .center-section h1,
 .grain-section h1,
 .service-section h1 {
+  margin: 0em;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding-left: 1.2em;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
+  padding-right: 1.2em;
   font-size: 3em;
   text-transform: uppercase;
   /* background-color: #FDEEB1; */
-  margin-top: 0.5em;
   /* position: relative; */
   /* line-height: 76% */
   /* float: left; */
@@ -199,6 +182,8 @@ header img {
   text-align: center;
   width: 100%;
   padding-left: 0em;
+  padding-right: 0em;
+
 }
 
 .left-section h1,
@@ -215,6 +200,8 @@ header img {
 }
 
 .service-section h2 {
+  margin: 0em;
+  padding-left: 2.4em;
   width: 100%;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-transform: uppercase;
@@ -224,16 +211,18 @@ header img {
 .right-section p,
 .grain-section p,
 .service-section p {
+  margin: 0em;
   width: 100%;
   /* float: left; */
   text-align: justify;
 }
 
 .center-section p {
+  margin: 0em;
   text-align: justify;
   width: auto;
   padding-left: 3.5em;
-  margin-right: 3.5em;
+  padding-right: 3.5em;
 }
 
 .center-section h3 {
@@ -364,4 +353,11 @@ footer {
   font-style: italic;
   font-size: 0.9em;
   vertical-align: middle;
+}
+
+#admin {
+  float: right;
+  /* vertical-align: top; */
+  padding-right: 1em;
+  color: #f4d03f;
 }
