@@ -1,14 +1,13 @@
 @import url("style.css");
 
-html,
+/* html,
 body {
   max-width: 480px;
 }
 
 #header {
   max-width: 480px;
-}
-
+} */
 
 .spacer {
   height: 10em;
