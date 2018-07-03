@@ -21,7 +21,8 @@ if (!isAdmin()) {
 
   <head>
     <meta name="description" content="Home page azienda agricola Cavallin" />
-    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
+    />
     <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
     />
@@ -89,7 +90,7 @@ if (!isAdmin()) {
       foreach ($clients as $client) {
         echo '<div class="grain-section">';
         echo '<ul>';
-        echo '<li> Identificativo: ' . $client['id'] . '</li>';
+        echo '<li id="client"> Identificativo: ' . $client['id'];
         echo '<p tabindex="10">' . $client['nome'] . ' ' . $client['cognome'] . '</p>';
         echo '<p tabindex="10"> Telefono: ' . $client['telefono'] . '</p>';
         echo '<p tabindex="10"> Email: ' . $client['email'] . '</p>';
@@ -111,6 +112,7 @@ if (!isAdmin()) {
 
         <?php
             echo '<a class="button" title="Rimuovi ' . $client['id'] . '"' . ' href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
+            echo '</li>';
             echo '</ul>';
             echo '</div>';
           }
@@ -118,28 +120,44 @@ if (!isAdmin()) {
         } else echo '<p>Nessun cliente presente.</p>';
         ?>
 
-        <div class="add-client" id="addClient">
-          <h1>Aggiungi un cliente</h1>
-          <form id="insertClient" action="clientManager.php" method="post">
-            <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
-            <fieldset id="clientFields">
-              <legend>Inserisci i seguenti dati:</legend>
-              <label for="id">Carta d'identità:</label>
-              <input name="id" type="text" id="id" size="30" maxlength="50" />
-              <label for="nome">Nome:</label>
-              <input name="nome" type="text" id="nome" size="30" maxlength="50" />
-              <label for="cognome">Cognome:</label>
-              <input name="cognome" type="text" id="cognome" size="30" maxlength="50" />
-              <label for="telefono">Numero di telefono:</label>
-              <input name="telefono" type="text" id="telefono" size="30" maxlength="50" />
-              <label for="email"><span xml:lang="en">Email:</span></label>
-              <input name="email" type="email" id="email" size="30" maxlength="50" />
-              <input type="submit" value="Aggiungi" name="submit"/>
-              
-              <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
-            </fieldset>
-          </form>
-        </div>
+          <div class="add-client" id="addClient">
+            <h1>Aggiungi un cliente</h1>
+            <form id="insertClient" action="clientManager.php" method="post">
+              <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
+              <fieldset id="clientFields">
+                <ul>
+                  <legend>Inserisci i seguenti dati:</legend>
+                  <li>
+                    <label for="id">Carta d'identità:</label>
+                    <input name="id" type="text" id="id" size="30" maxlength="50" />
+                  </li>
+                  <li>
+                    <label for="nome">Nome:</label>
+                    <input name="nome" type="text" id="nome" size="30" maxlength="50" />
+                  </li>
+                  <li>
+                    <label for="cognome">Cognome:</label>
+                    <input name="cognome" type="text" id="cognome" size="30" maxlength="50" />
+                  </li>
+                  <li>
+                    <label for="telefono">Numero di telefono:</label>
+                    <input name="telefono" type="text" id="telefono" size="30" maxlength="50" />
+                  </li>
+                  <li>
+                    <label for="email"><span xml:lang="en">Email:</span></label>
+                    <input name="email" type="email" id="email" size="30" maxlength="50" />
+                  </li>
+                  <li>
+                    <input type="submit" id="submit" value="Aggiungi" name="submit" />
+                  </li>
+                </ul>
+                <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
+              </fieldset>
+            </form>
+            <div id="errorInput">
+              <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
+            </div>
+          </div>
 
           <?php
         $connection->closeConnection();

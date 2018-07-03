@@ -96,7 +96,7 @@ if (!isAdmin()) {
         } else echo '<p>Nessuna prenotazione attiva al momento.</p>'; ?>
 
         <div class="add-reservation" id="addClient">
-          <h2>Aggiungi una prenotazione</h2>
+          <h1>Aggiungi una prenotazione</h1>
           <form id="insertPrenotation" action="prenotationManager.php" method="post">
             <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
             <fieldset id="prenotationFields">

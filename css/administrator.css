@@ -69,23 +69,29 @@
 
 .add-grain,
 .add-machine,
-.add-reservation {
+.add-reservation,
+.add-client {
   padding: 0.5em;
   padding-left: 2em;
 }
 
 .add-grain h1,
-.add-machine h1 {
+.add-machine h1,
+.add-reservation h1,
+.add-client h1 {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
+.add-client form ul,
 .add-grain form ul,
 .add-machine form ul,
 .add-reservation fieldset ul {
   list-style: none;
 }
 
+.grain-section #client form label,
+.add-client label,
 .add-grain label,
 .add-machine label,
 .add-reservation label {
@@ -93,13 +99,24 @@
   float: left;
 }
 
+.grain-section #client form label {
+  width: 100%;
+  float: left;
+  padding-bottom: 0.2em;
+}
+
+.add-client li,
 .add-grain li,
 .add-machine li,
 .add-reservation li {
   padding-bottom: 1em;
 }
 
-.add-reservation select,
+.add-reservation select {
+  border: 0.1px solid #0000005e;
+}
+
+.add-client fieldset,
 .add-reservation fieldset {
   border: none;
 }
@@ -109,12 +126,13 @@
   padding-top: 1em;
 }
 
+.add-client fieldset legend,
 .add-reservation fieldset legend {
   padding-bottom: 0.5em;
 }
 
 .add-reservation fieldset {
-  padding-bottom: 1em;
+  padding-top: 0.5em;
 }
 
 #fileToUpload {
@@ -136,4 +154,8 @@
   padding-left: 1em;
   padding-right: 1em;
   margin-top: 1em;
+}
+
+#go-to-menu {
+  display: none;
 }
