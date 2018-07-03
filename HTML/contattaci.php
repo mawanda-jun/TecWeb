@@ -22,6 +22,7 @@ if(isset($_POST['submit'])){
 
 <head>
   <title>Contattaci</title>
+  <meta meta name="viewport" content="width=device-width"/>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Pagina dei contatti" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />

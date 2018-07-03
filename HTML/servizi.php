@@ -7,6 +7,7 @@ header('Content-type: application/xhtml+xml'); ?>
 
 <head>
   <title>Servizi</title>
+  <meta name="viewport" content="width=device-width"/>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Servizi offerti dall'azienda" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
