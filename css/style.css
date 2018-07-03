@@ -448,17 +448,5 @@ html {
 }
 
 .bottom-section {
-  z-index: 100;
-  width: 100%;
-  max-width: 1024px;
-  background-color: #3c2109;
-  opacity: 0.97;
-}
-
-.bottom-section #navbar {
-  float: none;
-  margin: 0em;
-  text-align: center;
-  padding-top: 3em;
-  padding-bottom: 3em;
+  display: none;
 }
