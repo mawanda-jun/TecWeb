@@ -27,11 +27,18 @@
   color: initial;
 }
 
-.grains #description {
+.grains #description,
+.reservations #description,
+.clients #description {
   padding-left: 2em;
 }
 
-.grains #description h1 {
+.reservations #subtitle {
+  padding-left: 1.4em;
+}
+
+.grains #description h1,
+.reservations #description h1 {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
@@ -46,12 +53,23 @@
   padding-bottom: 0.5em;
 }
 
+.grain-section h4 {
+  padding-bottom: 0.5em;
+}
+
+.grain-section p {
+  float: left;
+  padding-left: 0em;
+  padding-bottom: 0.5em;
+}
+
 .grain-section form {
   padding-bottom: 1em;
 }
 
 .add-grain,
-.add-machine {
+.add-machine,
+.add-reservation {
   padding: 0.5em;
   padding-left: 2em;
 }
@@ -63,18 +81,39 @@
 }
 
 .add-grain form ul,
-.add-machine form ul {
+.add-machine form ul,
+.add-reservation fieldset ul {
   list-style: none;
 }
 
 .add-grain label,
-.add-machine label {
+.add-machine label,
+.add-reservation label {
   width: 100%;
   float: left;
 }
 
 .add-grain li,
-.add-machine li {
+.add-machine li,
+.add-reservation li {
+  padding-bottom: 1em;
+}
+
+.add-reservation select,
+.add-reservation fieldset {
+  border: none;
+}
+
+.add-reservation form {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.add-reservation fieldset legend {
+  padding-bottom: 0.5em;
+}
+
+.add-reservation fieldset {
   padding-bottom: 1em;
 }
 
@@ -91,7 +130,8 @@
 }
 
 .add-grain #submit,
-.add-machine #submit {
+.add-machine #submit,
+.add-reservation #submit {
   padding: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
