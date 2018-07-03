@@ -12,7 +12,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $wronglogin = false;
 $wrongloginmessage = '<div id="wronglogin">Dati errati!</div>';
-
 $connection = new DBConnection();
 $connection->openConnection();
 

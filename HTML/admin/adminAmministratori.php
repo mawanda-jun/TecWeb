@@ -66,8 +66,10 @@ if (!isAdmin()) {
         <p>In questa pagina &egrave; possibile inserire ed eliminare altri amministratori.</p>
       </div>
 
-
-      <?php
+      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+        echo '<p id="error">' . $_SESSION['error'] . '</p>';
+        $_SESSION['isError'] = false;
+      }
       $connection = new DBConnection();
       $connection->openConnection();
       $admins = $connection->getListAdmins();
@@ -91,9 +93,6 @@ if (!isAdmin()) {
             <label for="password"><span xml:lang="en">Password:</span></label>
             <input name="password" type="password" id="password" size="10" maxlength="12" />
             <input type="submit" value="Aggiungi" name="submit" />
-            <div id="errorInput">
-              <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-            </div>
             <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
           </fieldset>
         </form>

@@ -71,15 +71,15 @@ if (!isAdmin()) {
     <div class="clients">
       <div id="description">
         <h1>Benvenuto nella pagina di gestione dei clienti</h1>
-        <p>In questa pagina &egrave; possibile inserire ed eliminare altri clienti.</p>
+        <p>In questa pagina &egrave; possibile inserire ed eliminare i clienti.</p>
         <p>&Egrave; inoltre possibile modificarne il numero di telefono e l'indirizzo <span xml:lang="en">email</span>.</p>
       </div>
 
 
-      <div id="errorInput">
-      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-      </div>
-      <?php
+      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+        echo '<p id="error">' . $_SESSION['error'] . '</p>';
+        $_SESSION['isError'] = false;
+      }
       $connection = new DBConnection();
       $connection->openConnection();
       $clients = $connection->getListClients();

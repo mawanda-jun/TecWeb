@@ -24,13 +24,12 @@ if (isAdmin()) { // control if login has been successfull
     
     else if($_POST['start'] < date('Y-m-d'))
       $error = "La data di prenotazione non può essere passata";
-    // Controllo sulla disponibilità della prenotazione
-    
+      
     $order = $connection->getMachineAvailability($_POST['machineID'], $_POST['start'], $_POST['end']);
     if($order != null)
       $error = "Il macchinario selezionato non è disponibile in queste date. Controlla l'ordine #" . $order . " per maggiori informazioni";
       
-    if($error == null)
+    else if($error == null)
       $connection->insertPrenotation($_POST['clientID'], $_POST['machineID'], $_POST['start'], $_POST['end']);
 
   } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {

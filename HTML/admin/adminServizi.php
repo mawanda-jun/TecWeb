@@ -65,13 +65,15 @@ if (!isAdmin()) {
         <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se ne pu&ograve;
           modificare il prezzo.</p>
       </div>
-      <div class="list-modify-delete-service">
-        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
-        <br/>
-        <?php
+      
+      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+        echo '<p id="error">' . $_SESSION['error'] . '</p>';
+        $_SESSION['isError'] = false;
+      }
         $connection = new DBConnection();
         $connection->openConnection();
       
+      echo '<div class="list-modify-delete-service">';
       // $index = 0;         //forse non serve
       // $grainForPage = 10; //grani da mostrare per pagina
         $machines = $connection->getListMachinery();

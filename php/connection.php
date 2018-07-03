@@ -218,10 +218,9 @@ class DBConnection
     return mysqli_query($this->connection, $query) === true;
   }
 
-  // ritorna, se presente, l'ordine attivo per il macchinario (aggiungere controllo per intera durata prenotazione)
   public function getMachineAvailability($id, $start, $end) {
     $query = 'SELECT ordine FROM prenotazioni
-              WHERE dataInizio <= ' . $this->escape($end) . ' AND dataFine >= ' . $this->escape($end) . ' AND idMacchinario = "' . $this->escape($id) . '"';
+              WHERE dataInizio <= "' . $this->escape($end) . '" AND dataFine >= "' . $this->escape($start) . '" AND idMacchinario = "' . $this->escape($id) . '"';
     return (mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
   }
 

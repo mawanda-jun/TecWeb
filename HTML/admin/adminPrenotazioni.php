@@ -63,13 +63,16 @@ if (!isAdmin()) {
     <div class="reservations">
       <div id="description">
         <h1>Benvenuto nella pagina di gestione delle prenotazioni</h1>
+        <p>In questa pagina &egrave; possibile inserire ed eliminare una prenotazione se il macchinario &egrave; disponibile nel periodo indicato.</p>
+        <p>Prima di procedere con la prenotazione, ricordati di inserire il nuovo cliente se questo non &egrave; gi&agrave; presente nel database.</p>
       </div>
 
-      <div id="errorInput">
-      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-      </div>
-      <?php
-        $connection = new DBConnection();
+      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+        echo '<p id="error">' . $_SESSION['error'] . '</p>';
+        $_SESSION['isError'] = false;
+      }
+      
+      $connection = new DBConnection();
         $connection->openConnection();
         date_default_timezone_set("Europe/Rome");
 
