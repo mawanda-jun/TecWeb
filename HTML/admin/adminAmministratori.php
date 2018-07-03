@@ -93,7 +93,7 @@ if (!isAdmin()) {
             <input name="email" type="email" id="email" size="30" maxlength="50"/>
             <label for="password"><span xml:lang="en">Password:</span></label>
             <input name="password" type="password" id="password" size="10" maxlength="12" />
-            <input type="submit" id="submit" value="Aggiungi" name="submit" />
+            <input type="submit" id="submit" value="Aggiungi amministratore" name="submit" />
             <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
           </fieldset>
         </form>

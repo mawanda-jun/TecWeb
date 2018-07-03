@@ -128,7 +128,7 @@ if (!isAdmin()) {
               <input type="file" name="fileToUpload" id="fileToUpload" />
             </li>
             <li>
-              <input type="submit" name="submit" id="submit" value="Aggiungi" />
+              <input type="submit" name="submit" id="submit" value="Aggiungi coltivazione" />
             </li>
           </ul>
         </form>
