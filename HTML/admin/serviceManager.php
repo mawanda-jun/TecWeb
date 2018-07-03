@@ -32,7 +32,7 @@ if (isAdmin()) { // control if login has been successfull
         switch ($_POST['submit']) {
             default:
                 $error = "action not found";
-            case "Aggiungi":
+            case "Aggiungi macchinario":
                 {
                     if ($error == null) {
                         $fileName = $_FILES["fileToUpload"]["name"];

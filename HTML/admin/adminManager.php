@@ -21,7 +21,7 @@ if (isAdmin()) { // control if login has been successfull
     switch ($_POST['submit']) {
       default:
         $error = "action not found";
-      case "Aggiungi":
+      case "Aggiungi amministratore":
         {
           if ($error == false) {
             $connection->insertAdmin($email, $password);
