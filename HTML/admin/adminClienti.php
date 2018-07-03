@@ -21,8 +21,7 @@ if (!isAdmin()) {
 
   <head>
     <meta name="description" content="Home page azienda agricola Cavallin" />
-    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
-    />
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
     <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
     />
@@ -50,7 +49,7 @@ if (!isAdmin()) {
           <li><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
           <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
           <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
-          <li><a href="adminOrdini.php" tabindex="7">Ordini</a></li>
+          <li><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
           <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li class="active"><a href="adminClienti.php" tabindex="11">Clienti</a></li>
           <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
@@ -120,7 +119,7 @@ if (!isAdmin()) {
         } else echo '<p>Nessun cliente presente.</p>';
         ?>
 
-          <div class="add-client" id="addClient">
+        <div class="add-client" id="addClient">
             <h1>Aggiungi un cliente</h1>
             <form id="insertClient" action="clientManager.php" method="post">
               <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
