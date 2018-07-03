@@ -41,7 +41,7 @@ if (!isAdmin()) {
           <li><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
           <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
           <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
-          <li><a href="adminOrdini.php" tabindex="7">Ordini</a></li>
+          <li><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
           <li class="active"><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
           <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
@@ -63,10 +63,8 @@ if (!isAdmin()) {
     <div class="reservations">
       <div id="description">
         <h1>Benvenuto nella pagina di gestione delle prenotazioni</h1>
-        <p>In questa pagina &egrave; possibile inserire ed eliminare una prenotazione se il macchinario &egrave; disponibile
-          nel periodo indicato.</p>
-        <p>Prima di procedere con la prenotazione, ricordati di inserire il nuovo cliente se questo non &egrave; gi&agrave;
-          presente nel database.</p>
+        <p>In questa pagina &egrave; possibile inserire ed eliminare una prenotazione se il macchinario &egrave; disponibile nel periodo indicato.</p>
+        <p>Prima di procedere con la prenotazione, ricordati di inserire il nuovo cliente se questo non &egrave; gi&agrave; presente nel database.</p>
       </div>
 
       <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
@@ -87,7 +85,7 @@ if (!isAdmin()) {
             echo '<div class="grain-section">';
             $activeMachinery = $connection->getMachine($prenotation['idMacchinario']);
             echo '<h3 tabindex="10">Ordine #' . $prenotation['ordine'] . '</h3>';
-            echo '<h4 tabindex="10">' . $activeMachinery['nome'] . ' ' . $activeMachinery['modello'] .'</h4>';
+            echo '<h4 tabindex="10">Macchinario: ' . $activeMachinery['nome'] . ' ' . $activeMachinery['modello'] .'</h4>';
             echo '<p tabindex="10">ID cliente: ' . $prenotation['idCliente'] . '</p>';
             echo '<p tabindex="10">ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
             echo '<p tabindex="10">Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
@@ -97,12 +95,11 @@ if (!isAdmin()) {
           }
         } else echo '<p>Nessuna prenotazione attiva al momento.</p>'; ?>
 
-      <div class="add-reservation" id="addClient">
-        <h1>Aggiungi una prenotazione</h1>
-        <form id="insertPrenotation" action="prenotationManager.php" method="post">
-          <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
-          <fieldset id="prenotationFields">
-            <ul>
+        <div class="add-reservation" id="addClient">
+          <h2>Aggiungi una prenotazione</h2>
+          <form id="insertPrenotation" action="prenotationManager.php" method="post">
+            <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
+            <fieldset id="prenotationFields">
               <?php
         $clients = $connection->getListClients();
         echo 'Lista dei clienti:';
@@ -131,7 +128,7 @@ if (!isAdmin()) {
         } else
             echo '<div id="notRegisteredMachine">Non ci sono macchinari registrati! Registrane prima uno.</div>';
         ?>
-                    <fieldset>
+            <fieldset>
                       <legend>Scegli le date della prenotazione:</legend>
                       <ul>
                         <li>
@@ -146,21 +143,21 @@ if (!isAdmin()) {
                       </ul>
                     </fieldset>
 
-                    <?php 
+              <?php 
               if(isset($_POST['machineID']) && isset($_POST['client'])) {
                 echo '<input name="machineID" type="hidden" value="' . $_POST['machineID'] . '"/>'; 
                 echo '<input name="clientID" type="hidden" value="' . $_POST['clientID'] . '"/>'; 
               }?>
-                    <input type="submit" id="submit" value="Aggiungi prenotazione" name="submit" />
+              <input type="submit" value="Aggiungi prenotazione" name="submit"/>
+              
+              <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
+            </fieldset>
+          </form>
+        </div>
 
-                    <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
-          </fieldset>
-        </form>
-      </div>
 
 
-
-      <?php $connection->closeConnection(); ?>
+        <?php $connection->closeConnection(); ?>
     </div>
 
 
