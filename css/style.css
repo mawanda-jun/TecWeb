@@ -20,9 +20,9 @@ html {
 /* -----MANAGE HEADER ELEMENTS----- */
 
 #go-to-content {
-  /* display: none; */
-  color: #3c2109;
-  opacity: 0.97;
+  float: right;
+  padding-right: 1em;
+  color: #f4d03f;
 }
 
 header {
