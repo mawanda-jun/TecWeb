@@ -27,21 +27,21 @@ header('Content-type: application/xhtml+xml'); ?>
     <div class="row">
       <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
       <ul id="navbar">
-        <li><a href="../html/home.html" lang="en"  tabindex="10" target="_top">Home</a></li>
-        <li><a href="../html/chi-siamo.html"  tabindex="10" target="_top">Chi siamo</a></li>
-        <li class="active"><a href=""  tabindex="10" target="_top">Prodotti</a></li>
-        <li><a href="../html/servizi.php"  tabindex="10" target="_top">Servizi</a></li>
-        <li><a href="../html/contattaci.html"  tabindex="10" target="_top">Contattaci</a></li>
+        <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
+        <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
+        <li class="active"><a href="" tabindex="10" target="_top">Prodotti</a></li>
+        <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
+        <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
       </ul>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
           <ul>
-            <li class="active"><a href="../html/home.html" lang="en"  tabindex="10" target="_top">Home</a></li>
-            <li><a href="../html/chi-siamo.html"  tabindex="10" target="_top">Chi siamo</a></li>
-            <li><a href="../html/prodotti.php"  tabindex="10" target="_top">Prodotti</a></li>
-            <li><a href="../html/servizi.php"  tabindex="10" target="_top">Servizi</a></li>
-            <li><a href="../html/contattaci.html"  tabindex="10" target="_top">Contattaci</a></li>
+            <li class="active"><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
+            <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
+            <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
+            <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
+            <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
           </ul>
         </div>
       </div>
@@ -54,7 +54,7 @@ header('Content-type: application/xhtml+xml'); ?>
   <div class="spacer">
     &nbsp;
   </div>
-  <div class="top-img" id="prodotti-top-img" >
+  <div class="top-img" id="prodotti-top-img">
   </div>
   <div class="content">
     <div id="anchor"></div>
@@ -111,6 +111,15 @@ header('Content-type: application/xhtml+xml'); ?>
         <li>Giovanni Cavallin - 1148957</li>
       </ul>
     </div>
+  </div>
+  <div class="bottom-section">
+    <ul id="navbar">
+      <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
+      <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
+      <li class="active"><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
+      <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
+      <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
+    </ul>
   </div>
 
 

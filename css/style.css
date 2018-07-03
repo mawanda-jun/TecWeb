@@ -404,6 +404,7 @@ html {
 /* -----MANAGE FOOTER----- */
 
 #footer {
+  width: 100%;
   border-bottom: 1px solid #ddd;
   overflow: hidden;
   text-align: center;
@@ -437,4 +438,20 @@ html {
   /* vertical-align: top; */
   padding-right: 1em;
   color: #f4d03f;
+}
+
+.bottom-section {
+  z-index: 100;
+  width: 100%;
+  max-width: 1024px;
+  background-color: #3c2109;
+  opacity: 0.97;
+}
+
+.bottom-section #navbar {
+  float: none;
+  margin: 0em;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
