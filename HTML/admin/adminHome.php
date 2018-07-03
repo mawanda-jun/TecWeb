@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php"; ?>
-<?php require_once('../../validation/validator.php');?>
+<?php require_once('../../validation/validator.php'); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -46,8 +46,11 @@ else
       <?php echo $title ?>
     </title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="pannello_amministrazione" content="Pagina di amministrazione per gli amministratori" />
-    <meta name="author" content="DASISTEMARE" />
+    <meta name="description" content="Pagina di amministrazione per gli amministratori" />
+    <meta name="author" content="Tecwweb&amp;Pastorizia" />
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" sizes="16x16" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
     <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
@@ -178,10 +181,16 @@ else
             <a href="#story">Torna su</a>
           </div>
           <footer>
-            <div class="shrink-center">
-              <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-              <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-              <p>Da pensare a cosa scriverci</p>
+            <div id="site_info">
+              <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+              <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+              <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+              <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+              <ul id="collaborators">
+                <li>Manuel Vianello - 1102467</li>
+                <li>Stefano Panozzo - 1097068</li>
+                <li>Giovanni Cavallin - 1148957</li>
+              </ul>
             </div>
           </footer>
           <!-- </div> -->

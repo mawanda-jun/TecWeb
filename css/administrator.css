@@ -26,3 +26,74 @@
   text-decoration: none;
   color: initial;
 }
+
+.grains #description {
+  padding-left: 2em;
+}
+
+.grains #description h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.grain-section h1 {
+  font-size: 2.5em;
+  float: left;
+  padding-left: 0em;
+}
+
+.grain-section h2 {
+  padding-bottom: 0.5em;
+}
+
+.grain-section form {
+  padding-bottom: 1em;
+}
+
+.add-grain,
+.add-machine {
+  padding: 0.5em;
+  padding-left: 2em;
+}
+
+.add-grain h1,
+.add-machine h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.add-grain form ul,
+.add-machine form ul {
+  list-style: none;
+}
+
+.add-grain label,
+.add-machine label {
+  width: 100%;
+  float: left;
+}
+
+.add-grain li,
+.add-machine li {
+  padding-bottom: 1em;
+}
+
+#fileToUpload {
+  padding-top: 0.5em;
+}
+
+.button {
+  padding: 0.3em;
+}
+
+#submit {
+  cursor: pointer;
+}
+
+.add-grain #submit,
+.add-machine #submit {
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 1em;
+}

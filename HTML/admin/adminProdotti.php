@@ -22,8 +22,11 @@ if (!isAdmin()) {
   <head>
     <title>Prodotti</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="prodotti" content="Pagina di gestione dei prodotti" />
-    <meta name="author" content="DASISTEMARE" />
+    <meta name="description" content="Pagina di gestione dei prodotti" />
+    <meta name="author" content="Tecwweb&amp;Pastorizia" />
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" sizes="16x16" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
     <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
@@ -63,7 +66,7 @@ if (!isAdmin()) {
           <br/> &Egrave; anche possibile cambiarne solo la disponibilit&agrave; e il prezzo.</p>
       </div>
       <div class="list-modify-delete-grain">
-      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
         <?php
         $connection = new DBConnection();
         $connection->openConnection();
@@ -79,15 +82,16 @@ if (!isAdmin()) {
           <h2>Imposta una nuova disponibilit&agrave;</h2>
           <form id="insertAvailability" action="productManager.php" method="post" enctype="multipart/form-data">
             <label for="availability">Disponibilit&agrave;</label>
-            <input name="availability" type="text" id="availability" size="5" value="<?php echo $grain['disponibilita'] ?>"/>
-            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>"/>
+            <input name="availability" type="text" id="availability" size="5" value="<?php echo $grain['disponibilita'] ?>"
+            />
+            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
             <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
           </form>
           <h2>Imposta un nuovo prezzo</h2>
           <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
             <label for="price">Prezzo</label>
-            <input name="price" type="text" id="price" size="5" value ="<?php echo $grain['prezzo'] ?>" />
-            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>"/>
+            <input name="price" type="text" id="price" size="5" value="<?php echo $grain['prezzo'] ?>" />
+            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
             <input type="submit" name="submitPrice" value="Modifica prezzo" />
           </form>
           <?php
@@ -102,23 +106,33 @@ if (!isAdmin()) {
       <div class="add-grain">
         <h1>Inserisci una nuova <span xml:lang="en">cultivar</span></h1>
         <form method="post" action="productManager.php" enctype="multipart/form-data">
-          <label for="name">Nome:</label>
-          <input type="text" name="name" />
-          <label for="availability">Disponibilit&agrave; (in quintali):</label>
-          <input type="numbrt" name="availability" />
-          <label for="price">Prezzo:</label>
-          <input type="text" name="price" />
-          <label for="description">Descrizione:</label>
-          <textarea name="description" rows="5" cols="40"></textarea>
-          <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
-          <input type="file" name="fileToUpload" id="fileToUpload" />
-          <input type="submit" name="submit" value="Aggiungi" />
+          <ul>
+            <li>
+              <label for="name">Nome:</label>
+              <input type="text" name="name" />
+            </li>
+            <li>
+              <label for="availability">Disponibilit&agrave; (in quintali):</label>
+              <input type="numbrt" name="availability" />
+            </li>
+            <li>
+              <label for="price">Prezzo:</label>
+              <input type="text" name="price" />
+            </li>
+            <li>
+              <label for="description">Descrizione:</label>
+              <textarea name="description" rows="5" cols="40"></textarea>
+            </li>
+            <li>
+              <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
+              <input type="file" name="fileToUpload" id="fileToUpload" />
+            </li>
+            <li>
+              <input type="submit" name="submit" id="submit" value="Aggiungi" />
+            </li>
+          </ul>
         </form>
       </div>
-
-
-
-
     </div>
 
 
@@ -127,24 +141,16 @@ if (!isAdmin()) {
       <a href="#story">Torna su</a>
     </div>
     <footer>
-      <div class="shrink-center">
-        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-        <p>Da pensare a cosa scriverci</p>
-        
-        <!-- <?php echo (isset($_SESSION['file_exists']) && $_SESSION['file_exists']) ? $_SESSION['file_exists'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['maxSize']) && $_SESSION['maxSize']) ? $_SESSION['maxSize'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['noExtension']) && $_SESSION['noExtension']) ? $_SESSION['noExtension'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['noCharacter']) && $_SESSION['noCharacter']) ? $_SESSION['noCharacter'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['getImageType']) && $_SESSION['getImageType']) ? $_SESSION['getImageType'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['fileName']) && $_SESSION['fileName']) ? $_SESSION['fileName'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['file']) && $_SESSION['file']) ? $_SESSION['file'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['fileName1']) && $_SESSION['fileName1']) ? $_SESSION['fileName1'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['file1']) && $_SESSION['file1']) ? $_SESSION['file1'] : ''; ?><br/> 
-        <?php echo (isset($_SESSION['availability']) && $_SESSION['availability']) ? $_SESSION['availability'] : ''; ?>
-        <br/>
-        <?php echo (isset($_SESSION['grainName']) && $_SESSION['grainName']) ? $_SESSION['grainName'] : ''; ?> 
-        <br/>-->
+      <div id="site_info">
+        <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+        <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+        <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+        <ul id="collaborators">
+          <li>Manuel Vianello - 1102467</li>
+          <li>Stefano Panozzo - 1097068</li>
+          <li>Giovanni Cavallin - 1148957</li>
+        </ul>
       </div>
     </footer>
 

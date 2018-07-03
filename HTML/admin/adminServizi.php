@@ -22,8 +22,11 @@ if (!isAdmin()) {
   <head>
     <title>Servizi</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="servizi" content="Pagina di gestione dei servizi offerti" />
-    <meta name="author" content="DASISTEMARE" />
+    <meta name="description" content="Pagina di gestione dei servizi offerti" />
+    <meta name="author" content="Tecwweb&amp;Pastorizia" />
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" sizes="16x16" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
     <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
@@ -59,11 +62,11 @@ if (!isAdmin()) {
     <div class="services">
       <div id="description">
         <h1>Benvenuto nella pagina di gestione dei servizi.</h1>
-        <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre
-          se ne pu&ograve; modificare il prezzo.</p>
+        <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se ne pu&ograve;
+          modificare il prezzo.</p>
       </div>
       <div class="list-modify-delete-service">
-      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
         <br/>
         <?php
         $connection = new DBConnection();
@@ -82,7 +85,7 @@ if (!isAdmin()) {
             <label for="price">Prezzo</label>
             <input name="price" type="text" id="price" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
             <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
-            <input type="submit" name="submitPrice" value="Modifica prezzo" />
+            <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
           </form>
           <?php
           echo '<a class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</a>';
@@ -96,37 +99,45 @@ if (!isAdmin()) {
       <div class="add-machine">
         <h1>Inserisci una nuova macchina</h1>
         <form method="post" action="serviceManager.php" enctype="multipart/form-data">
-          <label for="id">Codice identificativo:</label>
-          <input type="text" name="id" />
-
-          <label for="type">Tipo:</label>
-          <input type="text" name="type" />
-
-          <label for="name">Marca:</label>
-          <input type="text" name="name" />
-
-          <label for="model">Modello:</label>
-          <input type="text" name="model" />
-
-          <label for="power">Potenza:</label>
-          <input type="text" name="power" />
-
-          <label for="year">Anno:</label>
-          <input type="text" name="year" />
-
-          <label for="price">Prezzo all'ora:</label>
-          <input type="text" name="price" />
-
-          <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
-          <input type="file" name="fileToUpload" id="fileToUpload" />
-
-          <input type="submit" name="submit" value="Aggiungi" />
+          <ul>
+            <li>
+              <label for="id">Codice identificativo:</label>
+              <input type="text" name="id" />
+            </li>
+            <li>
+              <label for="type">Tipo:</label>
+              <input type="text" name="type" />
+            </li>
+            <li>
+              <label for="name">Marca:</label>
+              <input type="text" name="name" />
+            </li>
+            <li>
+              <label for="model">Modello:</label>
+              <input type="text" name="model" />
+            </li>
+            <li>
+              <label for="power">Potenza:</label>
+              <input type="text" name="power" />
+            </li>
+            <li>
+              <label for="year">Anno:</label>
+              <input type="text" name="year" />
+            </li>
+            <li>
+              <label for="price">Prezzo all'ora:</label>
+              <input type="text" name="price" />
+            </li>
+            <li>
+              <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
+              <input type="file" name="fileToUpload" id="fileToUpload" />
+            </li>
+            <li>
+              <input type="submit" name="submit" id="submit" value="Aggiungi" />
+            </li>
+          </ul>
         </form>
       </div>
-
-
-
-
     </div>
 
 
@@ -135,19 +146,16 @@ if (!isAdmin()) {
       <a href="#story">Torna su</a>
     </div>
     <footer>
-      <div class="shrink-center">
-        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-        <p>Da pensare a cosa scriverci</p>
-        <!-- <?php echo (isset($_SESSION['file_exists']) && $_SESSION['file_exists']) ? $_SESSION['file_exists'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['maxSize']) && $_SESSION['maxSize']) ? $_SESSION['maxSize'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['noExtension']) && $_SESSION['noExtension']) ? $_SESSION['noExtension'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['noCharacter']) && $_SESSION['noCharacter']) ? $_SESSION['noCharacter'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['getImageType']) && $_SESSION['getImageType']) ? $_SESSION['getImageType'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['fileName']) && $_SESSION['fileName']) ? $_SESSION['fileName'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['file']) && $_SESSION['file']) ? $_SESSION['file'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['fileName1']) && $_SESSION['fileName1']) ? $_SESSION['fileName1'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['file1']) && $_SESSION['file1']) ? $_SESSION['file1'] : ''; ?><br/> -->
+      <div id="site_info">
+        <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+        <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+        <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+        <ul id="collaborators">
+          <li>Manuel Vianello - 1102467</li>
+          <li>Stefano Panozzo - 1097068</li>
+          <li>Giovanni Cavallin - 1148957</li>
+        </ul>
       </div>
     </footer>
 

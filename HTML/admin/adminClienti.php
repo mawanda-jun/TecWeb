@@ -20,10 +20,21 @@ if (!isAdmin()) {
 ?>
 
   <head>
+    <meta name="description" content="Home page azienda agricola Cavallin" />
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
+    <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
+    />
+    <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" sizes="16x16" />
+    <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
+    <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script>
+
+
     <title>Clienti</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="gestione_clienti" content="Pagina di gestione dei clienti" />
-    <meta name="author" content="DASISTEMARE" />
+    <meta name="description" content="Pagina di gestione dei clienti" />
+    <meta name="author" content="Tecwweb&amp;Pastorizia" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
     <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
@@ -71,10 +82,10 @@ if (!isAdmin()) {
       $clients = $connection->getListClients();
 
       if ($clients != null) { ?>
-      <div id="errorInput">
-        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-      </div>
-      <?php 
+        <div id="errorInput">
+          <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
+        </div>
+        <?php 
       foreach ($clients as $client) {
         echo '<div class="grain-section">';
         echo '<ul>';
@@ -84,21 +95,21 @@ if (!isAdmin()) {
         echo '<p tabindex="10"> Email: ' . $client['email'] . '</p>';
         ?>
 
-            <form id="insertNumber" action="clientManager.php" method="post" enctype="multipart/form-data">
-              <label for="number">Nuovo numero di telefono:</label>
-              <input name="number" type="text" id="number" size="9" />
-              <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
-              <input type="submit" name="submitNumber" value="Modifica numero" />
-            </form>
+        <form id="insertNumber" action="clientManager.php" method="post" enctype="multipart/form-data">
+          <label for="number">Nuovo numero di telefono:</label>
+          <input name="number" type="text" id="number" size="9" />
+          <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
+          <input type="submit" name="submitNumber" value="Modifica numero" />
+        </form>
 
-            <form id="insertEmail" action="clientManager.php" method="post" enctype="multipart/form-data">
-              <label for="email">Nuova email:</label>
-              <input name="email" type="text" id="email" size="23" />
-              <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
-              <input type="submit" name="submitEmail" value="Modifica email" />
-            </form>
+        <form id="insertEmail" action="clientManager.php" method="post" enctype="multipart/form-data">
+          <label for="email">Nuova email:</label>
+          <input name="email" type="text" id="email" size="23" />
+          <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
+          <input type="submit" name="submitEmail" value="Modifica email" />
+        </form>
 
-            <?php
+        <?php
             echo '<a class="button" title="Rimuovi ' . $client['id'] . '"' . ' href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
             echo '</ul>';
             echo '</div>';
@@ -130,7 +141,7 @@ if (!isAdmin()) {
           </form>
         </div>
 
-        <?php
+          <?php
         $connection->closeConnection();
         ?>
 
@@ -141,11 +152,16 @@ if (!isAdmin()) {
       <a href="#story">Torna su</a>
     </div>
     <footer>
-      <div class="shrink-center">
-        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-        <p>Da pensare a cosa scriverci</p><br/>
-        <!-- <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?> -->
+      <div id="site_info">
+        <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+        <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+        <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+        <ul id="collaborators">
+          <li>Manuel Vianello - 1102467</li>
+          <li>Stefano Panozzo - 1097068</li>
+          <li>Giovanni Cavallin - 1148957</li>
+        </ul>
       </div>
     </footer>
     <!-- </div> -->

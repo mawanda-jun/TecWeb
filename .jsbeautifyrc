@@ -51,7 +51,7 @@
       "?",
       "?php"
     ], // List of tags that should not be reformatted
-    "wrap_line_length": 100 // Lines should wrap at next opportunity after this number of characters (0 disables)
+    "wrap_line_length": 110 // Lines should wrap at next opportunity after this number of characters (0 disables)
   },
   "css": {
     "allowed_file_extensions": [
