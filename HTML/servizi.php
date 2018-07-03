@@ -6,10 +6,13 @@ header('Content-type: application/xhtml+xml'); ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-  <title>Home Page</title>
+  <title>Servizi</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="DASISTEMARE" />
-  <meta name="author" content="DASISTEMARE" />
+  <meta name="description" content="Servizi offerti dall'azienda" />
+  <meta name="author" content="Tecwweb&amp;Pastorizia" />
+  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+  <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" sizes="16x16" />
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
   <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
   />
@@ -67,16 +70,16 @@ header('Content-type: application/xhtml+xml'); ?>
       <h1 tabindex="13">Servizio macchinari</h1>
       <p tabindex="15">
         Proponiamo un servizio di noleggio trattori, telescopici e attrezzatura agricola. Mettiamo a vostra disposizione
-        un parco trattori ampio e completo, atto a soddisfare tutte le esigenze. Sono disponibili trattori
-        da 50 a 400 cavalli, telescopici da 6mt a 14mt e attrezzature agricole specializzate.
+        un parco trattori ampio e completo, atto a soddisfare tutte le esigenze. Sono disponibili trattori da 50
+        a 400 cavalli, telescopici da 6mt a 14mt e attrezzature agricole specializzate.
       </p>
       <p>
         Il servizio del noleggio presenta diversi vantaggi:
         <ul>
           <li>Potete ridurre al minimo il parco macchine, conservando più risorse</li>
           <li>Avete sempre a disposizione la macchina giusta per il lavoro in corso.</li>
-          <li>Il noleggio elimina i costi di manutenzione, i costi di riparazione e i costi indiretti dovuti allo
-            stop dei lavori.</li>
+          <li>Il noleggio elimina i costi di manutenzione, i costi di riparazione e i costi indiretti dovuti allo stop
+            dei lavori.</li>
           <li>Controllo dei costi e budget migliori: il noleggio offre un costo chiaro e semplice, dato dalla fattura
             del noleggiatore.</li>
           <li>Con il noleggio si elimina il rischio di problemi burocratici (assicurazioni, permessi, ecc…). </li>
@@ -91,7 +94,7 @@ header('Content-type: application/xhtml+xml'); ?>
           <li>Veicolo assicurato a carico della cooperativa con obbligo di versamento cauzionale franchigia.</li>
           <li>Copertura furto-incendio-danni meccanici.</li>
           <li>Manutenzione a carico della cooperativa.</li>
-        </ul> 
+        </ul>
       </p>
     </div>
 
@@ -130,7 +133,7 @@ header('Content-type: application/xhtml+xml'); ?>
     <a href="#anchor">Torna su</a>
   </div>
   <footer>
-  <div id="site_info">
+    <div id="site_info">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
       <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>

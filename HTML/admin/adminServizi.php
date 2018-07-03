@@ -22,8 +22,11 @@ if (!isAdmin()) {
   <head>
     <title>Servizi</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="servizi" content="Pagina di gestione dei servizi offerti" />
-    <meta name="author" content="DASISTEMARE" />
+    <meta name="description" content="Pagina di gestione dei servizi offerti" />
+    <meta name="author" content="Tecwweb&amp;Pastorizia" />
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" sizes="16x16" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
     <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
@@ -59,11 +62,11 @@ if (!isAdmin()) {
     <div class="services">
       <div id="description">
         <h1>Benvenuto nella pagina di gestione dei servizi.</h1>
-        <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre
-          se ne pu&ograve; modificare il prezzo.</p>
+        <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se ne pu&ograve;
+          modificare il prezzo.</p>
       </div>
       <div class="list-modify-delete-service">
-      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
         <br/>
         <?php
         $connection = new DBConnection();
@@ -135,17 +138,17 @@ if (!isAdmin()) {
       <a href="#story">Torna su</a>
     </div>
     <footer>
-    <div id="site_info">
-      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
-      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-      <ul id="collaborators">
-        <li>Manuel Vianello - 1102467</li>
-        <li>Stefano Panozzo - 1097068</li>
-        <li>Giovanni Cavallin - 1148957</li>
-      </ul>
-    </div>
+      <div id="site_info">
+        <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+        <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+        <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+        <ul id="collaborators">
+          <li>Manuel Vianello - 1102467</li>
+          <li>Stefano Panozzo - 1097068</li>
+          <li>Giovanni Cavallin - 1148957</li>
+        </ul>
+      </div>
     </footer>
 
 

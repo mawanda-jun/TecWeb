@@ -8,8 +8,11 @@ header('Content-type: application/xhtml+xml'); ?>
 <head>
   <title>Prodotti</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="DASISTEMARE" />
-  <meta name="author" content="DASISTEMARE" />
+  <meta name="description" content="Prodotti coltivati nella nostra azienda" />
+  <meta name="author" content="Tecwweb&amp;Pastorizia" />
+  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+  <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" sizes="16x16" />
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
   <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
   />
@@ -66,17 +69,16 @@ header('Content-type: application/xhtml+xml'); ?>
       <!-- <a href="" tabindex="6"></a> -->
       <!-- se non funziona usare questo -->
       <h1 tabindex="13">Il grano: vecchio e nuovo</h1>
-      <p tabindex="15">Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha
-        reso pi&ugrave; basso - quindi pi&ugrave; difficilmente abbattibile e pi&ugrave; facilmente raccoglibile
-        dai macchinari moderni -, dall'altro lo ha reso pi&ugrave; produttivo per la produzione di farine
-        e derivati. La nostra azienda ha tuttavia deciso di seguire una strada diversa: ricerche importanti
-        hanno visto come il grano duro antico offra notevoli vantaggi nutrizionali. Infatti il glutine
-        in esso contenuto ha una struttura diversa dagli altri e pi&ugrave; facilmente digeribile, oltre
-        ad avere una composizione proteica migliore ed un impatto glicemico inferiore. Non sono poi da
-        trascurare i loro importanti contributi alla biodiversit&agrave; e all'ambiente. Va infatti considerato
-        che i grani di antiche variet&agrave; hanno meno bisogno di concimazioni, altrimenti si sviluppano
-        anche troppo in altezza; essendo belli svettanti, sono pi&ugrave; difficilmente attaccabili dalle
-        infestanti, rendendo superflui i diserbanti. Insomma, si prestano ottimamente alla coltivazione
+      <p tabindex="15">Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha reso pi&ugrave;
+        basso - quindi pi&ugrave; difficilmente abbattibile e pi&ugrave; facilmente raccoglibile dai macchinari
+        moderni -, dall'altro lo ha reso pi&ugrave; produttivo per la produzione di farine e derivati. La nostra
+        azienda ha tuttavia deciso di seguire una strada diversa: ricerche importanti hanno visto come il grano
+        duro antico offra notevoli vantaggi nutrizionali. Infatti il glutine in esso contenuto ha una struttura
+        diversa dagli altri e pi&ugrave; facilmente digeribile, oltre ad avere una composizione proteica migliore
+        ed un impatto glicemico inferiore. Non sono poi da trascurare i loro importanti contributi alla biodiversit&agrave;
+        e all'ambiente. Va infatti considerato che i grani di antiche variet&agrave; hanno meno bisogno di concimazioni,
+        altrimenti si sviluppano anche troppo in altezza; essendo belli svettanti, sono pi&ugrave; difficilmente
+        attaccabili dalle infestanti, rendendo superflui i diserbanti. Insomma, si prestano ottimamente alla coltivazione
         biologica.
       </p>
     </div>
@@ -181,7 +183,7 @@ header('Content-type: application/xhtml+xml'); ?>
     <a href="#anchor">Torna su</a>
   </div>
   <footer>
-  <div id="site_info">
+    <div id="site_info">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
       <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
