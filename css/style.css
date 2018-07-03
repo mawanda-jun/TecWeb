@@ -164,7 +164,7 @@ html {
 }
 
 .content {
-  display: inline;
+  display: block;
   z-index: +1;
 }
 

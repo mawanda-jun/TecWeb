@@ -175,3 +175,7 @@ body {
   padding-bottom: 3em;
   font-size: 0.6em;
 }
+
+#anchor {
+  display: none;
+}
