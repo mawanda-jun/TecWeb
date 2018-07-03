@@ -258,7 +258,8 @@ html {
   padding-left: 0em;
 }
 
-.center-section p {
+.center-section p,
+.center-section .service-first-list {
   margin: 0em;
   text-align: justify;
   width: auto;
@@ -275,7 +276,7 @@ html {
   margin-right: 3.5em;
 }
 
-#service-first-list {
+.service-first-list {
   padding-top: 2em;
 }
 

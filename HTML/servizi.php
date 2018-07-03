@@ -12,6 +12,7 @@ header('Content-type: application/xhtml+xml'); ?>
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
   <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
   />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" />
   <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" />
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
@@ -67,7 +68,7 @@ header('Content-type: application/xhtml+xml'); ?>
         un parco trattori ampio e completo, atto a soddisfare tutte le esigenze. Sono disponibili trattori da 50
         a 400 cavalli, telescopici da 6mt a 14mt e attrezzature agricole specializzate.
       </p>
-      <p id="service-first-list">
+      <div class="service-first-list">
         Il servizio del noleggio presenta diversi vantaggi:
         <ul class="service-list-description">
           <li>Potete ridurre al minimo il parco macchine, conservando più risorse</li>
@@ -78,8 +79,8 @@ header('Content-type: application/xhtml+xml'); ?>
             del noleggiatore.</li>
           <li>Con il noleggio si elimina il rischio di problemi burocratici (assicurazioni, permessi, ecc…). </li>
         </ul>
-      </p>
-      <p>
+      </div>
+      <div class="service-first-list">
         I termini salienti del contratto:
         <ul class="service-list-description">
           <li>Trasporto del trattore a scelta dell’utente.</li>
@@ -89,7 +90,7 @@ header('Content-type: application/xhtml+xml'); ?>
           <li>Copertura furto-incendio-danni meccanici.</li>
           <li>Manutenzione a carico della cooperativa.</li>
         </ul>
-      </p>
+      </div>
     </div>
 
     <div class="machines-list">
