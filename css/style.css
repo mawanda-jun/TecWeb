@@ -456,3 +456,45 @@ html {
 .bottom-section {
   display: none;
 }
+
+.login-content h1 {
+  text-align: center;
+  padding-bottom: 1em;
+  /* padding-left: 1em; */
+}
+
+#login-form fieldset {
+  text-align: center;
+  padding-top: 2em;
+  /* padding-left: 3em; */
+  padding-bottom: 2em;
+  margin-bottom: 3em;
+}
+
+#login-form fieldset legend {
+  margin-left: 4.5em;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#login-form fieldset ul li {
+  width: 100%;
+  list-style: none;
+  padding-bottom: 1.5em;
+}
+
+#login-form fieldset ul li label {
+  width: 100%;
+}
+
+#login-button {
+  padding: 0.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+#delete-login-button {
+  padding: 0.5em;
+  padding-left: 0.9em;
+  padding-right: 0.9em;
+}

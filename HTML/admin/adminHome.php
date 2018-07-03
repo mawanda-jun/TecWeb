@@ -152,27 +152,37 @@ else
       <?php
 
     } else { ?>
-        <h1>Pagina di <span xml:lang="en">login</span></h1>
-        <form action="adminHome.php" method="post" id="loginform">
-          <fieldset id="loginfields">
-            <!-- <div id="loginFields"> -->
-            <legend> <span xml:lang="en">Login</span></legend>
+        <div class="login-content">
+          <h1>Pagina di <span xml:lang="en">login</span></h1>
+          <form action="adminHome.php" method="post" id="login-form">
+            <fieldset id="loginfields">
+              <!-- <div id="loginFields"> -->
+              <legend> <span xml:lang="en">Login</span></legend>
 
-            <?php 
+              <?php 
             if ($wronglogin)
               echo ($wrongloginmessage);
             ?>
-            <label for="emailLogin">Email</label>:
-            <input id="emailLogin" name="emailLogin" type="text" />
-            <br/>
-            <label for="password"><span xml:lang="en">Password</span></label>:
-            <input id="password" name="password" type="password" />
-            <br/>
-            <input value="Login" type="submit" />
-            <input value="Cancella" type="reset" />
-          </fieldset>
-          <!-- </div> -->
-        </form>
+              <ul>
+                <li>
+                  <label for="emailLogin">Email</label>:
+                  <br/>
+                  <input id="emailLogin" name="emailLogin" type="text" />
+                </li>
+                <li>
+                  <label for="password"><span xml:lang="en">Password</span></label>:
+                  <br/>
+                  <input id="password" name="password" type="password" />
+                </li>
+                <li id="buttons-login">
+                  <input value="Login" id="login-button" type="submit" />
+                  <input value="Cancella" id="delete-login-button" type="reset" />
+                </li>
+              </ul>
+            </fieldset>
+            <!-- </div> -->
+          </form>
+        </div>
         <?php
 
       } ?>
