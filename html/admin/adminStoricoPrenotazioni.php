@@ -107,7 +107,6 @@ if (!isAdmin()) {
       <div id="site_info">
         <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-        <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
         <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
         <ul id="collaborators">
           <li>Manuel Vianello - 1102467</li>
