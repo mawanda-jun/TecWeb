@@ -111,7 +111,7 @@ if(isset($_POST['submit'])){
     </div>
   </div>
   <div id="go-to-menu">
-    <a href="#anchor" tabindex="900" target="_self">Torna su</a>
+    <a href="#anchor" tabindex="900" target="_self"><img src="../images/icon/white-arrow-up.png" alt="Torna su"/></a>
   </div>
   <div id="footer">
     <div id="site_info">
