@@ -16,7 +16,7 @@ Pannello amministrazione:
     removeMachine($id)
     setMachinePrice($id, $price)
 
-3) pagina ordini:
+3) pagina Storico prenotazioni:
 -- tipologia grano, quantita' ordinata, prezzo, disponibilita 
 -- serve solo come reference per scalare la disponbilita' dal totale presente nei grani
 --> setGrainAvailability($name, $quantity)

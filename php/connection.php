@@ -60,8 +60,9 @@ class DBConnection
     return $this->getAllQuery('SELECT * FROM grani');
   }
 
-  public function getListPrenotations() {
-    return $this->getAllQuery('SELECT * FROM prenotazioni');
+  public function getListPastPrenotations() {
+    $query = 'SELECT * FROM prenotazioni WHERE CURDATE() > dataFine';
+    return $this->getAllQuery($query);
   }
 
   public function getListActivePrenotations() {
@@ -81,6 +82,10 @@ class DBConnection
     return $this->getAssArrayQuery("SELECT * FROM macchinari WHERE codice = '$id'");
   }
 
+  public function getClient($id) {
+    return $this->getAssArrayQuery("SELECT * FROM clienti WHERE id = '$id'");
+  }
+
   public function getListAdmins()  {
     $email = $_SESSION['emailLogin'];
     $query = 'SELECT email FROM users WHERE email <>"' . $email . '"';
@@ -89,10 +94,6 @@ class DBConnection
 
   public function getListClients() {
     return $this->getAllQuery('SELECT * FROM clienti');
-  }
-
-  public function getClient($id) {
-    return $this->getAssArrayQuery("SELECT * FROM clienti WHERE codice =" . $this->escape($id));
   }
 
   public function getPrenotationClient($order) {
