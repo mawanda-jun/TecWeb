@@ -43,7 +43,7 @@ class DBConnection
     return mysqli_fetch_assoc($result);
   }
   
-  // Utilizzato per prevenire SQL
+  // Utilizzato per prevenire SQL injection
   private function escape($string) {
     return mysqli_real_escape_string($this->connection, $string);
   }
@@ -154,7 +154,6 @@ class DBConnection
     return mysqli_query($this->connection, $insert);
   }
 
-  // serve un controllo sulla disponibilità alla prenotazione del macchinario
   public function insertPrenotation($clientId, $machineId, $firstDay, $lastDay) {
     $insert = 'INSERT INTO prenotazioni (idCliente, idMacchinario, dataInizio, dataFine) VALUES ("' .
       $this->escape($clientId) . '", "' .
@@ -219,15 +218,10 @@ class DBConnection
     return mysqli_query($this->connection, $query) === true;
   }
 
+  // ritorna, se presente, l'ordine attivo per il macchinario (aggiungere controllo per intera durata prenotazione)
   public function getMachineAvailability($id) {
-    $query = 'SELECT dataFine FROM prenotazioni
-              WHERE CURDATE() >= dataInizio AND CURDATE() <= dataFine AND ordine = "' . $this->escape($id) . '"';
-    return (mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
-  }
-
-  public function activePrenotation($id) {
-    $query = 'SELECT count(ordine) FROM prenotazioni
-              WHERE CURDATE() >= dataInizio AND CURDATE() <= dataFine AND ordine = "' . $this->escape($id) . '"';
+    $query = 'SELECT ordine FROM prenotazioni
+              WHERE CURDATE() >= dataInizio AND CURDATE() <= dataFine AND idMacchinario = "' . $this->escape($id) . '"';
     return (mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
   }
 
