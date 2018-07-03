@@ -42,6 +42,8 @@ if (!isAdmin()) {
           <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
           <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
           <li><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
+        </ul>
+        <ul id="navbar2">
           <li class="active"><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
           <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
@@ -63,8 +65,10 @@ if (!isAdmin()) {
     <div class="reservations">
       <div id="description">
         <h1>Benvenuto nella pagina di gestione delle prenotazioni</h1>
-        <p>In questa pagina &egrave; possibile inserire ed eliminare una prenotazione se il macchinario &egrave; disponibile nel periodo indicato.</p>
-        <p>Prima di procedere con la prenotazione, ricordati di inserire il nuovo cliente se questo non &egrave; gi&agrave; presente nel database.</p>
+        <p>In questa pagina &egrave; possibile inserire ed eliminare una prenotazione se il macchinario &egrave; disponibile
+          nel periodo indicato.</p>
+        <p>Prima di procedere con la prenotazione, ricordati di inserire il nuovo cliente se questo non &egrave; gi&agrave;
+          presente nel database.</p>
       </div>
 
       <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
@@ -95,17 +99,17 @@ if (!isAdmin()) {
           }
         } else echo '<p>Nessuna prenotazione attiva al momento.</p>'; ?>
 
-        <div class="add-reservation" id="addClient">
-          <h2>Aggiungi una prenotazione</h2>
-          <form id="insertPrenotation" action="prenotationManager.php" method="post">
-            <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
-            <fieldset id="prenotationFields">
-              <?php
+      <div class="add-reservation" id="addClient">
+        <h2>Aggiungi una prenotazione</h2>
+        <form id="insertPrenotation" action="prenotationManager.php" method="post">
+          <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
+          <fieldset id="prenotationFields">
+            <?php
         $clients = $connection->getListClients();
         echo 'Lista dei clienti:';
         if ($clients != null) { ?>
-                <select name="clientID" id="clientID">
-                  <?php foreach ($clients as $client) {
+              <select name="clientID" id="clientID">
+                <?php foreach ($clients as $client) {
                 echo '<option value="' . $client['id'] . '" ';
                 echo (isset($_POST['clientID']) && $_POST['clientID'] == $client['id']) ? 'selected="' . $_POST['clientID'] . '"' : '';
                 echo '>' . $client['id'] . ' - ' . $client['nome'] . ' ' . $client['cognome'] .'</option>';
@@ -118,8 +122,8 @@ if (!isAdmin()) {
         $machines = $connection->getListMachinery();
         echo 'Lista dei macchinari:';
         if ($machines != null) { ?>
-                  <select name="machineID" id="machineID">
-                    <?php foreach ($machines as $machine) {
+                <select name="machineID" id="machineID">
+                  <?php foreach ($machines as $machine) {
             echo '<option value="' . $machine['codice'] . '" ';
             echo (isset($_POST['machineID']) && $_POST['machineID'] == $machine['codice']) ? 'selected="' . $_POST['machineID'] . '"' : '';
             echo '>' . $machine['nome'] . ' ' . $machine['modello'] . '</option>';
@@ -128,36 +132,36 @@ if (!isAdmin()) {
         } else
             echo '<div id="notRegisteredMachine">Non ci sono macchinari registrati! Registrane prima uno.</div>';
         ?>
-            <fieldset>
-                      <legend>Scegli le date della prenotazione:</legend>
-                      <ul>
-                        <li>
-                          <label for="start">Inizio</label>
-                          <input type="date" id="start" name="start" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>"
-                          />
-                        </li>
-                        <li>
-                          <label for="end">Fine</label>
-                          <input type="date" id="end" name="end" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>" />
-                        </li>
-                      </ul>
-                    </fieldset>
+                  <fieldset>
+                    <legend>Scegli le date della prenotazione:</legend>
+                    <ul>
+                      <li>
+                        <label for="start">Inizio</label>
+                        <input type="date" id="start" name="start" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>"
+                        />
+                      </li>
+                      <li>
+                        <label for="end">Fine</label>
+                        <input type="date" id="end" name="end" value="<?php echo date('d/m/Y') ?>" min="<?php echo date('d/m/Y') ?>" />
+                      </li>
+                    </ul>
+                  </fieldset>
 
-              <?php 
+                  <?php 
               if(isset($_POST['machineID']) && isset($_POST['client'])) {
                 echo '<input name="machineID" type="hidden" value="' . $_POST['machineID'] . '"/>'; 
                 echo '<input name="clientID" type="hidden" value="' . $_POST['clientID'] . '"/>'; 
               }?>
-              <input type="submit" id="submit" value="Aggiungi prenotazione" name="submit"/>
-              
-              <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
-            </fieldset>
-          </form>
-        </div>
+                  <input type="submit" id="submit" value="Aggiungi prenotazione" name="submit" />
+
+                  <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
+          </fieldset>
+        </form>
+      </div>
 
 
 
-        <?php $connection->closeConnection(); ?>
+      <?php $connection->closeConnection(); ?>
     </div>
 
 

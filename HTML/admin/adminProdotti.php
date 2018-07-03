@@ -43,6 +43,8 @@ if (!isAdmin()) {
           <li class="active"><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
           <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
           <li><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
+        </ul>
+        <ul id="navbar2">
           <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
           <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>

@@ -1,6 +1,11 @@
 @import url("style.css");
 
-#navbar li a {
+header img {
+  margin-top: 1em;
+}
+
+#navbar li a,
+#navbar2 li a {
   font-size: 0.9em;
 }
 
@@ -28,7 +33,7 @@
 }
 
 .spacer {
-  height: 16em;
+  height: 14em;
 }
 
 .grains #description,

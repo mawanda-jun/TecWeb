@@ -42,6 +42,8 @@ if (!isAdmin()) {
           <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
           <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
           <li class="active"><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
+        </ul>
+        <ul id="navbar2">
           <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
           <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
           <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
@@ -94,7 +96,7 @@ if (!isAdmin()) {
             echo '</div>';
           }
         } else echo '<p>Nessuna prenotazione nel database.</p>'; ?>
-<?php $connection->closeConnection(); ?>
+      <?php $connection->closeConnection(); ?>
     </div>
 
 
