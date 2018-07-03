@@ -63,7 +63,6 @@ if (!isAdmin()) {
           <br/> &Egrave; anche possibile cambiarne solo la disponibilit&agrave; e il prezzo.</p>
       </div>
       <div class="list-modify-delete-grain">
-      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
         <?php
         $connection = new DBConnection();
         $connection->openConnection();
@@ -81,14 +80,14 @@ if (!isAdmin()) {
             <label for="availability">Disponibilit&agrave;</label>
             <input name="availability" type="text" id="availability" size="5" value="<?php echo $grain['disponibilita'] ?>"/>
             <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>"/>
-            <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
+            <input type="submit" name="submitAvailability" id="submit" value="Modifica disponibilit&agrave;" />
           </form>
           <h2>Imposta un nuovo prezzo</h2>
           <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
             <label for="price">Prezzo</label>
             <input name="price" type="text" id="price" size="5" value ="<?php echo $grain['prezzo'] ?>" />
             <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>"/>
-            <input type="submit" name="submitPrice" value="Modifica prezzo" />
+            <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
           </form>
           <?php
           echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
@@ -126,11 +125,8 @@ if (!isAdmin()) {
             <li><input type="submit" name="submit" id="submit" value="Aggiungi" /></li>
           </ul>
         </form>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
       </div>
-
-
-
-
     </div>
 
 

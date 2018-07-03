@@ -50,26 +50,31 @@
   padding-bottom: 1em;
 }
 
-.add-grain {
+.add-grain,
+.add-machine {
   padding: 0.5em;
   padding-left: 2em;
 }
 
-.add-grain h1 {
+.add-grain h1,
+.add-machine h1 {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
-.add-grain form ul {
+.add-grain form ul,
+.add-machine form ul {
   list-style: none;
 }
 
-.add-grain label {
+.add-grain label,
+.add-machine label {
   width: 100%;
   float: left;
 }
 
-.add-grain li {
+.add-grain li,
+.add-machine li {
   padding-bottom: 1em;
 }
 
@@ -77,7 +82,16 @@
   padding-top: 0.5em;
 }
 
+.button {
+  padding: 0.3em;
+}
+
 #submit {
+  cursor: pointer;
+}
+
+.add-grain #submit,
+.add-machine #submit {
   padding: 0.5em;
   padding-left: 1em;
   padding-right: 1em;

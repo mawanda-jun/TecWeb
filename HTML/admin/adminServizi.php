@@ -63,7 +63,6 @@ if (!isAdmin()) {
           se ne pu&ograve; modificare il prezzo.</p>
       </div>
       <div class="list-modify-delete-service">
-      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
         <br/>
         <?php
         $connection = new DBConnection();
@@ -82,7 +81,7 @@ if (!isAdmin()) {
             <label for="price">Prezzo</label>
             <input name="price" type="text" id="price" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
             <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
-            <input type="submit" name="submitPrice" value="Modifica prezzo" />
+            <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
           </form>
           <?php
           echo '<a class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</a>';
@@ -96,37 +95,44 @@ if (!isAdmin()) {
       <div class="add-machine">
         <h1>Inserisci una nuova macchina</h1>
         <form method="post" action="serviceManager.php" enctype="multipart/form-data">
-          <label for="id">Codice identificativo:</label>
-          <input type="text" name="id" />
-
-          <label for="type">Tipo:</label>
-          <input type="text" name="type" />
-
-          <label for="name">Marca:</label>
-          <input type="text" name="name" />
-
-          <label for="model">Modello:</label>
-          <input type="text" name="model" />
-
-          <label for="power">Potenza:</label>
-          <input type="text" name="power" />
-
-          <label for="year">Anno:</label>
-          <input type="text" name="year" />
-
-          <label for="price">Prezzo all'ora:</label>
-          <input type="text" name="price" />
-
-          <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
-          <input type="file" name="fileToUpload" id="fileToUpload" />
-
-          <input type="submit" name="submit" value="Aggiungi" />
+          <ul>
+            <li>
+            <label for="id">Codice identificativo:</label>
+            <input type="text" name="id" />
+            </li>
+            <li>
+              <label for="type">Tipo:</label>
+              <input type="text" name="type" />
+            </li>
+            <li>
+              <label for="name">Marca:</label>
+              <input type="text" name="name" />
+            </li>
+            <li>
+              <label for="model">Modello:</label>
+              <input type="text" name="model" />
+            </li>
+            <li>
+              <label for="power">Potenza:</label>
+              <input type="text" name="power" />
+            </li>
+            <li>
+              <label for="year">Anno:</label>
+              <input type="text" name="year" />
+            </li>
+            <li>
+              <label for="price">Prezzo all'ora:</label>
+              <input type="text" name="price" />
+            </li>
+            <li>
+              <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
+              <input type="file" name="fileToUpload" id="fileToUpload" />
+            </li> 
+            <li><input type="submit" name="submit" id="submit" value="Aggiungi" /></li>
+          </ul>
         </form>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
       </div>
-
-
-
-
     </div>
 
 
