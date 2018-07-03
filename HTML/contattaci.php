@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
   <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
   />
-  <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
+  <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" />
   <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -79,7 +79,7 @@ if(isset($_POST['submit'])){
     </div>
     <div class="center-section" id="contact-us">
       <h1>Vuoi contattarci?</h1>
-      <h2>Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h2>
+      <h2 id="subtitle-contact">Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h2>
       <form id="contattaci-form" action="" method="post">
         <ul>
           <li class="name-form">
@@ -102,7 +102,12 @@ if(isset($_POST['submit'])){
       <p>Se la richiesta è andata a buon fine, riceverai alla casella di posta indicata una copia della mail appena
         inviata.
       </p>
-      <p>Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta al seguente <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.</p>
+      <p id="contact-error-link">
+        Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta al seguente <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.
+      </p>
+      <p id="contact-error-print">
+        Se riscontri dei problemi, in alternativa, puoi contattare il seguente indirizzo email: aziendacavallin@gmail.com.
+      </p>
     </div>
   </div>
   <div id="go-to-menu">

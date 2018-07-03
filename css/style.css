@@ -312,11 +312,18 @@ html {
   float: left;
 }
 
+#subtitle-contact {
+  padding-left: 0em;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
 .center-section form {
-  margin: auto;
-  width: 39%;
-  /* width: 100%;
-  margin-left: 23em; */
+  /* margin: auto;
+  width: 39%; */
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2em;
 }
 
 .center-section form ul {
@@ -343,12 +350,16 @@ html {
 
 #name,
 #email {
-  width: 250px;
+  width: 20em;
 }
 
 #message-text {
-  width: 480px;
+  width: 30em;
   height: 10em;
+}
+
+#contact-error-print {
+  display: none;
 }
 
 .left-section p,
