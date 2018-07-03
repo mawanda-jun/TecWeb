@@ -32,7 +32,7 @@ header('Content-type: application/xhtml+xml'); ?>
         <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
         <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
         <li class="active"><a href="" tabindex="10" target="_top">Servizi</a></li>
-        <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
+        <li><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
       </ul>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
@@ -42,7 +42,7 @@ header('Content-type: application/xhtml+xml'); ?>
             <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
             <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
             <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
-            <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
+            <li><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
           </ul>
         </div>
       </div>
@@ -61,6 +61,10 @@ header('Content-type: application/xhtml+xml'); ?>
 
   <div class="content">
     <div id="anchor"></div>
+    <div id="print-content">
+      <h1 id="print-title">Azienda agricola Cavallin</h1>
+      <p id="print-path">Ti trovi in: Servizi</p>
+    </div>
     <div class="center-section" id="services">
       <h1>Servizio macchinari</h1>
       <p>
@@ -145,7 +149,7 @@ header('Content-type: application/xhtml+xml'); ?>
       <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
       <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
       <li class="active"><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
-      <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
+      <li><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
     </ul>
   </div>
 

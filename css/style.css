@@ -145,6 +145,10 @@ html {
   height: 9.6em;
 }
 
+#print-content {
+  display: none;
+}
+
 .top-img {
   margin: 0em;
   background-repeat: no-repeat;

@@ -17,6 +17,27 @@ body {
   display: none;
 }
 
+#print-content {
+  display: block;
+}
+
+#print-title {
+  margin: 0em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding-left: 0em;
+  padding-top: 1em;
+  padding-bottom: 0.3em;
+  padding-right: 0em;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#print-path {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
 .left-section,
 .right-section,
 .center-section,

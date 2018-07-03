@@ -59,6 +59,10 @@ header('Content-type: application/xhtml+xml'); ?>
   </div>
   <div class="content">
     <div id="anchor"></div>
+    <div id="print-content">
+      <h1 id="print-title">Azienda agricola Cavallin</h1>
+      <p id="print-path">Ti trovi in: Prodotti</p>
+    </div>
     <div class="center-section" id="story">
       <h1>Il grano: vecchio e nuovo</h1>
       <p>Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha reso pi&ugrave;

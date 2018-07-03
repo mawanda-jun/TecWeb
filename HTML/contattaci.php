@@ -73,6 +73,10 @@ if(isset($_POST['submit'])){
 
   <div class="content">
     <div id="anchor"></div>
+    <div id="print-content">
+      <h1 id="print-title">Azienda agricola Cavallin</h1>
+      <p id="print-path">Ti trovi in: Contattaci</p>
+    </div>
     <div class="center-section" id="contact-us">
       <h1>Vuoi contattarci?</h1>
       <h2>Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h2>
@@ -95,7 +99,9 @@ if(isset($_POST['submit'])){
           </li>
         </ul>
       </form>
-      <p>Se la richiesta è andata a buon fine, riceverai alla casella di posta indicata una copia della mail appena inviata.</p>
+      <p>Se la richiesta è andata a buon fine, riceverai alla casella di posta indicata una copia della mail appena
+        inviata.
+      </p>
       <p>Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta al seguente <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.</p>
     </div>
   </div>
@@ -125,4 +131,5 @@ if(isset($_POST['submit'])){
     </ul>
   </div>
 </body>
+
 </html>
