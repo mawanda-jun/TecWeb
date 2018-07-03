@@ -106,23 +106,32 @@ if (!isAdmin()) {
       <div class="add-grain">
         <h1>Inserisci una nuova <span xml:lang="en">cultivar</span></h1>
         <form method="post" action="productManager.php" enctype="multipart/form-data">
-          <label for="name">Nome:</label>
-          <input type="text" name="name" />
-          <label for="availability">Disponibilit&agrave; (in quintali):</label>
-          <input type="numbrt" name="availability" />
-          <label for="price">Prezzo:</label>
-          <input type="text" name="price" />
-          <label for="description">Descrizione:</label>
-          <textarea name="description" rows="5" cols="40"></textarea>
-          <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
-          <input type="file" name="fileToUpload" id="fileToUpload" />
-          <input type="submit" name="submit" value="Aggiungi" />
+          <ul>
+            <li>
+              <label for="name">Nome:</label>
+              <input type="text" name="name" />
+            </li>
+            <li>
+              <label for="availability">Disponibilit&agrave; (in quintali):</label>
+              <input type="numbrt" name="availability" />
+            </li>
+            <li>
+              <label for="price">Prezzo:</label>
+              <input type="text" name="price" />
+            </li>
+            <li>
+              <label for="description">Descrizione:</label>
+              <textarea name="description" rows="5" cols="40"></textarea>
+            </li>
+            <li>
+              <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
+              <input type="file" name="fileToUpload" id="fileToUpload" />
+            </li>
+            <li><input type="submit" name="submit" id="submit" value="Aggiungi" /></li>
+          </ul>
         </form>
+        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
       </div>
-
-
-
-
     </div>
 
 
