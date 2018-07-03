@@ -105,11 +105,17 @@ if (!isAdmin()) {
       <a href="#story">Torna su</a>
     </div>
     <footer>
-      <div class="shrink-center">
-        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-        <p>Da pensare a cosa scriverci</p>
-      </div>
+    <div id="site_info">
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators">
+        <li>Manuel Vianello - 1102467</li>
+        <li>Stefano Panozzo - 1097068</li>
+        <li>Giovanni Cavallin - 1148957</li>
+      </ul>
+    </div>
     </footer>
     <!-- </div> -->
 

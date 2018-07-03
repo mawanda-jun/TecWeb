@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . "/../../php/connection.php"; ?>
-<?php require_once('../../validation/validator.php');?>
+<?php require_once('../../validation/validator.php'); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -178,11 +178,17 @@ else
             <a href="#story">Torna su</a>
           </div>
           <footer>
-            <div class="shrink-center">
-              <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-              <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-              <p>Da pensare a cosa scriverci</p>
-            </div>
+          <div id="site_info">
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators">
+        <li>Manuel Vianello - 1102467</li>
+        <li>Stefano Panozzo - 1097068</li>
+        <li>Giovanni Cavallin - 1148957</li>
+      </ul>
+    </div>
           </footer>
           <!-- </div> -->
 

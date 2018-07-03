@@ -135,20 +135,17 @@ if (!isAdmin()) {
       <a href="#story">Torna su</a>
     </div>
     <footer>
-      <div class="shrink-center">
-        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS valid" />
-        <p>Da pensare a cosa scriverci</p>
-        <!-- <?php echo (isset($_SESSION['file_exists']) && $_SESSION['file_exists']) ? $_SESSION['file_exists'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['maxSize']) && $_SESSION['maxSize']) ? $_SESSION['maxSize'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['noExtension']) && $_SESSION['noExtension']) ? $_SESSION['noExtension'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['noCharacter']) && $_SESSION['noCharacter']) ? $_SESSION['noCharacter'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['getImageType']) && $_SESSION['getImageType']) ? $_SESSION['getImageType'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['fileName']) && $_SESSION['fileName']) ? $_SESSION['fileName'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['file']) && $_SESSION['file']) ? $_SESSION['file'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['fileName1']) && $_SESSION['fileName1']) ? $_SESSION['fileName1'] : ''; ?><br/>
-        <?php echo (isset($_SESSION['file1']) && $_SESSION['file1']) ? $_SESSION['file1'] : ''; ?><br/> -->
-      </div>
+    <div id="site_info">
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators">
+        <li>Manuel Vianello - 1102467</li>
+        <li>Stefano Panozzo - 1097068</li>
+        <li>Giovanni Cavallin - 1148957</li>
+      </ul>
+    </div>
     </footer>
 
 
