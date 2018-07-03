@@ -1,0 +1,75 @@
+@import url(../css/style.css);
+
+#header {
+  display: none;
+}
+
+.top-image {
+  display: none;
+}
+
+.left-section,
+.right-section,
+.center-section,
+.grain-section,
+.service-section {
+  position: unset;
+  text-align: center;
+}
+
+.left-section h1,
+.right-section h1,
+.center-section h1,
+.grain-section h1,
+.service-section h1 {
+  float: none;
+  width: 100%;
+  padding-left: 0em;
+  padding-right: 0em;
+  text-align: center;
+}
+
+.grain-section .text-subsection,
+.service-section .text-subsection {
+  width: 100%;
+  text-align: center;
+}
+
+.service-section h2 {
+  padding-left: 0em;
+  padding-right: 0em;
+}
+
+.service-section p {
+  padding-left: 0em;
+  text-align: center;
+}
+
+.left-section img,
+.right-section img,
+.grain-section img,
+.service-section img {
+  display: none;
+}
+
+#anchor {
+  display: none;
+}
+
+.spacer {
+  display: none;
+  height: 0em;
+
+}
+
+#contattaci-space {
+  display: none;
+}
+
+#go-to-menu {
+  display: none;
+}
+
+#footer {
+  display: none;
+}
