@@ -24,7 +24,8 @@ if (!isAdmin()) {
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="Pagina di gestione delle prenotazioni" />
     <meta name="author" content="Tecwweb&amp;Pastorizia" />
-    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
+    />
     <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" sizes="16x16" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
@@ -76,7 +77,7 @@ if (!isAdmin()) {
 
         
         if ($prenotations != null) {
-          echo '<h2 tabindex="10">Prenotazioni attive:</h2>';
+          echo '<h2 tabindex="10" id="subtitle">Prenotazioni attive:</h2>';
           foreach ($prenotations as $prenotation) {
             echo '<div class="grain-section">';
             $activeMachinery = $connection->getMachine($prenotation['idMacchinario']);
@@ -91,38 +92,38 @@ if (!isAdmin()) {
           }
         } else echo '<p>Nessuna prenotazione attiva al momento.</p>'; ?>
 
-        <div class="add-client" id="addClient">
+        <div class="add-reservation" id="addClient">
           <h2>Aggiungi una prenotazione</h2>
           <form id="insertPrenotation" action="prenotationManager.php" method="post">
             <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
             <fieldset id="prenotationFields">
-            <?php
+              <?php
         $clients = $connection->getListClients();
         echo 'Lista dei clienti:';
         if ($clients != null) { ?>
-        <select name="clientID" id="clientID">
-          <?php foreach ($clients as $client) {
+                <select name="clientID" id="clientID">
+                  <?php foreach ($clients as $client) {
                 echo '<option value="' . $client['id'] . '" ';
                 echo (isset($_POST['clientID']) && $_POST['clientID'] == $client['id']) ? 'selected="' . $_POST['clientID'] . '"' : '';
                 echo '>' . $client['id'] . ' - ' . $client['nome'] . ' ' . $client['cognome'] .'</option>';
             }
             echo '</select>';
         } else
-            echo '<div id="">Non ci sono clienti registrati! Registrane prima uno.</div>';
+            echo '<div id="notRegisteredClient">Non ci sono clienti registrati! Registrane prima uno.</div>';
         echo '<p>Se il cliente non è presente nella lista, inseriscilo <a href="adminClienti.php#addClient">qui</a> prima di continuare.</p>';
         
         $machines = $connection->getListMachinery();
         echo 'Lista dei macchinari:';
         if ($machines != null) { ?>
-        <select name="machineID" id="machineID">
-          <?php foreach ($machines as $machine) {
+                  <select name="machineID" id="machineID">
+                    <?php foreach ($machines as $machine) {
             echo '<option value="' . $machine['codice'] . '" ';
             echo (isset($_POST['machineID']) && $_POST['machineID'] == $machine['codice']) ? 'selected="' . $_POST['machineID'] . '"' : '';
             echo '>' . $machine['nome'] . ' ' . $machine['modello'] . '</option>';
           }
           echo '</select>';
         } else
-            echo '<div id="">Non ci sono macchinari registrati! Registrane prima uno.</div>';
+            echo '<div id="notRegisteredMachine">Non ci sono macchinari registrati! Registrane prima uno.</div>';
         ?>
             <fieldset>
               <legend>Scegli le date della prenotazione:</legend>
@@ -152,8 +153,8 @@ if (!isAdmin()) {
           </form>
         </div>
 
-        
-        
+
+
         <?php $connection->closeConnection(); ?>
     </div>
 
