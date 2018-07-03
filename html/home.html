@@ -2,15 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-  <title>Home Page</title>
+  <title><span xml:lang="en">HomePage</span></title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="Home page azienda agricola Cavallin" />
+  <meta name="description" content="Homepage azienda agricola Cavallin" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
-  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
+  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
+  />
   <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" sizes="16x16" />
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-  <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"/>
+  <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
+  />
   <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
   <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -18,32 +20,32 @@
 <body>
 
   <header>
-    <p id="go-to-content" tabindex="1"><a href="#content">Vai al contenuto</a></p>
     <div class="row">
-      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
+      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1" />
       <ul id="navbar">
-        <li class="active"><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
-        <li><a href="../html/chi-siamo.html" tabindex="1">Chi siamo</a></li>
-        <li><a href="../html/prodotti.php" tabindex="1">Prodotti</a></li>
-        <li><a href="../html/servizi.php" tabindex="1">Servizi</a></li>
-        <li><a href="../html/contattaci.html" tabindex="1">Contattaci</a></li>
+        <li class="active"><a href="../html/home.html" lang="en" tabindex="10">Home</a></li>
+        <li><a href="../html/chi-siamo.html" tabindex="10">Chi siamo</a></li>
+        <li><a href="../html/prodotti.php" tabindex="10">Prodotti</a></li>
+        <li><a href="../html/servizi.php" tabindex="10">Servizi</a></li>
+        <li><a href="../html/contattaci.html" tabindex="10">Contattaci</a></li>
       </ul>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
           <ul>
-            <li class="active"><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
-            <li><a href="../html/chi-siamo.html" tabindex="1">Chi siamo</a></li>
-            <li><a href="../html/prodotti.php" tabindex="1">Prodotti</a></li>
-            <li><a href="../html/servizi.php" tabindex="1">Servizi</a></li>
-            <li><a href="../html/contattaci.html" tabindex="1">Contattaci</a></li>
+            <li class="active"><a href="../html/home.html" lang="en" tabindex="10">Home</a></li>
+            <li><a href="../html/chi-siamo.html" tabindex="10">Chi siamo</a></li>
+            <li><a href="../html/prodotti.php" tabindex="10">Prodotti</a></li>
+            <li><a href="../html/servizi.php" tabindex="10">Servizi</a></li>
+            <li><a href="../html/contattaci.html" tabindex="10">Contattaci</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="row">
       <div id="breadcrumb">
-        <p id="path" tabindex="2">Ti trovi in: Home</p>
+        <p id="path" tabindex="1">Ti trovi in: Home</p>
+        <a id="go-to-content" href="#anchor" tabindex="1">Vai al contenuto</a>
       </div>
     </div>
   </header>
@@ -52,75 +54,71 @@
     &nbsp;
   </div>
 
-  <div class="top-img" id="home-top-img">
+  <div class="top-img" id="home-top-img" tabindex="-1">
   </div>
   <div class="content">
-    <div id="anchor"></div>
+    <div id="anchor" tabindex="20"></div>
     <div class="left-section" id="story">
-      <h1 tabindex="3">La nostra storia</h1>
-      <p tabindex="3">
-        <img src="../images/history-home.png" alt="Vecchia foto di un contadino al lavoro" /><b>---DA ADATTARE ALLA NOSTRA AZIENDA---</b>Azienda
-        Agricola Cavallin, una storia di passione e famiglia. Dopo molti anni di sperimentazioni, la
-        famiglia Cavallin ha scelto di tornare, per prima nella zona, all’antico sistema di appassimento
-        delle uve su reti verticali. Tale sistema è molto più oneroso e richiede molto spazio a disposizione,
-        ma il risultato, soprattutto da un punto di vista di sanità e concentrazione delle uve, è nettamente
-        superiore rispetto agli altri sistemi di appassimento. Così nel 2003 è stato realizzato un nuovo
-        fruttaio di cui è stato studiato ogni dettaglio. L’ubicazione stessa è stata il frutto di una
-        scelta consapevole: il fruttaio è posto, infatti, sulle “Sponde” della collina (ovvero il crinale),
-        dove non c’è mai nebbia e dove, negli anni, è stata osservata sempre una buona ventilazione.
-        L'agriturismo "La Primizia" si trova lungo l'argine del fiume Bacchiglione, a pochi chilometri
-        dal centro di Padova, a ridosso di una delle zone più belle e suggestive del corso del fiume.
-        L'edificio che ospita l'azienda, ristrutturato secondo la classica tipologia agricola, offre
-        un'accoglienza calda e familiare. L'agriturismo si propone come meta ideale per le persone che
-        ricercano la genuinità della cucina "contadina" padovana. Ci si può fermare a pranzo o a cena
-        ad assaggiare le specialità enogastronomiche, rifocillarsi con uno spuntino di metà pomeriggio
-        oppure iniziare la serata con un aperitivo diverso dal solito. Un luogo dove hanno la precedenza
-        assoluta le tipicità prodotte dall'azienda agricola (animali di corte, salumi, prosciutti, ortaggi
-        e vini DOC dei Colli Euganei) completati da una selezione di prodotti della zona in grado di
-        soddisfare tutti i gusti. Il contesto all'interno del quale è inserito "La Primizia" dà la possibilità
-        di abbinare alle degustazioni qualche ora di relax all'aria aperta nell'ampio giardino e di fare
-        lunghe passeggiate lungo l'argine del fiume Bacchiglione. "La Primizia" è anche Fattoria Didattica
-        e propone attività sia per le scuole sia per i bambini durante il periodo estivo organizzando
-        visite guidate all'Azienda Agricola e attività laboratoriali. All'interno della struttura è inoltre
-        presente uno spaccio aziendale dove è possibile acquistare i nostri prodotti.
+      <h1 tabindex="20">La nostra storia</h1>
+      <p tabindex="20">
+        <img src="../images/history-home.png" alt="Vecchia foto di un contadino al lavoro" tabindex="-1" /><b>---DA ADATTARE ALLA NOSTRA AZIENDA---</b>Azienda
+        Agricola Cavallin, una storia di passione e famiglia. Dopo molti anni di sperimentazioni, la famiglia Cavallin
+        ha scelto di tornare, per prima nella zona, all’antico sistema di appassimento delle uve su reti verticali.
+        Tale sistema è molto più oneroso e richiede molto spazio a disposizione, ma il risultato, soprattutto da
+        un punto di vista di sanità e concentrazione delle uve, è nettamente superiore rispetto agli altri sistemi
+        di appassimento. Così nel 2003 è stato realizzato un nuovo fruttaio di cui è stato studiato ogni dettaglio.
+        L’ubicazione stessa è stata il frutto di una scelta consapevole: il fruttaio è posto, infatti, sulle “Sponde”
+        della collina (ovvero il crinale), dove non c’è mai nebbia e dove, negli anni, è stata osservata sempre
+        una buona ventilazione. L'agriturismo "La Primizia" si trova lungo l'argine del fiume Bacchiglione, a pochi
+        chilometri dal centro di Padova, a ridosso di una delle zone più belle e suggestive del corso del fiume.
+        L'edificio che ospita l'azienda, ristrutturato secondo la classica tipologia agricola, offre un'accoglienza
+        calda e familiare. L'agriturismo si propone come meta ideale per le persone che ricercano la genuinità
+        della cucina "contadina" padovana. Ci si può fermare a pranzo o a cena ad assaggiare le specialità enogastronomiche,
+        rifocillarsi con uno spuntino di metà pomeriggio oppure iniziare la serata con un aperitivo diverso dal
+        solito. Un luogo dove hanno la precedenza assoluta le tipicità prodotte dall'azienda agricola (animali
+        di corte, salumi, prosciutti, ortaggi e vini DOC dei Colli Euganei) completati da una selezione di prodotti
+        della zona in grado di soddisfare tutti i gusti. Il contesto all'interno del quale è inserito "La Primizia"
+        dà la possibilità di abbinare alle degustazioni qualche ora di relax all'aria aperta nell'ampio giardino
+        e di fare lunghe passeggiate lungo l'argine del fiume Bacchiglione. "La Primizia" è anche Fattoria Didattica
+        e propone attività sia per le scuole sia per i bambini durante il periodo estivo organizzando visite guidate
+        all'Azienda Agricola e attività laboratoriali. All'interno della struttura è inoltre presente uno spaccio
+        aziendale dove è possibile acquistare i nostri prodotti.
       </p>
       <!-- <img src="../images/history-home.png" alt="Vecchia foto di un contadino al lavoro" tabindex="16" /> -->
     </div>
     <div class="right-section" id="products-overview">
-      <h1 tabindex="4">I nostri prodotti</h1>
-      <p tabindex="4">
-        <img src="../images/grano_misto.jpg" alt="Grano misto" /><b>---DA ADATTARE ALLA NOSTRA AZIENDA---</b>Naturalmente,
-        quello che fa veramente la differenza nella produzione casearia di Ai Prà azienda agricola caseificio
-        Padova è da ricercare nelle tecniche di allevamento del bestiame. L’azienda, infatti, alleva
-        mucche da latte secondo i principi di tutela degli animali e dell’ambiente. Si tratta di un tipo
-        di attenzione che, sicuramente, premia sia gli operatori sia la clientela. Se, infatti, quest’ultima
-        può avere la garanzia di alimentarsi con cibi genuini e gustosi, i produttori possono essere
-        certi di vendere prodotti che non possono deludere e di riuscire quindi a creare un durevole
-        rapporto di fiducia con gli acquirenti. Le mucche da latte, costantemente controllate dal veterinario,
-        vengono allevate in stalle pulite e, soprattutto, vengono alimentate con foraggi prodotti dalla
-        stessa azienda agricola caseificio Padova. Mais, grano, orzo, sorgo vengono coltivate e, successivamente,
-        essiccate e immagazzinate in perfette condizioni di conservazione, al solo scopo di far fronte
-        alle necessità alimentari del bestiame. Le coltivazioni biologiche e prive di ogm modificati
-        rientrano in un ambizioso progetto di salvaguardia della biodiversità e di sostenibilità delle
-        coltivazioni e dell’ambiente. Un’alimentazione corretta, priva di pericolose farine a base di
-        carne, rappresenta un garanzia di benessere per il consumatore e gli animali. Il bestiame, a
-        sua volta, in piena salute, premia con una produzione di latte maggiore e di qualità superiore,
-        pronta per essere trasformata in formaggi e latticini di prim’ordine.
+      <h1 tabindex="30">I nostri prodotti</h1>
+      <p tabindex="30">
+        <img src="../images/grano_misto.jpg" alt="Grano misto" tabindex="-1" /><b>---DA ADATTARE ALLA NOSTRA AZIENDA---</b>Naturalmente,
+        quello che fa veramente la differenza nella produzione casearia di Ai Prà azienda agricola caseificio Padova
+        è da ricercare nelle tecniche di allevamento del bestiame. L’azienda, infatti, alleva mucche da latte secondo
+        i principi di tutela degli animali e dell’ambiente. Si tratta di un tipo di attenzione che, sicuramente,
+        premia sia gli operatori sia la clientela. Se, infatti, quest’ultima può avere la garanzia di alimentarsi
+        con cibi genuini e gustosi, i produttori possono essere certi di vendere prodotti che non possono deludere
+        e di riuscire quindi a creare un durevole rapporto di fiducia con gli acquirenti. Le mucche da latte, costantemente
+        controllate dal veterinario, vengono allevate in stalle pulite e, soprattutto, vengono alimentate con foraggi
+        prodotti dalla stessa azienda agricola caseificio Padova. Mais, grano, orzo, sorgo vengono coltivate e,
+        successivamente, essiccate e immagazzinate in perfette condizioni di conservazione, al solo scopo di far
+        fronte alle necessità alimentari del bestiame. Le coltivazioni biologiche e prive di ogm modificati rientrano
+        in un ambizioso progetto di salvaguardia della biodiversità e di sostenibilità delle coltivazioni e dell’ambiente.
+        Un’alimentazione corretta, priva di pericolose farine a base di carne, rappresenta un garanzia di benessere
+        per il consumatore e gli animali. Il bestiame, a sua volta, in piena salute, premia con una produzione
+        di latte maggiore e di qualità superiore, pronta per essere trasformata in formaggi e latticini di prim’ordine.
       </p>
       <!-- <img src="../images/grano_misto.jpg" alt="Grano misto" tabindex="21" /> -->
     </div>
   </div>
 
   <div id="go-to-menu">
-    <a href="#anchor" tabindex="5">Torna su</a>
+    <a href="#anchor" tabindex="900">Torna su</a>
   </div>
   <footer>
     <div id="site_info">
-      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
-      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-      <ul id="collaborators">
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" tabindex="1000" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" tabindex="1000" />
+      <a href="admin/adminHome.php" id="admin" tabindex="950">Pannello di amministrazione</a>
+      <p tabindex="950">Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators" tabindex="950">
         <li>Manuel Vianello - 1102467</li>
         <li>Stefano Panozzo - 1097068</li>
         <li>Giovanni Cavallin - 1148957</li>

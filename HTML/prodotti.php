@@ -23,53 +23,43 @@ header('Content-type: application/xhtml+xml'); ?>
 <body>
 
   <header>
-    <p id="go-to-content" tabindex="3"><a href="#content">Vai al contenuto</a></p>
-    <!-- <div class="shrink-center"> -->
     <div class="row">
-      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
-      <!-- da nascondere -->
-      <!-- <p id="hidden-breadcrumb" tabindex="1">Ti trovi in: Home</p> -->
-      <!-- da nascondere -->
+      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1" />
       <ul id="navbar">
-        <li><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
-        <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
-        <li class="active" tabindex="7"><a href="">Prodotti</a></li>
-        <li><a href="../html/servizi.php" tabindex="9">Servizi</a></li>
-        <li><a href="../html/contattaci.html" tabindex="11">Contattaci</a></li>
+        <li><a href="../html/home.html" lang="en" tabindex="10">Home</a></li>
+        <li><a href="../html/chi-siamo.html" tabindex="10">Chi siamo</a></li>
+        <li class="active"><a href="" tabindex="10">Prodotti</a></li>
+        <li><a href="../html/servizi.php" tabindex="10">Servizi</a></li>
+        <li><a href="../html/contattaci.html" tabindex="10">Contattaci</a></li>
       </ul>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
           <ul>
-            <li class="active"><a href="../html/home.html" lang="en" tabindex="1">Home </a></li>
-            <li><a href="../html/chi-siamo.html" tabindex="5">Chi siamo</a></li>
-            <li><a href="../html/prodotti.php" tabindex="7">Prodotti</a></li>
-            <li><a href="../html/servizi.php" tabindex="9">Servizi</a></li>
-            <li><a href="../html/contattaci.html" tabindex="11">Contattaci</a></li>
+            <li class="active"><a href="../html/home.html" lang="en" tabindex="10">Home</a></li>
+            <li><a href="../html/chi-siamo.html" tabindex="10">Chi siamo</a></li>
+            <li><a href="../html/prodotti.php" tabindex="10">Prodotti</a></li>
+            <li><a href="../html/servizi.php" tabindex="10">Servizi</a></li>
+            <li><a href="../html/contattaci.html" tabindex="10">Contattaci</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div id="breadcrumb">
-      <p id="path" tabindex="12">Ti trovi in: Prodotti</p>
+      <p id="path" tabindex="1">Ti trovi in: Prodotti</p>
+      <a id="go-to-content" href="#anchor" tabindex="1">Vai al contenuto</a>
     </div>
-    <!-- </div> -->
   </header>
   <div class="spacer">
     &nbsp;
   </div>
-  <div class="top-img" id="prodotti-top-img">
-    <!-- <img src="../img/top-img-grain.jpg" alt="" /> da mettere in background 
-        da mettere eventualmente informazioni rapide o scritte-->
+  <div class="top-img" id="prodotti-top-img" tabindex="-1">
   </div>
   <div class="content">
     <div id="anchor"></div>
     <div class="center-section" id="story">
-      <!-- <div class="shrink-center"> -->
-      <!-- <a href="" tabindex="6"></a> -->
-      <!-- se non funziona usare questo -->
-      <h1 tabindex="13">Il grano: vecchio e nuovo</h1>
-      <p tabindex="15">Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha reso pi&ugrave;
+      <h1 tabindex="20">Il grano: vecchio e nuovo</h1>
+      <p tabindex="20">Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha reso pi&ugrave;
         basso - quindi pi&ugrave; difficilmente abbattibile e pi&ugrave; facilmente raccoglibile dai macchinari
         moderni -, dall'altro lo ha reso pi&ugrave; produttivo per la produzione di farine e derivati. La nostra
         azienda ha tuttavia deciso di seguire una strada diversa: ricerche importanti hanno visto come il grano
@@ -87,108 +77,34 @@ header('Content-type: application/xhtml+xml'); ?>
       <?php
     $connection = new DBConnection();
     $connection->openConnection();
-      
-      // $index = 0;         //forse non serve
-      // $grainForPage = 10; //grani da mostrare per pagina
     $grains = $connection->getListGrains();
 
     if ($grains != null) {
       foreach ($grains as $grain) {
         echo '<div class="grain-section">';
         echo '<div class="text-subsection">';
-        echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>';
-        echo '<p tabindex="10">' . $grain['descrizione'] . '</p>';
-        echo '<p tabindex="10">Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
-        echo '<p tabindex="10"> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';
+        echo '<h1 tabindex="30">' . $grain['nome'] . '</h1>';
+        echo '<p tabindex="30">' . $grain['descrizione'] . '</p>';
+        echo '<p tabindex="30">Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
+        echo '<p tabindex="30"> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';
         echo '</div>';
-        echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '"/>';
+        echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '" tabindex="-1"/>';
         echo '</div>';
       }
-    } else echo '<p>Nessun grano ora in produzione</p>'
+    } else echo '<p tabindex="30">Nessun grano ora in produzione</p>'
     ?>
     </div>
-
-
-
-
-    <!-- <div class="right-section" id="products-overview">
-      <h1 tabindex="17">Timilia o grano Marzuolo</h1>
-      <p tabindex="19">Grano duro siciliano gi&agrave; citato in epoca greca. &egrave; particolarmente apprezzato per la panificazione
-        grazie al gusto dolce e al colore carico della farina. Se ne ricava tra l'altro il celebre pane
-        Nero di Castelvetrano.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="21" />
-    </div>
-    <div class="left-section" id="story1">
-      <h1 tabindex="13">Frassineto</h1>
-      <p tabindex="15">Nato nel 1922 nell'Aretino, &egrave; un grano tenero derivato dal Gentil Rosso (vedi). Vanta gusto e
-        aroma intensi.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="16" />
-    </div>
-    <div class="right-section" id="products-overview1">
-      <h1 tabindex="17">Senatore Cappelli</h1>
-      <p tabindex="19">Nato con l'intento di aumentare la produzione di frumento per la crescente popolazione, deve il
-        nome al senatore abruzzese Raffaele Cappelli, nella cui tenuta il genetista Nazareno Strampelli
-        comp`ı gli incroci che lo portarono, dopo un'ibridazione con una cultivar tunisina, a produrre
-        un grano di maggiore resa. Non per questo il Cappelli perse sotto il profilo nutrizionale e della
-        digeribilit&agrave;.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="21" />
-    </div>
-    <div class="left-section" id="story2">
-      <h1 tabindex="13">Dicocco o farro medio</h1>
-      <p tabindex="15">Proteico e ricco di antiossidanti, appartiene davvero a un'antica cultivar ed era il preferito
-        dagli antichi romani.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="16" />
-    </div>
-    <div class="right-section" id="products-overview2">
-      <h1 tabindex="17">Gentil Rosso</h1>
-      <p tabindex="19">Nato in Toscana a met&agrave; '800, questo grano tenero ha spighe rossicce da cui si ricava una farina
-        di colore carico. &egrave; ben fornito di minerali e proteine.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="21" />
-    </div>
-    <div class="left-section" id="story2">
-      <h1 tabindex="13">Rieti</h1>
-      <p tabindex="15">Originario dell'omonima citt&agrave; laziale, era gi&agrave; coltivato nel '600, ma ebbe grande diffusione
-        in Italia nell'800.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="16" />
-    </div>
-    <div class="right-section" id="products-overview2">
-      <h1 tabindex="17">Solina</h1>
-      <p tabindex="19">Grano tenero diffuso in Abruzzo gi&agrave; nel XVI secolo.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="21" />
-    </div>
-    <div class="left-section" id="story2">
-      <h1 tabindex="13">Russello</h1>
-      <p tabindex="15">Pregiata variet&agrave; di grano duro siciliano, deve il suo nome al colore rosso-dorato delle spighe.
-        Ben digeribile, &egrave; molto apprezzato per la panificazione.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="16" />
-    </div>
-    <div class="right-section" id="products-overview2">
-      <h1 tabindex="17">Verna</h1>
-      <p tabindex="19">Grano tenero originario della Toscana. Sottoposta ad analisi dall'universit&agrave; di Bologna, la farina
-        ha mostrato un tenore di glutine dello 0,9% contro il 14% della media delle attuali cultivar,
-        rispetto alle quali ha pure un miglior contenuto di antiossidanti, proteine totali, minerali.
-      </p>
-      <img src="../images/logo.jpg" alt="" tabindex="21" />
-    </div> -->
   </div>
   <div id="go-to-menu">
-    <a href="#anchor">Torna su</a>
+    <a href="#anchor" tabindex="900">Torna su</a>
   </div>
   <footer>
-    <div id="site_info">
-      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
-      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-      <ul id="collaborators">
+  <div id="site_info">
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" tabindex="1000" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" tabindex="1000" />
+      <a href="admin/adminHome.php" id="admin" tabindex="950">Pannello di amministrazione</a>
+      <p tabindex="950">Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators" tabindex="950">
         <li>Manuel Vianello - 1102467</li>
         <li>Stefano Panozzo - 1097068</li>
         <li>Giovanni Cavallin - 1148957</li>
