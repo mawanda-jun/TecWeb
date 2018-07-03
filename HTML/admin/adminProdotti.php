@@ -35,7 +35,7 @@ if (!isAdmin()) {
   </head>
 
   <body>
-    <header>
+    <div id="header">
       <div class="row">
         <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
         <ul id="navbar">
@@ -56,7 +56,7 @@ if (!isAdmin()) {
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
-    </header>
+    </div>
 
     <div class="spacer">
       &nbsp;
@@ -69,7 +69,7 @@ if (!isAdmin()) {
           <br/> &Egrave; anche possibile cambiarne solo la disponibilit&agrave; e il prezzo.</p>
       </div>
       <div class="list-modify-delete-grain">
-      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+        <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
         echo '<p id="error">' . $_SESSION['error'] . '</p>';
         $_SESSION['isError'] = false;
       }
@@ -84,22 +84,22 @@ if (!isAdmin()) {
           foreach ($grains as $grain) {
             echo '<div class="grain-section">';
             echo '<h1 tabindex="10">' . $grain['nome'] . '</h1>'; ?>
-          <h2>Imposta una nuova disponibilit&agrave;</h2>
-          <form id="insertAvailability" action="productManager.php" method="post" enctype="multipart/form-data">
-            <label for="availability">Disponibilit&agrave;</label>
-            <input name="availability" type="text" id="availability" size="5" value="<?php echo $grain['disponibilita'] ?>"
-            />
-            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
-            <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
-          </form>
-          <h2>Imposta un nuovo prezzo</h2>
-          <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
-            <label for="price">Prezzo</label>
-            <input name="price" type="text" id="price" size="5" value="<?php echo $grain['prezzo'] ?>" />
-            <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
-            <input type="submit" name="submitPrice" value="Modifica prezzo" />
-          </form>
-          <?php
+        <h2>Imposta una nuova disponibilit&agrave;</h2>
+        <form id="insertAvailability" action="productManager.php" method="post" enctype="multipart/form-data">
+          <label for="availability">Disponibilit&agrave;</label>
+          <input name="availability" type="text" id="availability" size="5" value="<?php echo $grain['disponibilita'] ?>"
+          />
+          <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
+          <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
+        </form>
+        <h2>Imposta un nuovo prezzo</h2>
+        <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
+          <label for="price">Prezzo</label>
+          <input name="price" type="text" id="price" size="5" value="<?php echo $grain['prezzo'] ?>" />
+          <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
+          <input type="submit" name="submitPrice" value="Modifica prezzo" />
+        </form>
+        <?php
           echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
           echo '</div>';
         }
@@ -144,7 +144,7 @@ if (!isAdmin()) {
     <div id="go-to-menu">
       <a href="#story">Torna su</a>
     </div>
-    <footer>
+    <div id="footer">
       <div id="site_info">
         <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
@@ -156,7 +156,7 @@ if (!isAdmin()) {
           <li>Giovanni Cavallin - 1148957</li>
         </ul>
       </div>
-    </footer>
+    </div>
 
 
     <?php $connection->closeconnection(); ?>

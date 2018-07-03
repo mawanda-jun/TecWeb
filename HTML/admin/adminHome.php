@@ -58,7 +58,7 @@ else
   </head>
 
   <body>
-    <header>
+    <div id="header">
       <div class="row">
         <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
 
@@ -87,7 +87,7 @@ else
       } ?>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
-    </header>
+    </div>
 
     <div class="spacer">
       &nbsp;
@@ -182,7 +182,7 @@ else
           <div id="go-to-menu">
             <a href="#story">Torna su</a>
           </div>
-          <footer>
+          <div id="footer">
             <div id="site_info">
               <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
               <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
@@ -194,7 +194,7 @@ else
                 <li>Giovanni Cavallin - 1148957</li>
               </ul>
             </div>
-          </footer>
+          </div>
           <!-- </div> -->
 
 

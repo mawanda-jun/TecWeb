@@ -10,7 +10,8 @@ header('Content-type: application/xhtml+xml'); ?>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Prodotti coltivati nella nostra azienda" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
-  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
+  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
+  />
   <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" sizes="16x16" />
   <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
@@ -22,7 +23,7 @@ header('Content-type: application/xhtml+xml'); ?>
 
 <body>
 
-  <header>
+  <div id="header">
     <div class="row">
       <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1" />
       <ul id="navbar">
@@ -49,7 +50,7 @@ header('Content-type: application/xhtml+xml'); ?>
       <p id="path" tabindex="1">Ti trovi in: Prodotti</p>
       <a id="go-to-content" href="#anchor" tabindex="1">Vai al contenuto</a>
     </div>
-  </header>
+  </div>
   <div class="spacer">
     &nbsp;
   </div>
@@ -98,8 +99,8 @@ header('Content-type: application/xhtml+xml'); ?>
   <div id="go-to-menu">
     <a href="#anchor" tabindex="900">Torna su</a>
   </div>
-  <footer>
-  <div id="site_info">
+  <div id="footer">
+    <div id="site_info">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" tabindex="1000" />
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" tabindex="1000" />
       <a href="admin/adminHome.php" id="admin" tabindex="950">Pannello di amministrazione</a>
@@ -110,7 +111,7 @@ header('Content-type: application/xhtml+xml'); ?>
         <li>Giovanni Cavallin - 1148957</li>
       </ul>
     </div>
-  </footer>
+  </div>
 
 
   <?php $connection->closeconnection(); ?>

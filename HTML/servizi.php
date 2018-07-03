@@ -23,7 +23,7 @@ header('Content-type: application/xhtml+xml'); ?>
 
 <body>
 
-  <header>
+  <div id="header">
     <div class="row">
       <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1" />
       <ul id="navbar">
@@ -50,7 +50,7 @@ header('Content-type: application/xhtml+xml'); ?>
       <p id="path" tabindex="1">Ti trovi in: Servizi</p>
       <a id="go-to-content" href="#anchor" tabindex="1">Vai al contenuto</a>
     </div>
-  </header>
+  </div>
 
   <div class="spacer" tabinde="-1">
     &nbsp;
@@ -125,7 +125,7 @@ header('Content-type: application/xhtml+xml'); ?>
   <div id="go-to-menu">
     <a href="#anchor" tabindex="900">Torna su</a>
   </div>
-  <footer>
+  <div id="footer">
     <div id="site_info">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" tabindex="1000" />
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" tabindex="1000" />
@@ -137,7 +137,7 @@ header('Content-type: application/xhtml+xml'); ?>
         <li>Giovanni Cavallin - 1148957</li>
       </ul>
     </div>
-  </footer>
+  </div>
 
 
 

@@ -34,7 +34,7 @@ if (!isAdmin()) {
   </head>
 
   <body>
-    <header>
+    <div id="header">
       <div class="row">
         <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
         <ul id="navbar">
@@ -55,7 +55,7 @@ if (!isAdmin()) {
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
-    </header>
+    </div>
 
     <div class="spacer">
       &nbsp;
@@ -168,7 +168,7 @@ if (!isAdmin()) {
     <div id="go-to-menu">
       <a href="#story">Torna su</a>
     </div>
-    <footer>
+    <div id="footer">
       <div id="site_info">
         <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
@@ -180,7 +180,7 @@ if (!isAdmin()) {
           <li>Giovanni Cavallin - 1148957</li>
         </ul>
       </div>
-    </footer>
+    </div>
     <!-- </div> -->
 
 
