@@ -24,7 +24,8 @@ if (!isAdmin()) {
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="descripion" content="Pagina di gestione degli amministratori" />
     <meta name="author" content="Tecwweb&amp;Pastorizia" />
-    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
+    />
     <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" sizes="16x16" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
@@ -79,11 +80,12 @@ if (!isAdmin()) {
           echo '<li>' . $admin['email'] . ' <a class="button" title="Rimuovi amministratore ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina</a></li>';
         echo '</ul></div>';
       } else
-        echo '<div id="">Non ci sono altri amministratori.</div>';
+        echo '<div id="no-admin">Non ci sono altri amministratori.</div>';
       ?>
 
+      <div class="add-admin">
         <h1>Aggiungi un amministratore</h1>
-        <form id="insertAdmin" action="adminManager.php" method="post">
+        <form action="adminManager.php" method="post">
           <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
           <fieldset id="adminFields">
             <legend>Inserisci i seguenti dati:</legend>
@@ -92,11 +94,12 @@ if (!isAdmin()) {
             />
             <label for="password"><span xml:lang="en">Password:</span></label>
             <input name="password" type="password" id="password" size="10" maxlength="12" />
-            <input type="submit" value="Aggiungi" name="submit" />
+            <input type="submit" id="submit" value="Aggiungi" name="submit" />
             <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
           </fieldset>
         </form>
-        <?php
+      </div>
+      <?php
         $connection->closeConnection();
         ?>
 
@@ -107,17 +110,17 @@ if (!isAdmin()) {
       <a href="#story">Torna su</a>
     </div>
     <footer>
-    <div id="site_info">
-      <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-      <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-      <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
-      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-      <ul id="collaborators">
-        <li>Manuel Vianello - 1102467</li>
-        <li>Stefano Panozzo - 1097068</li>
-        <li>Giovanni Cavallin - 1148957</li>
-      </ul>
-    </div>
+      <div id="site_info">
+        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+        <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
+        <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+        <ul id="collaborators">
+          <li>Manuel Vianello - 1102467</li>
+          <li>Stefano Panozzo - 1097068</li>
+          <li>Giovanni Cavallin - 1148957</li>
+        </ul>
+      </div>
     </footer>
     <!-- </div> -->
 

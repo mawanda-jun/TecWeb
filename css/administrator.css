@@ -29,7 +29,9 @@
 
 .grains #description,
 .reservations #description,
-.clients #description {
+.clients #description,
+.services #description,
+.admins #description {
   padding-left: 2em;
 }
 
@@ -38,7 +40,10 @@
 }
 
 .grains #description h1,
-.reservations #description h1 {
+.reservations #description h1,
+.clients #description h1,
+.services #description h1,
+.admins #description h1 {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
@@ -70,7 +75,8 @@
 .add-grain,
 .add-machine,
 .add-reservation,
-.add-client {
+.add-client,
+.add-admin {
   padding: 0.5em;
   padding-left: 2em;
 }
@@ -78,7 +84,8 @@
 .add-grain h1,
 .add-machine h1,
 .add-reservation h1,
-.add-client h1 {
+.add-client h1,
+.add-admin h1 {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
@@ -117,8 +124,13 @@
 }
 
 .add-client fieldset,
-.add-reservation fieldset {
+.add-reservation fieldset,
+.add-admin fieldset {
   border: none;
+}
+
+.add-admin fieldset {
+  padding-bottom: 2em;
 }
 
 .add-reservation form {
@@ -132,6 +144,11 @@
   padding-bottom: 0.5em;
 }
 
+.add-admin fieldset legend {
+  padding-top: 0em;
+  padding-bottom: 1em;
+}
+
 .add-reservation p {
   padding-top: 0.5em;
   padding-bottom: 2em;
@@ -139,6 +156,16 @@
 
 .add-reservation fieldset {
   padding-top: 0.5em;
+}
+
+.admins .listAndDelete {
+  padding-top: 3em;
+  padding-left: 2em;
+  padding-bottom: 3em;
+}
+
+.admins .listAndDelete li {
+  padding-top: 2em;
 }
 
 #fileToUpload {
@@ -151,6 +178,11 @@
 
 #submit {
   cursor: pointer;
+}
+
+#no-admin {
+  padding-left: 2em;
+  padding-top: 2em;
 }
 
 .add-grain #submit,
