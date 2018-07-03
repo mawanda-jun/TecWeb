@@ -64,6 +64,9 @@ if (!isAdmin()) {
         <h1>Benvenuto nella pagina di gestione delle prenotazioni</h1>
       </div>
 
+      <div id="errorInput">
+      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
+      </div>
       <?php
         $connection = new DBConnection();
         $connection->openConnection();
@@ -95,7 +98,7 @@ if (!isAdmin()) {
             <fieldset id="prenotationFields">
             <?php
         $clients = $connection->getListClients();
-        echo '<form id="frm" method="post" class="listClientAndReserve">Lista dei clienti:';
+        echo 'Lista dei clienti:';
         if ($clients != null) { ?>
         <select name="clientID" id="clientID">
           <?php foreach ($clients as $client) {
@@ -103,13 +106,13 @@ if (!isAdmin()) {
                 echo (isset($_POST['clientID']) && $_POST['clientID'] == $client['id']) ? 'selected="' . $_POST['clientID'] . '"' : '';
                 echo '>' . $client['id'] . ' - ' . $client['nome'] . ' ' . $client['cognome'] .'</option>';
             }
-            echo '</select></form>';
+            echo '</select>';
         } else
             echo '<div id="">Non ci sono clienti registrati! Registrane prima uno.</div>';
         echo '<p>Se il cliente non è presente nella lista, inseriscilo <a href="adminClienti.php#addClient">qui</a> prima di continuare.</p>';
         
         $machines = $connection->getListMachinery();
-        echo '<form id="frm" method="post" class="listMachineAndReserve">Lista dei macchinari:';
+        echo 'Lista dei macchinari:';
         if ($machines != null) { ?>
         <select name="machineID" id="machineID">
           <?php foreach ($machines as $machine) {
@@ -117,7 +120,7 @@ if (!isAdmin()) {
             echo (isset($_POST['machineID']) && $_POST['machineID'] == $machine['codice']) ? 'selected="' . $_POST['machineID'] . '"' : '';
             echo '>' . $machine['nome'] . ' ' . $machine['modello'] . '</option>';
           }
-          echo '</select></form>';
+          echo '</select>';
         } else
             echo '<div id="">Non ci sono macchinari registrati! Registrane prima uno.</div>';
         ?>
@@ -137,6 +140,11 @@ if (!isAdmin()) {
 
             </fieldset>
 
+              <?php 
+              if(isset($_POST['machineID']) && isset($_POST['client'])) {
+                echo '<input name="machineID" type="hidden" value="' . $_POST['machineID'] . '"/>'; 
+                echo '<input name="clientID" type="hidden" value="' . $_POST['clientID'] . '"/>'; 
+              }?>
               <input type="submit" value="Aggiungi prenotazione" name="submit"/>
               
               <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->

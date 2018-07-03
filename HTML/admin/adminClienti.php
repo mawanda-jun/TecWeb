@@ -76,15 +76,15 @@ if (!isAdmin()) {
       </div>
 
 
+      <div id="errorInput">
+      <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
+      </div>
       <?php
       $connection = new DBConnection();
       $connection->openConnection();
       $clients = $connection->getListClients();
 
       if ($clients != null) { ?>
-        <div id="errorInput">
-          <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '' ?>
-        </div>
         <?php 
       foreach ($clients as $client) {
         echo '<div class="grain-section">';

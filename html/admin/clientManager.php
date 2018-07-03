@@ -16,16 +16,10 @@ if (isAdmin()) { // control if login has been successfull
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
     $error = validateClientAdd($id, $nome, $cognome, $telefono, $email);
-    switch ($_POST['submit']) {
-      default:
-        $error = "action not found";
-      case "Aggiungi":
-        {
-          if ($error == false) {
-            $connection->insertClient($id, $nome, $cognome, $telefono, $email);
-            $error = null;
-          }
-        };
+    
+    if ($error == false) {
+      $connection->insertClient($id, $nome, $cognome, $telefono, $email);
+      $error = null;
     }
   } else if (isset($_POST['submitNumber'])) {
     if (isset($_POST['number']) && isset($_POST['clientId']))
@@ -41,7 +35,7 @@ if (isAdmin()) { // control if login has been successfull
 
   } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
     if (!$connection->removeClient($_GET['remove']))
-      $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente associato ad una prenotazione!";
+      $error = "Errore durante l'eliminazione del cliente. Ricorda che non è possibile eliminare un cliente già associato ad una prenotazione!";
     else $error = null;
   }
   $connection->closeConnection();
