@@ -67,7 +67,10 @@ if (!isAdmin()) {
           <br/> &Egrave; anche possibile cambiarne solo la disponibilit&agrave; e il prezzo.</p>
       </div>
       <div class="list-modify-delete-grain">
-        <?php
+      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+        echo '<p id="error">' . $_SESSION['error'] . '</p>';
+        $_SESSION['isError'] = false;
+      }
         $connection = new DBConnection();
         $connection->openConnection();
       
@@ -97,7 +100,6 @@ if (!isAdmin()) {
           <?php
           echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
           echo '</div>';
-          // echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : '';
         }
       } else echo '<p>Nessun grano ora in produzione</p>';
       ?>
