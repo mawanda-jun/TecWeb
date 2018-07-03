@@ -148,7 +148,7 @@ if (!isAdmin()) {
                 echo '<input name="machineID" type="hidden" value="' . $_POST['machineID'] . '"/>'; 
                 echo '<input name="clientID" type="hidden" value="' . $_POST['clientID'] . '"/>'; 
               }?>
-              <input type="submit" value="Aggiungi prenotazione" name="submit"/>
+              <input type="submit" id="submit" value="Aggiungi prenotazione" name="submit"/>
               
               <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
             </fieldset>

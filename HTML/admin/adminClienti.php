@@ -147,7 +147,7 @@ if (!isAdmin()) {
                     <input name="email" type="email" id="email" size="30" maxlength="50" />
                   </li>
                   <li>
-                    <input type="submit" id="submit" value="Aggiungi" name="submit" />
+                    <input type="submit" id="submit" value="Aggiungi cliente" name="submit" />
                   </li>
                 </ul>
                 <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->

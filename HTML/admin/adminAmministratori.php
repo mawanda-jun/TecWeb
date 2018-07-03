@@ -90,8 +90,7 @@ if (!isAdmin()) {
           <fieldset id="adminFields">
             <legend>Inserisci i seguenti dati:</legend>
             <label for="email"><span xml:lang="en">Email:</span></label>
-            <input name="email" type="email" id="email" size="30" maxlength="50" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>"
-            />
+            <input name="email" type="email" id="email" size="30" maxlength="50"/>
             <label for="password"><span xml:lang="en">Password:</span></label>
             <input name="password" type="password" id="password" size="10" maxlength="12" />
             <input type="submit" id="submit" value="Aggiungi" name="submit" />
