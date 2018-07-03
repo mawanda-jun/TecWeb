@@ -14,7 +14,8 @@ body {
   height: 10em;
 }
 
-#navbar {
+#navbar,
+#navbarBottom {
   display: none;
 }
 
@@ -165,7 +166,7 @@ body {
   opacity: 0.97;
 }
 
-.bottom-section #navbar {
+.bottom-section #navbarBottom {
   display: block;
   float: none;
   margin: 0em;
