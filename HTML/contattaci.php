@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
         <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
         <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
         <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
-        <li class="active"><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
+        <li class="active"><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
       </ul>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
