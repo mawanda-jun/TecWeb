@@ -128,7 +128,13 @@
 
 .add-client fieldset legend,
 .add-reservation fieldset legend {
+  padding-top: 2em;
   padding-bottom: 0.5em;
+}
+
+.add-reservation p {
+  padding-top: 0.5em;
+  padding-bottom: 2em;
 }
 
 .add-reservation fieldset {
