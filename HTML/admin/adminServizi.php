@@ -101,8 +101,8 @@ if (!isAdmin()) {
         <form method="post" action="serviceManager.php" enctype="multipart/form-data">
           <ul>
             <li>
-            <label for="id">Codice identificativo:</label>
-            <input type="text" name="id" />
+              <label for="id">Codice identificativo:</label>
+              <input type="text" name="id" />
             </li>
             <li>
               <label for="type">Tipo:</label>
@@ -131,11 +131,12 @@ if (!isAdmin()) {
             <li>
               <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
               <input type="file" name="fileToUpload" id="fileToUpload" />
-            </li> 
-            <li><input type="submit" name="submit" id="submit" value="Aggiungi" /></li>
+            </li>
+            <li>
+              <input type="submit" name="submit" id="submit" value="Aggiungi" />
+            </li>
           </ul>
         </form>
-        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
       </div>
     </div>
 

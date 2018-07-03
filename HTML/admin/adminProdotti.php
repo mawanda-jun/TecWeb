@@ -127,10 +127,11 @@ if (!isAdmin()) {
               <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
               <input type="file" name="fileToUpload" id="fileToUpload" />
             </li>
-            <li><input type="submit" name="submit" id="submit" value="Aggiungi" /></li>
+            <li>
+              <input type="submit" name="submit" id="submit" value="Aggiungi" />
+            </li>
           </ul>
         </form>
-        <?php echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : ''; ?>
       </div>
     </div>
 
