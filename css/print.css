@@ -77,6 +77,10 @@ body {
   text-align: center;
 }
 
+.center-section .img-center-container {
+  display: none;
+}
+
 .left-section img,
 .right-section img,
 .grain-section img,

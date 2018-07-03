@@ -373,6 +373,15 @@ html {
   padding-right: 0.5em;
 }
 
+.center-section .img-center-container {
+  text-align: center;
+  padding-top: 2em;
+}
+
+.img-center-container img {
+  height: 27em;
+}
+
 .left-section img,
 .right-section img,
 .grain-section img,
