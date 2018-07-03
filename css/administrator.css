@@ -27,6 +27,10 @@
   color: initial;
 }
 
+.spacer {
+  height: 16em;
+}
+
 .grains #description,
 .reservations #description,
 .clients #description,
