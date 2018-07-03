@@ -33,6 +33,7 @@
 }
 
 .dropdown-content {
+  opacity: 0.95;
   display: none;
   margin-top: 0em;
   position: absolute;

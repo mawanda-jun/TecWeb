@@ -25,7 +25,7 @@ header('Content-type: application/xhtml+xml'); ?>
 
   <header>
     <div class="row">
-      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1"/>
+      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1" />
       <ul id="navbar">
         <li><a href="../html/home.html" lang="en" tabindex="10">Home</a></li>
         <li><a href="../html/chi-siamo.html" tabindex="10">Chi siamo</a></li>
@@ -67,9 +67,9 @@ header('Content-type: application/xhtml+xml'); ?>
         un parco trattori ampio e completo, atto a soddisfare tutte le esigenze. Sono disponibili trattori da 50
         a 400 cavalli, telescopici da 6mt a 14mt e attrezzature agricole specializzate.
       </p>
-      <p>
+      <p id="service-first-list">
         Il servizio del noleggio presenta diversi vantaggi:
-        <ul>
+        <ul class="service-list-description">
           <li>Potete ridurre al minimo il parco macchine, conservando più risorse</li>
           <li>Avete sempre a disposizione la macchina giusta per il lavoro in corso.</li>
           <li>Il noleggio elimina i costi di manutenzione, i costi di riparazione e i costi indiretti dovuti allo stop
@@ -81,7 +81,7 @@ header('Content-type: application/xhtml+xml'); ?>
       </p>
       <p>
         I termini salienti del contratto:
-        <ul>
+        <ul class="service-list-description">
           <li>Trasporto del trattore a scelta dell’utente.</li>
           <li>Massimale di ore di utilizzo.
           </li>

@@ -256,6 +256,20 @@ header img {
   margin-right: 3.5em;
 }
 
+#service-first-list {
+  padding-top: 2em;
+}
+
+.service-list-description {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2.5em;
+}
+
+.service-list-description li {
+  padding-bottom: 1em;
+}
+
 .grain-section .text-subsection,
 .service-section .text-subsection {
   width: 60%;
