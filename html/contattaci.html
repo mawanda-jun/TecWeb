@@ -44,8 +44,8 @@
       </div>
     </div>
     <div id="breadcrumb">
-      <p id="path" tabindex="1">Ti trovi in: Contattaci</p>
-      <a id="go-to-content" href="#anchor" tabindex="1">Vai al contenuto</a>
+      <p id="path">Ti trovi in: Contattaci</p>
+      <a id="go-to-content" href="#anchor" tabindex="1" target="_self">Vai al contenuto</a>
     </div>
   </div>
 
@@ -54,11 +54,11 @@
   </div>
 
   <div class="content">
-    <div id="anchor" tabindex="20"></div>
+    <div id="anchor"></div>
     <div class="center-section" id="contact-us">
-      <h1 tabindex="30">Vuoi contattarci?</h1>
-      <h3 tabindex="30">Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h3>
-      <form id="contattaci-form" action="dati.php" method="POST" tabindex="30">
+      <h1>Vuoi contattarci?</h1>
+      <h2>Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h2>
+      <form id="contattaci-form" action="dati.php" method="POST">
         <ul>
           <li class="name-form">
             <label for="name">Nome:</label>
@@ -79,23 +79,20 @@
       </form>
     </div>
   </div>
-
   <div id="go-to-menu">
-    <a href="#anchor">Torna su</a>
+    <a href="#anchor" tabindex="900" target="_self">Torna su</a>
   </div>
   <div id="footer">
     <div id="site_info">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-      <div class="central-footer">
-        <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-        <ul id="collaborators">
-          <li>Manuel Vianello - 1102467</li>
-          <li>Stefano Panozzo - 1097068</li>
-          <li>Giovanni Cavallin - 1148957</li>
-        </ul>
-        <a href="admin/adminHome.php" id="admin-link" tabindex="12">Pannello di amministrazione</a>
-      </div>
+      <a href="admin/adminHome.php" id="admin" tabindex="950" target="_top">Pannello di amministrazione</a>
+      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators">
+        <li>Manuel Vianello - 1102467</li>
+        <li>Stefano Panozzo - 1097068</li>
+        <li>Giovanni Cavallin - 1148957</li>
+      </ul>
     </div>
   </div>
   <!-- </div> -->

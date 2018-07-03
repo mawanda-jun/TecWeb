@@ -25,7 +25,7 @@ header('Content-type: application/xhtml+xml'); ?>
 
   <div id="header">
     <div class="row">
-      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1" />
+      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
       <ul id="navbar">
         <li><a href="../html/home.html" lang="en"  tabindex="10" target="_top">Home</a></li>
         <li><a href="../html/chi-siamo.html"  tabindex="10" target="_top">Chi siamo</a></li>
@@ -47,20 +47,20 @@ header('Content-type: application/xhtml+xml'); ?>
       </div>
     </div>
     <div id="breadcrumb">
-      <p id="path" tabindex="1">Ti trovi in: Prodotti</p>
-      <a id="go-to-content" href="#anchor" tabindex="1">Vai al contenuto</a>
+      <p id="path">Ti trovi in: Prodotti</p>
+      <a id="go-to-content" href="#anchor" tabindex="1" target="_self">Vai al contenuto</a>
     </div>
   </div>
   <div class="spacer">
     &nbsp;
   </div>
-  <div class="top-img" id="prodotti-top-img" tabindex="-1">
+  <div class="top-img" id="prodotti-top-img" >
   </div>
   <div class="content">
     <div id="anchor"></div>
     <div class="center-section" id="story">
-      <h1 tabindex="20">Il grano: vecchio e nuovo</h1>
-      <p tabindex="20">Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha reso pi&ugrave;
+      <h1>Il grano: vecchio e nuovo</h1>
+      <p>Durante gli anni '70 il grano duro ha subito una spinta genetica notevole, che da un lato lo ha reso pi&ugrave;
         basso - quindi pi&ugrave; difficilmente abbattibile e pi&ugrave; facilmente raccoglibile dai macchinari
         moderni -, dall'altro lo ha reso pi&ugrave; produttivo per la produzione di farine e derivati. La nostra
         azienda ha tuttavia deciso di seguire una strada diversa: ricerche importanti hanno visto come il grano
@@ -84,28 +84,28 @@ header('Content-type: application/xhtml+xml'); ?>
       foreach ($grains as $grain) {
         echo '<div class="grain-section">';
         echo '<div class="text-subsection">';
-        echo '<h1 tabindex="30">' . $grain['nome'] . '</h1>';
-        echo '<p tabindex="30">' . $grain['descrizione'] . '</p>';
-        echo '<p tabindex="30">Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
-        echo '<p tabindex="30"> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';
+        echo '<h1>' . $grain['nome'] . '</h1>';
+        echo '<p>' . $grain['descrizione'] . '</p>';
+        echo '<p>Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
+        echo '<p> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';
         echo '</div>';
         echo '<img src="../images/' . $grain['immagine'] . '" alt="immagine del ' . $grain['nome'] . '" tabindex="-1"/>';
         echo '</div>';
       }
-    } else echo '<p tabindex="30">Nessun grano ora in produzione</p>'
+    } else echo '<p>Nessun grano ora in produzione</p>'
     ?>
     </div>
   </div>
   <div id="go-to-menu">
-    <a href="#anchor" tabindex="900">Torna su</a>
+    <a href="#anchor" tabindex="900" target="_self">Torna su</a>
   </div>
   <div id="footer">
     <div id="site_info">
-      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" tabindex="1000" />
-      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" tabindex="1000" />
-      <a href="admin/adminHome.php" id="admin" tabindex="950">Pannello di amministrazione</a>
-      <p tabindex="950">Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-      <ul id="collaborators" tabindex="950">
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+      <a href="admin/adminHome.php" id="admin" tabindex="950" target="_top">Pannello di amministrazione</a>
+      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators">
         <li>Manuel Vianello - 1102467</li>
         <li>Stefano Panozzo - 1097068</li>
         <li>Giovanni Cavallin - 1148957</li>

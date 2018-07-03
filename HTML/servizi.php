@@ -25,44 +25,44 @@ header('Content-type: application/xhtml+xml'); ?>
 
   <div id="header">
     <div class="row">
-      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" tabindex="-1" />
+      <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
       <ul id="navbar">
-        <li><a href="../html/home.html" lang="en"  tabindex="10" target="_top">Home</a></li>
-        <li><a href="../html/chi-siamo.html"  tabindex="10" target="_top">Chi siamo</a></li>
-        <li><a href="../html/prodotti.php"  tabindex="10" target="_top">Prodotti</a></li>
-        <li class="active"><a href=""  tabindex="10" target="_top">Servizi</a></li>
-        <li><a href="../html/contattaci.html"  tabindex="10" target="_top">Contattaci</a></li>
+        <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
+        <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
+        <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
+        <li class="active"><a href="" tabindex="10" target="_top">Servizi</a></li>
+        <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
       </ul>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
           <ul>
-            <li class="active"><a href="../html/home.html" lang="en"  tabindex="10" target="_top">Home</a></li>
-            <li><a href="../html/chi-siamo.html"  tabindex="10" target="_top">Chi siamo</a></li>
-            <li><a href="../html/prodotti.php"  tabindex="10" target="_top">Prodotti</a></li>
-            <li><a href="../html/servizi.php"  tabindex="10" target="_top">Servizi</a></li>
-            <li><a href="../html/contattaci.html"  tabindex="10" target="_top">Contattaci</a></li>
+            <li class="active"><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
+            <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
+            <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
+            <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
+            <li><a href="../html/contattaci.html" tabindex="10" target="_top">Contattaci</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div id="breadcrumb">
-      <p id="path" tabindex="1">Ti trovi in: Servizi</p>
-      <a id="go-to-content" href="#anchor" tabindex="1">Vai al contenuto</a>
+      <p id="path">Ti trovi in: Servizi</p>
+      <a id="go-to-content" href="#anchor" tabindex="1" target="_self">Vai al contenuto</a>
     </div>
   </div>
 
   <div class="spacer" tabinde="-1">
     &nbsp;
   </div>
-  <div class="top-img" id="servizi-top-img" tabindex="-1">
+  <div class="top-img" id="servizi-top-img">
   </div>
 
   <div class="content">
-    <div id="anchor" tabindex="20"></div>
+    <div id="anchor"></div>
     <div class="center-section" id="services">
-      <h1 tabindex="20">Servizio macchinari</h1>
-      <p tabindex="20">
+      <h1>Servizio macchinari</h1>
+      <p>
         Proponiamo un servizio di noleggio trattori, telescopici e attrezzatura agricola. Mettiamo a vostra disposizione
         un parco trattori ampio e completo, atto a soddisfare tutte le esigenze. Sono disponibili trattori da 50
         a 400 cavalli, telescopici da 6mt a 14mt e attrezzature agricole specializzate.
@@ -106,32 +106,32 @@ header('Content-type: application/xhtml+xml'); ?>
         foreach ($machines as $machine) {
           echo '<div class="service-section">';
           echo '<div class="text-subsection">';
-          echo '<h1 tabindex="30">' . $machine['nome'] . '</h1>';
-          echo '<h2 tabindex="30"> Modello: ' . $machine['modello'] . '</h2>';
-          echo '<p tabindex="30"> Tipologia: ' . $machine['tipologia'] . '</p>';
-          echo '<p tabindex="30"> Potenza: ' . $machine['potenzaKW'] . ' KW</p>';
-          echo '<p tabindex="30"> Anno: ' . $machine['anno'] . '</p>';
-          echo '<p tabindex="30"> Prezzo (al giorno): ' . $machine['prezzoGiorno'] . '€</p>';
+          echo '<h1>' . $machine['nome'] . '</h1>';
+          echo '<h2> Modello: ' . $machine['modello'] . '</h2>';
+          echo '<p> Tipologia: ' . $machine['tipologia'] . '</p>';
+          echo '<p> Potenza: ' . $machine['potenzaKW'] . ' KW</p>';
+          echo '<p> Anno: ' . $machine['anno'] . '</p>';
+          echo '<p> Prezzo (al giorno): ' . $machine['prezzoGiorno'] . '€</p>';
           echo '</div>';
           echo '<img src="../images/' . $machine['immagine'] . '" alt="immagine del ' . $machine['nome'] . ' ' . $machine['modello'] . '" tabindex="-1"/>';
           echo '</div>';
         }
-      } else echo '<p tabindex="30">Nessun grano ora in produzione</p>';
+      } else echo '<p>Nessun grano ora in produzione</p>';
       $connection->closeConnection();
       ?>
     </div>
 
   </div>
   <div id="go-to-menu">
-    <a href="#anchor" tabindex="900">Torna su</a>
+    <a href="#anchor" tabindex="900" target="_self">Torna su</a>
   </div>
   <div id="footer">
     <div id="site_info">
-      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" tabindex="1000" />
-      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" tabindex="1000" />
-      <a href="admin/adminHome.php" id="admin" tabindex="950">Pannello di amministrazione</a>
-      <p tabindex="950">Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-      <ul id="collaborators" tabindex="950">
+      <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+      <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+      <a href="admin/adminHome.php" id="admin" tabindex="950" target="_top">Pannello di amministrazione</a>
+      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators">
         <li>Manuel Vianello - 1102467</li>
         <li>Stefano Panozzo - 1097068</li>
         <li>Giovanni Cavallin - 1148957</li>
