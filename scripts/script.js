@@ -16,7 +16,12 @@ window.onclick = function (event) {
   }
 }
 
-function onSelectChange() {
-  document.getElementById('frm')
+function onSelectChangeMac() {
+  document.getElementById('mac')
+    .submit();
+}
+
+function onSelectChangeCli() {
+  document.getElementById('cli')
     .submit();
 }

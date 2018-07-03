@@ -107,7 +107,7 @@ if (!isAdmin()) {
         } else echo '<p>Nessun cliente presente.</p>';
         ?>
 
-        <div class="add-client">
+        <div class="add-client" id="addClient">
           <h1>Aggiungi un cliente</h1>
           <form id="insertClient" action="clientManager.php" method="post">
             <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
