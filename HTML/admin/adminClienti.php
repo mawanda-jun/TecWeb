@@ -26,8 +26,8 @@ if (!isAdmin()) {
     <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
     />
-    <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" />
     <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
     <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script>
 
