@@ -1,5 +1,9 @@
 @import url("style.css");
 
+.spacer {
+  height: 10em;
+}
+
 #navbar {
   display: none;
 }

@@ -39,8 +39,8 @@ header {
 }
 
 header img {
-  width: 7em;
-  padding: 1em;
+  width: 10em;
+  padding: 0em;
   padding-left: 2em;
   /* padding-left: 2em; */
   float: left;
@@ -108,7 +108,7 @@ header img {
 
 .spacer {
   width: 100%;
-  height: 0.5em;
+  height: 0.9em;
   margin: 0em;
 }
 
