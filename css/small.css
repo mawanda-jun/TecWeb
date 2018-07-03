@@ -121,14 +121,11 @@ body {
 
 #name,
 #email {
-  width: 200px;
+  width: 15em;
 }
 
 #message-text {
-  /* width: 255px; */
-  width: 85%;
-  margin-right: 2em;
-
+  width: 20em;
 }
 
 .left-section p,

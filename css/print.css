@@ -105,3 +105,11 @@ body {
 #footer {
   display: none;
 }
+
+#contact-error-link {
+  display: none;
+}
+
+#contact-error-print {
+  display: block;
+}
