@@ -26,8 +26,8 @@ if (!isAdmin()) {
     <meta name="author" content="Tecwweb&amp;Pastorizia" />
     <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
     />
-    <link rel="icon" type="image/png" href="../images/icon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" href="../images/icon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
     <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->

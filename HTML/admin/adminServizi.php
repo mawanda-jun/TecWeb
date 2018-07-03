@@ -87,7 +87,7 @@ if (!isAdmin()) {
             echo '<h1 tabindex="10">' . $machine['nome'] . ' ' . $machine['modello'] . '</h1>'; ?>
       <h2>Imposta un nuovo prezzo</h2>
       <form id="insertPrice" action="serviceManager.php" method="post">
-        <label for="price">Prezzo</label>
+        <label for="price">Prezzo: </label>
         <input name="price" type="text" id="price" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
         <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
         <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
