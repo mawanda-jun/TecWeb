@@ -7,6 +7,7 @@ header('Content-type: application/xhtml+xml'); ?>
 
 <head>
   <title>Prodotti</title>
+  <meta name="viewport" content="width=device-width"/>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Prodotti coltivati nella nostra azienda" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
