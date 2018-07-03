@@ -241,6 +241,7 @@ html {
   width: 100%;
   /* float: left; */
   text-align: justify;
+  font-size: 1.2em;
 }
 
 .service-section p {
@@ -258,6 +259,7 @@ html {
   width: auto;
   padding-left: 3.5em;
   padding-right: 3.5em;
+  font-size: 1.2em;
 }
 
 .center-section h3 {
@@ -357,7 +359,12 @@ html {
   float: right;
 }
 
+.left-section img {
+  padding-left: 2em;
+}
+
 .right-section img {
+  padding-right: 2em;
   float: left;
 }
 
