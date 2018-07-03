@@ -11,7 +11,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Pagina di amministrazione per gli amministratori" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
-  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
   <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" sizes="16x16" />
   <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />

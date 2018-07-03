@@ -21,7 +21,7 @@ if (!isAdmin()) {
 
   <head>
     <meta name="description" content="Home page azienda agricola Cavallin" />
-    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica">
+    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"/>
     <link href="../css/style.css" rel="stylesheet" type="text/css" media="handheld, screen" />
     <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
     />
@@ -153,8 +153,8 @@ if (!isAdmin()) {
     </div>
     <footer>
       <div id="site_info">
-        <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-        <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
         <a href="admin/adminHome.php" id="admin" tabindex="12">Pannello di amministrazione</a>
         <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
         <ul id="collaborators">
