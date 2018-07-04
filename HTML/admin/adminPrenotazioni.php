@@ -29,8 +29,8 @@ if (!isAdmin()) {
     <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
     <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-    <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
-    <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
+    
+
   </head>
 
   <body>
@@ -53,7 +53,7 @@ if (!isAdmin()) {
       <div id="breadcrumb">
         <p id="path">Ti trovi in: Amministrazione > Prenotazioni</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
-        <a id="toSite" href="../">Torna al sito</a>
+        <a id="toSite" href="../../index.php">Torna al sito</a>
       </div>
     </div>
 
@@ -71,67 +71,67 @@ if (!isAdmin()) {
           presente nel database.</p>
       </div>
 
-      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+      <?php if (isset($_SESSION['isError']) && $_SESSION['isError']) {
         echo '<p id="error">' . $_SESSION['error'] . '</p>';
         $_SESSION['isError'] = false;
       }
-      
+
       $connection = new DBConnection();
-        $connection->openConnection();
-        date_default_timezone_set("Europe/Rome");
+      $connection->openConnection();
+      date_default_timezone_set("Europe/Rome");
 
-        $prenotations = $connection->getListActivePrenotations();
+      $prenotations = $connection->getListActivePrenotations();
 
-        
-        if ($prenotations != null) {
-          echo '<h2 id="subtitle">Prenotazioni attive:</h2>';
-          foreach ($prenotations as $prenotation) {
-            echo '<div class="grain-section">';
-            $activeMachinery = $connection->getMachine($prenotation['idMacchinario']);
-            echo '<h3>Ordine #' . $prenotation['ordine'] . '</h3>';
-            echo '<h4>Macchinario: ' . $activeMachinery['nome'] . ' ' . $activeMachinery['modello'] .'</h4>';
-            echo '<p>ID cliente: ' . $prenotation['idCliente'] . '</p>';
-            echo '<p>ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
-            echo '<p>Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
-            echo '<p>Data fine prenotazione: ' . $prenotation['dataFine'] . '</p>';
-            echo '<a class="button" title="Rimuovi ' . $prenotation['ordine'] . '"' . ' href="prenotationManager.php?remove=' . $prenotation['ordine'] . '" >Elimina prenotazione</a>';
-            echo '</div>';
-          }
-        } else echo '<p>Nessuna prenotazione attiva al momento.</p>'; ?>
+
+      if ($prenotations != null) {
+        echo '<h2 id="subtitle">Prenotazioni attive:</h2>';
+        foreach ($prenotations as $prenotation) {
+          echo '<div class="grain-section">';
+          $activeMachinery = $connection->getMachine($prenotation['idMacchinario']);
+          echo '<h3>Ordine #' . $prenotation['ordine'] . '</h3>';
+          echo '<h4>Macchinario: ' . $activeMachinery['nome'] . ' ' . $activeMachinery['modello'] . '</h4>';
+          echo '<p>ID cliente: ' . $prenotation['idCliente'] . '</p>';
+          echo '<p>ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
+          echo '<p>Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
+          echo '<p>Data fine prenotazione: ' . $prenotation['dataFine'] . '</p>';
+          echo '<a class="button" title="Rimuovi ' . $prenotation['ordine'] . '"' . ' href="prenotationManager.php?remove=' . $prenotation['ordine'] . '" >Elimina prenotazione</a>';
+          echo '</div>';
+        }
+      } else echo '<p>Nessuna prenotazione attiva al momento.</p>'; ?>
 
       <div class="add-reservation" id="addClient">
         <h2>Aggiungi una prenotazione</h2>
         <form id="insertPrenotation" action="prenotationManager.php" method="post">
-          <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
+          
           <fieldset id="prenotationFields">
             <?php
-        $clients = $connection->getListClients();
-        echo 'Lista dei clienti:';
-        if ($clients != null) { ?>
+            $clients = $connection->getListClients();
+            echo 'Lista dei clienti:';
+            if ($clients != null) { ?>
               <select name="clientID" id="clientID">
                 <?php foreach ($clients as $client) {
-                echo '<option value="' . $client['id'] . '" ';
-                echo (isset($_POST['clientID']) && $_POST['clientID'] == $client['id']) ? 'selected="' . $_POST['clientID'] . '"' : '';
-                echo '>' . $client['id'] . ' - ' . $client['nome'] . ' ' . $client['cognome'] .'</option>';
-            }
-            echo '</select>';
-        } else
-            echo '<div id="notRegisteredClient">Non ci sono clienti registrati! Registrane prima uno.</div>';
-        echo '<p>Se il cliente non è presente nella lista, inseriscilo <a href="adminClienti.php#addClient">qui</a> prima di continuare.</p>';
-        
-        $machines = $connection->getListMachinery();
-        echo 'Lista dei macchinari:';
-        if ($machines != null) { ?>
+                  echo '<option value="' . $client['id'] . '" ';
+                  echo (isset($_POST['clientID']) && $_POST['clientID'] == $client['id']) ? 'selected="' . $_POST['clientID'] . '"' : '';
+                  echo '>' . $client['id'] . ' - ' . $client['nome'] . ' ' . $client['cognome'] . '</option>';
+                }
+                echo '</select>';
+              } else
+                echo '<div id="notRegisteredClient">Non ci sono clienti registrati! Registrane prima uno.</div>';
+              echo '<p>Se il cliente non è presente nella lista, inseriscilo <a href="adminClienti.php#addClient">qui</a> prima di continuare.</p>';
+
+              $machines = $connection->getListMachinery();
+              echo 'Lista dei macchinari:';
+              if ($machines != null) { ?>
                 <select name="machineID" id="machineID">
                   <?php foreach ($machines as $machine) {
-            echo '<option value="' . $machine['codice'] . '" ';
-            echo (isset($_POST['machineID']) && $_POST['machineID'] == $machine['codice']) ? 'selected="' . $_POST['machineID'] . '"' : '';
-            echo '>' . $machine['nome'] . ' ' . $machine['modello'] . '</option>';
-          }
-          echo '</select>';
-        } else
-            echo '<div id="notRegisteredMachine">Non ci sono macchinari registrati! Registrane prima uno.</div>';
-        ?>
+                    echo '<option value="' . $machine['codice'] . '" ';
+                    echo (isset($_POST['machineID']) && $_POST['machineID'] == $machine['codice']) ? 'selected="' . $_POST['machineID'] . '"' : '';
+                    echo '>' . $machine['nome'] . ' ' . $machine['modello'] . '</option>';
+                  }
+                  echo '</select>';
+                } else
+                  echo '<div id="notRegisteredMachine">Non ci sono macchinari registrati! Registrane prima uno.</div>';
+                ?>
                   <fieldset>
                     <legend>Scegli le date della prenotazione:</legend>
                     <ul>
@@ -148,13 +148,13 @@ if (!isAdmin()) {
                   </fieldset>
 
                   <?php 
-              if(isset($_POST['machineID']) && isset($_POST['client'])) {
-                echo '<input name="machineID" type="hidden" value="' . $_POST['machineID'] . '"/>'; 
-                echo '<input name="clientID" type="hidden" value="' . $_POST['clientID'] . '"/>'; 
-              }?>
+                  if (isset($_POST['machineID']) && isset($_POST['client'])) {
+                    echo '<input name="machineID" type="hidden" value="' . $_POST['machineID'] . '"/>';
+                    echo '<input name="clientID" type="hidden" value="' . $_POST['clientID'] . '"/>';
+                  } ?>
                   <input type="submit" id="submit" value="Aggiungi prenotazione" name="submit" />
 
-                  <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
+                  
           </fieldset>
         </form>
       </div>
@@ -174,13 +174,13 @@ if (!isAdmin()) {
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
         <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
         <ul id="collaborators">
-          <li>Manuel Vianello - 1102466</li>
+          <li>Manuel Vianello - 1102467</li>
           <li>Stefano Panozzo - 1097068</li>
           <li>Giovanni Cavallin - 1148957</li>
         </ul>
       </div>
     </div>
-    <!-- </div> -->
+   
 
 
 

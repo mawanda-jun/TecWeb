@@ -104,7 +104,10 @@ header('Content-type: application/xhtml+xml'); ?>
 
       <?php
       $connection = new DBConnection();
-      $connection->openConnection();
+      if (!$connection->openConnection()) {
+        require("Location: ../index.php");
+        die();
+      }
   
   // $index = 0;         //forse non serve
   // $grainForPage = 10; //grani da mostrare per pagina
@@ -140,7 +143,7 @@ header('Content-type: application/xhtml+xml'); ?>
       <a href="admin/adminHome.php" id="admin" tabindex="950" target="_top">Pannello di amministrazione</a>
       <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
       <ul id="collaborators">
-        <li>Manuel Vianello - 1102466</li>
+        <li>Manuel Vianello - 1102467</li>
         <li>Stefano Panozzo - 1097068</li>
         <li>Giovanni Cavallin - 1148957</li>
       </ul>

@@ -127,7 +127,7 @@ if(isset($_POST['submit'])){
       <a href="admin/adminHome.php" id="admin" target="_top">Pannello di amministrazione</a>
       <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
       <ul id="collaborators">
-        <li>Manuel Vianello - 1102466</li>
+        <li>Manuel Vianello - 1102467</li>
         <li>Stefano Panozzo - 1097068</li>
         <li>Giovanni Cavallin - 1148957</li>
       </ul>

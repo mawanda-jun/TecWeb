@@ -11,14 +11,12 @@
 
 #breadcrumb #logout {
   float: right;
-  /* vertical-align: top; */
   padding-right: 1em;
   color: #f4d03f;
 }
 
 #breadcrumb #toSite {
   float: right;
-  /* vertical-align: top; */
   padding-right: 1em;
   color: #f4d03f;
 }
@@ -182,7 +180,6 @@
 
 .button {
   padding: 0.3em;
-  border: 1px;
 }
 
 #submit {

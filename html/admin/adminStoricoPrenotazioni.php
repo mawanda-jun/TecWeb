@@ -29,8 +29,8 @@ if (!isAdmin()) {
     <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
     <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-    <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
-    <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
+    
+
   </head>
 
   <body>
@@ -53,7 +53,7 @@ if (!isAdmin()) {
       <div id="breadcrumb">
         <p id="path">Ti trovi in: Amministrazione > Storico prenotazioni</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
-        <a id="toSite" href="../">Torna al sito</a>
+        <a id="toSite" href="../../index.php">Torna al sito</a>
       </div>
     </div>
 
@@ -68,34 +68,34 @@ if (!isAdmin()) {
         <p>In questa pagina &egrave; possibile visionare le prenotazioni passate di un macchinario.</p>
       </div>
 
-      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+      <?php if (isset($_SESSION['isError']) && $_SESSION['isError']) {
         echo '<p id="error">' . $_SESSION['error'] . '</p>';
         $_SESSION['isError'] = false;
       }
-      
+
       $connection = new DBConnection();
-        $connection->openConnection();
-        date_default_timezone_set("Europe/Rome");
+      $connection->openConnection();
+      date_default_timezone_set("Europe/Rome");
 
-        $prenotations = $connection->getListPastPrenotations();
+      $prenotations = $connection->getListPastPrenotations();
 
-        
-        if ($prenotations != null) {
-          echo '<h2 id="subtitle">Prenotazioni passate:</h2>';
-          foreach ($prenotations as $prenotation) {
-            echo '<div class="grain-section">';
-            $machine = $connection->getMachine($prenotation['idMacchinario']);
-            $client = $connection->getClient($prenotation['idCliente']);
-            echo '<h3>Ordine #' . $prenotation['ordine'] . '</h3>';
-            echo '<h4>Macchinario: ' . $machine['nome'] . ' ' . $machine['modello'] .'</h4>';
-            echo '<h4>Cliente: ' . $client['nome'] . ' ' . $client['cognome'] .'</h4>';
-            echo '<p>ID cliente: ' . $prenotation['idCliente'] . '</p>';
-            echo '<p>ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
-            echo '<p>Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
-            echo '<p>Data fine prenotazione: ' . $prenotation['dataFine'] . '</p>';
-            echo '</div>';
-          }
-        } else echo '<p>Nessuna prenotazione nel database.</p>'; ?>
+
+      if ($prenotations != null) {
+        echo '<h2 id="subtitle">Prenotazioni passate:</h2>';
+        foreach ($prenotations as $prenotation) {
+          echo '<div class="grain-section">';
+          $machine = $connection->getMachine($prenotation['idMacchinario']);
+          $client = $connection->getClient($prenotation['idCliente']);
+          echo '<h3>Ordine #' . $prenotation['ordine'] . '</h3>';
+          echo '<h4>Macchinario: ' . $machine['nome'] . ' ' . $machine['modello'] . '</h4>';
+          echo '<h4>Cliente: ' . $client['nome'] . ' ' . $client['cognome'] . '</h4>';
+          echo '<p>ID cliente: ' . $prenotation['idCliente'] . '</p>';
+          echo '<p>ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
+          echo '<p>Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
+          echo '<p>Data fine prenotazione: ' . $prenotation['dataFine'] . '</p>';
+          echo '</div>';
+        }
+      } else echo '<p>Nessuna prenotazione nel database.</p>'; ?>
       <?php $connection->closeConnection(); ?>
     </div>
 
@@ -109,13 +109,13 @@ if (!isAdmin()) {
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
         <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
         <ul id="collaborators">
-          <li>Manuel Vianello - 1102466</li>
+          <li>Manuel Vianello - 1102467</li>
           <li>Stefano Panozzo - 1097068</li>
           <li>Giovanni Cavallin - 1148957</li>
         </ul>
       </div>
     </div>
-    <!-- </div> -->
+   
 
 
 

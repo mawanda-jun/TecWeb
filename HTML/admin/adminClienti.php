@@ -28,7 +28,7 @@ if (!isAdmin()) {
     />
     <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
     <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
-    <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
+
     <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script>
 
 
@@ -37,9 +37,9 @@ if (!isAdmin()) {
     <meta name="description" content="Pagina di gestione dei clienti" />
     <meta name="author" content="Tecwweb&amp;Pastorizia" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-    <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
-    <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
-    <!-- <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script> -->
+    
+
+
   </head>
 
   <body>
@@ -62,7 +62,7 @@ if (!isAdmin()) {
       <div id="breadcrumb">
         <p id="path">Ti trovi in: Amministrazione > Clienti</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
-        <a id="toSite" href="../">Torna al sito</a>
+        <a id="toSite" href="../../index.php">Torna al sito</a>
       </div>
     </div>
 
@@ -79,7 +79,7 @@ if (!isAdmin()) {
       </div>
 
 
-      <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
+      <?php if (isset($_SESSION['isError']) && $_SESSION['isError']) {
         echo '<p id="error">' . $_SESSION['error'] . '</p>';
         $_SESSION['isError'] = false;
       }
@@ -113,19 +113,19 @@ if (!isAdmin()) {
       </form>
 
       <?php
-            echo '<a class="button" title="Rimuovi ' . $client['id'] . '"' . ' href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
-            echo '</li>';
-            echo '</ul>';
-            echo '</div>';
-          }
-          // echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? $_SESSION['error'] : '';
-        } else echo '<p>Nessun cliente presente.</p>';
-        ?>
+      echo '<a class="button" title="Rimuovi ' . $client['id'] . '"' . ' href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
+      echo '</li>';
+      echo '</ul>';
+      echo '</div>';
+    }
+
+  } else echo '<p>Nessun cliente presente.</p>';
+  ?>
 
         <div class="add-client" id="addClient">
           <h1>Aggiungi un cliente</h1>
           <form id="insertClient" action="clientManager.php" method="post">
-            <!-- onsubmit="return validateFormInsertAdmin()"> da usare quando e se avremo uno script di validazione -->
+            
             <fieldset id="clientFields">
               <ul>
                 <legend>Inserisci i seguenti dati:</legend>
@@ -153,7 +153,7 @@ if (!isAdmin()) {
                   <input type="submit" id="submit" value="Aggiungi cliente" name="submit" />
                 </li>
               </ul>
-              <!-- <input type="reset" value="Cancella i campi" name="reset"/> -->
+              
             </fieldset>
           </form>
           <div id="errorInput">
@@ -177,13 +177,13 @@ if (!isAdmin()) {
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
         <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
         <ul id="collaborators">
-          <li>Manuel Vianello - 1102466</li>
+          <li>Manuel Vianello - 1102467</li>
           <li>Stefano Panozzo - 1097068</li>
           <li>Giovanni Cavallin - 1148957</li>
         </ul>
       </div>
     </div>
-    <!-- </div> -->
+   
 
 
   </body>

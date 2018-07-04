@@ -3,11 +3,13 @@
 
 <?php 
 header('Content-type: application/xhtml+xml');
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 ?>
 
 <head>
-  <title>Pannello amministrazione</title>
+  <title>Sessione scaduta</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Pagina di amministrazione per gli amministratori" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
@@ -16,27 +18,50 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
   <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
   <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-  <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
-  <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
-  <!-- <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script> -->
 </head>
 
 <body>
+<div id="header">
+      <div class="row">
+        <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
+      </div>
+      <div id="breadcrumb">
+        <p id="path">Ti trovi in: Sessione scaduta!</p>
+        <a id="toSite" href="../../index.php">Torna al sito</a>
+      </div>
+    </div>
+
+    <div class="spacer">
+      &nbsp;
+    </div>
+
+
   <div id="content">
     <h1>Qualcosa non va...</h1>
     <p>
       <?php 
-      if(isset($_SESSION['error'])) 
+      if (isset($_SESSION['error']))
         echo $_SESSION['error'];
-      else 
-        echo('Qualcosa &egrave; andato storto. Clicca sul logo e andr&agrave; tutto bene.'); 
+      else
+        echo ('<p>Qualcosa &egrave; andato storto. Clicca su "Torna al sito" e andr&agrave; tutto bene.</p>');
       $_SESSION['error'] = null;
       ?>
     </p>
-    <!-- <img id="imageerr" src="../images/err404.jpg" alt="Immagine di errore"/> <br/> -->
-    <!-- <a href="index.php">Torna alla pagina di amministrazione del sito</a> <br/> -->
-    <!-- <a id="backpage" href="javascript:history.back()">Ritorna alla pagina precedente</a> -->
   </div>
+
+
+  <div id="footer">
+            <div id="site_info">
+              <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+              <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+              <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+              <ul id="collaborators">
+                <li>Manuel Vianello - 1102467</li>
+                <li>Stefano Panozzo - 1097068</li>
+                <li>Giovanni Cavallin - 1148957</li>
+              </ul>
+            </div>
+          </div>
 </body>
 
 </html>

@@ -29,9 +29,9 @@ if (!isAdmin()) {
     <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
     <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
     <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-    <!-- <link href="../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)" /> -->
-    <!-- <link href="../css/print.css" type="text/css" rel="stylesheet" media="print" /> -->
-    <!-- <script src="../scripts/script.js" type="text/javascript" charset="utf-8"></script> -->
+    
+
+
   </head>
 
   <body>
@@ -54,7 +54,7 @@ if (!isAdmin()) {
       <div id="breadcrumb">
         <p id="path">Ti trovi in: Amministrazione > Prodotti</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
-        <a id="toSite" href="../">Torna al sito</a>
+        <a id="toSite" href="../../index.php">Torna al sito</a>
       </div>
     </div>
 
@@ -69,10 +69,10 @@ if (!isAdmin()) {
           <br/> &Egrave; anche possibile cambiarne solo la disponibilit&agrave; e il prezzo.</p>
       </div>
       <div class="list-modify-delete-grain">
-        <?php if(isset($_SESSION['isError']) && $_SESSION['isError']) {
-        echo '<p id="error">' . $_SESSION['error'] . '</p>';
-        $_SESSION['isError'] = false;
-      }
+        <?php if (isset($_SESSION['isError']) && $_SESSION['isError']) {
+          echo '<p id="error">' . $_SESSION['error'] . '</p>';
+          $_SESSION['isError'] = false;
+        }
         $connection = new DBConnection();
         $connection->openConnection();
       
@@ -100,11 +100,11 @@ if (!isAdmin()) {
           <input type="submit" name="submitPrice" value="Modifica prezzo" />
         </form>
         <?php
-          echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
-          echo '</div>';
-        }
-      } else echo '<p>Nessun grano ora in produzione</p>';
-      ?>
+        echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';
+        echo '</div>';
+      }
+    } else echo '<p>Nessun grano ora in produzione</p>';
+    ?>
       </div>
 
       <div class="add-grain">
@@ -150,7 +150,7 @@ if (!isAdmin()) {
         <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
         <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
         <ul id="collaborators">
-          <li>Manuel Vianello - 1102466</li>
+          <li>Manuel Vianello - 1102467</li>
           <li>Stefano Panozzo - 1097068</li>
           <li>Giovanni Cavallin - 1148957</li>
         </ul>

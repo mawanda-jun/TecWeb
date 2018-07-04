@@ -8,9 +8,9 @@ if (session_status() == PHP_SESSION_NONE) {
 class DBConnection
 {
   const host = 'localhost';
-  const user = 'root';
-  const pwd = '';
-  const db = 'azienda';
+  const user = 'gcavalli';
+  const pwd = 'ufu5zahj6Lah1rie';
+  const db = 'gcavalli';
 
   public $connectionOpen = false;
   public $failedConnection = false;
