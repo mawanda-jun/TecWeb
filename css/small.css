@@ -192,9 +192,16 @@ body {
   float: none;
   margin: 0em;
   text-align: center;
+  padding-bottom: 10em;
+}
+
+.bottom-section #navbarBottom li {
+  display: list-item;
   padding-top: 3em;
-  padding-bottom: 3em;
-  font-size: 0.6em;
+}
+
+#anchor-bottom {
+  padding-bottom: 10em;
 }
 
 #go-to-menu {
