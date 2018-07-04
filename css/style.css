@@ -141,6 +141,10 @@ html {
   margin: 0em;
 }
 
+#spacer-404 {
+  height: 7em;
+}
+
 #contattaci-spacer {
   height: 9.6em;
 }
@@ -542,4 +546,8 @@ html {
   padding: 0.5em;
   padding-left: 0.9em;
   padding-right: 0.9em;
+}
+
+#img-404 {
+  width: 100%;
 }
