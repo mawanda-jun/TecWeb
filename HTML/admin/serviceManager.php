@@ -1,6 +1,7 @@
 <?php require_once __DIR__ . "/../../php/connection.php";
 require_once('uploadImage.php');
 require_once('../../validation/validator.php');
+require_once('deleteImage.php');
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -22,7 +23,7 @@ if (isAdmin()) { // control if login has been successfull
         $type = filter_var($_POST['type'], FILTER_SANITIZE_STRING);
         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         $model = filter_var($_POST['model'], FILTER_SANITIZE_STRING);
-        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+        // $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         $power = filter_var($_POST['power'], FILTER_SANITIZE_NUMBER_FLOAT);
         $year = filter_var($_POST['year'], FILTER_SANITIZE_NUMBER_INT);
         $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT);
@@ -46,11 +47,11 @@ if (isAdmin()) { // control if login has been successfull
                             $error = $errorOk['error'];
                             $_SESSION['isError'] = true;
                             $_SESSION['error'] = $error;
-                            header("Location: adminServizi.php");
+                            header("Location: sessione_scaduta.php");
 
                             exit();
                         } else
-                            if (!$connection->insertGrain($_POST['name'], $_POST['description'], $fileName, $_POST['price'], $_POST['availability'])) {
+                            if (!$connection->insertMachine($id, $type, $name, $model,$power,$year,$fileName,$price)) {
           // if (!$connection->insertGrain('ciao', 'ciao', 'image.img', '123', '123')) {
                             $_SESSION['isError'] = true;
                             $_SESSION['error'] = "C'&egrave; stato un problema durante il caricamento della <span xml:lang='en'>cultivar</span>";

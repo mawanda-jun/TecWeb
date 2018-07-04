@@ -34,6 +34,7 @@ function uploadImage($fileName, $tmpFileName, $fileSize)
 	if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 		&& $imageFileType != "gif") {
 		$error = "Attenzione: solamente le estensioni JPG, JPEG, PNG e GIF sono consentite.";
+		// $error = $imageFileType;
 		$uploadOk = 0;
 	}
 	// check if the file upladed contains some char not accepted for security
