@@ -137,6 +137,12 @@ body {
   padding-left: 0em;
 }
 
+.img-center-container img {
+  float: left;
+  padding-top: 2em;
+  width: 100%;
+}
+
 .left-section img,
 .right-section img,
 .grain-section img,
