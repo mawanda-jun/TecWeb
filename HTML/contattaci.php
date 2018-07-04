@@ -104,10 +104,13 @@ if(isset($_POST['submit'])){
         inviata.
       </p>
       <p id="contact-error-link">
-        Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta al seguente <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.
+        Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta seguendo il seguente <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.
       </p>
       <p id="contact-error-print">
         Se riscontri dei problemi, in alternativa, puoi contattare il seguente indirizzo email: aziendacavallin@gmail.com.
+      </p>
+      <p>
+        Se preferisci, puoi contattarci al seguente numero di telefono: <a href="tel:+390123456789">0123456789</a>.
       </p>
     </div>
   </div>
