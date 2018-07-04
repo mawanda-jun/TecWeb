@@ -100,53 +100,47 @@ else
     if (isAdmin()) { ?>
       <div class="content">
 
-        <div class="left-section" id="actions">
-          <h2>Benvenuto nella sezione di amministrazione</h2>
-          <p>In questa sezione potrai svolgere tutte le operazioni di amministrazione del sito.</p>
-          <h3>Prodotti</h3>
-          <p>In questa sezione si possono: </p>
-          <ul> </ul>
-
-
-
-
-
-
-
-
-          <!-- <h2>Benvenuto nell’area di amministrazione</h2>
-          <p>In quest’ area potrai gestire, aggiornare e monitorare alcune parti del sito.</p>
-
-          <h3 xml:lang="en">News</h3>
-          <p>In questa pagina si ha la possibilità di:</p>
-          <ul>
-            <li>aggiungere <span xml:lang="en">news</span></li>
-            <li>cancellare la <span xml:lang="en">cache</span> delle <span xml:lang="en">news</span> per
-              la <span xml:lang="en">sidebar</span></li>
-            <li>cancellare le <span xml:lang="en">news</span></li>
-            <li>modificare le <span xml:lang="en">news</span></li>
-            <li>impostare le <span xml:lang="en">news</span> come bozza o pubblicarle</li>
+        <div class="left-section">
+          <h1>Benvenuto nel pannello di amministrazione</h1>
+          <p>Qui potrai svolgere tutte le operazioni di amministrazione del sito.</p>
+          <p>Le sezioni disponibili sono di seguito presentate:</p>
+          <ul> 
+          <li>
+            <h2>Prodotti</h2>
+            <p>In questa sezione &egrave; possibile gestire i prodotti offerti dall'azienda. &Egrave; quindi possibile vedere le 
+                <span xml:lang='en'>cultivar</span> e modificarne la disponibilit&agrave; ed il prezzo. Inoltre, &egrave; possibile eliminare una 
+                <span xml:lang='en'>cultivar</span> esistente o inserirne una nuova.</p>
+          </li>
+          <li>
+            <h2>Servizi</h2>
+            <p>In questa sezione &egrave; possibile gestire i servizi offerti dall'azienda. &Egrave; quindi possibile vedere le macchine disponibilili 
+                e modificarne il prezzo. Inoltre, &egrave; possibile eliminare una macchina esistente o inserirne una nuova.</p>
+          </li>
+          <li>
+            <h2>Storico prenotazioni</h2>
+            <p>In questa sezione &egrave; possibile visualizzare lo storico delle prenotazioni, ossia quelle prenotazioni che hanno come data di restituzione
+                una data precedente a quella odierna.</p>
+          </li>
+          <li>
+            <h2>Prenotazioni</h2>
+            <p>In questa sezione &egrave; possibile visualizzare le prenotazioni attive, ossia quelle prenotazioni che sono in corso o hanno una data di inizio
+                dopo quella odierna. &Egrave; quindi possibile eliminare una prenotazione ed inserirne una nuova: &egrave; necessario inserire prima il cliente se 
+                questo non &egrave; gi&agrave; nel database; quando poi si inseriranno i campi dati relativi alla prenotazione, il controllo della 
+                disponibilit&agrave; del macchinario nelle date inserite verr&agrave; eseguito automaticamente.</p>
+          </li>
+          <li>
+            <h2>Clienti</h2>
+            <p>In questa sezione &egrave; possibile visualizzare i clienti inseriti nel database. Un cliente, per ragioni di sicurezza, deve essere 
+                salvato per prenotare un macchinario. &Egrave; quindi possibile modificare il numero di telefono e l'indirizzo <span xml:lang='en'>email</span>
+                del cliente. Inoltre, &egrave; possibile inserirne uno nuovo o eliminarne uno esistente, solamente se questo non ha gi&agrave; effettuato una
+                prenotazione per non creare disomogeneit&agrave; nel database.</p>
+          </li>
+          <li>
+            <h2>Amministratori</h2>
+            <p>In questa sezione &egrave; possibile visualizzare gli amministratori inseriti nel database. Nella lista non viene mostrato l'amministratore 
+                collegato all'account che ha eseguito l'accesso. &Egrave; quindi possibile eliminare un amministratore o inserne uno nuovo.</p>
+          </li>
           </ul>
-
-          <h3>Immagini</h3>
-          <p>In questa sezione è possibile fare l’<span lang="en">upload</span> di nuove immagini o rimuoverle
-            dal sito.</p>
-
-          <h3>Commenti e utenti bloccati</h3>
-          <p>Nella sezione commenti è presente una lista di tutti i commenti presenti nel sito. E’ possibile
-            bloccare un utente, specificandone il motivo (se desiderato) e conseguentemente eliminare
-            il commento oppure eliminare solo il commento.</p>
-          <p>Nella pagina utenti bloccati invece troviamo un elenco di tutti gli utenti ai quali è impedito
-            l'inserimento dei commenti e c'è la funzione per sbloccarli.</p>
-
-          <h3>Capitoli</h3>
-          <p>Questa sezione elenca tutti i capitoli presenti, permettendo di aggiungerne di nuovi o di eliminarne.</p>
-
-          <h3>Amministratori</h3>
-          <p>In questa sezione è possibile aggiungere e rimuovere amministratori, cambiare la propria password
-            ed aggiornare la propria <span xml:lang="it">e-mail</span>.</p>
-
-          <p>Infine puoi ritornare al sito rimanendo loggato all’Area amministrativa o fare <span xml:lang="en">Logout</span>.</p> -->
         </div>
       </div>
       <?php

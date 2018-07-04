@@ -8,7 +8,6 @@ class DBConnection
   const user = 'root';
   const pwd = '';
   const db = 'azienda';
-	/*public $connectionErrorPage = ''; DA DEFINIRE UNA PAGINA DI ERRORE PER IL DB */
 
   public $connectionOpen = false;
   public $failedConnection = false;
@@ -21,20 +20,14 @@ class DBConnection
     $this->connection = @mysqli_connect(static::host, static::user, static::pwd, static::db);
     if (!$this->connection) {
       $this->failedConnection = true;
-      $this->showError();
       return false;
     }
     $this->connectionOpen = true;
     return true;
   }
 
-  private function showError() {
-    header('Location: /' . $this->connectionErrorPage);
-    exit();
-  }
-
   private function getAllQuery($query) {
-    $result = mysqli_query($this->connection, $query) or $this->showError();
+    $result = mysqli_query($this->connection, $query);
     return mysqli_fetch_all($result, MYSQLI_ASSOC);
   }
 
@@ -51,7 +44,7 @@ class DBConnection
   public function adminLogin($email, $password) {
     $query = 'SELECT pwd FROM users WHERE ' .
       'email = "' . $this->escape($email) . '"';
-    $result = mysqli_query($this->connection, $query) or $this->showError();
+    $result = mysqli_query($this->connection, $query);
     $dataDB = mysqli_fetch_row($result);
     return password_verify($password, $dataDB[0]);
   }

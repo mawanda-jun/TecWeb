@@ -23,41 +23,32 @@ if (isAdmin()) { // control if login has been successfull
         $type = filter_var($_POST['type'], FILTER_SANITIZE_STRING);
         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         $model = filter_var($_POST['model'], FILTER_SANITIZE_STRING);
-        // $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         $power = filter_var($_POST['power'], FILTER_SANITIZE_NUMBER_FLOAT);
         $year = filter_var($_POST['year'], FILTER_SANITIZE_NUMBER_INT);
         $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT);
 
         $error = validateServiceAdd($id, $type, $name, $model, $power, $year, $price);
 
-        switch ($_POST['submit']) {
-            default:
-                $error = "action not found";
-            case "Aggiungi macchinario":
-                {
-                    if ($error == null) {
-                        $fileName = $_FILES["fileToUpload"]["name"];
-                        $tmpFileName = $_FILES["fileToUpload"]["tmp_name"];
-                        $fileSize = $_FILES['fileToUpload']['size'];
-                        $errorOk = uploadImage($fileName, $tmpFileName, $fileSize);
+        if ($error == null) {
+            $fileName = $_FILES["fileToUpload"]["name"];
+            $tmpFileName = $_FILES["fileToUpload"]["tmp_name"];
+            $fileSize = $_FILES['fileToUpload']['size'];
+            $errorOk = uploadImage($fileName, $tmpFileName, $fileSize);
 
-                        if ($errorOk['error'] != null) {
-                            if (!$_SESSION['already'])
-                                deleteImage($fileName);
-                            $error = $errorOk['error'];
-                            $_SESSION['isError'] = true;
-                            $_SESSION['error'] = $error;
-                            header("Location: sessione_scaduta.php");
+            if ($errorOk['error'] != null) {
+                if (!$_SESSION['already'])
+                    deleteImage($fileName);
+                $error = $errorOk['error'];
+                $_SESSION['isError'] = true;
+                $_SESSION['error'] = $error;
+                header("Location: sessione_scaduta.php");
 
-                            exit();
-                        } else
-                            if (!$connection->insertMachine($id, $type, $name, $model,$power,$year,$fileName,$price)) {
-          // if (!$connection->insertGrain('ciao', 'ciao', 'image.img', '123', '123')) {
-                            $_SESSION['isError'] = true;
-                            $_SESSION['error'] = "C'&egrave; stato un problema durante il caricamento della <span xml:lang='en'>cultivar</span>";
-                        }
-                    }
-                };
+                exit();
+            } else
+                if (!$connection->insertMachine($id, $type, $name, $model,$power,$year,$fileName,$price)) {
+                $_SESSION['isError'] = true;
+                $_SESSION['error'] = "C'&egrave; stato un problema l'inserimento del macchinario.";
+            }
         }
     } else if (isset($_POST['submitPrice'])) {
         if (isset($_POST['machineID']) && !empty($_POST['machineID'])) {
@@ -66,7 +57,7 @@ if (isAdmin()) { // control if login has been successfull
         }
     } else if (isset($_GET['remove']) && !empty($_GET['remove'])) {
         if (!$connection->removeMachine($_GET['remove'])) {
-            $error = "L'eliminazione del macchinario non &egrave; andata a buon fine. ";
+            $error = "L'eliminazione del macchinario non &egrave; andata a buon fine. Controlla che non sia gi&agrave; presente una prenotazione associata.";
         } else $error = null;
     }
     $connection->closeConnection();
