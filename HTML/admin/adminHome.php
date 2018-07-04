@@ -65,22 +65,22 @@ else
         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
 
         <ul id="navbar">
-          <li class="active"><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
-          <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
-          <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
-          <li><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
+          <li class="active"><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
+          <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
+          <li><a href="adminServizi.php">Servizi</a></li>
+          <li><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
         </ul>
         <ul id="navbar2">
-          <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
-          <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
-          <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
+          <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
+          <li><a href="adminClienti.php">Clienti</a></li>
+          <li><a href="adminAmministratori.php">Amministratori</a></li>
         </ul>
         <?php 
       } ?>
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Pannello amministrazione</p>
+        <p id="path">Ti trovi in: Pannello amministrazione</p>
         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <?php 
@@ -101,8 +101,8 @@ else
       <div class="content">
 
         <div class="left-section" id="actions">
-          <h2 tabindex="13">Benvenuto nella sezione di amministrazione</h2>
-          <p tabindex="15">In questa sezione potrai svolgere tutte le operazioni di amministrazione del sito.</p>
+          <h2>Benvenuto nella sezione di amministrazione</h2>
+          <p>In questa sezione potrai svolgere tutte le operazioni di amministrazione del sito.</p>
           <h3>Prodotti</h3>
           <p>In questa sezione si possono: </p>
           <ul> </ul>
@@ -167,7 +167,7 @@ else
                 <li>
                   <label for="emailLogin">Email</label>:
                   <br/>
-                  <input id="emailLogin" name="emailLogin" type="text" />
+                  <input id="emailLogin" name="emailLogin" type="email" />
                 </li>
                 <li>
                   <label for="password"><span xml:lang="en">Password</span></label>:

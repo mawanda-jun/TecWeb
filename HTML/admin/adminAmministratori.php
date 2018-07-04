@@ -39,20 +39,20 @@ if (!isAdmin()) {
       <div class="row">
         <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
         <ul id="navbar">
-          <li><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
-          <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
-          <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
-          <li><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
+          <li><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
+          <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
+          <li><a href="adminServizi.php">Servizi</a></li>
+          <li><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
         </ul>
         <ul id="navbar2">
-          <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
-          <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
-          <li class="active"><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
+          <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
+          <li><a href="adminClienti.php">Clienti</a></li>
+          <li class="active"><a href="adminAmministratori.php">Amministratori</a></li>
         </ul>
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Amministrazione > Amministratori</p>
+        <p id="path">Ti trovi in: Amministrazione > Amministratori</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>

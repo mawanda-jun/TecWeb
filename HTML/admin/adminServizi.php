@@ -39,20 +39,20 @@ if (!isAdmin()) {
       <div class="row">
         <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
         <ul id="navbar">
-          <li><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
-          <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
-          <li class="active"><a href="adminServizi.php" tabindex="5">Servizi</a></li>
-          <li><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
+          <li><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
+          <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
+          <li class="active"><a href="adminServizi.php">Servizi</a></li>
+          <li><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
         </ul>
         <ul id="navbar2">
-          <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
-          <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
-          <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
+          <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
+          <li><a href="adminClienti.php">Clienti</a></li>
+          <li><a href="adminAmministratori.php">Amministratori</a></li>
         </ul>
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Servizi</p>
+        <p id="path">Ti trovi in: Amministrazione > Servizi</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
@@ -84,7 +84,7 @@ if (!isAdmin()) {
         if ($machines != null) {
           foreach ($machines as $machine) {
             echo '<div class="grain-section">';
-            echo '<h1 tabindex="10">' . $machine['nome'] . ' ' . $machine['modello'] . '</h1>'; ?>
+            echo '<h1>' . $machine['nome'] . ' ' . $machine['modello'] . '</h1>'; ?>
       <h2>Imposta un nuovo prezzo</h2>
       <form id="insertPrice" action="serviceManager.php" method="post">
         <label for="price">Prezzo: </label>

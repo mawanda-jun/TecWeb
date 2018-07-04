@@ -38,20 +38,20 @@ if (!isAdmin()) {
       <div class="row">
         <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
         <ul id="navbar">
-          <li><a href="adminHome.php" lang="en" tabindex="1">Pannello amministrazione</a></li>
-          <li><a href="adminProdotti.php" lang="en" tabindex="1">Prodotti</a></li>
-          <li><a href="adminServizi.php" tabindex="5">Servizi</a></li>
-          <li class="active"><a href="adminStoricoPrenotazioni.php" tabindex="7">Storico prenotazioni</a></li>
+          <li><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
+          <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
+          <li><a href="adminServizi.php">Servizi</a></li>
+          <li class="active"><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
         </ul>
         <ul id="navbar2">
-          <li><a href="adminPrenotazioni.php" tabindex="9">Prenotazioni</a></li>
-          <li><a href="adminClienti.php" tabindex="11">Clienti</a></li>
-          <li><a href="adminAmministratori.php" tabindex="11">Amministratori</a></li>
+          <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
+          <li><a href="adminClienti.php">Clienti</a></li>
+          <li><a href="adminAmministratori.php">Amministratori</a></li>
         </ul>
       </div>
 
       <div id="breadcrumb">
-        <p id="path" tabindex="12">Ti trovi in: Amministrazione > Storico prenotazioni</p>
+        <p id="path">Ti trovi in: Amministrazione > Storico prenotazioni</p>
         <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
         <a id="toSite" href="../">Torna al sito</a>
       </div>
@@ -81,18 +81,18 @@ if (!isAdmin()) {
 
         
         if ($prenotations != null) {
-          echo '<h2 tabindex="10" id="subtitle">Prenotazioni passate:</h2>';
+          echo '<h2 id="subtitle">Prenotazioni passate:</h2>';
           foreach ($prenotations as $prenotation) {
             echo '<div class="grain-section">';
             $machine = $connection->getMachine($prenotation['idMacchinario']);
             $client = $connection->getClient($prenotation['idCliente']);
-            echo '<h3 tabindex="10">Ordine #' . $prenotation['ordine'] . '</h3>';
-            echo '<h4 tabindex="10">Macchinario: ' . $machine['nome'] . ' ' . $machine['modello'] .'</h4>';
-            echo '<h4 tabindex="10">Cliente: ' . $client['nome'] . ' ' . $client['cognome'] .'</h4>';
-            echo '<p tabindex="10">ID cliente: ' . $prenotation['idCliente'] . '</p>';
-            echo '<p tabindex="10">ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
-            echo '<p tabindex="10">Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
-            echo '<p tabindex="10">Data fine prenotazione: ' . $prenotation['dataFine'] . '</p>';
+            echo '<h3>Ordine #' . $prenotation['ordine'] . '</h3>';
+            echo '<h4>Macchinario: ' . $machine['nome'] . ' ' . $machine['modello'] .'</h4>';
+            echo '<h4>Cliente: ' . $client['nome'] . ' ' . $client['cognome'] .'</h4>';
+            echo '<p>ID cliente: ' . $prenotation['idCliente'] . '</p>';
+            echo '<p>ID macchinario: ' . $prenotation['idMacchinario'] . '</p>';
+            echo '<p>Data inizio prenotazione: ' . $prenotation['dataInizio'] . '</p>';
+            echo '<p>Data fine prenotazione: ' . $prenotation['dataFine'] . '</p>';
             echo '</div>';
           }
         } else echo '<p>Nessuna prenotazione nel database.</p>'; ?>

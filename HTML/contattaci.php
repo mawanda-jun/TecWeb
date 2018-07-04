@@ -43,28 +43,28 @@ if(isset($_POST['submit'])){
     <div class="row">
       <img src="../images/logo.jpg" alt="logo azienda" id="logo-img" />
       <ul id="navbar">
-        <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
-        <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
-        <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
-        <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
-        <li class="active"><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
+        <li><a href="../html/home.html" lang="en" target="_top">Home</a></li>
+        <li><a href="../html/chi-siamo.html" target="_top">Chi siamo</a></li>
+        <li><a href="../html/prodotti.php" target="_top">Prodotti</a></li>
+        <li><a href="../html/servizi.php" target="_top">Servizi</a></li>
+        <li class="active"><a href="../html/contattaci.php" target="_top">Contattaci</a></li>
       </ul>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
           <ul>
-            <li class="active"><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
-            <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
-            <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
-            <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
-            <li><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
+            <li class="active"><a href="../html/home.html" lang="en" target="_top">Home</a></li>
+            <li><a href="../html/chi-siamo.html" target="_top">Chi siamo</a></li>
+            <li><a href="../html/prodotti.php" target="_top">Prodotti</a></li>
+            <li><a href="../html/servizi.php" target="_top">Servizi</a></li>
+            <li><a href="../html/contattaci.php" target="_top">Contattaci</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div id="breadcrumb">
       <p id="path">Ti trovi in: Contattaci</p>
-      <a id="go-to-content" href="#anchor" tabindex="1" target="_self">Vai al contenuto</a>
+      <a id="go-to-content" href="#anchor" arget="_self">Vai al contenuto</a>
     </div>
   </div>
 
@@ -115,13 +115,13 @@ if(isset($_POST['submit'])){
     </div>
   </div>
   <div id="go-to-menu">
-    <a href="#anchor" tabindex="900" target="_self"><img src="../images/icon/white-arrow-up.png" alt="Torna su"/></a>
+    <a href="#anchor"  target="_self"><img src="../images/icon/white-arrow-up.png" alt="Torna su"/></a>
   </div>
   <div id="footer">
     <div id="site_info">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-      <a href="admin/adminHome.php" id="admin" tabindex="950" target="_top">Pannello di amministrazione</a>
+      <a href="admin/adminHome.php" id="admin"  target="_top">Pannello di amministrazione</a>
       <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
       <ul id="collaborators">
         <li>Manuel Vianello - 1102467</li>
@@ -132,11 +132,11 @@ if(isset($_POST['submit'])){
   </div>
   <div class="bottom-section">
     <ul id="navbar">
-      <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
-      <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
-      <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
-      <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
-      <li class="active"><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
+      <li><a href="../html/home.html" lang="en" target="_top">Home</a></li>
+      <li><a href="../html/chi-siamo.html" target="_top">Chi siamo</a></li>
+      <li><a href="../html/prodotti.php" target="_top">Prodotti</a></li>
+      <li><a href="../html/servizi.php" target="_top">Servizi</a></li>
+      <li class="active"><a href="../html/contattaci.php" target="_top">Contattaci</a></li>
     </ul>
   </div>
 </body>
