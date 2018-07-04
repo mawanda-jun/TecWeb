@@ -152,6 +152,25 @@ body {
   padding-left: 0em;
 }
 
+.center-section .service-first-list {
+  text-align: unset;
+  width: 100%;
+  float: left;
+  padding-left: 0em;
+}
+
+.center-section .service-first-list .service-list-description {
+  padding-left: 1.5em;
+  width: 100%;
+  float: left;
+}
+
+.center-section .service-first-list .service-list-description li {
+  width: 100%;
+  float: left;
+  padding-left: 0em;
+}
+
 .grain-section .text-subsection,
 .service-section .text-subsection {
   width: 100%;
