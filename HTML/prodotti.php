@@ -7,7 +7,7 @@ header('Content-type: application/xhtml+xml'); ?>
 
 <head>
   <title>Prodotti</title>
-  <meta name="viewport" content="width=device-width"/>
+  <meta name="viewport" content="width=device-width" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Prodotti coltivati nella nostra azienda" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
@@ -36,7 +36,9 @@ header('Content-type: application/xhtml+xml'); ?>
         <li><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
       </ul>
       <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <a id="menu-link" href="#anchor-bottom">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+        </a>
         <div id="myDropdown" class="dropdown-content">
           <ul>
             <li class="active"><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
@@ -120,6 +122,7 @@ header('Content-type: application/xhtml+xml'); ?>
   </div>
   <div class="bottom-section">
     <ul id="navbarBottom">
+      <li id="anchor-bottom"></li>
       <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
       <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
       <li class="active"><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>

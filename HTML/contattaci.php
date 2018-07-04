@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
 
 <head>
   <title>Contattaci</title>
-  <meta meta name="viewport" content="width=device-width"/>
+  <meta meta name="viewport" content="width=device-width" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Pagina dei contatti" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
@@ -50,7 +50,9 @@ if(isset($_POST['submit'])){
         <li class="active"><a href="../html/contattaci.php" target="_top">Contattaci</a></li>
       </ul>
       <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <a id="menu-link" href="#anchor-bottom">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+        </a>
         <div id="myDropdown" class="dropdown-content">
           <ul>
             <li class="active"><a href="../html/home.html" lang="en" target="_top">Home</a></li>
@@ -104,7 +106,8 @@ if(isset($_POST['submit'])){
         inviata.
       </p>
       <p id="contact-error-link">
-        Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta seguendo il seguente <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.
+        Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta seguendo il seguente
+        <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.
       </p>
       <p id="contact-error-print">
         Se riscontri dei problemi, in alternativa, puoi contattare il seguente indirizzo email: aziendacavallin@gmail.com.
@@ -115,13 +118,13 @@ if(isset($_POST['submit'])){
     </div>
   </div>
   <div id="go-to-menu">
-    <a href="#anchor"  target="_self"><img src="../images/icon/white-arrow-up.png" alt="Torna su"/></a>
+    <a href="#anchor" target="_self"><img src="../images/icon/white-arrow-up.png" alt="Torna su"/></a>
   </div>
   <div id="footer">
     <div id="site_info">
       <img id="xhtmlvalid" src="../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
       <img id="cssvalid" src="../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-      <a href="admin/adminHome.php" id="admin"  target="_top">Pannello di amministrazione</a>
+      <a href="admin/adminHome.php" id="admin" target="_top">Pannello di amministrazione</a>
       <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
       <ul id="collaborators">
         <li>Manuel Vianello - 1102467</li>
@@ -131,14 +134,14 @@ if(isset($_POST['submit'])){
     </div>
   </div>
   <div class="bottom-section">
-    <ul id="navbar">
-      <li><a href="../html/home.html" lang="en" target="_top">Home</a></li>
-      <li><a href="../html/chi-siamo.html" target="_top">Chi siamo</a></li>
-      <li><a href="../html/prodotti.php" target="_top">Prodotti</a></li>
-      <li><a href="../html/servizi.php" target="_top">Servizi</a></li>
-      <li class="active"><a href="../html/contattaci.php" target="_top">Contattaci</a></li>
+    <ul id="navbarBottom">
+      <li id="anchor-bottom"></li>
+      <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
+      <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
+      <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
+      <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
+      <li class="active"><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
     </ul>
   </div>
-</body>
 
 </html>
