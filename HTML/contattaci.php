@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
 
 <head>
   <title>Contattaci</title>
-  <meta meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Pagina dei contatti" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />
@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
     </div>
     <div id="breadcrumb">
       <p id="path">Ti trovi in: Contattaci</p>
-      <a id="go-to-content" href="#anchor" arget="_self">Vai al contenuto</a>
+      <a id="go-to-content" href="#anchor" target="_self">Vai al contenuto</a>
     </div>
   </div>
 
@@ -82,23 +82,23 @@ if(isset($_POST['submit'])){
     </div>
     <div class="center-section" id="contact-us">
       <h1>Vuoi contattarci?</h1>
-      <h2 id="subtitle-contact">Richiedi informazione compilando il modulo!<br>Ti contatteremo il prima possibile!</h2>
+      <h2 id="subtitle-contact">Richiedi informazione compilando il modulo!<br/>Ti contatteremo il prima possibile!</h2>
       <form id="contattaci-form" action="" method="post">
         <ul>
           <li class="name-form">
             <label for="name">Nome:</label>
-            <input type="text" name="first_name" class="form-control" id="name" required>
+            <input type="text" name="first_name" class="form-control" id="name" />
           </li>
           <li class="email-form">
             <label for="email" xml:lang="en">E-mail:</label>
-            <input type="email" name="email" class="form-control" id="email" size="35" required>
+            <input type="text" name="email" class="form-control" id="email" size="35" />
           </li>
           <li class="message-form">
             <label for="message-text">Messaggio:</label>
-            <textarea name="message" class="form-control" id="message-text"></textarea>
+            <textarea name="message" class="form-control" id="message-text" rows="40" cols="60"></textarea>
           </li>
           <li class="submit-form">
-            <input type="submit" name="submit" value="Richiedi informazioni" class="form-control-submit">
+            <input type="submit" name="submit" value="Richiedi informazioni" class="form-control-submit" />
           </li>
         </ul>
       </form>
@@ -143,5 +143,6 @@ if(isset($_POST['submit'])){
       <li class="active"><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
     </ul>
   </div>
+</body>
 
 </html>
