@@ -45,8 +45,18 @@ body {
 .service-section {
   margin-top: 0em;
   padding-top: 0em;
+  padding-bottom: 8em;
   position: unset;
   text-align: center;
+  width: 100%;
+}
+
+.grain-section {
+  padding-bottom: 5em;
+}
+
+#services {
+  padding-bottom: 8em;
 }
 
 .left-section h1,
