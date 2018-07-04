@@ -74,10 +74,6 @@ class DBConnection
     return $this->getAllQuery('SELECT * FROM macchinari ORDER BY codice');
   }
 
-  public function getGrain($name) {
-    return $this->getAssArrayQuery("SELECT * FROM grani WHERE nome =" . $this->escape($name));
-  }
-
   public function getMachine($id) {
     return $this->getAssArrayQuery("SELECT * FROM macchinari WHERE codice = '$id'");
   }
@@ -94,25 +90,6 @@ class DBConnection
 
   public function getListClients() {
     return $this->getAllQuery('SELECT * FROM clienti');
-  }
-
-  public function getPrenotationClient($order) {
-    $query = 'SELECT idCliente FROM prenotazioni WHERE ordine =' . $this->escape($order);
-    return (mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
-  }
-
-  public function getMachinePrice($id) {
-    $query = 'SELECT prezzoGiorno FROM macchinari WHERE codice ="' . $this->escape($id) . '"';
-    return (mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
-  }
-
-  public function getMachineryType() {
-    $query = 'SELECT DISTINCT tipologia FROM macchinari';
-    return (mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
-  }
-
-  public function getMachineryOfType($type) {
-    return $this->getAllQuery('SELECT * FROM macchinari WHERE tipologia = ' . $this->escape($type));
   }
 
   public function insertAdmin($email, $password) {
@@ -223,11 +200,6 @@ class DBConnection
     $query = 'SELECT ordine FROM prenotazioni
               WHERE dataInizio <= "' . $this->escape($end) . '" AND dataFine >= "' . $this->escape($start) . '" AND idMacchinario = "' . $this->escape($id) . '"';
     return (mysqli_fetch_row(mysqli_query($this->connection, $query))[0]);
-  }
-
-  public function isClient($id) {
-    $query = 'SELECT * FROM clienti WHERE id = "' . $this->escape($id) . '"';
-    return (mysqli_query($this->connection, $query) >= 1);
   }
 
   public function closeConnection() {

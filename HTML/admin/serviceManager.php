@@ -50,10 +50,9 @@ if (isAdmin()) { // control if login has been successfull
 
                             exit();
                         } else
-                            if (!$connection->insertGrain($_POST['name'], $_POST['description'], $fileName, $_POST['price'], $_POST['availability'])) {
-          // if (!$connection->insertGrain('ciao', 'ciao', 'image.img', '123', '123')) {
-                            $_SESSION['isError'] = true;
-                            $_SESSION['error'] = "C'&egrave; stato un problema durante il caricamento della <span xml:lang='en'>cultivar</span>";
+                            if (!$connection->insertMachine($id, $type, $name, $model, $power, $year, $fileName, $price)) {
+                                $_SESSION['isError'] = true;
+                                $_SESSION['error'] = "C'&egrave; stato un problema durante l'inserimento del macchinario.";
                         }
                     }
                 };
