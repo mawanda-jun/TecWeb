@@ -1,0 +1,25 @@
+%generare il pdf con il comando: pdflatex main.tex
+\documentclass[a4paper, oneside, openany]{article}
+\usepackage{sos}
+\input{comandi.tex}
+
+
+
+\begin{document}
+\copertina{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%SOMMARIO
+\newpage
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PARAGRAFI
+\input{sez/introduzione.tex}
+\input{sez/installazione.tex}
+\input{sez/progettazione.tex}
+\input{sez/realizzazione.tex}
+\input{sez/verifica.tex}
+\input{sez/suddivisioneLavoro.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
