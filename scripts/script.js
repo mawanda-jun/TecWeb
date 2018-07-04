@@ -1,6 +1,8 @@
 function myFunction() {
   document.getElementById("myDropdown")
     .classList.toggle("show");
+  document.getElementById("menu-link")
+    .removeAttribute("href");
 }
 
 window.onclick = function (event) {
