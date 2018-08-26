@@ -64,7 +64,7 @@ if (!isAdmin()) {
 
     <div class="services">
       <div id="description">
-        <h1>Benvenuto nella pagina di gestione dei servizi.</h1>
+        <h1>Benvenuto nella pagina di gestione dei servizi</h1>
         <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se ne pu&ograve;
           modificare il prezzo.</p>
       </div>

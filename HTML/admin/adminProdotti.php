@@ -64,7 +64,7 @@ if (!isAdmin()) {
 
     <div class="grains">
       <div id="description">
-        <h1>Benvenuto nella pagina di gestione delle coltivazioni.</h1>
+        <h1>Benvenuto nella pagina di gestione delle coltivazioni</h1>
         <p>In questa pagina &egrave; possibile inserirle, modificarle ed eliminarle.
           <br/> &Egrave; anche possibile cambiarne solo la disponibilit&agrave; e il prezzo.</p>
       </div>
