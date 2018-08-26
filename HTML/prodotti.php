@@ -92,7 +92,7 @@ header('Content-type: application/xhtml+xml'); ?>
       foreach ($grains as $grain) {
         echo '<div class="grain-section">';
         echo '<div class="text-subsection">';
-        echo '<h1>' . $grain['nome'] . '</h1>';
+        echo '<h2>' . $grain['nome'] . '</h2>';
         echo '<p>' . $grain['descrizione'] . '</p>';
         echo '<p>Disponibilità: ' . $grain['disponibilita'] . ' q</p>';
         echo '<p> Prezzo: ' . $grain['prezzo'] . '€ (per quintale)</p>';

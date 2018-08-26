@@ -81,8 +81,8 @@ if (!isAdmin()) {
         if ($grains != null) {
           foreach ($grains as $grain) {
             echo '<div class="grain-section">';
-            echo '<h1>' . $grain['nome'] . '</h1>'; ?>
-        <h2>Imposta una nuova disponibilit&agrave;</h2>
+            echo '<h2>' . $grain['nome'] . '</h2>'; ?>
+        <h3>Imposta una nuova disponibilit&agrave;</h3>
         <form id="insertAvailability" action="productManager.php" method="post" enctype="multipart/form-data">
           <label for="availability <?php echo $grain['nome'] ?>">Disponibilit&agrave;: </label>
           <input name="availability <?php echo $grain['nome'] ?>" type="text" id="availability <?php echo $grain['nome'] ?>" size="5" value="<?php echo $grain['disponibilita'] ?>"
@@ -90,7 +90,7 @@ if (!isAdmin()) {
           <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
           <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
         </form>
-        <h2>Imposta un nuovo prezzo</h2>
+        <h3>Imposta un nuovo prezzo</h3>
         <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
           <label for="price <?php echo $grain['nome'] ?>">Prezzo: </label>
           <input name="price <?php echo $grain['nome'] ?>" type="text" id="price <?php echo $grain['nome'] ?>" size="5" value="<?php echo $grain['prezzo'] ?>" />
@@ -106,7 +106,7 @@ if (!isAdmin()) {
       </div>
 
       <div class="add-grain">
-        <h1>Inserisci una nuova <span xml:lang="en">cultivar</span></h1>
+        <h2>Inserisci una nuova <span xml:lang="en">cultivar</span></h2>
         <form method="post" action="productManager.php" enctype="multipart/form-data">
           <ul>
             <li>

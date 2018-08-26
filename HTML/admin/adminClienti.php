@@ -91,9 +91,8 @@ if (!isAdmin()) {
       <?php 
       foreach ($clients as $client) {
         echo '<div class="grain-section">';
-        echo '<ul>';
-        echo '<li id="client"> Identificativo: ' . $client['id'];
-        echo '<p>' . $client['nome'] . ' ' . $client['cognome'] . '</p>';
+        echo '<h2 id="client">' . $client['nome'] . ' ' . $client['cognome'] . '</h2>';
+        echo '<p> Identificativo: ' . $client['id'] . '</p>';
         echo '<p> Telefono: ' . $client['telefono'] . '</p>';
         echo '<p> Email: ' . $client['email'] . '</p>';
         ?>
@@ -114,8 +113,6 @@ if (!isAdmin()) {
 
       <?php
       echo '<a class="button" title="Rimuovi ' . $client['id'] . '"' . ' href="clientManager.php?remove=' . $client['id'] . '" >Elimina cliente</a>';
-      echo '</li>';
-      echo '</ul>';
       echo '</div>';
     }
 
@@ -123,7 +120,7 @@ if (!isAdmin()) {
   ?>
 
         <div class="add-client" id="addClient">
-          <h1>Aggiungi un cliente</h1>
+          <h2>Aggiungi un cliente</h2>
           <form id="insertClient" action="clientManager.php" method="post">
             
             <fieldset id="clientFields">

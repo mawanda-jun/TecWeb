@@ -82,8 +82,8 @@ if (!isAdmin()) {
       if ($machines != null) {
         foreach ($machines as $machine) {
           echo '<div class="grain-section">';
-          echo '<h1>' . $machine['nome'] . ' ' . $machine['modello'] . '</h1>'; ?>
-      <h2>Imposta un nuovo prezzo</h2>
+          echo '<h2>' . $machine['nome'] . ' ' . $machine['modello'] . '</h2>'; ?>
+      <h3>Imposta un nuovo prezzo</h3>
       <form id="insertPrice" action="serviceManager.php" method="post">
         <label for="price <?php echo $machine['nome'] ?>">Prezzo: </label>
         <input name="price" type="text" id="price <?php echo $machine['nome'] ?>" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
@@ -100,7 +100,7 @@ if (!isAdmin()) {
     </div>
 
     <div class="add-machine">
-      <h1>Inserisci una nuova macchina</h1>
+      <h2>Inserisci una nuova macchina</h2>
       <form method="post" action="serviceManager.php" enctype="multipart/form-data">
         <ul>
           <li>

@@ -117,8 +117,8 @@ header('Content-type: application/xhtml+xml'); ?>
         foreach ($machines as $machine) {
           echo '<div class="service-section">';
           echo '<div class="text-subsection">';
-          echo '<h1>' . $machine['nome'] . '</h1>';
-          echo '<h2> Modello: ' . $machine['modello'] . '</h2>';
+          echo '<h2>' . $machine['nome'] . '</h2>';
+          echo '<h3> Modello: ' . $machine['modello'] . '</h3>';
           echo '<p> Tipologia: ' . $machine['tipologia'] . '</p>';
           echo '<p> Potenza: ' . $machine['potenzaKW'] . ' KW</p>';
           echo '<p> Anno: ' . $machine['anno'] . '</p>';

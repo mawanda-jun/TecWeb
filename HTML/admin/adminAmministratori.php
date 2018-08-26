@@ -77,7 +77,7 @@ if (!isAdmin()) {
       $connection->openConnection();
       $admins = $connection->getListAdmins();
       if ($admins != null) {
-        echo '<div class="listAndDelete"><p>Lista degli amministratori:</p><ul>';
+        echo '<div class="listAndDelete"><h2>Lista degli amministratori</h2><ul>';
         foreach ($admins as $admin)
           echo '<li>' . $admin['email'] . ' <a class="button" title="Rimuovi amministratore ' . $admin['email'] . '"' . ' href="adminManager.php?remove=' . $admin['email'] . '" >Elimina</a></li>';
         echo '</ul></div>';
@@ -86,7 +86,7 @@ if (!isAdmin()) {
       ?>
 
       <div class="add-admin">
-        <h1>Aggiungi un amministratore</h1>
+        <h2>Aggiungi un amministratore</h2>
         <form action="adminManager.php" method="post">
           <fieldset id="adminFields">
             <legend>Inserisci i seguenti dati:</legend>
