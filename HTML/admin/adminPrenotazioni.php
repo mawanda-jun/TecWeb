@@ -106,7 +106,7 @@ if (!isAdmin()) {
           <fieldset id="prenotationFields">
             <?php
             $clients = $connection->getListClients();
-            echo 'Lista dei clienti:';
+            echo '<label for="clientID">Lista dei clienti: </label>';
             if ($clients != null) { ?>
               <select name="clientID" id="clientID">
                 <?php foreach ($clients as $client) {
@@ -120,7 +120,7 @@ if (!isAdmin()) {
               echo '<p>Se il cliente non è presente nella lista, inseriscilo <a href="adminClienti.php#addClient">qui</a> prima di continuare.</p>';
 
               $machines = $connection->getListMachinery();
-              echo 'Lista dei macchinari:';
+              echo '<label for="machineID">Lista dei macchinari: </label>';
               if ($machines != null) { ?>
                 <select name="machineID" id="machineID">
                   <?php foreach ($machines as $machine) {

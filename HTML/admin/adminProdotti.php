@@ -76,8 +76,6 @@ if (!isAdmin()) {
         $connection = new DBConnection();
         $connection->openConnection();
       
-      // $index = 0;         //forse non serve
-      // $grainForPage = 10; //grani da mostrare per pagina
         $grains = $connection->getListGrains();
 
         if ($grains != null) {
@@ -86,16 +84,16 @@ if (!isAdmin()) {
             echo '<h1>' . $grain['nome'] . '</h1>'; ?>
         <h2>Imposta una nuova disponibilit&agrave;</h2>
         <form id="insertAvailability" action="productManager.php" method="post" enctype="multipart/form-data">
-          <label for="availability">Disponibilit&agrave;: </label>
-          <input name="availability" type="text" id="availability" size="5" value="<?php echo $grain['disponibilita'] ?>"
+          <label for="availability <?php echo $grain['nome'] ?>">Disponibilit&agrave;: </label>
+          <input name="availability <?php echo $grain['nome'] ?>" type="text" id="availability <?php echo $grain['nome'] ?>" size="5" value="<?php echo $grain['disponibilita'] ?>"
           />
           <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
           <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
         </form>
         <h2>Imposta un nuovo prezzo</h2>
         <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
-          <label for="price">Prezzo: </label>
-          <input name="price" type="text" id="price" size="5" value="<?php echo $grain['prezzo'] ?>" />
+          <label for="price <?php echo $grain['nome'] ?>">Prezzo: </label>
+          <input name="price <?php echo $grain['nome'] ?>" type="text" id="price <?php echo $grain['nome'] ?>" size="5" value="<?php echo $grain['prezzo'] ?>" />
           <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
           <input type="submit" name="submitPrice" value="Modifica prezzo" />
         </form>
@@ -113,19 +111,19 @@ if (!isAdmin()) {
           <ul>
             <li>
               <label for="name">Nome:</label>
-              <input type="text" name="name" />
+              <input type="text" name="name" id="name"/>
             </li>
             <li>
               <label for="availability">Disponibilit&agrave; (in quintali):</label>
-              <input type="numbrt" name="availability" />
+              <input type="numbrt" name="availability" id="availability"/>
             </li>
             <li>
               <label for="price">Prezzo:</label>
-              <input type="text" name="price" />
+              <input type="text" name="price" id="price"/>
             </li>
             <li>
-              <label for="description">Descrizione:</label>
-              <textarea name="description" rows="5" cols="40"></textarea>
+              <label for="new description">Descrizione:</label>
+              <textarea name="description" id="new description" rows="5" cols="40"></textarea>
             </li>
             <li>
               <label for="fileToUpload">Seleziona un'immagine dal computer:</label>

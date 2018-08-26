@@ -77,8 +77,6 @@ if (!isAdmin()) {
       $connection->openConnection();
 
       echo '<div class="list-modify-delete-service">';
-      // $index = 0;         //forse non serve
-      // $grainForPage = 10; //grani da mostrare per pagina
       $machines = $connection->getListMachinery();
 
       if ($machines != null) {
@@ -87,8 +85,8 @@ if (!isAdmin()) {
           echo '<h1>' . $machine['nome'] . ' ' . $machine['modello'] . '</h1>'; ?>
       <h2>Imposta un nuovo prezzo</h2>
       <form id="insertPrice" action="serviceManager.php" method="post">
-        <label for="price">Prezzo: </label>
-        <input name="price" type="text" id="price" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
+        <label for="price <?php echo $machine['nome'] ?>">Prezzo: </label>
+        <input name="price" type="text" id="price <?php echo $machine['nome'] ?>" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
         <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
         <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
       </form>
@@ -107,31 +105,31 @@ if (!isAdmin()) {
         <ul>
           <li>
             <label for="id">Codice identificativo:</label>
-            <input type="text" name="id" />
+            <input type="text" name="id" id="id"/>
           </li>
           <li>
             <label for="type">Tipo:</label>
-            <input type="text" name="type" />
+            <input type="text" name="type" id="type"/>
           </li>
           <li>
             <label for="name">Marca:</label>
-            <input type="text" name="name" />
+            <input type="text" name="name" id="name"/>
           </li>
           <li>
             <label for="model">Modello:</label>
-            <input type="text" name="model" />
+            <input type="text" name="model" id="model"/>
           </li>
           <li>
             <label for="power">Potenza:</label>
-            <input type="text" name="power" />
+            <input type="text" name="power" id="power"/>
           </li>
           <li>
             <label for="year">Anno:</label>
-            <input type="text" name="year" />
+            <input type="text" name="year" id="year"/>
           </li>
           <li>
             <label for="price">Prezzo all'ora:</label>
-            <input type="text" name="price" />
+            <input type="text" name="price" id="price"/>
           </li>
           <li>
             <label for="fileToUpload">Seleziona un'immagine dal computer:</label>

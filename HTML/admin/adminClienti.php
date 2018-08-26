@@ -99,15 +99,15 @@ if (!isAdmin()) {
         ?>
 
       <form id="insertNumber" action="clientManager.php" method="post" enctype="multipart/form-data">
-        <label for="number">Nuovo numero di telefono:</label>
-        <input name="number" type="text" id="number" size="9" />
+        <label for="number <?php echo $client['id'] ?>">Nuovo numero di telefono:</label>
+        <input name="number" type="text" id="number <?php echo $client['id'] ?>" size="9" />
         <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
         <input type="submit" id="submit" name="submitNumber" value="Modifica numero" />
       </form>
 
       <form id="insertEmail" action="clientManager.php" method="post" enctype="multipart/form-data">
-        <label for="email">Nuova email:</label>
-        <input name="email" type="text" id="email" size="23" />
+        <label for="email<?php echo $client['id'] ?>">Nuova email:</label>
+        <input name="email" type="text" id="email<?php echo $client['id'] ?>" size="23" />
         <?php echo '<input name="clientId" type="hidden" value="' . $client['id'] . '"/>'; ?>
         <input type="submit" id="submit" name="submitEmail" value="Modifica email" />
       </form>
