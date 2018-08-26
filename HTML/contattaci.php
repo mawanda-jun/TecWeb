@@ -106,8 +106,8 @@ if(isset($_POST['submit'])){
         inviata.
       </p>
       <p id="contact-error-link">
-        Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo client di posta seguendo il seguente
-        <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">link</a>.
+        Se riscontri dei problemi, in alternativa, puoi utilizzare il tuo 
+        <a href="mailto:aziendacavallin@gmail.com?subject=Richiesta informazioni Azienda Cavallin">client di posta</a>.
       </p>
       <p id="contact-error-print">
         Se riscontri dei problemi, in alternativa, puoi contattare il seguente indirizzo email: aziendacavallin@gmail.com.
@@ -136,11 +136,11 @@ if(isset($_POST['submit'])){
   <div class="bottom-section">
     <ul id="navbarBottom">
       <li id="anchor-bottom"></li>
-      <li><a href="../html/home.html" lang="en" tabindex="10" target="_top">Home</a></li>
-      <li><a href="../html/chi-siamo.html" tabindex="10" target="_top">Chi siamo</a></li>
-      <li><a href="../html/prodotti.php" tabindex="10" target="_top">Prodotti</a></li>
-      <li><a href="../html/servizi.php" tabindex="10" target="_top">Servizi</a></li>
-      <li class="active"><a href="../html/contattaci.php" tabindex="10" target="_top">Contattaci</a></li>
+      <li><a href="../html/home.html" lang="en" target="_top">Home</a></li>
+      <li><a href="../html/chi-siamo.html" target="_top">Chi siamo</a></li>
+      <li><a href="../html/prodotti.php" target="_top">Prodotti</a></li>
+      <li><a href="../html/servizi.php" target="_top">Servizi</a></li>
+      <li class="active"><a href="../html/contattaci.php" target="_top">Contattaci</a></li>
     </ul>
   </div>
 </body>
