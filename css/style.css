@@ -248,6 +248,15 @@ html {
   float: right;
 }
 
+.grain-section h2 {
+  margin: 0em;
+  padding-left: 0.4em;
+  padding-bottom: 0.5em;
+  width: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-transform: uppercase;
+}
+
 .service-section h2 {
   margin: 0em;
   padding-left: 2.4em;
@@ -255,6 +264,15 @@ html {
   width: 100%;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-transform: uppercase;
+}
+
+.service-section h3 {
+  float: left;
+  margin: 0em;
+  padding-left: 3.1em;
+  padding-bottom: 0.5em;
+  width: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .left-section p,
@@ -270,7 +288,7 @@ html {
 }
 
 .service-section p {
-  padding-left: 3.7em;
+  padding-left: 3.1em;
   padding-bottom: 0.5em;
 }
 
