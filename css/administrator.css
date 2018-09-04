@@ -186,11 +186,6 @@
   cursor: pointer;
 }
 
-#no-admin {
-  padding-left: 2em;
-  padding-top: 2em;
-}
-
 .add-grain #submit,
 .add-machine #submit,
 .add-reservation #submit {
@@ -206,4 +201,27 @@
 
 #admin-link {
   display: none;
+}
+
+#home-admin p {
+  padding-left: 0em;
+}
+
+#admin-customers h2,
+#admin-machine h2,
+#admin-grain h2 {
+  padding-left: 0em;
+}
+
+.reservations h2 {
+  padding-top: 1em;
+}
+
+#no-admin,
+#reservations-message {
+  padding-top: 0.5em;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  width: 100%;
+  float: left;
 }

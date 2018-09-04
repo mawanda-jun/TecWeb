@@ -306,6 +306,11 @@ html {
   font-size: 1.2em;
 }
 
+.add-machine h2,
+.add-grain h2 {
+  padding-bottom: 0.5em;
+}
+
 .center-section h3 {
   width: auto;
   text-align: center;

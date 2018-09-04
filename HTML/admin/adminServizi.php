@@ -19,57 +19,57 @@ if (!isAdmin()) {
 }
 ?>
 
-  <head>
-    <title>Servizi</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Pagina di gestione dei servizi offerti" />
-    <meta name="author" content="Tecwweb&amp;Pastorizia" />
-    <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica"
-    />
-    <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
-    <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-    
+<head>
+  <title>Servizi</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Pagina di gestione dei servizi offerti" />
+  <meta name="author" content="Tecwweb&amp;Pastorizia" />
+  <meta name="keywords" content="agricoltura, azienda, agricola, grano, duro, biologico, HTML, CSS, JavaScript, MySQL, informatica" />
+  <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
+  <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
 
 
-  </head>
 
-  <body>
-    <div id="header">
-      <div class="row">
-        <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
-        <ul id="navbar">
-          <li><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
-          <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
-          <li class="active"><a href="adminServizi.php">Servizi</a></li>
-          <li><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
-        </ul>
-        <ul id="navbar2">
-          <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
-          <li><a href="adminClienti.php">Clienti</a></li>
-          <li><a href="adminAmministratori.php">Amministratori</a></li>
-        </ul>
-      </div>
+</head>
 
-      <div id="breadcrumb">
-        <p id="path">Ti trovi in: Amministrazione > Servizi</p>
-        <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
-        <a id="toSite" href="../../index.php">Torna al sito</a>
-      </div>
+<body>
+  <div id="header">
+    <div class="row">
+      <img src="../../images/logo.jpg" alt="logo azienda" id="logo-img" />
+      <ul id="navbar">
+        <li><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
+        <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
+        <li class="active"><a href="adminServizi.php">Servizi</a></li>
+        <li><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
+      </ul>
+      <ul id="navbar2">
+        <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
+        <li><a href="adminClienti.php">Clienti</a></li>
+        <li><a href="adminAmministratori.php">Amministratori</a></li>
+      </ul>
     </div>
 
-    <div class="spacer">
-      &nbsp;
+    <div id="breadcrumb">
+      <p id="path">Ti trovi in: Amministrazione > Servizi</p>
+      <a id="logout" href="adminHome.php?logout=true" xml:lang="en">Logout</a>
+      <a id="toSite" href="../../index.php">Torna al sito</a>
+    </div>
+  </div>
+
+  <div class="spacer">
+    &nbsp;
+  </div>
+
+  <div class="services">
+    <div id="description">
+      <h1>Benvenuto nella pagina di gestione dei servizi</h1>
+      <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se
+        ne pu&ograve;
+        modificare il prezzo.</p>
     </div>
 
-    <div class="services">
-      <div id="description">
-        <h1>Benvenuto nella pagina di gestione dei servizi</h1>
-        <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se ne pu&ograve;
-          modificare il prezzo.</p>
-      </div>
-
-      <?php if (isset($_SESSION['isError']) && $_SESSION['isError']) {
+    <?php if (isset($_SESSION['isError']) && $_SESSION['isError']) {
         echo '<p id="error">' . $_SESSION['error'] . '</p>';
         $_SESSION['isError'] = false;
       }
@@ -81,89 +81,89 @@ if (!isAdmin()) {
 
       if ($machines != null) {
         foreach ($machines as $machine) {
-          echo '<div class="grain-section">';
+          echo '<div id="admin-machine" class="grain-section">';
           echo '<h2>' . $machine['nome'] . ' ' . $machine['modello'] . '</h2>'; ?>
-      <h3>Imposta un nuovo prezzo</h3>
-      <form id="insertPrice" action="serviceManager.php" method="post">
-        <label for="price <?php echo $machine['nome'] ?>">Prezzo: </label>
-        <input name="price" type="text" id="price <?php echo $machine['nome'] ?>" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
-        <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
-        <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
-      </form>
-      <?php
+    <h3>Imposta un nuovo prezzo</h3>
+    <form id="insertPrice" action="serviceManager.php" method="post">
+      <label for="price <?php echo $machine['nome'] ?>">Prezzo: </label>
+      <input name="price" type="text" id="price <?php echo $machine['nome'] ?>" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
+      <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
+      <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
+    </form>
+    <?php
       echo '<a class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</a>';
       echo '</div>';
           // echo (isset($_SESSION['isError']) && $_SESSION['isError']) ? (isset($_SESSION['error']) ? $_SESSION['error'] : '') : '';
     }
   } else echo '<p>Nessun macchinario disponibile</p>';
   ?>
+  </div>
+
+  <div class="add-machine">
+    <h2>Inserisci una nuova macchina</h2>
+    <form method="post" action="serviceManager.php" enctype="multipart/form-data">
+      <ul>
+        <li>
+          <label for="id">Codice identificativo:</label>
+          <input type="text" name="id" id="id" />
+        </li>
+        <li>
+          <label for="type">Tipo:</label>
+          <input type="text" name="type" id="type" />
+        </li>
+        <li>
+          <label for="name">Marca:</label>
+          <input type="text" name="name" id="name" />
+        </li>
+        <li>
+          <label for="model">Modello:</label>
+          <input type="text" name="model" id="model" />
+        </li>
+        <li>
+          <label for="power">Potenza:</label>
+          <input type="text" name="power" id="power" />
+        </li>
+        <li>
+          <label for="year">Anno:</label>
+          <input type="text" name="year" id="year" />
+        </li>
+        <li>
+          <label for="price">Prezzo all'ora:</label>
+          <input type="text" name="price" id="price" />
+        </li>
+        <li>
+          <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
+          <input type="file" name="fileToUpload" id="fileToUpload" />
+        </li>
+        <li>
+          <input type="submit" name="submit" id="submit" value="Aggiungi macchinario" />
+        </li>
+      </ul>
+    </form>
+  </div>
+  </div>
+
+
+
+  <div id="go-to-menu">
+    <a href="#story">Torna su</a>
+  </div>
+  <div id="footer">
+    <div id="site_info">
+      <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
+      <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
+      <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
+      <ul id="collaborators">
+        <li>Manuel Vianello - 1102467</li>
+        <li>Stefano Panozzo - 1097068</li>
+        <li>Giovanni Cavallin - 1148957</li>
+      </ul>
     </div>
-
-    <div class="add-machine">
-      <h2>Inserisci una nuova macchina</h2>
-      <form method="post" action="serviceManager.php" enctype="multipart/form-data">
-        <ul>
-          <li>
-            <label for="id">Codice identificativo:</label>
-            <input type="text" name="id" id="id"/>
-          </li>
-          <li>
-            <label for="type">Tipo:</label>
-            <input type="text" name="type" id="type"/>
-          </li>
-          <li>
-            <label for="name">Marca:</label>
-            <input type="text" name="name" id="name"/>
-          </li>
-          <li>
-            <label for="model">Modello:</label>
-            <input type="text" name="model" id="model"/>
-          </li>
-          <li>
-            <label for="power">Potenza:</label>
-            <input type="text" name="power" id="power"/>
-          </li>
-          <li>
-            <label for="year">Anno:</label>
-            <input type="text" name="year" id="year"/>
-          </li>
-          <li>
-            <label for="price">Prezzo all'ora:</label>
-            <input type="text" name="price" id="price"/>
-          </li>
-          <li>
-            <label for="fileToUpload">Seleziona un'immagine dal computer:</label>
-            <input type="file" name="fileToUpload" id="fileToUpload" />
-          </li>
-          <li>
-            <input type="submit" name="submit" id="submit" value="Aggiungi macchinario" />
-          </li>
-        </ul>
-      </form>
-    </div>
-    </div>
+  </div>
 
 
-
-    <div id="go-to-menu">
-      <a href="#story">Torna su</a>
-    </div>
-    <div id="footer">
-      <div id="site_info">
-        <img id="xhtmlvalid" src="../../images/valid-xhtml10.png" lang="en" alt="XHTML valid" />
-        <img id="cssvalid" src="../../images/vcss-blue.gif" lang="en" alt="CSS3 valid" />
-        <p>Progetto didattico del corso Tecnologie <span xml:lang="en">web</span> prodotto da:</p>
-        <ul id="collaborators">
-          <li>Manuel Vianello - 1102467</li>
-          <li>Stefano Panozzo - 1097068</li>
-          <li>Giovanni Cavallin - 1148957</li>
-        </ul>
-      </div>
-    </div>
-
-
-    <?php $connection->closeconnection(); ?>
-  </body>
+  <?php $connection->closeconnection(); ?>
+</body>
 
 
 </html>
