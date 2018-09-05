@@ -77,6 +77,7 @@ else
         <li><a href="adminClienti.php">Clienti</a></li>
         <li><a href="adminAmministratori.php">Amministratori</a></li>
       </ul>
+
       <div class="dropdown">
         <a id="menu-link" href="#anchor-bottom">
           <button onclick="myFunction()" class="dropbtn">Menu</button>
@@ -216,6 +217,8 @@ else
   </div>
 
 
+  <?php
+    if (isAdmin()) { ?>
   <div class="bottom-section">
     <ul id="navbarBottom">
       <li id="anchor-bottom"></li>
@@ -228,6 +231,8 @@ else
       <li><a href="adminAmministratori.php">Amministratori</a></li>
     </ul>
   </div>
+  <?php
+    } ?>
 
 </body>
 

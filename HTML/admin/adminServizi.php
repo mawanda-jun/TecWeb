@@ -28,7 +28,10 @@ if (!isAdmin()) {
   <link rel="icon" type="image/png" href="../../images/icon/favicon-32x32.png" />
   <link rel="icon" type="image/png" href="../../images/icon/favicon-16x16.png" />
   <link href="../../css/administrator.css" rel="stylesheet" type="text/css" media="handheld, screen" />
-
+  <link href="../../css/small.css" type="text/css" rel="stylesheet" media="handheld, screen and (max-width:720px),only screen and (max-device-width:720px)"
+  />
+  <link href="../../css/print.css" type="text/css" rel="stylesheet" media="print" />
+  <script src="../../scripts/script.js" type="text/javascript" charset="utf-8"></script>
 
 
 </head>
@@ -48,6 +51,23 @@ if (!isAdmin()) {
         <li><a href="adminClienti.php">Clienti</a></li>
         <li><a href="adminAmministratori.php">Amministratori</a></li>
       </ul>
+
+      <div class="dropdown">
+        <a id="menu-link" href="#anchor-bottom">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+        </a>
+        <div id="myDropdown" class="dropdown-content">
+          <ul>
+            <li><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
+            <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
+            <li class="active"><a href="adminServizi.php">Servizi</a></li>
+            <li><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
+            <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
+            <li><a href="adminClienti.php">Clienti</a></li>
+            <li><a href="adminAmministratori.php">Amministratori</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div id="breadcrumb">
@@ -161,6 +181,18 @@ if (!isAdmin()) {
     </div>
   </div>
 
+  <div class="bottom-section">
+    <ul id="navbarBottom">
+      <li id="anchor-bottom"></li>
+      <li><a href="adminHome.php" lang="en">Pannello amministrazione</a></li>
+      <li><a href="adminProdotti.php" lang="en">Prodotti</a></li>
+      <li class="active"><a href="adminServizi.php">Servizi</a></li>
+      <li><a href="adminStoricoPrenotazioni.php">Storico prenotazioni</a></li>
+      <li><a href="adminPrenotazioni.php">Prenotazioni</a></li>
+      <li><a href="adminClienti.php">Clienti</a></li>
+      <li><a href="adminAmministratori.php">Amministratori</a></li>
+    </ul>
+  </div>
 
   <?php $connection->closeconnection(); ?>
 </body>
