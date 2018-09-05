@@ -13,6 +13,10 @@ body {
   height: 10em;
 }
 
+#admin-spacer {
+  height: 12.5em;
+}
+
 #navbar,
 #navbar2 {
   display: none;

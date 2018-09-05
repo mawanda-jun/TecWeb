@@ -83,7 +83,7 @@ if (!isAdmin()) {
     </div>
   </div>
 
-  <div class="spacer">
+  <div id="admin-spacer" class="spacer">
     &nbsp;
   </div>
 
