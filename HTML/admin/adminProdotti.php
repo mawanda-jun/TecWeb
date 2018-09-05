@@ -111,7 +111,7 @@ if (!isAdmin()) {
         <input name="availability <?php echo $grain['nome'] ?>" type="text" id="availability <?php echo $grain['nome'] ?>"
           size="5" value="<?php echo $grain['disponibilita'] ?>" />
         <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
-        <input type="submit" name="submitAvailability" value="Modifica disponibilit&agrave;" />
+        <input type="submit" class="admin-input" name="submitAvailability" value="Modifica disponibilit&agrave;" />
       </form>
       <h3>Imposta un nuovo prezzo</h3>
       <form id="insertPrice" action="productManager.php" method="post" enctype="multipart/form-data">
@@ -119,7 +119,7 @@ if (!isAdmin()) {
         <input name="price <?php echo $grain['nome'] ?>" type="text" id="price <?php echo $grain['nome'] ?>"
           size="5" value="<?php echo $grain['prezzo'] ?>" />
         <input name="grainName" type="hidden" value="<?php echo $grain['nome'] ?>" />
-        <input type="submit" name="submitPrice" value="Modifica prezzo" />
+        <input type="submit" class="admin-input" name="submitPrice" value="Modifica prezzo" />
       </form>
       <?php
         echo '<a class="button" title="Rimuovi ' . $grain['nome'] . '"' . ' href="productManager.php?remove=' . $grain['nome'] . '" >Elimina coltivazione</a>';

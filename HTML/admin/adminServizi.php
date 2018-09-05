@@ -112,7 +112,7 @@ if (!isAdmin()) {
       <label for="price <?php echo $machine['nome'] ?>">Prezzo: </label>
       <input name="price" type="text" id="price <?php echo $machine['nome'] ?>" size="5" value="<?php echo $machine['prezzoGiorno'] ?>" />
       <input name="machineID" type="hidden" value="<?php echo $machine['codice'] ?>" />
-      <input type="submit" name="submitPrice" id="submit" value="Modifica prezzo" />
+      <input type="submit" class="admin-input" name="submitPrice" id="submit" value="Modifica prezzo" />
     </form>
     <?php
       echo '<a class="button" title="Rimuovi ' . $machine['nome'] . '"' . ' href="serviceManager.php?remove=' . $machine['codice'] . '" >Elimina macchinario</a>';

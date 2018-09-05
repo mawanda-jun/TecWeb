@@ -141,3 +141,13 @@ body {
 #contact-error-print {
   display: block;
 }
+
+.admin-input,
+.add-grain,
+.add-machine,
+.add-reservation,
+.add-client,
+.add-admin,
+.button {
+  display: none;
+}
