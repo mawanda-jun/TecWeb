@@ -118,7 +118,10 @@ else
   <?php
     if (isAdmin()) { ?>
   <div class="content">
-
+    <div id="print-content">
+      <h1 id="print-title">Azienda agricola Cavallin</h1>
+      <p id="print-path">Ti trovi in: Pannello di Amministrazione</p>
+    </div>
     <div id="home-admin" class="left-section">
       <h1>Benvenuto nel pannello di amministrazione</h1>
       <p>Qui potrai svolgere tutte le operazioni di amministrazione del sito.</p>

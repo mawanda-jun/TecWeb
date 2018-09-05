@@ -82,6 +82,10 @@ if (!isAdmin()) {
   </div>
 
   <div class="services">
+    <div id="print-content">
+      <h1 id="print-title">Azienda agricola Cavallin</h1>
+      <p id="print-path">Ti trovi in: Amministrazione > Servizi</p>
+    </div>
     <div id="description">
       <h1>Benvenuto nella pagina di gestione dei servizi</h1>
       <p>In questa pagina &egrave; possibile inserire o eliminare un macchinario a disposizione. Inoltre se

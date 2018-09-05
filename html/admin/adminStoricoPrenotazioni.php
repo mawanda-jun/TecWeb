@@ -83,6 +83,10 @@ if (!isAdmin()) {
 
 
     <div class="reservations">
+      <div id="print-content">
+        <h1 id="print-title">Azienda agricola Cavallin</h1>
+        <p id="print-path">Ti trovi in: Amministrazione > Storico prenotazioni</p>
+      </div>
       <div id="description">
         <h1>Benvenuto nella pagina di gestione delle prenotazioni passate</h1>
         <p>In questa pagina &egrave; possibile visionare le prenotazioni passate di un macchinario.</p>

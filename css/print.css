@@ -38,6 +38,12 @@ body {
   padding-bottom: 2em;
 }
 
+.content {
+  float: left;
+  padding-left: 0em;
+  margin-left: 0em;
+}
+
 .left-section,
 .right-section,
 .center-section,
@@ -46,8 +52,9 @@ body {
   margin-top: 0em;
   padding-top: 0em;
   padding-bottom: 8em;
+  padding-left: 0em;
   position: unset;
-  text-align: center;
+  float: left;
   width: 100%;
 }
 
@@ -64,27 +71,34 @@ body {
 .center-section h1,
 .grain-section h1,
 .service-section h1 {
-  float: none;
+  float: left;
   width: 100%;
   padding-left: 0em;
   padding-right: 0em;
-  text-align: center;
+  text-align: left;
 }
 
 .grain-section .text-subsection,
 .service-section .text-subsection {
   width: 100%;
-  text-align: center;
+  text-align: left;
+  float: left;
 }
 
 .service-section h2 {
   padding-left: 0em;
   padding-right: 0em;
+  float: left;
 }
 
+.left-section p,
+.right-section p,
+.center-section p,
+.grain-section p,
 .service-section p {
   padding-left: 0em;
-  text-align: center;
+  text-align: left;
+  float: left;
 }
 
 .center-section .img-center-container {

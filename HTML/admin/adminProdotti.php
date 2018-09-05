@@ -82,6 +82,10 @@ if (!isAdmin()) {
   </div>
 
   <div class="grains">
+    <div id="print-content">
+      <h1 id="print-title">Azienda agricola Cavallin</h1>
+      <p id="print-path">Ti trovi in: Amministrazione > Prodotti</p>
+    </div>
     <div id="description">
       <h1>Benvenuto nella pagina di gestione delle coltivazioni</h1>
       <p>In questa pagina &egrave; possibile inserirle, modificarle ed eliminarle.

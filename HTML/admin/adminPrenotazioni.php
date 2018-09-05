@@ -83,6 +83,10 @@ if (!isAdmin()) {
 
 
   <div class="reservations">
+    <div id="print-content">
+      <h1 id="print-title">Azienda agricola Cavallin</h1>
+      <p id="print-path">Ti trovi in: Amministrazione > Prenotazioni</p>
+    </div>
     <div id="description">
       <h1>Benvenuto nella pagina di gestione delle prenotazioni</h1>
       <p>In questa pagina &egrave; possibile inserire ed eliminare una prenotazione se il macchinario

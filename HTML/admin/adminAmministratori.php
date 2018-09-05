@@ -83,6 +83,10 @@ if (!isAdmin()) {
 
 
     <div class="admins">
+      <div id="print-content">
+        <h1 id="print-title">Azienda agricola Cavallin</h1>
+        <p id="print-path">Ti trovi in: Amministrazione > Amministratori</p>
+      </div>
       <div id="description">
         <h1>Benvenuto nella pagina di gestione degli amministratori</h1>
         <p>In questa pagina &egrave; possibile inserire ed eliminare altri amministratori.</p>
