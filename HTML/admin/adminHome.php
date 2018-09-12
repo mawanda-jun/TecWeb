@@ -44,6 +44,7 @@ else
   <title>
     <?php echo $title ?>
   </title>
+  <meta name="viewport" content="width=device-width" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="Pagina di amministrazione per gli amministratori" />
   <meta name="author" content="Tecwweb&amp;Pastorizia" />

@@ -21,6 +21,7 @@ if (!isAdmin()) {
 
   <head>
     <title>Amministratori</title>
+    <meta name="viewport" content="width=device-width" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="descripion" content="Pagina di gestione degli amministratori" />
     <meta name="author" content="Tecwweb&amp;Pastorizia" />
