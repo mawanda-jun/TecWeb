@@ -138,7 +138,6 @@ if (!isAdmin()) {
     <div class="add-client" id="addClient">
       <h2>Aggiungi un cliente</h2>
       <form id="insertClient" action="clientManager.php" method="post">
-
         <fieldset id="clientFields">
           <ul>
             <legend>Inserisci i seguenti dati:</legend>

@@ -113,12 +113,20 @@ if (!isAdmin()) {
         <h2>Aggiungi un amministratore</h2>
         <form action="adminManager.php" method="post">
           <fieldset id="adminFields">
-            <legend>Inserisci i seguenti dati:</legend>
-            <label for="email"><span xml:lang="en">Email:</span></label>
-            <input name="email" type="email" id="email" size="30" maxlength="50" />
-            <label for="password"><span xml:lang="en">Password:</span></label>
-            <input name="password" type="password" id="password" size="10" maxlength="12" />
-            <input type="submit" id="submit" value="Aggiungi amministratore" name="submit" />
+            <ul>
+              <legend>Inserisci i seguenti dati:</legend>
+              <li>
+                <label for="email"><span xml:lang="en">Email:</span></label>
+                <input name="email" type="email" id="email" size="30" maxlength="50" />
+              </li>
+              <li>
+                <label for="password"><span xml:lang="en">Password:</span></label>
+                <input name="password" type="password" id="password" size="30" maxlength="12" />
+              </li>
+              <li>
+                <input type="submit" id="submit" value="Aggiungi amministratore" name="submit" />
+              </li>
+            </ul>
           </fieldset>
         </form>
       </div>

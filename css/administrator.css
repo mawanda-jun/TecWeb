@@ -99,7 +99,8 @@
 .add-client form ul,
 .add-grain form ul,
 .add-machine form ul,
-.add-reservation fieldset ul {
+.add-reservation fieldset ul,
+.add-admin form ul {
   list-style: none;
 }
 
@@ -107,7 +108,8 @@
 .add-client label,
 .add-grain label,
 .add-machine label,
-.add-reservation label {
+.add-reservation label,
+.add-admin label {
   width: 100%;
   float: left;
 }
@@ -121,7 +123,8 @@
 .add-client li,
 .add-grain li,
 .add-machine li,
-.add-reservation li {
+.add-reservation li,
+.add-admin li {
   padding-bottom: 1em;
 }
 
