@@ -75,13 +75,13 @@ body {
   width: 100%;
   padding-left: 0em;
   padding-right: 0em;
-  text-align: left;
+  text-align: center;
 }
 
 .grain-section .text-subsection,
 .service-section .text-subsection {
   width: 100%;
-  text-align: left;
+  text-align: justify;
   float: left;
 }
 
@@ -97,7 +97,7 @@ body {
 .grain-section p,
 .service-section p {
   padding-left: 0em;
-  text-align: left;
+  text-align: justify;
   float: left;
 }
 
